@@ -1,0 +1,51 @@
+INTRODUÇÃO
+Recentemente IoT (Internet of Things - Internet das Coisas) vem tomando o foco das atenções de empresas e entusiastas de IT (Information Tecnology - Tecnologia da Informação) [dzone IoT 2015] a tal ponto que, as empresas líderes do segmento já incluem IoT como um de seus segmentos [IMB IoT][ARM mBed][M$ IoT][Intel IoT][Oracle IoT][Google IoT][Amazon IoT].
+Todo este movimento no mercado é justificado pelo baixo custo de dispositivos [RpiZero][ESP8266] e serviços [esg-whitepaper][AWS IoT Pricing]. Este baixo custo possibilita a computação ubíqua [Weiser 1991] que é entendida pelos autores como "computação virtualmente onipresente". Também para os autores, esta virtual onipresença é base e consequência para a IoT, levando à visão de que a mesma [IoT] como realizadora da computação ubíqua.
+Uma vez contextualizado o mercado e a oportunidade de implementação da computação ubíqua, percebemos a necessidade de dar aos elementos cotidianos (coisas) a capacidade info-computacional, tornando-os sensores e atuadores conectados, unicamente identificáveis e acessíveis através da rede mundial (internet)[Andre Lemos][Kranenburg 2012].
+É esperado que estas "coisas conectadas" (dispositivos) até o final de 2016 representem uma quantia total de 6,4 bilhões [Gartner].
+1 PROBLEMA
+A grande quantidade de dispositivos traz o desafio de localizá-los contextualmente, tanto para (1) que o dispositivo tome ciência de sua posição em um contexto além de sua posição global em suas tomadas de decisão e (2) para que outros (sistemas, pessoas e coisas) saibam a localização de qualquer dispositivo ao qual tem interesse de interagir.
+Mesmo com a grande quantidade de dispositivos já conectados são poucos os documentos e opiniões descrevendo boas práticas para concepção, construção e manutenção dos mesmos, especialmente sobre os cuidados tomados quanto a segurança e análise de custos para a implementação e manutenção. Além disso, a falta de referências neste sentido é agravada quando considera-se implementação no interior do estado de São Paulo.
+
+2 JUSTIFICATIVA
+
+
+3 OBJETIVO
+3.1 Objetivos Gerais
+Considerando características locais, propõem-se a construção de uma aplicação para localizar dispositivos dentro de um prédio, avaliar sua precisão e associar um custo de replicação e pesquisa.
+
+3.2 Objetivos Específicos
+Estabelecer o estado da arte sobre a desenvolvimento de aplicações IoT;
+Identificar desafios locais para o desenvolvimento;
+Identificar provedores de serviços, dispositivos e ferramentas para o desenvolvimento;
+Construir um protótipo de sala conectada virtualmente que identifique os dispositivos conectados a rede que existem dentro nela através de conexões sem fio;
+Estimar o custo total da pesquisa;
+Estimar o custo de replicação da aplicação.
+4 METODOLOGIA
+	A primeira parte deste trabalho foca-se no levantamento bibliográfico sobre Internet das Coisas, Bi
+5 CRONOGRAMA
+
+
+
+
+-How to overcome local constrains?
+-How much does it cost?
+	-further works to lower the cost of this app
+	-futher works to lower IoT apps
+	-total research cost
+	-app replication cost
+
+
+
+
+
+Uma vez contextualizado o mercado e a oportunidade de implementação da computação ubíqua, percebemos a necessidade de dar ao elementos cotidianos(coisas) a capacidade info-computacional, tornando-os sensores e atuadores conectados, unicamente identificáveis e aess´veis através da rede mundial.
+
+Visto isso, este trabalho propõe uma saída para contextualizar dispositivos, de acordo com condições locais bla bla bla, seguindo a tendência do mercado e demonstrando como implementar disp
+
+
+
+Demostrar a implementação de um dispositivo conectado
+
+
+Devido ao crescimento exponencial de coisas conectadas, um dos problemas recorrentes é localizar contextualmente estes dispositivos
