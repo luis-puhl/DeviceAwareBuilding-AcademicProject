@@ -1,7 +1,18 @@
 DeviceAwareBuilding-AcademicProject
 ====================================
 
-# Introdução
+# 0 - Como ler este trabalho
+
+> isto é um comentário  
+> *especialmente coisas em itálico*
+
+[Isto é uma referencia] e de vez em quando [isto também](https://duckduckgo.com
+"Tudo que você precisa")
+
+Este trabalho está em andamento, a versão final será em LaTeX (PDF) então **Não
+confie neste texto**
+
+# 1 - Introdução
 
 >_Contexto_  
 _IoT como foco_
@@ -107,19 +118,19 @@ Sistemas de posicionamento eletronico por radio-frequencia são geralmente
 compostos de dois componetes básicos: Transmissores e receptores. Seu
 funcionamento assume que um destes componentes é fixo e outro é móvel, para
 saber a posição do componente móvel em relação ao fixo calcula-se a distância e
-em o ângulo ou a distância de vários componetnes fixos e utiliza-se triângulação
-para encontrar uma localização com maior precisão.
+o ângulo ou, como no GPS, a distância de vários componetnes fixos e utiliza-se
+triângulação para encontrar uma localização com maior precisão.
 
 Os tradicionais sistemas de GPS (Global Positioning System) utilizam a técnica
 onde o dispositivo móvel contém o receptor e os transmissores são fixos em
-satélites na órbita terrestre[Djuknic2001].
-
+satélites na órbita terrestre [Djuknic2001].
 
 Entretanto, a força do sinal GPS não é suficiente para penetrar a maioria dos
 prédios. A reflexão do sinal muitas vezes permite a leitura em ambientes
 fechados, porém o cálculo da posição não será confiável [Dartmouth2000].
-Portanto, são necessárias soluções diferentes para se criar um sistema de
+Portanto são necessárias soluções diferentes das por satélite um sistema de
 geoposicionamento que funcione em ambientes fechados.
+
 
 
 > **Revisado até aqui**  
@@ -127,16 +138,24 @@ geoposicionamento que funcione em ambientes fechados.
 *Ambiente conciente*  
 *Nota do autor: Introduza nossa solução.*  
 
+Uma abordagem já utilizada para medir distâncias é através de redes sem fio
+padrão Wi-Fi 802.11 ([bahillo2009ieee]) e Bluetooth, utilizando essas técnicas
+propomos estabelecer uma rede de nós sensores colaborativos fixos no ambiente
+onde deseja-se obter a localização dos dispositivos. As informações de distância
+serão compartilhadas entre os nós para maior precisão da estimativa de
+distância.
 
-
-Por exemplo, utilizando uma série de sensores wi-fi posicionados em pontos fixos
+Por exemplo, utilizando uma série de sensores Wi-Fi posicionados em pontos fixos
 dentro de um prédio, com a triangulação do sinal é possível calcular a posição
-de dispositivos conectados à rede wi-fi [BLECKY, 2016].
+de dispositivos conectados à rede Wi-Fi [BLECKY, 2016].
 
 
+
+
+[bahillo2009ieee]:http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5073583
 
 Para oferecer uma posição confiável, é necessário que estes sensores
-coletem e transmitam a força do sinal wi-fi em cada dispositivo com uma alta
+coletem e transmitam a força do sinal Wi-Fi em cada dispositivo com uma alta
 frequência.
 
 
@@ -160,7 +179,7 @@ devices é recebida, facil gerencia dentro do predio*\\
 
 Utilizando como exemplo o prédio do Laboratório de Tecnologia da
 Informação Aplicada (LTIA) da Faculdade de Ciências da Unesp de Bauru, em um dia
-comum, é observado uma média de 30 dispositivos conectados à rede wi-fi.
+comum, é observado uma média de 30 dispositivos conectados à rede Wi-Fi.
 
 Considerando um sensor que a cada 30 segundos colete 1 kB de dados de cada
 dispositivo, por mês, seriam coletados mais de 2 GB de dados. Portanto, para garantir
