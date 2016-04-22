@@ -171,113 +171,124 @@ levando em conta  a quantidade prevista de em média 5 dispositivos conectados
 por pessoa e de que, com este sistema, estes dispositivos não precisariam de
 sensores para localizar-se além de informações mais completas para o prédio.
 
-*Funcionamento por prédio* \\
+> *Funcionamento por prédio*  
  -> *uma vez instalado qualquer quantidade de
-devices é recebida, facil gerencia dentro do predio*\\
- -> \underline {beneficios para o admin do predio*\\
+devices é recebida, facil gerencia dentro do predio*  
+ -> *beneficios para o admin do predio*  
 
 
-Utilizando como exemplo o prédio do Laboratório de Tecnologia da
-Informação Aplicada (LTIA) da Faculdade de Ciências da Unesp de Bauru, em um dia
-comum, é observado uma média de 30 dispositivos conectados à rede Wi-Fi.
+Utilizando como exemplo o prédio do Laboratório de Tecnologia da Informação
+Aplicada (LTIA) da Faculdade de Ciências da Unesp de Bauru, em um dia comum, é
+observado uma média de 30 dispositivos conectados à rede Wi-Fi.
 
 Considerando um sensor que a cada 30 segundos colete 1 kB de dados de cada
-dispositivo, por mês, seriam coletados mais de 2 GB de dados. Portanto, para garantir
-um sistema escalável, é necessário a utilização de técnicas de Big Data para
-armazenar e manipular esses dados.
-O melhor modo de se definir Big Data ainda é discutido por pesquisadores,
-mas uma definição simples é a de que “se é necessário se preocupar com o tamanho
-dos dados, então é Big Data.” (ESPOSITO, 2015, tradução nossa)
+dispositivo, por mês, seriam coletados mais de 2 GB de dados. Portanto, para
+garantir um sistema escalável, é necessário a utilização de técnicas de Big Data
+para armazenar e manipular esses dados. O melhor modo de se definir Big Data
+ainda é discutido por pesquisadores, mas uma definição simples é a de que “se é
+necessário se preocupar com o tamanho dos dados, então é Big Data.” (ESPOSITO,
+2015, tradução nossa)
 
 
-\chapter{Problema}
-A grande quantidade de dispositivos traz o desafio de localizá-los contextualmente, tanto para que o dispositivo tome ciência de sua posição em um contexto além de sua posição global em suas tomadas de decisão e para que outros (sistemas, pessoas e coisas) saibam a localização de qualquer dispositivo ao qual têm interesse de interagir.
+# Problema
 
-Mesmo com a grande quantidade de dispositivos já conectados são poucos os documentos descrevendo boas práticas para concepção, construção e manutenção de aplicações IoT, especialmente sobre os cuidados tomados quanto a segurança e análise de custos para a implementação e manutenção.
+A grande quantidade de dispositivos traz o desafio de localizá-los
+contextualmente, tanto para que o dispositivo tome ciência de sua posição em um
+contexto além de sua posição global em suas tomadas de decisão e para que outros
+(sistemas, pessoas e coisas) saibam a localização de qualquer dispositivo ao
+qual têm interesse de interagir.
 
-Além disso, a falta de referências neste sentido é agravada quando considera-se implementação no interior do estado de São Paulo visto que poucas são as organizações atualizadas neste tema levando a uma falta enorme de conteúdo escrito na linguagem local além de serviços e produtos disponíveis para construção de uma plataforma completa e competitiva nesta região.
+Mesmo com a grande quantidade de dispositivos já conectados são poucos os
+documentos descrevendo boas práticas para concepção, construção e manutenção de
+aplicações IoT, especialmente sobre os cuidados tomados quanto a segurança e
+análise de custos para a implementação e manutenção.
 
-\chapter{Justificativa}
+Além disso, a falta de referências neste sentido é agravada quando considera-se
+implementação no interior do estado de São Paulo visto que poucas são as
+organizações atualizadas neste tema levando a uma falta enorme de conteúdo
+escrito na linguagem local além de serviços e produtos disponíveis para
+construção de uma plataforma completa e competitiva nesta região.
 
-*Nota do parecerista: Reescrever*
+# Justificativa
 
-Na visão dos autores, promover o desenvolvimento local através de trabalhos exemplo, treinamentos ou manuais é fundamental para a equiparação dos desenvolvedores locais com as tecnologias e tendencias de mercado então justificamos sua execução para que outras organizações possam encontrar novos caminhos.
+> *Nota do parecerista: Reescrever*
 
-\chapter{Objetivos*
+Na visão dos autores, promover o desenvolvimento local através de trabalhos
+exemplo, treinamentos ou manuais é fundamental para a equiparação dos
+desenvolvedores locais com as tecnologias e tendencias de mercado então
+justificamos sua execução para que outras organizações possam encontrar novos
+caminhos.
 
-\section{Objetivos Gerais}
+# Objetivos
 
-*Nota do parecerista: Este não é o objetivo do TCC do Marcelo Augusto Cordeiro??*
+## Objetivos Gerais
 
-Considerando características locais, propõem-se a construção de uma aplicação para localizar contextualmente dispositivos dentro de um prédio piloto e avaliar sua precisão.
+> *Nota do parecerista: Este não é o objetivo do TCC do Marcelo Augusto
+Cordeiro??*
 
-Além desta aplicação, é objetivo definir o custo do projeto piloto incluindo esforço de pesquisa assim como definir um custo para replicação deste localizador contextual em outros prédios.
+Considerando características locais, propõem-se a construção de uma aplicação
+para localizar contextualmente dispositivos dentro de um prédio piloto e avaliar
+sua precisão.
 
-\section{Objetivos Específicos*
+Além desta aplicação, é objetivo definir o custo do projeto piloto incluindo
+esforço de pesquisa assim como definir um custo para replicação deste
+localizador contextual em outros prédios.
 
-\begin{alineas}
-	\item Estabelecer o estado da arte sobre a desenvolvimento de aplicações IoT;
-	\item Identificar desafios locais para o desenvolvimento;
-	\item Identificar provedores de serviços, dispositivos e ferramentas para o desenvolvimento;
-	\item Construir um protótipo de sala conectada virtualmente que identifique os dispositivos conectados a rede que existem dentro nela através de conexões sem fio;
-	\item Estimar o custo total do projeto piloto incluindo esforço de pesquisa;
-	\item Estimar o custo de replicação da aplicação em outros prédios.
-\end{alineas}
+## Objetivos Específicos
 
-*Nota do parecerista: Na proposta do Marcelo, foi informado que o Luís Henrique ficará responsável por todos os sensores, o que inclui sua construção, posicionamento, configuração e programação dos gateways.*
+ -  Estabelecer o estado da arte sobre a desenvolvimento de aplicações IoT;
+ -  Identificar desafios locais para o desenvolvimento;
+ -  Identificar provedores de serviços, dispositivos e ferramentas para o
+ desenvolvimento;
+ -  Construir um protótipo de sala conectada virtualmente que identifique os
+ dispositivos conectados a rede que existem dentro nela através de conexões sem
+ fio;
+ -  Estimar o custo total do projeto piloto incluindo esforço de pesquisa;
+ -  Estimar o custo de replicação da aplicação em outros prédios.
 
-\chapter{Método de Pesquisa*
+> *Nota do parecerista: Na proposta do Marcelo, foi informado que o Luís
+Henrique ficará responsável por todos os sensores, o que inclui sua construção,
+posicionamento, configuração e programação dos gateways.*
 
-Utilizaremos prototipagem ágil semelhante ao desenvolvimento de um produto utilizando a metodologia *Scrum* [James2016], executando iterações de uma semana onde a cada iteração uma nova versão melhorada do produto completo (hardware, software, documentação e resultados) será entregue.
+# Método de Pesquisa
 
-Dentro de cada iteração as camadas da aplicação IoT serão escolhidas, implementadas, justificadas e avaliadas sendo todo processo documentado. Como resultado de cada iteração será gerado um relatório das mudanças a partir da iteração anterior.
+Utilizaremos prototipagem ágil semelhante ao desenvolvimento de um produto
+utilizando a metodologia *Scrum* [James2016], executando iterações de uma semana
+onde a cada iteração uma nova versão melhorada do produto completo (hardware,
+software, documentação e resultados) será entregue.
 
-\begin{figure}[htb]
-	\caption{\label{fig:projeto}Modelo das camadas }
-	\begin{center}
-		\includegraphics[width=1\textwidth]{img/projeto.JPG}
-	\end{center}
-	\legend{Fonte: Marcelo Augusto Cordeiro}
-\end{figure}
-
-A Figura \ref{fig:projeto} apresenta a arquitetura simplificada de uma aplicação IoT. Esta será modificada a cada iteração do projeto especialmente as camadas de sensores, *gateway* e base de dados.
-
-*Nota do parecerista: Reescrever a metodologia....descrever detalhadamente as atividades que deverão ser desenvolvidas*
-
-
->  Fundamentação Teórica
-> \chapter{Fundamentação Teórica*
-
-> Precisa?
+Dentro de cada iteração as camadas da aplicação IoT serão escolhidas,
+implementadas, justificadas e avaliadas sendo todo processo documentado. Como
+resultado de cada iteração será gerado um relatório das mudanças a partir da
+iteração anterior.
 
 
->  Cronograma
-\chapter{Cronograma}
+![Modelo das camadas][divisaoProjeto.png]  
+Fonte: Marcelo Augusto Cordeiro
+
+[divisaoProjeto.png]: latex/img/projeto.JPG
+
+A Figura \ref{fig:projeto} apresenta a arquitetura simplificada de uma aplicação
+IoT. Esta será modificada a cada iteração do projeto especialmente as camadas de
+sensores, *gateway* e base de dados.
+
+> *Nota do parecerista: Reescrever a metodologia....descrever detalhadamente as
+atividades que deverão ser desenvolvidas*
+
+
+# Cronograma
 
 
 Devido a natureza ágil e iterativa da metodologia, o cronograma será dividido em apenas três partes: Levantamento Bibliográfico Inicial, Desenvolvimento Iterativo e Revisão Final. Estas partes serão distribuídas conforme a Tabela~\ref{table:cronograma}.
 
-\begin{table}[htb]
-\IBGEtab{%
-\ABNTEXchapterfont {
-  \caption{Cronograma de Atividades Propostas}%
-  \label{table:cronograma}
-}
-}{%
-  \begin{tabular}{cccccccccc}
-  \toprule
-	Atividade							&	Fev	&	Mar	&	Abr	&	Mai	&	Jun	&	Jul	&	Ago	&	Set	&	Out \\
-  \midrule \midrule
-	Levantamento Bibliográfico Inicial	&	X	&	X	&	 	&	 	&	 	&	 	&	 	&	 	&	  \\
-  \midrule
-  Desenvolvimento Iterativo				&	 	&	X	&	X	&	X	&	X	&	X	&	X	&	X	&	  \\
-  \midrule
-  Revisão Final							&	 	&	 	&	 	&	 	&	 	&	 	&	 	&	X	&	X \\
-  \bottomrule
-\end{tabular}%
-}{%
-  \fonte{Produzido pelo autor.}%
-  }
-\end{table}
 
-*Nota do parecerista: A atividade ``Desenvolvimento Iterativo'' deve ser dividida em sub-atividades...*
+Tabela 1 – Cronograma de Atividades Propostas
+
+| Atividade							 	| 	Fev	 | 	Mar	 | 	Abr	 | 	Mai	 | 	Jun	 | 	Jul	 | 	Ago	 | 	Set	 | 	Out  |
+| ------------------------------------- |:------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+| Levantamento Bibliográfico Inicial	| 	X	 | 	X	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	     |
+| Desenvolvimento Iterativo				| 	 	 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 	     |
+| Revisão Final							| 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	X	 | 	X    |
+Fonte: Produzido pelo autor
+
+> *Nota do parecerista: A atividade ``Desenvolvimento Iterativo'' deve ser dividida em sub-atividades...*

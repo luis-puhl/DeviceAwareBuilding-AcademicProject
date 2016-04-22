@@ -477,9 +477,9 @@ uma loja ou um médico e um desfibrilador.
 
 % GPS não funciona bem indoor, existem 2 tipos de indoor
 
-Os tradicionais sistemas de GPS (Global Positioning System) utilizam a
-técnica de auto posicionamento para calcular sua posição no globo terrestre baseado
-nos sinais recebidos de 24 satélites posicionados na órbita terrestre com 20.200
+Os tradicionais sistemas de GPS (Global Positioning System) utilizam a técnica
+de auto posicionamento para calcular sua posição no globo terrestre baseado nos
+sinais recebidos de 24 satélites posicionados na órbita terrestre com 20.200
 kilômetros de distância entre cada um \cite{Djuknic2001}.
 
 
@@ -500,15 +500,14 @@ se criar um sistema de geoposicionamento que funcione em ambientes fechados.
 
 
 
-Por exemplo, utilizando uma série de sensores wi-fi posicionados em pontos
-fixos dentro de um prédio, com a triangulação do sinal é possível calcular a posição
+Por exemplo, utilizando uma série de sensores wi-fi posicionados em pontos fixos
+dentro de um prédio, com a triangulação do sinal é possível calcular a posição
 de dispositivos conectados à rede wi-fi [BLECKY, 2016].
 
 
 
-Para oferecer uma posição confiável, é necessário que estes sensores
-coletem e transmitam a força do sinal wi-fi em cada dispositivo com uma alta
-frequência.
+Para oferecer uma posição confiável, é necessário que estes sensores coletem e
+transmitam a força do sinal wi-fi em cada dispositivo com uma alta frequência.
 
 
 \textbf{\underline{Justificativa }}\\
@@ -529,31 +528,48 @@ devices é recebida, facil gerencia dentro do predio}\\
  -> \underline {beneficios para o admin do predio}\\
 
 
-Utilizando como exemplo o prédio do Laboratório de Tecnologia da
-Informação Aplicada (LTIA) da Faculdade de Ciências da Unesp de Bauru, em um dia
-comum, é observado uma média de 30 dispositivos conectados à rede wi-fi.
+Utilizando como exemplo o prédio do Laboratório de Tecnologia da Informação
+Aplicada (LTIA) da Faculdade de Ciências da Unesp de Bauru, em um dia comum, é
+observado uma média de 30 dispositivos conectados à rede wi-fi.
 
 Considerando um sensor que a cada 30 segundos colete 1 kB de dados de cada
-dispositivo, por mês, seriam coletados mais de 2 GB de dados. Portanto, para garantir
-um sistema escalável, é necessário a utilização de técnicas de Big Data para
-armazenar e manipular esses dados.
-O melhor modo de se definir Big Data ainda é discutido por pesquisadores,
-mas uma definição simples é a de que “se é necessário se preocupar com o tamanho
-dos dados, então é Big Data.” (ESPOSITO, 2015, tradução nossa)
+dispositivo, por mês, seriam coletados mais de 2 GB de dados. Portanto, para
+garantir um sistema escalável, é necessário a utilização de técnicas de Big Data
+para armazenar e manipular esses dados.
+
+O melhor modo de se definir Big Data ainda é discutido por pesquisadores, mas
+uma definição simples é a de que “se é necessário se preocupar com o tamanho dos
+dados, então é Big Data.” (ESPOSITO, 2015, tradução nossa)
 
 
 \chapter{Problema}
-A grande quantidade de dispositivos traz o desafio de localizá-los contextualmente, tanto para que o dispositivo tome ciência de sua posição em um contexto além de sua posição global em suas tomadas de decisão e para que outros (sistemas, pessoas e coisas) saibam a localização de qualquer dispositivo ao qual têm interesse de interagir.
 
-Mesmo com a grande quantidade de dispositivos já conectados são poucos os documentos descrevendo boas práticas para concepção, construção e manutenção de aplicações IoT, especialmente sobre os cuidados tomados quanto a segurança e análise de custos para a implementação e manutenção.
+A grande quantidade de dispositivos traz o desafio de localizá-los
+contextualmente, tanto para que o dispositivo tome ciência de sua posição em um
+contexto além de sua posição global em suas tomadas de decisão e para que outros
+(sistemas, pessoas e coisas) saibam a localização de qualquer dispositivo ao
+qual têm interesse de interagir.
 
-Além disso, a falta de referências neste sentido é agravada quando considera-se implementação no interior do estado de São Paulo visto que poucas são as organizações atualizadas neste tema levando a uma falta enorme de conteúdo escrito na linguagem local além de serviços e produtos disponíveis para construção de uma plataforma completa e competitiva nesta região.
+Mesmo com a grande quantidade de dispositivos já conectados são poucos os
+documentos descrevendo boas práticas para concepção, construção e manutenção de
+aplicações IoT, especialmente sobre os cuidados tomados quanto a segurança e
+análise de custos para a implementação e manutenção.
+
+Além disso, a falta de referências neste sentido é agravada quando considera-se
+implementação no interior do estado de São Paulo visto que poucas são as
+organizações atualizadas neste tema levando a uma falta enorme de conteúdo
+escrito na linguagem local além de serviços e produtos disponíveis para
+construção de uma plataforma completa e competitiva nesta região.
 
 \chapter{Justificativa}
 
 \underline{Nota do parecerista: Reescrever}
 
-Na visão dos autores, promover o desenvolvimento local através de trabalhos exemplo, treinamentos ou manuais é fundamental para a equiparação dos desenvolvedores locais com as tecnologias e tendencias de mercado então justificamos sua execução para que outras organizações possam encontrar novos caminhos.
+Na visão dos autores, promover o desenvolvimento local através de trabalhos
+exemplo, treinamentos ou manuais é fundamental para a equiparação dos
+desenvolvedores locais com as tecnologias e tendencias de mercado então
+justificamos sua execução para que outras organizações possam encontrar novos
+caminhos.
 
 \chapter{Objetivos}
 
@@ -561,28 +577,50 @@ Na visão dos autores, promover o desenvolvimento local através de trabalhos ex
 
 \underline{Nota do parecerista: Este não é o objetivo do TCC do Marcelo Augusto Cordeiro??}
 
-Considerando características locais, propõem-se a construção de uma aplicação para localizar contextualmente dispositivos dentro de um prédio piloto e avaliar sua precisão.
+Considerando características locais, propõem-se a construção de uma aplicação
+para localizar contextualmente dispositivos dentro de um prédio piloto e avaliar
+sua precisão.
 
-Além desta aplicação, é objetivo definir o custo do projeto piloto incluindo esforço de pesquisa assim como definir um custo para replicação deste localizador contextual em outros prédios.
+Além desta aplicação, é objetivo definir o custo do projeto piloto incluindo
+esforço de pesquisa assim como definir um custo para replicação deste
+localizador contextual em outros prédios.
 
 \section{Objetivos Específicos}
 
 \begin{alineas}
+
 	\item Estabelecer o estado da arte sobre a desenvolvimento de aplicações IoT;
+
 	\item Identificar desafios locais para o desenvolvimento;
-	\item Identificar provedores de serviços, dispositivos e ferramentas para o desenvolvimento;
-	\item Construir um protótipo de sala conectada virtualmente que identifique os dispositivos conectados a rede que existem dentro nela através de conexões sem fio;
+
+	\item Identificar provedores de serviços, dispositivos e ferramentas para o
+	desenvolvimento;
+
+	\item Construir um protótipo de sala conectada virtualmente que identifique
+	os dispositivos conectados a rede que existem dentro nela através de
+	conexões sem fio;
+
 	\item Estimar o custo total do projeto piloto incluindo esforço de pesquisa;
+
 	\item Estimar o custo de replicação da aplicação em outros prédios.
+
 \end{alineas}
 
-\underline{Nota do parecerista: Na proposta do Marcelo, foi informado que o Luís Henrique ficará responsável por todos os sensores, o que inclui sua construção, posicionamento, configuração e programação dos gateways.}
+\underline{Nota do parecerista: Na proposta do Marcelo, foi informado que o Luís
+Henrique ficará responsável por todos os sensores, o que inclui sua construção,
+posicionamento, configuração e programação dos gateways.}
 
 \chapter{Método de Pesquisa}
 
-Utilizaremos prototipagem ágil semelhante ao desenvolvimento de um produto utilizando a metodologia \textit{Scrum} \cite{James2016}, executando iterações de uma semana onde a cada iteração uma nova versão melhorada do produto completo (hardware, software, documentação e resultados) será entregue.
+Utilizaremos prototipagem ágil semelhante ao desenvolvimento de um produto
+utilizando a metodologia \textit{Scrum} \cite{James2016}, executando iterações
+de uma semana onde a cada iteração uma nova versão melhorada do produto completo
+(hardware, software, documentação e resultados) será entregue.
 
-Dentro de cada iteração as camadas da aplicação IoT serão escolhidas, implementadas, justificadas e avaliadas sendo todo processo documentado. Como resultado de cada iteração será gerado um relatório das mudanças a partir da iteração anterior.
+Dentro de cada iteração as camadas da aplicação IoT serão escolhidas,
+implementadas, justificadas e avaliadas sendo todo processo documentado. Como
+resultado de cada iteração será gerado um relatório das mudanças a partir da
+iteração anterior.
 
 \begin{figure}[htb]
 	\caption{\label{fig:projeto}Modelo das camadas }
@@ -592,9 +630,12 @@ Dentro de cada iteração as camadas da aplicação IoT serão escolhidas, imple
 	\legend{Fonte: Marcelo Augusto Cordeiro}
 \end{figure}
 
-A Figura \ref{fig:projeto} apresenta a arquitetura simplificada de uma aplicação IoT. Esta será modificada a cada iteração do projeto especialmente as camadas de sensores, \textit{gateway} e base de dados.
+A Figura \ref{fig:projeto} apresenta a arquitetura simplificada de uma aplicação
+IoT. Esta será modificada a cada iteração do projeto especialmente as camadas de
+sensores, \textit{gateway} e base de dados.
 
-\underline{Nota do parecerista: Reescrever a metodologia....descrever detalhadamente as atividades que deverão ser desenvolvidas}
+\underline{Nota do parecerista: Reescrever a metodologia....descrever
+detalhadamente as atividades que deverão ser desenvolvidas}
 
 
 % Fundamentação Teórica
@@ -607,7 +648,10 @@ A Figura \ref{fig:projeto} apresenta a arquitetura simplificada de uma aplicaç�
 \chapter{Cronograma}
 
 
-Devido a natureza ágil e iterativa da metodologia, o cronograma será dividido em apenas três partes: Levantamento Bibliográfico Inicial, Desenvolvimento Iterativo e Revisão Final. Estas partes serão distribuídas conforme a Tabela~\ref{table:cronograma}.
+Devido a natureza ágil e iterativa da metodologia, o cronograma será dividido em
+apenas três partes: Levantamento Bibliográfico Inicial, Desenvolvimento
+Iterativo e Revisão Final. Estas partes serão distribuídas conforme a
+Tabela~\ref{table:cronograma}.
 
 \begin{table}[htb]
 \IBGEtab{%
