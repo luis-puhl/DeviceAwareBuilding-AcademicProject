@@ -123,11 +123,53 @@ Fechados (IPS - *Indoor Positioning System*) porém a ubiquidade deste é
 essencial para conquistar o mesmo nível de confiânça trasido pelos GNSSs.
 
 Para implementar este IPS propomos o uso de tecnologias já implantadas em
-dispositivos e ubíquoas como Wi-Fi (padrão *IEEE 802.11*) e Bluetooth (Padrão
-*Bluetooth SIG*) para que os objetos conectados sobre o qual temos interesse em
-encontrar não necessitem de modificações para o fazermos.
+dispositivos e ubíquoas como Wi-Fi (padrão *IEEE 802.11*) e Bluetooth (padrão
+*Bluetooth SIG*) para que os objetos conectados em que temos interesse de
+encontrar o contexo locativo não necessitem de modificações.
 
 # 3 - Justificativa
+
+> Como a manipulação de RF é geralmente mais complicada em sistemas com
+*hardwares* heterogênios
+
+Sobre o contexto encontrado propomos um ambiente consciente onde o contexto
+locativo oriundo do posicionamento remoto de cada dispositivo móvel é
+administrado e divulgado pelo prédio conectado ao invés da auto localização do
+aparelho pois:
+
+- Uma vez encontrada é mais fácil a propagação desta informação do
+ambiente para o aparelho em comparação ao auto posicionamento pois a negociação
+entre o ambiente e o aparelho é nula quando o ambiente contém a informação (o
+ambiente sempre disponibilizará uma informação coletada para o gerador desta
+informação);
+- Pode-se lidar com grande heterogeniedade de dispositivos uma vez
+que cada um deles não precisa se adaptar para cada mudança de ambiente;
+- Este tipo de informação já é contida nos históricos de cada Ponto de Acesso
+ Wi-Fi (AP - *Access Point*) porém:
+	- Geralmente sem uso - poucas são as aplicações que usam a localização
+	obtida pelo AP;
+	- com granularidade insuficiente para uso em aplicações contextualizadas;
+	- geralmente não disponibilizada pelos APs.
+- Uma vez instalado um PS deste gênero a quatia de dispositivos que ele pode
+localizar fica limitada apenas pela rede física;
+- Economia de harware quando menos é necessário em cada dispositivo;
+
+Levamos em conta também a quantidade prevista de em média 5 dispositivos IoT
+por pessoa que seriam beneficiados sempre que utilizados no ambiente conectado.
+
+>Colocar reforço sobre a imlementação no LTIA
+
+![Modelo das camadas][projeto]  
+Fonte: Marcelo Augusto Cordeiro
+
+[projeto]: latex/img/projeto.JPG
+
+A Figura \ref{fig:projeto} apresenta a arquitetura simplificada de uma aplicação
+IoT.
+
+Para possibilitar testes em um ambiente real, o projeto aqui proposto será
+instalado dentro do prédio do Laboratório de Tecnologia da Informação Aplicada
+(LTIA) da Faculdade de Ciências da Unesp de Bauru.
 
 > *Nota do parecerista: Reescrever*
 Na visão dos autores, promover o desenvolvimento local através de trabalhos
@@ -136,27 +178,15 @@ desenvolvedores locais com as tecnologias e tendencias de mercado então
 justificamos sua execução para que outras organizações possam encontrar novos
 caminhos.
 
- Como a manipulação de RF é geralmente mais complicada em sistemas com
-*hardwares* heterogênios
-
-> *Economia em cada aparelho*
-
-Escolhemos o sistema de antenas sensoras e dispositivos transmissores ao invés
-do contrario (explicar com o detalhes o pq da escolha e falar o que é contrário)
-para economia de harware no sentido de menos hardware em cada dispositivo e
-levando em conta  a quantidade prevista de em média 5 dispositivos conectados
-por pessoa e de que, com este sistema, estes dispositivos não precisariam de
-sensores para localizar-se além de informações mais completas para o prédio.
-
 > *Funcionamento por prédio*  
  -> *uma vez instalado qualquer quantidade de
 devices é recebida, facil gerencia dentro do predio*  
  -> *beneficios para o admin do predio*  
 
 
-# Objetivos
+# 4 - Objetivos
 
-## Objetivos Gerais
+## 4.1 - Objetivos Gerais
 
 > *Nota do parecerista: Este não é o objetivo do TCC do Marcelo Augusto
 Cordeiro??*
@@ -169,34 +199,48 @@ Além desta aplicação, é objetivo definir o custo do projeto piloto incluindo
 esforço de pesquisa assim como definir um custo para replicação deste
 localizador contextual em outros prédios.
 
-## Objetivos Específicos
+## 4.2 Objetivos Específicos
 
 -  Estabelecer o estado da arte sobre a desenvolvimento de aplicações IoT;
 -  Identificar desafios locais para o desenvolvimento;
 -  Identificar provedores de serviços, dispositivos e ferramentas para o
 desenvolvimento;
--  Construir um protótipo de sala conectada virtualmente que identifique os
-dispositivos conectados a rede que existem dentro nela através de conexões sem
-fio;
+- Construção de sensores de identificação e localização (distância) de
+ dispositivos cuja comunicação seja baseada em Bluetooth e Wi-Fi;
+- Posicionamento destes sensores;
+- Construção de um dispositivo agregador de informações dos sensores
+ (*gateway*) e sua interface web (Web REST API - *Representational
+State Transfer Application Programming Interface*);
 -  Estimar o custo total do projeto piloto incluindo esforço de pesquisa;
 -  Estimar o custo de replicação da aplicação em outros prédios.
 
-> *Nota do parecerista: Na proposta do Marcelo, foi informado que o Luís
-Henrique ficará responsável por todos os sensores, o que inclui sua construção,
-posicionamento, configuração e programação dos gateways.*
-
 # 4 - Método de Pesquisa
 
-*Ambiente conciente*  
+Para implementar este IPS propomos o uso de tecnologias já implantadas em
+dispositivos e ubíquoas como Wi-Fi (padrão *IEEE 802.11*) e Bluetooth (Padrão
+*Bluetooth SIG*) para que os objetos conectados sobre o qual temos interesse em
+encontrar não necessitem de modificações para o fazermos.
+
+> *Ambiente conciente*  
 
 Abordagens para medir distâncias através de redes sem fio Wi-Fi
 ([bahillo2009ieee]) e Bluetooth já existem e, propor novas maneiras não é o foco
 deste trabalho, utilizando essas técnicas propomos estabelecer uma rede de nós
 sensores colaborativos fixos no ambiente onde deseja-se obter a localização dos
 dispositivos. As informações de distância serão compartilhadas entre os nós para
-maior precisão da estimativa de distância.
+maior precisão da informação.
 
 > Esta rede estará conectada a internet e proverá o serviço de localização
+
+Para a implementação pretende-se utilizar os softwares de maior destaque
+recentemente nos ramos de comunicação de baixa energia (*MQTT*), serviços *Web*
+para armazenamento (*MongoDB*) e publicação (*NodeJS*) além de softares para
+medição da distância sem interferir na comuncação (*Sniffing*) e das plataformas
+de hardware disponíveis e recomendadas para IoT (*Raspberry Pi 3*).]
+
+>Colocar a versão do bluetooth/wifi
+> Pode ser colocado como uma das ferramentas a serem usadas
+
 
 Mesmo com a grande quantidade de dispositivos já conectados são poucos os
 documentos descrevendo boas práticas para concepção, construção e manutenção de
@@ -209,27 +253,43 @@ organizações atualizadas neste tema levando a uma falta enorme de conteúdo
 escrito na linguagem local além de serviços e produtos disponíveis para
 construção de uma plataforma completa e competitiva nesta região.
 
-----------------------------
+>"-Utilizaremos prototipagem [...] produto é uma frase meio vaga
+descrever mais como o Scrum vai funcionar em relação ao projeto (use na descrição componentes do projeto)
+-
 
-Utilizaremos prototipagem ágil semelhante ao desenvolvimento de um produto
-utilizando a metodologia *Scrum* [James2016], executando iterações de uma semana
-onde a cada iteração uma nova versão melhorada do produto completo (hardware,
-software, documentação e resultados) será entregue.
+Devido a falta de conteúdo e instrução utilizaremos prototipagem ágil para este
+projeto, uma vez que esta metodologia de desenvolvimento é recomendada para
+projetos cujas especificações e definições não são claras demandando muitas
+modificações das mesmas durante a execução do mesmo entrando em contraste com
+metodologias clássicas como a cascata que apesar de previsíveis não reagem bem a
+ambientes de extrema incertesa.
+
+Mais especificamente utilizaremos uma variante da metodologia *Scrum*
+[James2016] que será adaptada para o projeto. Nela serão executadas iterações de
+uma semana onde a cada iteração uma nova versão melhorada do produto completo
+(hardware, software, documentação e resultados) será entregue.
 
 Dentro de cada iteração as camadas da aplicação IoT serão escolhidas,
 implementadas, justificadas e avaliadas sendo todo processo documentado. Como
 resultado de cada iteração será gerado um relatório das mudanças a partir da
 iteração anterior.
 
+Com mais detalhes, cada iteração cumprirá parcialmente gerando um relatório
+sobre os seguintes objetivos:
 
-![Modelo das camadas][divisaoProjeto.png]  
-Fonte: Marcelo Augusto Cordeiro
+- Escolha de provedores de serviços, dispositivos e ferramentas para o
+desenvolvimento;
+- Construção, avaliação, teste e manutenção dos sensores;
+- Construção de um dispositivo agregador e sua API;
+- Estimativa do custo total do projeto piloto;
+- Estimativa do custo de replicação;
+- Identificação dos desafios para o desenvolvimento.
 
-[divisaoProjeto.png]: latex/img/projeto.JPG
+Desta forma esperamos garantir a liberdade necessária para o projeto ser
+executado com sucesso mesmo no ambiente de incertesa no qual o mercado local de
+IoT encontra-se, cumprindo as premissas de grande relevância para os
+interessados na área de funcionamento, mantebilidade e segurança.
 
-A Figura \ref{fig:projeto} apresenta a arquitetura simplificada de uma aplicação
-IoT. Esta será modificada a cada iteração do projeto especialmente as camadas de
-sensores, *gateway* e base de dados.
 
 > *Nota do parecerista: Reescrever a metodologia....descrever detalhadamente as
 atividades que deverão ser desenvolvidas*
