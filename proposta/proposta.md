@@ -55,8 +55,9 @@ quanto virtual é necessário o contato entre as partes para a existencia de uma
 interação.
 
 Mais ainda, para melhor funcionamento de aplicações, em especial o oferecimento
-de conteúdo específico para cada usuário, é necessário contextualizar e o
-primeiro passo da contextualização é a conciência da localização.
+de conteúdo específico para cada usuário e situação, é necessário contextualizar
+e para muitas aplicações a localização é a informação contextual mais importante
+e relvante.
 
 > *Exemplo da perda de aparelhos no predio (zebra) (ou outro exemplo)*
 
@@ -114,22 +115,46 @@ uma loja ou um médico e um desfibrilador.
 
 > GPS não funciona bem indoor, existem 2 tipos de indoor
 
-Sistemas de posicionamento eletronico por radio-frequencia são geralmente
-compostos de dois componetes básicos: Transmissores e receptores. Seu
-funcionamento assume que um destes componentes é fixo e outro é móvel, para
-saber a posição do componente móvel em relação ao fixo calcula-se a distância e
-o ângulo ou, como no GPS, a distância de vários componetnes fixos e utiliza-se
-triângulação para encontrar uma localização com maior precisão.
+Sistemas de posicionamento (PS - *Positioning System*) em geral determinam a
+partir de um conjuto não vazio de pontos de referência (RP - *Reference Point*),
+cuja localização global em relação a um ponto origem escolhido (*O*) é conhecida
+e com precisão maior ou igual a interna do sistema, a posição relativa de um
+ponto móvel dentro deste sistema (MU - *Mobile User*) aos RPs e consequentemente
+a posição relativa ao *O*.
 
-Os tradicionais sistemas de GPS (Global Positioning System) utilizam a técnica
+Para PSs eletônicos baseados em radio-frequência (RF - *Radio Frequency*)
+geralmente utilizam-se dois componetes básicos, Transmissores e Receptores, seu
+funcionamento assume que ao menos um destes está no RP e outro no MU. Para
+calcular a posição do MU utiliza-se as propriedades da comunicação por RF como
+tempo de chegada (TOA - *Time Of Arrival*), diferenial de tempo de chegada (TDOA -
+*Time Difference Of Arrival*) e ângulo de chegada de sinal (AOA - *Angle Of
+Arrival*).
+
+Para maior precisão é comum a utilização de multiplas RPs, geralmente com o
+número mínimo igual ao número de dimenções espaciais que deseja-se calcular.
+Notamos que para sistemas distribuídos como a sincronização de relógios é um
+problema clássico o tempo conta como dimenção.
+
+Os sistemas classificados como "Sistema de Navegação Global por Satélite" (GNSS -
+*Global Navigation Satellite System*) como o tradicional estadounidense Sistema
+de Posicionamento Global (GPS - *Global Positioning System*) utilizam a técnica
 onde o dispositivo móvel contém o receptor e os transmissores são fixos em
 satélites na órbita terrestre [Djuknic2001].
 
-Entretanto, a força do sinal GPS não é suficiente para penetrar a maioria dos
-prédios. A reflexão do sinal muitas vezes permite a leitura em ambientes
-fechados, porém o cálculo da posição não será confiável [Dartmouth2000].
-Portanto são necessárias soluções diferentes das por satélite um sistema de
-geoposicionamento que funcione em ambientes fechados.
+Entretanto a força do sinal GNSS não é suficiente para penetrar a maioria dos
+prédios uma vez que estes dependem de visão direta (LOS - *Line-Of-Sight*) entre
+os satélites e o receptor. A reflexão do sinal muitas vezes permite a leitura em
+ambientes fechados, porém o cálculo da posição não será confiável
+[Dartmouth2000].
+
+Portanto, apesar da ubiquidade dos GNSSs, são necessárias soluções diferentes
+para obter  um sistema de geoposicionamento que funcione em ambientes fechados.
+A ubiquidade deste Sistema de Posicionamento para Ambientes Fechados (IPS -
+*Indoor Positioning System*) é essencial para o bom funcionamento prático do
+mesmo que somente pode ser estabelecido com uso de 
+
+ Como a manipulação de RF é geralmente mais complicada em sistemas com
+*hardwares* heterogênios
 
 
 
@@ -147,11 +172,10 @@ distância.
 
 Por exemplo, utilizando uma série de sensores Wi-Fi posicionados em pontos fixos
 dentro de um prédio, com a triangulação do sinal é possível calcular a posição
-de dispositivos conectados à rede Wi-Fi [BLECKY, 2016].
+de dispositivos conectados à rede Wi-Fi [SubPos].
 
 
-
-
+[SubPos]:http://subpos.org/
 [bahillo2009ieee]:http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5073583
 
 Para oferecer uma posição confiável, é necessário que estes sensores
