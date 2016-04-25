@@ -77,8 +77,6 @@ uma loja ou um médico e um desfibrilador.
 > *Soluções corelatas*  
 *Nota do autor: Introduza os meios existentes de localização (marcelo).*
 
-> GPS não funciona bem indoor, existem 2 tipos
-
 ## 2.1 - Sobre Sistemas de Posicionamento
 
 Sistemas de posicionamento (PS - *Positioning System*) são geralmente
@@ -111,25 +109,25 @@ sinal (AOA - *Angle Of Arrival*).
 
 Para maior precisão, é comum a utilização de múltiplas RPs geralmente com o
 número mínimo igual ao número de dimenções espaciais que deseja-se calcular.
-Notamos que para sistemas distribuídos, como a sincronização de relógios, é um
-problema clássico o tempo conta como dimensão. (SERIA: O tempo contAR como dimensão?)
+Notamos que para sistemas distribuídos a sincronização de relógios é um
+problema clássico então o tempo conta como dimensão.
 
 Os sistemas classificados como "Sistema de Navegação Global por Satélite" (GNSS -
 *Global Navigation Satellite System*), como o tradicional Estadunidense Sistema
 de Posicionamento Global (GPS - *Global Positioning System*), utilizam a técnica
 em que o dispositivo móvel contém o receptor e os transmissores são fixos em
 satélites na órbita terrestre [Djuknic2001]. Devido a posição e número de
-satélites, o GPS e seus correlatos estão sempre presentes do ponto de vista de um
-observador da superfície terrestre, sendo para este tipo de usuário um sistema
-ubíquo.
+satélites, o GPS e seus correlatos estão sempre presentes do ponto de vista de
+um observador da superfície terrestre, sendo para este tipo de usuário um
+sistema ubíquo.
 
 Entretanto a força do sinal GNSS não é suficiente para penetrar a maioria dos
-prédios, uma vez que estes dependem de visão direta (LOS - *Line-Of-Sight*) entre
-os satélites e o receptor. A reflexão do sinal muitas vezes permite a leitura em
-ambientes fechados, porém o cálculo da posição não será confiável
-[Dartmouth2000].Portanto, apesar da ubiquidade dos GNSSs em ambientes abertos, são necessárias
-soluções diferentes para obter um Sistema de Posicionamento para Ambientes
-Fechados (IPS - *Indoor Positioning System*) sendo a ubiquidade deste
+prédios, uma vez que estes dependem de visão direta (LOS - *Line-Of-Sight*)
+entre os satélites e o receptor. A reflexão do sinal muitas vezes permite a
+leitura em ambientes fechados, porém o cálculo da posição não será confiável
+[Dartmouth2000].Portanto, apesar da ubiquidade dos GNSSs em ambientes abertos,
+são necessárias soluções diferentes para obter um Sistema de Posicionamento para
+Ambientes Fechados (IPS - *Indoor Positioning System*) sendo a ubiquidade deste
 essencial para conquistar o mesmo nível de confiança trazido pelos GNSSs.
 
 Para implementar este IPS, propomos o uso de tecnologias já implantadas em
@@ -200,9 +198,6 @@ devices é recebida, facil gerencia dentro do predio*
 
 ## 4.1 - Objetivos Gerais
 
-> *Nota do parecerista: Este não é o objetivo do TCC do Marcelo Augusto
-Cordeiro??*
-
 Considerando características locais, propõem-se a construção de uma aplicação
 para localizar contextualmente dispositivos dentro de um prédio piloto e avaliar
 sua precisão.
@@ -226,7 +221,7 @@ State Transfer Application Programming Interface*);
 -  Estimar o custo total do projeto piloto incluindo esforço de pesquisa;
 -  Estimar o custo de replicação da aplicação em outros prédios.
 
-# 4 - Método de Pesquisa
+# 5 - Método de Pesquisa
 
 > *Ambiente conciente*  
 

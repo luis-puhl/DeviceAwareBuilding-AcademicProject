@@ -376,69 +376,34 @@ Faculdade de Ciências, Campus Bauru }
 \chapter[INTRODUÇÃO]{INTRODUÇÃO}
 %\addcontentsline{toc}{chapter}{Introdução}
 
- 1 - Introdução
-
-Recentemente, Internet das Coisas (IoT - \textit{Internet of Things}) vem tomando o
-foco das atenções de empresas e entusiastas de Tecnologia da Informação (IT -
-\textit{Information Tecnology}) \cite{DzoneIoT:2015} a tal ponto que as empresas líderes do
-segmento já incluem IoT como uma de suas áreas de atuação \cite{Ibm2016} \cite{ARM-mbed}
-\cite{Microsoft2016} \cite{Intel2016} \cite{Oracle2016} \cite{Google2016} \cite{AmazonIoT2016}.
-
-Todo este movimento no mercado é justificado pelo baixo custo dos pequenos
-dispositivos computacionais \cite{RpiZeroLaunch} \cite{Esp8266.net} e grandes serviços na
-nuvem \cite{Kaufmann2015} \cite{Amazon2016}. Este baixo custo possibilita a computação
-ubíqua descrita por Weiser em 1991 e 1992 \cite{Weiser1999} que é entendida pelos
-autores como \textit{``computação virtualmente onipresente''}. Também para os autores,
-esta virtual onipresença é base e consequência para a IoT, sendo esta a
-realizadora da computação ubíqua.
-
-Uma vez contextualizado o mercado e a oportunidade de implementação da
-computação ubíqua, percebemos a necessidade de dar aos elementos cotidianos
-(coisas) a capacidade info-computacional, tornando-os sensores e atuadores
-conectados, unicamente identificáveis e acessíveis através da rede mundial
-(internet) \cite{Lemos2013} \cite{Kranenburg2012}.
-
-É esperado que uma quantia total de 6,4 bilhões de dispositivos conectados
-exista até o final de 2016 \cite{GARTNER2015} e entre 26 bilhões \cite{GARTNER2014} e 50
-bilhões até 2020 com até 250 novas coisas conectando-se por segundo
-\cite{CiscoBlog2013}.
-
-
---- texto antigo ---
-
-Recentemente IoT (\textit{Internet of Things} - Internet das Coisas) vem tomando
-o foco das atenções de empresas e entusiastas de IT (\textit{Information
-Tecnology} - Tecnologia da Informação) \cite{DzoneIoT:2015} a tal ponto que as
-empresas líderes do segmento já incluem IoT como uma de suas áreas de atuação
-\cite{Ibm2016} \cite{ARM-mbed} \cite{Microsoft2016} \cite{Intel2016}
+Recentemente, Internet das Coisas (IoT - \textit{Internet of Things}) vem
+tomando o foco das atenções de empresas e entusiastas de Tecnologia da
+Informação \cite{DzoneIoT:2015} a tal
+ponto que as empresas líderes do segmento já incluem IoT como uma de suas áreas
+de atuação \cite{Ibm2016} \cite{ARM-mbed} \cite{Microsoft2016} \cite{Intel2016}
 \cite{Oracle2016} \cite{Google2016} \cite{AmazonIoT2016}.
 
 Todo este movimento no mercado é justificado pelo baixo custo dos pequenos
 dispositivos computacionais \cite{RpiZeroLaunch} \cite{Esp8266.net} e grandes
 serviços na nuvem \cite{Kaufmann2015} \cite{Amazon2016}. Este baixo custo
 possibilita a computação ubíqua descrita por Weiser em 1991 e 1992
-\cite{Weiser1999} que é entendida pelos autores como ``computação virtualmente
-onipresente''. Também para os autores, esta virtual onipresença é base e
-consequência para a IoT sendo esta a realizadora da computação ubíqua.
+\cite{Weiser1999} que é entendida pelos autores como \textit{``computação
+virtualmente onipresente''}. Também para os autores, esta virtual onipresença é
+base e consequência para a IoT, sendo esta a realizadora da computação ubíqua.
 
 Uma vez contextualizado o mercado e a oportunidade de implementação da
 computação ubíqua, percebemos a necessidade de dar aos elementos cotidianos
 (coisas) a capacidade info-computacional, tornando-os sensores e atuadores
 conectados, unicamente identificáveis e acessíveis através da rede mundial
-(internet) \cite{Lemos2013} \cite{Kranenburg2012}.
-
-\underline{Numero de dispositivos}
+de computadores \cite{Lemos2013} \cite{Kranenburg2012}.
 
 É esperado que uma quantia total de 6,4 bilhões de dispositivos conectados
 exista até o final de 2016 \cite{GARTNER2015} e entre 26 bilhões
-\cite{GARTNER2014}  e 50 bilhões até 2020 com até 250 novas coisas conectando-se
+\cite{GARTNER2014} e 50 bilhões até 2020 com até 250 novas coisas conectando-se
 por segundo \cite{CiscoBlog2013}.
-
 
 \chapter{PROBLEMA}
 \label{chap:PROBLEMA}
-
- 2 - Problema
 
 Tamanha quantidade de dispositivos conectados pouco acrescenta na vida diária se
 humanos ou coisas não puderem simplesmente se encontrar, tanto em ambiente real
@@ -447,8 +412,8 @@ interação.
 
 Mais ainda, para melhor funcionamento de aplicações como o uso de conteúdo
 específico para cada usuário e situação é necessário coletar informações
-contextuais. Para a maioria das aplicações a informação contextual de maior
-relevancia é a localização física.
+contextuais. Para a maioria das aplicações, a informação contextual de maior
+relevância é a localização física.
 
 Destacamos a necessidade da criação desta informação através de sensores ativos
 sempre que necessário para que o dispositivo tenha ciência deste contexto em
@@ -460,170 +425,127 @@ seria um profissional saber onde está o dispositivo em seu local de trabalho,
 seja ele um vendedor e seu tablet para demostrar um produto fora de estoque em
 uma loja ou um médico e um desfibrilador.
 
---- texto antigo ---
-
-\textbf{\underline{Problema}}
-\underline{Grande quantidade de dispositivos}
-
-Tamanha quantidade de dispositivos conectados pouco acrescenta na vida diária se
-humanos ou coisas não puderem simplesmente se encontrar, tanto em ambiente real
-quanto virtual é necessário o contato entre as partes para a existencia de uma
-interação.
-
-Mais ainda, para melhor funcionamento de aplicações, em especial o oferecimento
-de conteúdo específico para cada usuário, é necessário contextualizar e o
-primeiro passo da contextualização é a conciência da localização.
-
-\underline{Exemplo da perda de aparelhos no predio (zebra) (ou outro exemplo)}
-
-Um exeplo da necessidade de localização de dispositivos dentro de um prédio
-seria um profissional saber onde está o dispositivo em seu local de trabalho,
-seja ele um vendedor e seu tablet para demostrar um produto fora de estoque em
-uma loja ou um médico e um desfibrilador.
-
-A grande quantidade de dispositivos traz o desafio de localizá-los
-contextualmente, tanto para que o dispositivo tome ciência de sua posição em um
-contexto além de sua posição global em suas tomadas de decisão e para que outros
-(sistemas, pessoas e coisas) saibam a localização de qualquer dispositivo ao
-qual têm interesse de interagir.
-
-Mesmo com a grande quantidade de dispositivos já conectados são poucos os
-documentos descrevendo boas práticas para concepção, construção e manutenção de
-aplicações IoT, especialmente sobre os cuidados tomados quanto a segurança e
-análise de custos para a implementação e manutenção.
-
-Além disso, a falta de referências neste sentido é agravada quando considera-se
-implementação no interior do estado de São Paulo visto que poucas são as
-organizações atualizadas neste tema levando a uma falta enorme de conteúdo
-escrito na linguagem local além de serviços e produtos disponíveis para
-construção de uma plataforma completa e competitiva nesta região.
-
-
 \section{SOBRE SISTEMAS DE POSICIONAMENTO}
 \label{sec:SOBRE SISTEMAS DE POSICIONAMENTO}
 
- 2.1 -
-
 Sistemas de posicionamento (PS - \textit{Positioning System}) são geralmente
-constituidos de um Ponto Origem Global escolhido (\textit{O}) e um conjuto não vazio de
-Pontos de Referência (RP - \textit{Reference Point}) cuja localização global em relação
-ao \textit{O} é conhecida com precisão maior ou igual a oferecida pelo sistema.
+constituídos de um Ponto Origem Global escolhido (\textit{O}) e um conjuto não
+vazio de Pontos de Referência (RP - \textit{Reference Point}) cuja localização
+global em relação ao \textit{O} é conhecida com precisão maior ou igual a
+oferecida pelo sistema.
 
-Também faz parte do sistema o ponto móvel (MU - \textit{Mobile User}) sobre o qual
-temos interesse em determinar a posição que é feita pelo PS encontrando uma
+Também faz parte do sistema o ponto móvel (MU - \textit{Mobile User}) sobre o
+qual temos interesse em determinar a posição que é feita pelo PS encontrando uma
 distância (com dimensão variável de acordo com o método utilizado para
-adiquiri-la) relativa a um sub-conjunto de RPs. Feito isso é possível utlizar
-modelos matemáticos para a partir das distâncias encontrar uma posição do MU em
-relação aos RPs e uma nova transformação é aplicada para encontrar a posição
+adquirir a distância) relativa a um sub-conjunto de RPs. Feito isso, é possível utilizar
+modelos matemáticos para, a partir das distâncias, encontrar uma posição do MU
+em relação aos RPs e uma nova transformação é aplicada para encontrar a posição
 relativa ao \textit{O}.
 
 Uma das maneiras de classificar PSs é entre os de Auto Posicionamento e
 Posicionamento Remoto. Os de Auto Posicionamento contém no MU todo aparato
-necessário para medir a distância dos RPs e calcular a posição em relação a \textit{O}.
-Já os de Posicionamento Remoto tem o mínimo necessário na MU e todo o trabalho
-de cálculo de distância e posição global é feito nos RPs ou em uma unidade
-coordenadora destes.
+necessário para medir a distância dos RPs e calcular a posição em relação a
+\textit{O}. Já os de Posicionamento Remoto tem o mínimo necessário na MU e todo
+o trabalho de cálculo de distância e posição global é feito nos RPs ou em uma
+unidade coordenadora destes.
 
-Para PSs eletônicos baseados em radio-frequência (RF - \textit{Radio Frequency})
-geralmente utilizam-se dois componetes básicos, Transmissores e Receptores, os
-quais assume-se que ao menos um destes está no RP e ao menos um outro no MU.
-Para calcular a distância entre MU e RP utiliza-se as propriedades da
-comunicação por RF como tempo de chegada (TOA - \textit{Time Of Arrival}), diferenial
-de tempo de chegada (TDOA - \textit{Time Difference Of Arrival}) e ângulo de chegada de
-sinal (AOA - \textit{Angle Of Arrival}).
+Para PSs eletrônicos baseados em radio-frequência (RF - \textit{Radio
+Frequency}), geralmente, utilizam-se dois componentes básicos, Transmissores e
+Receptores, os quais assume-se que ao menos um destes está no RP e ao menos um
+outro no MU. Para calcular a distância entre MU e RP, utiliza-se as propriedades
+da comunicação por RF como tempo de chegada (TOA - \textit{Time Of Arrival}),
+diferencial de tempo de chegada (TDOA - \textit{Time Difference Of Arrival}) e
+ângulo de chegada de sinal (AOA - \textit{Angle Of Arrival}).
 
 Para maior precisão, é comum a utilização de múltiplas RPs geralmente com o
-número mínimo igual ao número de dimenções espaciais que deseja-se calcular.
-Notamos que para sistemas distribuídos a sincronização de relógios é um
-problema clássico então o tempo conta como dimensão.
+número mínimo igual ao número de dimensões espaciais que deseja-se calcular.
+Notamos que para sistemas distribuídos a sincronização de relógios é um problema
+clássico então o tempo conta como dimensão.
 
-Os sistemas classificados como ``Sistema de Navegação Global por Satélite'' (GNSS -
-\textit{Global Navigation Satellite System}), como o tradicional Estadunidense Sistema
-de Posicionamento Global (GPS - \textit{Global Positioning System}), utilizam a técnica
-em que o dispositivo móvel contém o receptor e os transmissores são fixos em
-satélites na órbita terrestre \cite{Djuknic2001}. Devido a posição e número de
-satélites, o GPS e seus correlatos estão sempre presentes do ponto de vista de
-um observador da superfície terrestre, sendo para este tipo de usuário um
-sistema ubíquo.
+Os sistemas classificados como ``Sistema de Navegação Global por Satélite''
+(GNSS - \textit{Global Navigation Satellite System}), como o tradicional
+Estadunidense Sistema de Posicionamento Global (GPS - \textit{Global Positioning
+System}), utilizam a técnica em que o dispositivo móvel contém o receptor e os
+transmissores são fixos em satélites na órbita terrestre \cite{Djuknic2001}.
+Devido a posição e número de satélites, o GPS e seus correlatos estão sempre
+presentes do ponto de vista de um observador da superfície terrestre, sendo para
+este tipo de usuário um sistema ubíquo.
 
-Entretanto a força do sinal GNSS não é suficiente para penetrar a maioria dos
+Entretanto, a força do sinal GNSS não é suficiente para penetrar a maioria dos
 prédios, uma vez que estes dependem de visão direta (LOS - *Line-Of-Sight*)
 entre os satélites e o receptor. A reflexão do sinal muitas vezes permite a
 leitura em ambientes fechados, porém o cálculo da posição não será confiável
-\cite{Dartmouth2000}.Portanto, apesar da ubiquidade dos GNSSs em ambientes abertos,
-são necessárias soluções diferentes para obter um Sistema de Posicionamento para
-Ambientes Fechados (IPS - \textit{Indoor Positioning System}) sendo a ubiquidade deste
-essencial para conquistar o mesmo nível de confiança trazido pelos GNSSs.
+\cite{Dartmouth2000}. Portanto, apesar da ubiquidade dos GNSSs em ambientes
+abertos, são necessárias soluções diferentes para obter um Sistema de
+Posicionamento para Ambientes Fechados (IPS - \textit{Indoor Positioning
+System}) sendo a ubiquidade deste essencial para conquistar o mesmo nível de
+confiança trazido pelos GNSSs.
 
 Para implementar este IPS, propomos o uso de tecnologias já implantadas em
-dispositivos móveis e essenciais para o funcionamento dos memos, especialmente
-as de camadas de comunicação, que são ubíquoas no ambiente dos dispositivos
-móveis, como Wi-Fi (padrão *IEEE 802.11*) e Bluetooth (padrão \textit{Bluetooth SIG}),
-para que os objetos conectados em que temos interesse de encontrar o contexto
-locativo não necessitem de modificações.
-
----
-
-\underline{Soluções corelatas}
-
-\underline{Nota do autor: Introduza os meios existentes de localização (marcelo).}
-
-% GPS não funciona bem indoor, existem 2 tipos de indoor
-
-Os tradicionais sistemas de GPS (Global Positioning System) utilizam a técnica
-de auto posicionamento para calcular sua posição no globo terrestre baseado nos
-sinais recebidos de 24 satélites posicionados na órbita terrestre com 20.200
-kilômetros de distância entre cada um \cite{Djuknic2001}.
-
-
-Entretanto, a força do sinal GPS não é suficiente para penetrar a maioria dos
-prédios. A reflexão do sinal muitas vezes permite a leitura em ambientes
-fechados, porém o cálculo da posição não será confiável
-\cite{Dartmouth2000}. Portanto, são necessárias soluções diferentes para
-se criar um sistema de geoposicionamento que funcione em ambientes fechados.
-
-Por exemplo, utilizando uma série de sensores wi-fi posicionados em pontos fixos
-dentro de um prédio, com a triangulação do sinal é possível calcular a posição
-de dispositivos conectados à rede wi-fi [BLECKY, 2016].
-
-Para oferecer uma posição confiável, é necessário que estes sensores coletem e
-transmitam a força do sinal wi-fi em cada dispositivo com uma alta frequência.
-
+dispositivos móveis e essenciais para o funcionamento dos mesmos, especialmente
+as de camadas de comunicação, que são ubíquas no ambiente dos dispositivos
+móveis, como Wi-Fi (padrão *IEEE 802.11*) e Bluetooth (padrão \textit{Bluetooth
+SIG}), para que os objetos conectados em que temos interesse de encontrar o
+contexto locativo não necessitem de modificações.
 
 \chapter{JUSTIFICATIVA}
 \label{chap:JUSTIFICATIVA}
 
- 3 - Justificativa
+Nossa proposta de IPS é de Posicionamento Remoto localizando dentro de um
+ambiente fechado dispositivos conectados a internet (IoT Devices) através de
+redes Wi-Fi e Bluetooth. Mediremos a distância destes MUs (devices) aos RP
+(sensores) utilizando o resíduo eletromagnético das redes sem fio
+(\textit{sniffing}) disponibilizando as informações encontradas através de uma
+REST WEB API.
 
 Sobre o contexto encontrado, propomos um ambiente consciente onde o contexto
 locativo oriundo do posicionamento remoto de cada dispositivo móvel é
 administrado e divulgado pelo prédio conectado ao invés da auto localização do
 aparelho, pois:
 
-- Uma vez encontrada a localização, é mais fácil propagar esta informação do
+\begin{alineas}
+
+	\item Uma vez encontrada a localização, é mais fácil propagar esta informação do
 ambiente para o aparelho em comparação ao auto posicionamento, pois a negociação
 entre o ambiente e o aparelho é nula quando o primeiro contém a informação- o
 ambiente sempre disponibilizará uma informação coletada para o gerador desta
 informação;
-- Pode-se lidar com grande heterogeniedade de dispositivos, uma vez
+
+	\item Pode-se lidar com grande heterogeneidade de dispositivos, uma vez
 que cada um deles não precisa se adaptar para cada mudança de ambiente;
-- Este tipo de informação já é contida nos históricos de cada Ponto de Acesso
- Wi-Fi (AP - \textit{Access Point}), porém:
-	- Geralmente sem uso - poucas são as aplicações que usam a localização
-	obtida pelo AP;
-	- com granularidade insuficiente para uso em aplicações contextualizadas;
-	- geralmente não disponibilizada pelos APs.
-- Uma vez instalado um PS deste gênero, a quatia de dispositivos que ele pode
-localizar fica limitada apenas pela rede física;
-- Economia de hardware quando menos é exigido de cada dispositivo;
+
+	\item Este tipo de informação já é contida nos históricos de cada Ponto de
+	Acesso Wi-Fi (AP - \textit{Access Point}), porém:
+
+	\begin{alineas}
+
+		\item Geralmente sem uso - poucas são as aplicações que usam a
+		localização obtida pelo AP;
+
+		\item Com granularidade insuficiente para uso em aplicações
+		contextualizadas;
+
+		\item geralmente não disponibilizada pelos APs.
+
+	\end{alineas}
+
+	\item Uma vez instalado um PS deste gênero, a quantia de dispositivos que
+	ele pode localizar fica limitada apenas pela rede física;
+
+	\item Economia de hardware quando menos é exigido de cada dispositivo.
+
+\end{alineas}
 
 Levamos em conta também a quantidade prevista de em média 5 dispositivos IoT
 por pessoa que seriam beneficiados sempre que utilizados no ambiente conectado.
 
-![Modelo das camadas][projeto]
-Fonte: Marcelo Augusto Cordeiro
-
-[projeto]: latex/img/projeto.JPG
+\begin{figure}[htb]
+	\caption{\label{fig:projeto}Modelo das camadas }
+	\begin{center}
+		\includegraphics[width=1\textwidth]{img/projeto.JPG}
+	\end{center}
+	\legend{Fonte: Marcelo Augusto Cordeiro}
+\end{figure}
 
 A Figura \ref{fig:projeto} apresenta a arquitetura simplificada de uma aplicação
 IoT.
@@ -632,54 +554,11 @@ Para possibilitar testes em um ambiente real, o projeto aqui proposto será
 instalado dentro do prédio do Laboratório de Tecnologia da Informação Aplicada
 (LTIA) da Faculdade de Ciências da Unesp de Bauru.
 
-
---- texto antigo ---
-
-\underline{Economia em cada aparelho}\\
-
-Escolhemos o sistema de antenas sensoras e dispositivos transmissores ao invés
-do contrario (explicar com o detalhes o pq da escolha e falar o que é contrário)
-para economia de harware no sentido de menos hardware em cada dispositivo e
-levando em conta  a quantidade prevista de em média 5 dispositivos conectados
-por pessoa e de que, com este sistema, estes dispositivos não precisariam de
-sensores para localizar-se além de informações mais completas para o prédio.
-
-\underline{Funcionamento por prédio} \\
- -> \underline{uma vez instalado qualquer quantidade de
-devices é recebida, facil gerencia dentro do predio}\\
- -> \underline {beneficios para o admin do predio}\\
-
-
-Utilizando como exemplo o prédio do Laboratório de Tecnologia da Informação
-Aplicada (LTIA) da Faculdade de Ciências da Unesp de Bauru, em um dia comum, é
-observado uma média de 30 dispositivos conectados à rede wi-fi.
-
-Considerando um sensor que a cada 30 segundos colete 1 kB de dados de cada
-dispositivo, por mês, seriam coletados mais de 2 GB de dados. Portanto, para
-garantir um sistema escalável, é necessário a utilização de técnicas de Big Data
-para armazenar e manipular esses dados.
-
-O melhor modo de se definir Big Data ainda é discutido por pesquisadores, mas
-uma definição simples é a de que “se é necessário se preocupar com o tamanho dos
-dados, então é Big Data.” (ESPOSITO, 2015, tradução nossa)
-
-\underline{Nota do parecerista: Reescrever}
-
-Na visão dos autores, promover o desenvolvimento local através de trabalhos
-exemplo, treinamentos ou manuais é fundamental para a equiparação dos
-desenvolvedores locais com as tecnologias e tendencias de mercado então
-justificamos sua execução para que outras organizações possam encontrar novos
-caminhos.
-
 \chapter{OBJETIVOS}
 \label{chap:OBJETIVOS}
 
- 4 - Objetivos
-
 \section{OBJETIVO GERAL}
 \label{sec:OBJETIVO GERAL}
-
- 4.1 - Objetivos Gerais
 
 Considerando características locais, propõem-se a construção de uma aplicação
 para localizar contextualmente dispositivos dentro de um prédio piloto e avaliar
@@ -692,37 +571,6 @@ localizador contextual em outros prédios.
 \section{OBJETIVOS ESPECÍFICOS}
 \label{sec:OBJETIVOS ESPECÍFICOS}
 
- 4.2 Objetivos Específicos
-
--  Estabelecer o estado da arte sobre a desenvolvimento de aplicações IoT;
--  Identificar desafios locais para o desenvolvimento;
--  Identificar provedores de serviços, dispositivos e ferramentas para o
-desenvolvimento;
-- Construção de sensores de identificação e localização (distância) de
- dispositivos cuja comunicação seja baseada em Bluetooth e Wi-Fi;
-- Posicionamento destes sensores;
-- Construção de um dispositivo agregador de informações dos sensores
- (\textit{gateway}) e sua interface web (Web REST API - *Representational
-State Transfer Application Programming Interface*);
--  Estimar o custo total do projeto piloto incluindo esforço de pesquisa;
--  Estimar o custo de replicação da aplicação em outros prédios.
-
---- texto antigo ---
-
-\textit{Objetivos}
-
-\textit{Objetivos Gerais}
-
-Considerando características locais, propõem-se a construção de uma aplicação
-para localizar contextualmente dispositivos dentro de um prédio piloto e avaliar
-sua precisão.
-
-Além desta aplicação, é objetivo definir o custo do projeto piloto incluindo
-esforço de pesquisa assim como definir um custo para replicação deste
-localizador contextual em outros prédios.
-
-\textit{Objetivos Específicos}
-
 \begin{alineas}
 
 	\item Estabelecer o estado da arte sobre a desenvolvimento de aplicações IoT;
@@ -730,11 +578,16 @@ localizador contextual em outros prédios.
 	\item Identificar desafios locais para o desenvolvimento;
 
 	\item Identificar provedores de serviços, dispositivos e ferramentas para o
-	desenvolvimento;
+desenvolvimento;
 
-	\item Construir um protótipo de sala conectada virtualmente que identifique
-	os dispositivos conectados a rede que existem dentro nela através de
-	conexões sem fio;
+	\item construir sensores de identificação e localização (distância) de
+ dispositivos cuja comunicação seja baseada em Bluetooth e Wi-Fi;
+
+	\item Posicionar estes sensores;
+
+	\item construir de um dispositivo agregador de informações dos sensores
+ (\textit{gateway}) e sua interface web (Web REST API - \textit{Representational
+State Transfer} \textit{Application Programming Interface});
 
 	\item Estimar o custo total do projeto piloto incluindo esforço de pesquisa;
 
@@ -742,29 +595,23 @@ localizador contextual em outros prédios.
 
 \end{alineas}
 
-\underline{Nota do parecerista: Na proposta do Marcelo, foi informado que o Luís
-Henrique ficará responsável por todos os sensores, o que inclui sua construção,
-posicionamento, configuração e programação dos gateways.}
-
-
 \chapter{MÉTODO DE PESQUISA}
 \label{chap:MÉTODO DE PESQUISA}
 
- 5 - Método de Pesquisa
-
 Abordagens para medir distâncias através de redes sem fio Wi-Fi
-(\cite{bahillo2009ieee}) e Bluetooth já existem e, propor novas maneiras não é o foco
-deste trabalho. Utilizando essas técnicas, propomos estabelecer uma rede de nós
-sensores colaborativos fixos no ambiente onde deseja-se obter a localização dos
-dispositivos. As informações de distância serão compartilhadas entre os nós para
-maior precisão da informação.
+\cite{bahillo2009ieee} e Bluetooth já existem e, propor novas maneiras não é o
+foco deste trabalho. Utilizando essas técnicas, propomos estabelecer uma rede de
+nós sensores colaborativos fixos no ambiente onde deseja-se obter a localização
+dos dispositivos. As informações de distância serão compartilhadas entre os nós
+para maior precisão da informação.
 
-Para a implementação pretende-se utilizar os softwares de maior destaque
-recentemente nos ramos de comunicação de baixa energia (\textit{MQTT}), serviços \textit{Web}
-para armazenamento (\textit{MongoDB}) e publicação (\textit{NodeJS}), além de softwares para
-medição da distância sem interferir na comuncação (\textit{Sniffing}) e das plataformas
-de hardware disponíveis e recomendadas para IoT com capacidade Wi-Fi e Bluetooth
-(\textit{Raspberry Pi 3}).
+Para a implementação, pretende-se utilizar os softwares de maior destaque
+recentemente nos ramos de comunicação de baixa energia (\textit{MQTT}), serviços
+\textit{Web} para armazenamento (\textit{MongoDB}) e publicação
+(\textit{NodeJS}), além de softwares para medição da distância sem interferir na
+comuncação (\textit{Sniffing}) e das plataformas de hardware disponíveis e
+recomendadas para IoT com capacidade Wi-Fi e Bluetooth (\textit{Raspberry Pi
+3}).
 
 Mesmo com a grande quantidade de dispositivos já conectados são poucos os
 documentos descrevendo boas práticas para concepção, construção e manutenção de
@@ -784,10 +631,10 @@ modificações das mesmas durante a execução do mesmo. Esse método entra em
 contraste com metodologias clássicas, como a cascata que apesar de previsíveis,
 não reagem bem a ambientes de extrema incerteza.
 
-Mais especificamente utilizaremos uma variante da metodologia \textit{Scrum}
-\cite{James2016} que será adaptada para o projeto. Nela, serão executadas iterações
-de uma semana em que a cada iteração, uma nova versão melhorada do produto
-completo (hardware, software, documentação e resultados) será entregue.
+Mais especificamente, utilizaremos uma variante da metodologia \textit{Scrum}
+\cite{James2016} que será adaptada para o projeto. Nela, serão executadas
+iterações de uma semana em que a cada iteração, uma nova versão melhorada do
+produto completo (hardware, software, documentação e resultados) será entregue.
 
 Dentro de cada iteração, as camadas da aplicação IoT serão escolhidas,
 implementadas, justificadas e avaliadas, sendo todo processo documentado. Como
@@ -801,55 +648,31 @@ relatório utilizado para tomar e justificar decisões durante a execução do
 projeto bem como servir de posterior documentação. Os objetivos de cada iteração
 são:
 
-- Escolha de provedores de serviços, dispositivos e ferramentas para o
+\begin{alineas}
+
+	\item Escolha de provedores de serviços, dispositivos e ferramentas para o
 desenvolvimento;
-- Construção, avaliação, teste e manutenção dos sensores;
-- Construção de um dispositivo agregador e sua API;
-- Estimativa do custo total do projeto piloto;
-- Estimativa do custo de replicação;
-- Identificação dos desafios para o desenvolvimento.
+
+	\item construir, avaliar, testar e manter dos sensores;
+
+	\item construir um dispositivo agregador e sua API;
+
+	\item Estimar o custo total do projeto piloto;
+
+	\item Estimar o custo de replicação;
+
+	\item Identificar os desafios para o desenvolvimento.
+
+\end{alineas}
 
 Desta forma, esperamos garantir a liberdade necessária para o projeto ser
 executado com sucesso, mesmo no ambiente de incerteza no qual o mercado local de
-IoT encontra-se, cumprindo as premissas de de funcionamento, mantebilidade e
+IoT encontra-se, cumprindo as premissas de de funcionamento, manutenção e
 segurança que são grande importância para os interessados na área.
-
-
---- texto antigo ---
-
-\textit{Método de Pesquisa}
-
-Utilizaremos prototipagem ágil semelhante ao desenvolvimento de um produto
-utilizando a metodologia \textit{Scrum} \cite{James2016}, executando iterações
-de uma semana onde a cada iteração uma nova versão melhorada do produto completo
-(hardware, software, documentação e resultados) será entregue.
-
-Dentro de cada iteração as camadas da aplicação IoT serão escolhidas,
-implementadas, justificadas e avaliadas sendo todo processo documentado. Como
-resultado de cada iteração será gerado um relatório das mudanças a partir da
-iteração anterior.
-
-\begin{figure}[htb]
-	\caption{\label{fig:projeto}Modelo das camadas }
-	\begin{center}
-		\includegraphics[width=1\textwidth]{img/projeto.JPG}
-	\end{center}
-	\legend{Fonte: Marcelo Augusto Cordeiro}
-\end{figure}
-
-A Figura \ref{fig:projeto} apresenta a arquitetura simplificada de uma aplicação
-IoT. Esta será modificada a cada iteração do projeto especialmente as camadas de
-sensores, \textit{gateway} e base de dados.
-
-\underline{Nota do parecerista: Reescrever a metodologia....descrever
-detalhadamente as atividades que deverão ser desenvolvidas}
 
 
 \chapter{CRONOGRAMA}
 \label{chap:CRONOGRAMA}
-
-
-5 - Cronograma
 
 Devido a natureza ágil e iterativa da metodologia, o cronograma será dividido em
 apenas três partes: Levantamento Bibliográfico Inicial, Desenvolvimento
@@ -857,28 +680,6 @@ Iterativo (Escolha de provedores e fornecedores; Construção, avaliação, test
 manutenção dos sensores e agregadores; Estimativas de custos totais e de
 replicação e Documentação de desenvolvimento) e Revisão Final. Estas partes
 serão distribuídas conforme a Tabela 1.
-
-Tabela 1 – Cronograma de Atividades Propostas
-
-| Atividade															 	| 	Fev	 | 	Mar	 | 	Abr	 | 	Mai	 | 	Jun	 | 	Jul	 | 	Ago	 | 	Set	 | 	Out  |
-| --------------------------------------------------------------------- |:------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-| Levantamento Bibliográfico Inicial									| 	X	 | 	X	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	     |
-| Escolha de provedores e fornecedores									| 	 	 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 		 | 		 | 	     |
-| Construção, avaliação, teste e manutenção dos sensores e agregadoes	| 	 	 | 		 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 		 | 	     |
-| Estimativas de custos totais e de replicação							| 	 	 | 		 | 		 | 		 | 	X	 | 	X	 | 	X	 | 	X	 | 	     |
-| Documentação de desenvolvimento										| 	 	 | 		 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 	     |
-| Revisão Final															| 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	x 	 | 	X	 | 	X    |
-Fonte: Produzido pelo autor
-
---- texto antigo ---
-
-\textit{Cronograma}
-
-
-Devido a natureza ágil e iterativa da metodologia, o cronograma será dividido em
-apenas três partes: Levantamento Bibliográfico Inicial, Desenvolvimento
-Iterativo e Revisão Final. Estas partes serão distribuídas conforme a
-Tabela~\ref{table:cronograma}.
 
 \begin{table}[htb]
 \IBGEtab{%
@@ -889,22 +690,25 @@ Tabela~\ref{table:cronograma}.
 }{%
   \begin{tabular}{cccccccccc}
   \toprule
-	Atividade							&	Fev	&	Mar	&	Abr	&	Mai	&	Jun	&	Jul	&	Ago	&	Set	&	Out \\
+	Atividade															&	Fev	&	Mar	&	Abr	&	Mai	&	Jun	&	Jul	&	Ago	&	Set	&	Out \\
   \midrule \midrule
-	Levantamento Bibliográfico Inicial	&	X	&	X	&	 	&	 	&	 	&	 	&	 	&	 	&	  \\
+	Levantamento Bibliográfico Inicial									&	X	&	X	&	 	&	 	&	 	&	 	&	 	&	 	&	  \\
   \midrule
-  Desenvolvimento Iterativo				&	 	&	X	&	X	&	X	&	X	&	X	&	X	&	X	&	  \\
+  Escolha de provedores e fornecedores									&	 	&	X	&	X	&	X	&	X	&	X	&		&		&	  \\
   \midrule
-  Revisão Final							&	 	&	 	&	 	&	 	&	 	&	 	&	 	&	X	&	X \\
+  Construção, avaliação e manutenção \\ dos sensores e agregadores	&	 	&		&	X	&	X	&	X	&	X	&	X	&		&	  \\
+  \midrule
+  Estimativas de custos							&	 	&		&		&		&	X	&	X	&	X	&	X	&	  \\
+  \midrule
+  Documentação de desenvolvimento										&	 	&		&	X	&	X	&	X	&	X	&	X	&	X	&	  \\
+  \midrule
+  Revisão Final															&	 	&	 	&	 	&	 	&	 	&	 	&	X 	&	X	&	X \\
   \bottomrule
 \end{tabular}%
 }{%
   \fonte{Produzido pelo autor.}%
   }
 \end{table}
-
-\underline{Nota do parecerista: A atividade ``Desenvolvimento Iterativo'' deve ser dividida em sub-atividades...}
-
 
 % ----------------------------------------------------------------------------
 
