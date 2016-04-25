@@ -216,7 +216,7 @@ State Transfer Application Programming Interface*);
 
 # 4 - Método de Pesquisa
 
-Para implementar este IPS propomos o uso de tecnologias já implantadas em
+Para implementar o IPS propomos o uso de tecnologias já implantadas em
 dispositivos e ubíquoas como Wi-Fi (padrão *IEEE 802.11*) e Bluetooth (Padrão
 *Bluetooth SIG*) para que os objetos conectados sobre o qual temos interesse em
 encontrar não necessitem de modificações para o fazermos.
@@ -234,13 +234,10 @@ maior precisão da informação.
 
 Para a implementação pretende-se utilizar os softwares de maior destaque
 recentemente nos ramos de comunicação de baixa energia (*MQTT*), serviços *Web*
-para armazenamento (*MongoDB*) e publicação (*NodeJS*) além de softares para
+para armazenamento (*MongoDB*) e publicação (*NodeJS*) além de softwares para
 medição da distância sem interferir na comuncação (*Sniffing*) e das plataformas
-de hardware disponíveis e recomendadas para IoT (*Raspberry Pi 3*).]
-
->Colocar a versão do bluetooth/wifi
-> Pode ser colocado como uma das ferramentas a serem usadas
-
+de hardware disponíveis e recomendadas para IoT com capacidade Wi-Fi e Bluetooth
+(*Raspberry Pi 3*).
 
 Mesmo com a grande quantidade de dispositivos já conectados são poucos os
 documentos descrevendo boas práticas para concepção, construção e manutenção de
@@ -252,10 +249,6 @@ implementação no interior do estado de São Paulo visto que poucas são as
 organizações atualizadas neste tema levando a uma falta enorme de conteúdo
 escrito na linguagem local além de serviços e produtos disponíveis para
 construção de uma plataforma completa e competitiva nesta região.
-
->"-Utilizaremos prototipagem [...] produto é uma frase meio vaga
-descrever mais como o Scrum vai funcionar em relação ao projeto (use na descrição componentes do projeto)
--
 
 Devido a falta de conteúdo e instrução utilizaremos prototipagem ágil para este
 projeto, uma vez que esta metodologia de desenvolvimento é recomendada para
@@ -274,8 +267,9 @@ implementadas, justificadas e avaliadas sendo todo processo documentado. Como
 resultado de cada iteração será gerado um relatório das mudanças a partir da
 iteração anterior.
 
-Com mais detalhes, cada iteração cumprirá parcialmente gerando um relatório
-sobre os seguintes objetivos:
+Com mais detalhes, cada iteração cumprirá parcialmente os seguintes objetivos
+gerando um relatório utilizado para tomar e justificar decisões durante a
+execução do projeto bem como servir de posterior documentação.
 
 - Escolha de provedores de serviços, dispositivos e ferramentas para o
 desenvolvimento;
@@ -290,32 +284,29 @@ executado com sucesso mesmo no ambiente de incertesa no qual o mercado local de
 IoT encontra-se, cumprindo as premissas de grande relevância para os
 interessados na área de funcionamento, mantebilidade e segurança.
 
-
-> *Nota do parecerista: Reescrever a metodologia....descrever detalhadamente as
-atividades que deverão ser desenvolvidas*
-
-
-# Cronograma
-
+# 5 - Cronograma
 
 Devido a natureza ágil e iterativa da metodologia, o cronograma será dividido em
-apenas três partes: Levantamento Bibliográfico Inicial, Desenvolvimento
-Iterativo e Revisão Final. Estas partes serão distribuídas conforme a
-Tabela~\ref{table:cronograma}.
-
+apenas três grandes partes: Levantamento Bibliográfico Inicial, Desenvolvimento
+Iterativo (envolvendo escolha de fornecedores, construção de sensores e
+agregadores, Estimativas e documentação) e Revisão Final. Estas partes serão
+distribuídas conforme a Tabela.
 
 Tabela 1 – Cronograma de Atividades Propostas
 
-| Atividade							 	| 	Fev	 | 	Mar	 | 	Abr	 | 	Mai	 | 	Jun	 | 	Jul	 | 	Ago	 | 	Set	 | 	Out  |
-| ------------------------------------- |:------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-| Levantamento Bibliográfico Inicial	| 	X	 | 	X	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	     |
-| Desenvolvimento Iterativo				| 	 	 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 	     |
-| Revisão Final							| 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	X	 | 	X    |
+| Atividade															 	| 	Fev	 | 	Mar	 | 	Abr	 | 	Mai	 | 	Jun	 | 	Jul	 | 	Ago	 | 	Set	 | 	Out  |
+| --------------------------------------------------------------------- |:------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+| Levantamento Bibliográfico Inicial									| 	X	 | 	X	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	     |
+| Escolha de provedores e fornecedores									| 	 	 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 		 | 		 | 	     |
+| Construção, avaliação, teste e manutenção dos sensores e agregadoes	| 	 	 | 		 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 		 | 	     |
+| Estimativas de custos totais e de replicação							| 	 	 | 		 | 		 | 		 | 	X	 | 	X	 | 	X	 | 	X	 | 	     |
+| Documentação de desenvolvimento										| 	 	 | 		 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 	X	 | 	     |
+| Revisão Final															| 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	 	 | 	x 	 | 	X	 | 	X    |
 Fonte: Produzido pelo autor
 
-> *Nota do parecerista: A atividade ``Desenvolvimento Iterativo'' deve ser dividida em sub-atividades...*
-
------------------------------------
+---
+EOF
+---
 
 > **Nossa solução**  
 
