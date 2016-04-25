@@ -17,19 +17,19 @@ confie neste texto**
 >_Contexto_  
 _IoT como foco_
 
-Recentemente Internet das Coisas (IoT - *Internet of Things*) vem tomando o foco
-das atenções de empresas e entusiastas de Tecnologia da Informação (IT -
+Recentemente, Internet das Coisas (IoT - *Internet of Things*) vem tomando o
+foco das atenções de empresas e entusiastas de Tecnologia da Informação (IT -
 *Information Tecnology*) [DzoneIoT:2015] a tal ponto que as empresas líderes do
 segmento já incluem IoT como uma de suas áreas de atuação [Ibm2016] [ARM-mbed]
 [Microsoft2016] [Intel2016] [Oracle2016] [Google2016] [AmazonIoT2016].
 
 Todo este movimento no mercado é justificado pelo baixo custo dos pequenos
-dispositivos computacionais [RpiZeroLaunch] [Esp8266.net] e grandes
-serviços na nuvem [Kaufmann2015] [Amazon2016]. Este baixo custo
-possibilita a computação ubíqua descrita por Weiser em 1991 e 1992
-[Weiser1999] que é entendida pelos autores como *"computação virtualmente
-onipresente"*. Também para os autores esta virtual onipresença é base e
-consequência para a IoT sendo esta a realizadora da computação ubíqua.
+dispositivos computacionais [RpiZeroLaunch] [Esp8266.net] e grandes serviços na
+nuvem [Kaufmann2015] [Amazon2016]. Este baixo custo possibilita a computação
+ubíqua descrita por Weiser em 1991 e 1992 [Weiser1999] que é entendida pelos
+autores como *"computação virtualmente onipresente"*. Também para os autores,
+esta virtual onipresença é base e consequência para a IoT, sendo esta a
+realizadora da computação ubíqua.
 
 Uma vez contextualizado o mercado e a oportunidade de implementação da
 computação ubíqua, percebemos a necessidade de dar aos elementos cotidianos
@@ -51,15 +51,15 @@ bilhões até 2020 com até 250 novas coisas conectando-se por segundo
 
 Tamanha quantidade de dispositivos conectados pouco acrescenta na vida diária se
 humanos ou coisas não puderem simplesmente se encontrar, tanto em ambiente real
-quanto virtual é necessário o contato entre as partes para a existencia de uma
+quanto virtual é necessário o contato entre as partes para a existência de uma
 interação.
 
 > *Introduza o problema de localizar e contextualizar cada dispositivo.*
 
-Mais ainda, para melhor funcionamento de aplicações, em especial o oferecimento
-de conteúdo específico para cada usuário e situação, é necessário contextualizar
-e para muitas aplicações a localização é a informação contextual mais importante
-e relvante.
+Mais ainda, para melhor funcionamento de aplicações como o uso de conteúdo
+específico para cada usuário e situação é necessário coletar informações
+contextuais. Para a maioria das aplicações a informação contextual de maior
+relevancia é a localização física.
 
 Destacamos a necessidade da criação desta informação através de sensores ativos
 sempre que necessário para que o dispositivo tenha ciência deste contexto em
@@ -68,96 +68,106 @@ localização de qualquer dispositivo ao qual têm interesse de interagir.
 
 > *Exemplo da perda de aparelhos no predio (zebra) (ou outro exemplo)*
 
-Um exeplo da necessidade de localização de dispositivos dentro de um prédio
+Um exemplo da necessidade de localização de dispositivos dentro de um prédio
 seria um profissional saber onde está o dispositivo em seu local de trabalho,
 seja ele um vendedor e seu tablet para demostrar um produto fora de estoque em
 uma loja ou um médico e um desfibrilador.
 
 
-
 > *Soluções corelatas*  
 *Nota do autor: Introduza os meios existentes de localização (marcelo).*
 
-> GPS não funciona bem indoor, existem 2 tipos de indoor
+> GPS não funciona bem indoor, existem 2 tipos
 
 ## 2.1 - Sobre Sistemas de Posicionamento
 
-Sistemas de posicionamento (PS - *Positioning System*) em geral determinam a
-partir de um conjuto não vazio de pontos de referência (RP - *Reference Point*),
-cuja localização global em relação a um ponto origem escolhido (*O*) é conhecida
-e com precisão maior ou igual a interna do sistema, a posição relativa de um
-ponto móvel dentro deste sistema (MU - *Mobile User*) aos RPs e consequentemente
-a posição relativa ao *O*.
+Sistemas de posicionamento (PS - *Positioning System*) são geralmente
+constituidos de um Ponto Origem Global escolhido (*O*) e um conjuto não vazio de
+Pontos de Referência (RP - *Reference Point*) cuja localização global em relação
+ao *O* é conhecida com precisão maior ou igual a oferecida pelo sistema.
+
+Também faz parte do sistema o ponto móvel (MU - *Mobile User*) sobre o qual
+temos interesse em determinar a posição que é feita pelo PS encontrando uma
+distância (com dimensão variável de acordo com o método utilizado para
+adiquiri-la) relativa a um sub-conjunto de RPs. Feito isso é possível utlizar
+modelos matemáticos para a partir das distâncias encontrar uma posição do MU em
+relação aos RPs e uma nova transformação é aplicada para encontrar a posição
+relativa ao *O*.
+
+Uma das maneiras de classificar PSs é entre os de Auto Posicionamento e
+Posicionamento Remoto. Os de Auto Posicionamento contém no MU todo aparato
+necessário para medir a distância dos RPs e calcular a posição em relação a *O*.
+Já os de Posicionamento Remoto tem o mínimo necessário na MU e todo o trabalho
+de cálculo de distância e posição global é feito nos RPs ou em uma unidade
+coordenadora destes.
 
 Para PSs eletônicos baseados em radio-frequência (RF - *Radio Frequency*)
-geralmente utilizam-se dois componetes básicos, Transmissores e Receptores, seu
-funcionamento assume que ao menos um destes está no RP e outro no MU. Para
-calcular a posição do MU utiliza-se as propriedades da comunicação por RF como
-tempo de chegada (TOA - *Time Of Arrival*), diferenial de tempo de chegada (TDOA -
-*Time Difference Of Arrival*) e ângulo de chegada de sinal (AOA - *Angle Of
-Arrival*).
+geralmente utilizam-se dois componetes básicos, Transmissores e Receptores, os
+quais assume-se que ao menos um destes está no RP e ao menos um outro no MU.
+Para calcular a distância entre MU e RP utiliza-se as propriedades da
+comunicação por RF como tempo de chegada (TOA - *Time Of Arrival*), diferenial
+de tempo de chegada (TDOA - *Time Difference Of Arrival*) e ângulo de chegada de
+sinal (AOA - *Angle Of Arrival*).
 
-Para maior precisão é comum a utilização de multiplas RPs, geralmente com o
+Para maior precisão, é comum a utilização de múltiplas RPs geralmente com o
 número mínimo igual ao número de dimenções espaciais que deseja-se calcular.
-Notamos que para sistemas distribuídos como a sincronização de relógios é um
-problema clássico o tempo conta como dimenção.
+Notamos que para sistemas distribuídos, como a sincronização de relógios, é um
+problema clássico o tempo conta como dimensão. (SERIA: O tempo contAR como dimensão?)
 
 Os sistemas classificados como "Sistema de Navegação Global por Satélite" (GNSS -
-*Global Navigation Satellite System*) como o tradicional Estadounidense Sistema
-de Posicionamento Global (GPS - *Global Positioning System*) utilizam a técnica
-onde o dispositivo móvel contém o receptor e os transmissores são fixos em
+*Global Navigation Satellite System*), como o tradicional Estadunidense Sistema
+de Posicionamento Global (GPS - *Global Positioning System*), utilizam a técnica
+em que o dispositivo móvel contém o receptor e os transmissores são fixos em
 satélites na órbita terrestre [Djuknic2001]. Devido a posição e número de
-satélites o GPS e seus correlatos estão sempre presentes do ponto de vista de um
-observador da superfície terrestre sendo para este tipo de usuário um sistema
+satélites, o GPS e seus correlatos estão sempre presentes do ponto de vista de um
+observador da superfície terrestre, sendo para este tipo de usuário um sistema
 ubíquo.
 
 Entretanto a força do sinal GNSS não é suficiente para penetrar a maioria dos
-prédios uma vez que estes dependem de visão direta (LOS - *Line-Of-Sight*) entre
+prédios, uma vez que estes dependem de visão direta (LOS - *Line-Of-Sight*) entre
 os satélites e o receptor. A reflexão do sinal muitas vezes permite a leitura em
 ambientes fechados, porém o cálculo da posição não será confiável
-[Dartmouth2000].
-
-Portanto, apesar da ubiquidade dos GNSSs em ambientes abertos, são necessárias
+[Dartmouth2000].Portanto, apesar da ubiquidade dos GNSSs em ambientes abertos, são necessárias
 soluções diferentes para obter um Sistema de Posicionamento para Ambientes
-Fechados (IPS - *Indoor Positioning System*) porém a ubiquidade deste é
-essencial para conquistar o mesmo nível de confiânça trasido pelos GNSSs.
+Fechados (IPS - *Indoor Positioning System*) sendo a ubiquidade deste
+essencial para conquistar o mesmo nível de confiança trazido pelos GNSSs.
 
-Para implementar este IPS propomos o uso de tecnologias já implantadas em
-dispositivos e ubíquoas como Wi-Fi (padrão *IEEE 802.11*) e Bluetooth (padrão
-*Bluetooth SIG*) para que os objetos conectados em que temos interesse de
-encontrar o contexo locativo não necessitem de modificações.
+Para implementar este IPS, propomos o uso de tecnologias já implantadas em
+dispositivos móveis e essenciais para o funcionamento dos memos, especialmente
+as de camadas de comunicação, que são ubíquoas no ambiente dos dispositivos
+móveis, como Wi-Fi (padrão *IEEE 802.11*) e Bluetooth (padrão *Bluetooth SIG*),
+para que os objetos conectados em que temos interesse de encontrar o contexto
+locativo não necessitem de modificações.
 
 # 3 - Justificativa
 
 > Como a manipulação de RF é geralmente mais complicada em sistemas com
 *hardwares* heterogênios
 
-Sobre o contexto encontrado propomos um ambiente consciente onde o contexto
+Sobre o contexto encontrado, propomos um ambiente consciente onde o contexto
 locativo oriundo do posicionamento remoto de cada dispositivo móvel é
 administrado e divulgado pelo prédio conectado ao invés da auto localização do
-aparelho pois:
+aparelho, pois:
 
-- Uma vez encontrada é mais fácil a propagação desta informação do
-ambiente para o aparelho em comparação ao auto posicionamento pois a negociação
-entre o ambiente e o aparelho é nula quando o ambiente contém a informação (o
+- Uma vez encontrada a localização, é mais fácil propagar esta informação do
+ambiente para o aparelho em comparação ao auto posicionamento, pois a negociação
+entre o ambiente e o aparelho é nula quando o primeiro contém a informação- o
 ambiente sempre disponibilizará uma informação coletada para o gerador desta
-informação);
-- Pode-se lidar com grande heterogeniedade de dispositivos uma vez
+informação;
+- Pode-se lidar com grande heterogeniedade de dispositivos, uma vez
 que cada um deles não precisa se adaptar para cada mudança de ambiente;
 - Este tipo de informação já é contida nos históricos de cada Ponto de Acesso
- Wi-Fi (AP - *Access Point*) porém:
+ Wi-Fi (AP - *Access Point*), porém:
 	- Geralmente sem uso - poucas são as aplicações que usam a localização
 	obtida pelo AP;
 	- com granularidade insuficiente para uso em aplicações contextualizadas;
 	- geralmente não disponibilizada pelos APs.
-- Uma vez instalado um PS deste gênero a quatia de dispositivos que ele pode
+- Uma vez instalado um PS deste gênero, a quatia de dispositivos que ele pode
 localizar fica limitada apenas pela rede física;
-- Economia de harware quando menos é necessário em cada dispositivo;
+- Economia de hardware quando menos é exigido de cada dispositivo;
 
 Levamos em conta também a quantidade prevista de em média 5 dispositivos IoT
 por pessoa que seriam beneficiados sempre que utilizados no ambiente conectado.
-
->Colocar reforço sobre a imlementação no LTIA
 
 ![Modelo das camadas][projeto]  
 Fonte: Marcelo Augusto Cordeiro
@@ -170,6 +180,8 @@ IoT.
 Para possibilitar testes em um ambiente real, o projeto aqui proposto será
 instalado dentro do prédio do Laboratório de Tecnologia da Informação Aplicada
 (LTIA) da Faculdade de Ciências da Unesp de Bauru.
+
+>(Colocar itens abaixo pedidos pelo parecerista ex: beneficios ao gerenciador do predio)
 
 > *Nota do parecerista: Reescrever*
 Na visão dos autores, promover o desenvolvimento local através de trabalhos
@@ -195,7 +207,7 @@ Considerando características locais, propõem-se a construção de uma aplicaç
 para localizar contextualmente dispositivos dentro de um prédio piloto e avaliar
 sua precisão.
 
-Além desta aplicação, é objetivo definir o custo do projeto piloto incluindo
+Além desta aplicação, é objetivo definir o custo do projeto piloto, incluindo
 esforço de pesquisa assim como definir um custo para replicação deste
 localizador contextual em outros prédios.
 
@@ -216,16 +228,11 @@ State Transfer Application Programming Interface*);
 
 # 4 - Método de Pesquisa
 
-Para implementar o IPS propomos o uso de tecnologias já implantadas em
-dispositivos e ubíquoas como Wi-Fi (padrão *IEEE 802.11*) e Bluetooth (Padrão
-*Bluetooth SIG*) para que os objetos conectados sobre o qual temos interesse em
-encontrar não necessitem de modificações para o fazermos.
-
 > *Ambiente conciente*  
 
 Abordagens para medir distâncias através de redes sem fio Wi-Fi
 ([bahillo2009ieee]) e Bluetooth já existem e, propor novas maneiras não é o foco
-deste trabalho, utilizando essas técnicas propomos estabelecer uma rede de nós
+deste trabalho. Utilizando essas técnicas, propomos estabelecer uma rede de nós
 sensores colaborativos fixos no ambiente onde deseja-se obter a localização dos
 dispositivos. As informações de distância serão compartilhadas entre os nós para
 maior precisão da informação.
@@ -234,7 +241,7 @@ maior precisão da informação.
 
 Para a implementação pretende-se utilizar os softwares de maior destaque
 recentemente nos ramos de comunicação de baixa energia (*MQTT*), serviços *Web*
-para armazenamento (*MongoDB*) e publicação (*NodeJS*) além de softwares para
+para armazenamento (*MongoDB*) e publicação (*NodeJS*), além de softwares para
 medição da distância sem interferir na comuncação (*Sniffing*) e das plataformas
 de hardware disponíveis e recomendadas para IoT com capacidade Wi-Fi e Bluetooth
 (*Raspberry Pi 3*).
@@ -245,31 +252,36 @@ aplicações IoT, especialmente sobre os cuidados tomados quanto a segurança e
 análise de custos para a implementação e manutenção.
 
 Além disso, a falta de referências neste sentido é agravada quando considera-se
-implementação no interior do estado de São Paulo visto que poucas são as
-organizações atualizadas neste tema levando a uma falta enorme de conteúdo
+a implementação no interior do estado de São Paulo. Nesta região, poucas são as
+organizações atualizadas neste tema, levando a uma falta enorme de conteúdo
 escrito na linguagem local além de serviços e produtos disponíveis para
 construção de uma plataforma completa e competitiva nesta região.
 
-Devido a falta de conteúdo e instrução utilizaremos prototipagem ágil para este
+Devido a falta de conteúdo e instrução, utilizaremos prototipagem ágil para este
 projeto, uma vez que esta metodologia de desenvolvimento é recomendada para
-projetos cujas especificações e definições não são claras demandando muitas
-modificações das mesmas durante a execução do mesmo entrando em contraste com
-metodologias clássicas como a cascata que apesar de previsíveis não reagem bem a
-ambientes de extrema incertesa.
+projetos cujas especificações e definições não são claras, demandando muitas
+modificações das mesmas durante a execução do mesmo. Esse método entra em
+contraste com metodologias clássicas, como a cascata que apesar de previsíveis,
+não reagem bem a ambientes de extrema incerteza.
 
 Mais especificamente utilizaremos uma variante da metodologia *Scrum*
-[James2016] que será adaptada para o projeto. Nela serão executadas iterações de
-uma semana onde a cada iteração uma nova versão melhorada do produto completo
-(hardware, software, documentação e resultados) será entregue.
+[James2016] que será adaptada para o projeto. Nela, serão executadas iterações
+de uma semana em que a cada iteração, uma nova versão melhorada do produto
+completo (hardware, software, documentação e resultados) será entregue.
 
-Dentro de cada iteração as camadas da aplicação IoT serão escolhidas,
-implementadas, justificadas e avaliadas sendo todo processo documentado. Como
-resultado de cada iteração será gerado um relatório das mudanças a partir da
+Dentro de cada iteração, as camadas da aplicação IoT serão escolhidas,
+implementadas, justificadas e avaliadas, sendo todo processo documentado. Como
+resultado de cada uma delas, será gerado um relatório das mudanças a partir da
 iteração anterior.
 
-Com mais detalhes, cada iteração cumprirá parcialmente os seguintes objetivos
-gerando um relatório utilizado para tomar e justificar decisões durante a
-execução do projeto bem como servir de posterior documentação.
+>O que é cumprir parcialmente no paragrafo abaixo?
+
+Com mais detalhes, cada iteração cumprirá uma parte de cada objetivo no trabalho
+completo levando o projeto integralmente para um estágio de completude maior a
+cada iteração. Serão foco de cada iteração os objetivos abaixo, gerando um
+relatório utilizado para tomar e justificar decisões durante a execução do
+projeto bem como servir de posterior documentação. Os objetivos de cada iteração
+são:
 
 - Escolha de provedores de serviços, dispositivos e ferramentas para o
 desenvolvimento;
@@ -279,18 +291,19 @@ desenvolvimento;
 - Estimativa do custo de replicação;
 - Identificação dos desafios para o desenvolvimento.
 
-Desta forma esperamos garantir a liberdade necessária para o projeto ser
-executado com sucesso mesmo no ambiente de incertesa no qual o mercado local de
-IoT encontra-se, cumprindo as premissas de grande relevância para os
-interessados na área de funcionamento, mantebilidade e segurança.
+Desta forma, esperamos garantir a liberdade necessária para o projeto ser
+executado com sucesso, mesmo no ambiente de incerteza no qual o mercado local de
+IoT encontra-se, cumprindo as premissas de de funcionamento, mantebilidade e
+segurança que são grande importância para os interessados na área.
 
 # 5 - Cronograma
 
 Devido a natureza ágil e iterativa da metodologia, o cronograma será dividido em
-apenas três grandes partes: Levantamento Bibliográfico Inicial, Desenvolvimento
-Iterativo (envolvendo escolha de fornecedores, construção de sensores e
-agregadores, Estimativas e documentação) e Revisão Final. Estas partes serão
-distribuídas conforme a Tabela.
+apenas três partes: Levantamento Bibliográfico Inicial, Desenvolvimento
+Iterativo (Escolha de provedores e fornecedores; Construção, avaliação, teste e
+manutenção dos sensores e agregadores; Estimativas de custos totais e de
+replicação e Documentação de desenvolvimento) e Revisão Final. Estas partes
+serão distribuídas conforme a Tabela 1.
 
 Tabela 1 – Cronograma de Atividades Propostas
 
