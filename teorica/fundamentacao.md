@@ -36,6 +36,18 @@ tecnologias, existentes e evolutivas, de informação e comunicação" ([ITU 201
 
 [Wortmann, 2015]:(<http://link.springer.com/article/10.1007%2Fs12599-015-0383-3> "Internet of Things: Technology and Value Added")
 
+Hoje em dia quase qualquer tecnologia de comunicação acessível a computadores
+pode ser utilizada como meio de comunicação entre nós da IoT tornado RFID mais
+uma, porém de grande importância, tecnologia info-comunicacional a disposição
+das coias para sua conexão. Esta gama de tecnologias possibilita uma gama
+equivalente de coias conectadas, se a coisa pode usar de uma tecnologia de
+conexão, considerando suas restrições de volume, custo e utilidade, muito
+provavelmente vai faze-lo gerando ao menos uma identidade virtual representando
+seu objeto físico e seus atributos. Esta identidade virtual e atributos virtuais
+serão expostos para todos individuos, humanos ou coisas, que lhe forem
+convenientes de qualquer lugar do universo virtual fazendo efetivamente parte da
+internet.
+
 ## Localização contextual de dispositivos
 
 LOCALIZAR CONTEXTUALMENTE
