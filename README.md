@@ -16,6 +16,10 @@ anything allowed) aware of the devices location.
 	- language-latex
 	- pdf-view (PDF.js)
 
+# TODO
+
+- Add *"DeviceAwareBuilding"* sufix to publication files (\*.pdf);
+
 # Project Phases (fases do projeto)
 
 ## Proposal (proposta)
@@ -43,6 +47,6 @@ discussed individually so the greater idea can be validated.
 
 | Version | Delivery Date | Location |
 |:--:|:------:|:--:|
-| Foundations | - | teorica/fundamentacao.pdf |
+| Foundations | schedule to 2016-05-16 | teorica/fundamentacao.pdf |
 | Current | - | teorica/latex/fundamentacao-DeviceAwareBuilding.pdf |
 | Current Markdown | - | teorica/fundamentacao.md |

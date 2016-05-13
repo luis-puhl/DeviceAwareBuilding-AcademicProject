@@ -1,48 +1,68 @@
 DeviceAwareBuilding-AcademicProject
 ====================================
 
-# 0 - Como ler este trabalho
-
-> isto é um comentário  
-> *especialmente coisas em itálico*
-
-[Isto é uma referencia] e de vez em quando [isto também](https://duckduckgo.com
-"Tudo que você precisa")
-
-Este trabalho está em andamento, a versão final será em LaTeX (PDF) então **Não
-confie neste texto**
-
 # 1 - Introdução
 
->_Contexto_  
-_IoT como foco_
+Recentemente, Internet das Coisas (IoT - Internet of Things) vem tomando o foco
+das atenções de empresas e entusiastas de Tecnologia da Informação ([DZONE,
+2015])  a tal ponto que as empresas líderes do segmento já incluem IoT como uma
+de suas áreas de atuação ([IBM, 2016]) ([ARM, 2016]) ([MICROSOFT, 2016])
+([INTEL, 2016]) ([ORACLE, 2016]) ([GOOGLE, 2016]) ([AMAZON, 2016a]).
 
-Recentemente, Internet das Coisas (IoT - *Internet of Things*) vem tomando o
-foco das atenções de empresas e entusiastas de Tecnologia da Informação (IT -
-*Information Tecnology*) [DzoneIoT:2015] a tal ponto que as empresas líderes do
-segmento já incluem IoT como uma de suas áreas de atuação [Ibm2016] [ARM-mbed]
-[Microsoft2016] [Intel2016] [Oracle2016] [Google2016] [AmazonIoT2016].
+[DZONE, 2015]:(<https://dzone.com/guides/internet-of-things-1> "DZONE. THE DZONE GUIDE TO THE INTERNET OF THINGS")
+
+[IBM, 2016]:(<http://www.ibm.com/internet-of-things> "IBM. IBM IoT.")
+
+[ARM, 2016]:(<https://www.mbed.com/en/> "ARM. Welcome to mbed")
+
+[MICROSOFT, 2016]:(<https://dev.windows.com/en-US/iot> "MICROSOFT. The Internet of Your Things")
+
+[INTEL, 2016]:(<https://software.intel.com/en-us/articles/a-fast-flexible-and-scalable-path-to-commercial-iot-solutions> "INTEL. IoT Solutions | IntelDeveloper Zone")
+
+[ORACLE, 2016]:<https://www.oracle.com/solutions/internet-of-things/index.html> "ORACLE. Oracle IoT"
+
+[GOOGLE, 2016]:(<https://cloud.google.com/solutions/iot/> "GOOGLE. Google for Internet of Things")
+
+[AMAZON, 2016a]:(<https://aws.amazon.com/pt/iot/> "AMAZON. AWS IoT")
 
 Todo este movimento no mercado é justificado pelo baixo custo dos pequenos
-dispositivos computacionais [RpiZeroLaunch] [Esp8266.net] e grandes serviços na
-nuvem [Kaufmann2015] [Amazon2016]. Este baixo custo possibilita a computação
-ubíqua descrita por Weiser em 1991 e 1992 [Weiser1999] que é entendida pelos
-autores como *"computação virtualmente onipresente"*. Também para os autores,
-esta virtual onipresença é base e consequência para a IoT, sendo esta a
-realizadora da computação ubíqua.
+dispositivos computacionais ([FUNDATION, 2015]) ([ESP8266.NET, 2016]) e grandes
+serviços na nuvem ([KAUFMANN; DOLAN, 2015]) ([AMAZON, 2016b]). Este baixo custo
+possibilita a computação ubíqua descrita por Weiser em 1991 e 1992 ([WEISER,
+1999]) que é entendida pelos autores como “computação virtualmente onipresente”.
+Também para os autores, esta virtual onipresença é base e consequência para a
+IoT, sendo esta a realizadora da computação ubíqua.
+
+[FUNDATION, 2015]:(<https://www.raspberrypi.org/blog/raspberry-pi-zero/> "RASPBERRY PI FOUNDATION. Raspberry Pi Zero: the $5 computer")
+
+[ESP8266.NET, 2016]:(<http://esp8266.net/}> "ESP8266.net home")
+
+[KAUFMANN; DOLAN, 2015]:(<https://cloud.google.com/files/esg-whitepaper.pdf> "Price Comparison: Google Cloud vs AWS")
+
+[AMAZON, 2016b]:(<https://aws.amazon.com/pt/iot/pricing/> "AMAZON. Deﬁnição de preço do AWS IoT ? Amazon Web Services")
+
+[WEISER, 1999]:(<http://dl.acm.org/citation.cfm?doid=329124.329126> "WEISER, M. The computer for the 21st century")
 
 Uma vez contextualizado o mercado e a oportunidade de implementação da
 computação ubíqua, percebemos a necessidade de dar aos elementos cotidianos
 (coisas) a capacidade info-computacional, tornando-os sensores e atuadores
-conectados, unicamente identificáveis e acessíveis através da rede mundial
-(internet) [Lemos2013] [Kranenburg2012].
+conectados, unicamente identificáveis e acessíveis através da rede mundial de
+computadores ([LEMOS, 2013]) ([KRANENBURG, 2012]).
 
-> *Numero de dispositivos*
+[LEMOS, 2013]:(<http://www.seminariosmv.org.br/textos/Andre%20Lemos.pdf> "LEMOS, A. A Comunicação das Coisas: Internet das Coisas e Teoria Ator-Rede")
+
+[KRANENBURG, 2012]:(<http://www.fastcocreate.com/1681563/the-sensing-planet-why-the-internet-of-things-is-the-biggest-next-big-thing> "KRANENBURG, R. van. The Sensing Planet: Why The Internet Of Things Is The Biggest Next Big Thing")
 
 É esperado que uma quantia total de 6,4 bilhões de dispositivos conectados
-exista até o final de 2016 [GARTNER2015] e entre 26 bilhões [GARTNER2014] e 50
-bilhões até 2020 com até 250 novas coisas conectando-se por segundo
-[CiscoBlog2013].
+exista até o final de 2016 ([GARTNER, 2015]) e entre 26 bilhões ([GARTNER,
+2014]) e 50 bilhões até 2020 com até 250 novas coisas conectando-se por segundo
+([CISCO, 2013]).
+
+[GARTNER, 2015]:(<http://www.gartner.com/newsroom/id/3165317> "GARTNER. Gartner Says 6.4 Billion Connected "Things"Will Be in Use in 2016, Up 30 Percent From 2015")
+
+[GARTNER, 2014]:(<http://www.gartner.com/newsroom/id/2684616> "GARTNER. Gartner Says the Internet of Things Will Transform the Data Center")
+
+[CISCO, 2013]:(<http://blogs.cisco.com/news/cisco-connections-counter> "CISCO. How Many Internet Connections are in the World? Right. Now")
 
 # 2 - Problema
 
