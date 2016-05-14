@@ -57,8 +57,8 @@ LOCALIZAR CONTEXTUALMENTE
 Das informações contextuais que uma aplicação de cliente móvel pode obter, a
 localização é uma das mais importantes. Ajudar pessoas a navegar por mapas,
 encontrar objetos e pessoas com os quais tem interesse de interagir é sem dúvida
-uma boa meta a ser alcançada com a coleta da localização do cliente
-([Bellavista et al, 2008]). Porém, ao contrário das técnicas atuais de localização que
+uma boa meta a ser alcançada com a coleta da localização do cliente ([Bellavista
+et al, 2008]). Porém, ao contrário das técnicas atuais de localização que
 consideram a propriedade desta informação com sendo do cliente móvel por maior
 confiança por parte dos usuários humanos finais detentores dos clientes
 localizados nesses sistemas decidindo confortavelmente em compartilhar ou não
@@ -71,6 +71,15 @@ uma vez que este mudou da detenção de um móvel para múltiplos tornado a dete
 do todo (coisas dentro do prédio) mais precioso do que o das partes.
 
 [Bellavista et al, 2008]:(<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4487093> "Location-Based Services: Back to the Future")
+
+Uma vez encontrada a localização de um dispositivo, metadados sobre o prédio são
+mesclados formando um conjunto rico contextualmente do ponto de vista do prédio
+como fornecedor principal dos dados para a internet e portanto seus usuários.
+Essa riqueza é garantida com metadados sobre o dispositivo (identificação, nome,
+histórico, carecteristicas) e sobre o prédio (mapa, estrutura de salas, horario
+de funcionamento, consumo energético, humanos responsáveis e lista de
+equipamentos) que trazem possibilidades de extração de informação sem igual para
+os detentores deste prédio e seu conteúdo.
 
 O que é esperado
 
