@@ -54,7 +54,23 @@ LOCALIZAR CONTEXTUALMENTE
 
 ### - Localização contextual
 
-Porque
+Das informações contextuais que uma aplicação de cliente móvel pode obter, a
+localização é uma das mais importantes. Ajudar pessoas a navegar por mapas,
+encontrar objetos e pessoas com os quais tem interesse de interagir é sem dúvida
+uma boa meta a ser alcançada com a coleta da localização do cliente
+([Bellavista et al, 2008]). Porém, ao contrário das técnicas atuais de localização que
+consideram a propriedade desta informação com sendo do cliente móvel por maior
+confiança por parte dos usuários humanos finais detentores dos clientes
+localizados nesses sistemas decidindo confortavelmente em compartilhar ou não
+esta informação com quem a solicitar, neste trabalho os humanos ou tomadores de
+decisão não estarão em posse do cliente móvel e sim em posse do prédio, portanto
+a mesma informação, sem degradação em sua importância, passará a ser coletada e
+armazenada pelo provedor da rede como nos Serviços Baseados em Localização (LBS -
+*Location-Based Services*) de primeira geração porém mantendo o foco no usuário
+uma vez que este mudou da detenção de um móvel para múltiplos tornado a detenção
+do todo (coisas dentro do prédio) mais precioso do que o das partes.
+
+[Bellavista et al, 2008]:(<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4487093> "Location-Based Services: Back to the Future")
 
 O que é esperado
 
