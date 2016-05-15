@@ -55,7 +55,35 @@ internet.
 
 ## Localização contextual de dispositivos
 
-LOCALIZAR CONTEXTUALMENTE
+O terno *"Contexto"* e *"Consciência de Contexto"* em ciência da computação
+expressa uma ideia recente estudada nos campos de inteligência artifical e
+ciência cognitiva desde 1991 e ainda é considerado um tema atual e promissor a
+ponto de mudar o cenário de negócios nos próximos 10 anos porém sem definição
+simples. Tamanha é a falta de uma definição geral que realmente funcione para
+casos reais que existe uma proposta de definir o termo utlizando uma nova
+metodologia de pesquisa holística através de mineração e agrupamento de texto
+advindo de publicações ciêntificas ([Pascalau, Nalepa, Kluza 2013]).
+
+[Pascalau, Nalepa, Kluza 2013]:(<http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.672.5972> "Towards a Better Understanding of Context-Aware Applications")
+
+[Pascalau, Nalepa, Kluza 2013](<http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.672.5972> "Towards a Better Understanding of Context-Aware Applications")
+
+Mesmo sem uma definição permanente em vista, utilizaremos o que é considerado
+estado da arte para o termo *"Contexto"* que foi introduzido por Dey e Abowd em
+1999 ([Dey e Abowd, 1999]) e reforçado por Dey em 2000 ([Dey, 2000]):
+
+[Dey, 2000]:(<http://www.cc.gatech.edu/fce/ctk/pubs/dey-thesis.pdf> "Providing architectural support for building context-aware applications")
+
+[Dey, 2000](<http://www.cc.gatech.edu/fce/ctk/pubs/dey-thesis.pdf> "Providing architectural support for building context-aware applications")
+
+> *"Contexto é qualquer informação que pode ser utilizada para caracterizar a
+situação de uma entidade. Uma entidade é uma pessoa, lugar ou objeto que é
+considerado relevante para a interação entre um usuário e uma aplicação,
+incluindo o próprio usuário e a aplicação."*  
+[Dey e Abowd, 1999] p. 3. Tradução Nossa.
+
+[Dey e Abowd, 1999]:(<http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.150.4833> "Towards a Better Understanding of Context and Context-Awareness")
+[Dey e Abowd, 1999](<http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.150.4833> "Towards a Better Understanding of Context and Context-Awareness")
 
 ### - Localização contextual
 
@@ -85,11 +113,16 @@ Essa riqueza é garantida com metadados sobre o dispositivo (identificação, no
 histórico, carecteristicas) e sobre o prédio (mapa, estrutura de salas, horario
 de funcionamento, consumo energético, humanos responsáveis e lista de
 equipamentos) que trazem possibilidades de extração de informação sem igual para
-os detentores deste prédio e seu conteúdo.
+os detentores deste prédio e seu conteúdo. Esta capacidade do prédio deve-se
+pelo papel de coordenador de informações e controlador de meta-informações
+semelhante ao Coordenador em uma aplicação na arquitetura
+Modelo-Apresentação-Adaptador-Controlador-Coordenador (MPACC -
+*Model-PresentationAdapter-Controller-Coordinator*) proposto por Román e
+Campbell ([Román e Campbell 2001]).
 
-O que é esperado
+[Román e Campbell 2001]:(<http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.408.8058> "A Model for Ubiquitous Applications")
+[Román e Campbell 2001](<http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.408.8058> "A Model for Ubiquitous Applications")
 
-CONTEXTO DE UM DISPOSITIVO EM UM PRÉDIO
 ### - Contexto de um dispositivo em um prédio
 
 divisões lógicas dentro de um predio
