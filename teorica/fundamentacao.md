@@ -91,20 +91,28 @@ Das informações contextuais que uma aplicação de cliente móvel pode obter, 
 localização é uma das mais importantes. Ajudar pessoas a navegar por mapas,
 encontrar objetos e pessoas com os quais tem interesse de interagir é sem dúvida
 uma boa meta a ser alcançada com a coleta da localização do cliente ([Bellavista
-et al, 2008]). Porém, ao contrário das técnicas atuais de localização que
-consideram a propriedade desta informação com sendo do cliente móvel por maior
-confiança por parte dos usuários humanos finais detentores dos clientes
-localizados nesses sistemas decidindo confortavelmente em compartilhar ou não
-esta informação com quem a solicitar, neste trabalho os humanos ou tomadores de
-decisão não estarão em posse do cliente móvel e sim em posse do prédio, portanto
-a mesma informação, sem degradação em sua importância, passará a ser coletada e
-armazenada pelo provedor da rede como nos Serviços Baseados em Localização (LBS -
-*Location-Based Services*) de primeira geração porém mantendo o foco no usuário
-uma vez que este mudou da detenção de um móvel para múltiplos tornado a detenção
-do todo (coisas dentro do prédio) mais precioso do que o das partes.
+et al, 2008]).
+
+Na categoria de Serviços Baseados em Localização (LBS - *Location-Based
+Services*) existem duas gerações. A primeira orientada a conteúdo que falhou
+pois a informação de localização era armazenada pela rede, podendo até ser
+vendida pelo provedor a terceiros, causando a sensação de Spam no usuário final
+ao receber conteúdo desta provedora. Já na segunda geração a posse da informação
+moveu para o cliente móvel, deixando a cargo do usuário escolher se ela seria
+compartilhada e com quem, esta mudança trouxe maior engajamento do usuário
+resultando numa maior aceitação dessa geração ([Bellavista et al, 2008]).
 
 [Bellavista et al, 2008]:(<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4487093> "Location-Based Services: Back to the Future")
 [Bellavista et al, 2008](<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4487093> "Location-Based Services: Back to the Future")
+
+Porém, ao contrário das técnicas atuais, neste trabalho os humanos ou tomadores
+de decisão não estarão em posse do cliente móvel e sim em posse do prédio.
+Portanto a mesma informação sem degradação em sua importância passará a ser
+coletada e armazenada pelo provedor da rede como nos LBSs de primeira geração.
+
+Esta decisão garnate o foco no usuário uma vez que este mudou, antes ele detinha
+um móvel, agora ele detem múltiplos. Isso torna a detenção do todo (coisas
+dentro do prédio) mais precioso do que o das partes (os clientes móveis).
 
 Uma vez encontrada a localização de um dispositivo, metadados sobre o prédio são
 mesclados formando um conjunto rico contextualmente do ponto de vista do prédio
