@@ -155,7 +155,21 @@ uma simples coleção de dados [W3C, 2015].
 
 ## Localização baseada em redes sem fio
 
-Como
+Para o sistema de posicionamento nos baseamos em técnicas de triângulação de
+distâncias adquiridas com a medição de caracteristicas eletromagnéticas (ex.:
+potência de sinal) e caracteristicas dos protocolos (ex.: Tempo de chegada) que
+já foram explorados anteriormente ([Abusubaih et al, 2007], [Bahillo et al,
+2009], [Feldmann et al, 2003]).
+
+[Abusubaih et al, 2007]:(<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4668193> "A dual distance measurement scheme for indoor IEEE 802.11 wireless local area networks (2007) By Abusubaih, Murad and Rathke, Berthold and Wolisz, Adam")
+[Abusubaih et al, 2007](<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4668193> "A dual distance measurement scheme for indoor IEEE 802.11 wireless local area networks (2007) By Abusubaih, Murad and Rathke, Berthold and Wolisz, Adam")
+
+
+[Bahillo et al, 2009]:(<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5073583> "IEEE 802.11 Distance Estimation Based on RTS/CTS Two-Frame Exchange Mechanism (2009) By A. Bahillo and J. Prieto and S. Mazuelas and R. M. Lorenzo and J. Blas and P. Fernandez")
+[Bahillo et al, 2009](<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5073583> "IEEE 802.11 Distance Estimation Based on RTS/CTS Two-Frame Exchange Mechanism (2009) By A. Bahillo and J. Prieto and S. Mazuelas and R. M. Lorenzo and J. Blas and P. Fernandez")
+
+[Feldmann et al, 2003]:(<https://www.researchgate.net/publication/220719209_An_Indoor_Bluetooth-Based_Positioning_System_Concept_Implementation_and_Experimental_Evaluation> "An indoor Bluetooth-based positioning system: concept , Implementation and experimental evaluation (2003) By Feldmann, Silke; Kyamakya, Kyandoghere; Zapater, Ana; Lue, Zighuo")
+[Feldmann et al, 2003](<https://www.researchgate.net/publication/220719209_An_Indoor_Bluetooth-Based_Positioning_System_Concept_Implementation_and_Experimental_Evaluation> "An indoor Bluetooth-based positioning system: concept , Implementation and experimental evaluation (2003) By Feldmann, Silke; Kyamakya, Kyandoghere; Zapater, Ana; Lue, Zighuo")
 
 sensores(WiFi, BLE)
 
