@@ -132,11 +132,12 @@ Campbell ([Román e Campbell 2001]).
 
 ### - Contexto de um dispositivo em um prédio
 
-Para os metadados agregados à informação de localização pelo prédio definimos
-que o modelo de divulgação terá de conter além da informação de localização do
-dispositivo informação sobre o dispositivo localizado, informação da estrutura
-do prédio, ligação entre a estrutura do prédio e a localização do dispositivo e
-informação sobre o estado do prédio.
+Para os metadados agregados à informação de posição pelo prédio definimos que o
+modelo de divulgação terá de conter além da posição do dispositivo informação
+sobre este (nome, histórico), informação da estrutura do prédio (mapa imagem,
+mapa lógico, nome, localização global, endereço, etc), ligação entre a estrutura
+do prédio e a localização do dispositivo (posição no mapa lógico) e informação
+sobre o estado do prédio (horário de funcionamento, frequentadores, etc).
 
 Este modelo visa prover fácil mineração e reutilização de informações por
 terceiros após a implementação do projeto que é medida pela disponibilidade e
@@ -151,15 +152,6 @@ uma simples coleção de dados [W3C, 2015].
 
 [W3C, 2015]:(<https://www.w3.org/standards/semanticweb/data> "Data - W3C")
 [W3C, 2015](<https://www.w3.org/standards/semanticweb/data> "Data - W3C")
-
-
-Para esse
-
-divisões lógicas dentro de um predio
-
-estrutura de URI para o prédio
--informações derivadas dos metadados ex: dados que serão processados pelo marcelo
--descrever exemplo de metadados ex: mapa (semântico), estrutura de árvore
 
 ## Localização baseada em redes sem fio
 

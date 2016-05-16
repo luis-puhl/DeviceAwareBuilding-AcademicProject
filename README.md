@@ -18,7 +18,16 @@ anything allowed) aware of the devices location.
 
 # TODO
 
-- Add *"DeviceAwareBuilding"* sufix to publication files (\*.pdf);
+## Structural
+- [ ] Add *"DeviceAwareBuilding"* sufix to publication files (\*.pdf);
+
+## Theoretical Validity
+- [ ] Image map and Logical Map definition;
+	- [ ] URI pattern for the logical map;
+	- [ ] URI pattern for the logical map;
+	- [ ] Example of reuse (Marcelo's case);
+- [ ] Extend Semantic Web use across the work;
+- [ ] Expand the definition of `Device Context in a building`;
 
 # Project Phases (fases do projeto)
 
