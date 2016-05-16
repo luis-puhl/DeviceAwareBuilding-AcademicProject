@@ -171,6 +171,13 @@ já foram explorados anteriormente ([Abusubaih et al, 2007], [Bahillo et al,
 [Feldmann et al, 2003]:(<https://www.researchgate.net/publication/220719209_An_Indoor_Bluetooth-Based_Positioning_System_Concept_Implementation_and_Experimental_Evaluation> "An indoor Bluetooth-based positioning system: concept , Implementation and experimental evaluation (2003) By Feldmann, Silke; Kyamakya, Kyandoghere; Zapater, Ana; Lue, Zighuo")
 [Feldmann et al, 2003](<https://www.researchgate.net/publication/220719209_An_Indoor_Bluetooth-Based_Positioning_System_Concept_Implementation_and_Experimental_Evaluation> "An indoor Bluetooth-based positioning system: concept , Implementation and experimental evaluation (2003) By Feldmann, Silke; Kyamakya, Kyandoghere; Zapater, Ana; Lue, Zighuo")
 
-sensores(WiFi, BLE)
+Portanto os sensores seguirão as especificações de *WiFi IEEE 802.11* ([Crow et
+al, 1997]) e *Bluetooth low energy* (BLE) ([Hossain e Soh, 2007]).
+
+[Crow et al, 1997]:(<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=620533> "IEEE 802.11 Wireless Local Area Networks (1997) By Crow, B.P. and Widjaja, I. and Kim, L.G. and Sakai, P.T.")
+[Crow et al, 1997](<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=620533> "IEEE 802.11 Wireless Local Area Networks (1997) By Crow, B.P. and Widjaja, I. and Kim, L.G. and Sakai, P.T.")
+
+[Hossain e Soh, 2007]:(<http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=853758> "A Comprehensive Study of Bluetooth Signal Parameters for Localization (2007) By Hossain, A. K. M. Mahtab and Soh, Wee-Seng")
+[Hossain e Soh, 2007](<http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=853758> "A Comprehensive Study of Bluetooth Signal Parameters for Localization (2007) By Hossain, A. K. M. Mahtab and Soh, Wee-Seng")
 
 Rpi como sensor
