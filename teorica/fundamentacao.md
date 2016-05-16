@@ -10,7 +10,7 @@ ao presente trabalho. Dentre eles, Computação em Nuvem, Balanceamento de Carga
 e Redes Neurais Artificiais.
 
 Para conceituar, fundamentar e dar suporte teórico ao presente trabalho
-apresentamos nesta seção os tópicos IoT, localização contextual de dispositivos,
+apresentamos nesta seção os tópicos: Iot, localização contextual de dispositivos
 e localização baseada em redes sem fio.
 
 ## Internet das coisas (*IoT*)
@@ -21,9 +21,9 @@ laboratório Auto-ID Labs no Instituto de Tecnologia de Massachusetts (MIT -
 *Massachusetts Institute of Technology*) utilizando identificação por
 radio-frequência (RFID - *radio-frequency identification*) ([Atzori et al,
 2010]; [Mattern e Floerkemeier, 2010]) e desde então cresceu ultrapassando o
-escopo da tecnologia RFID porém sempre com as premissas de "Uma infraestrutura
+escopo da tecnologia RFID porém sempre com as premissas de "uma infraestrutura
 global para a Sociedade da Informação, habilitando serviços avançados através da
-interconecção de coisas (físicas e virtuais) baseadas em tecnologias, existentes
+interconexão de coisas (físicas e virtuais) baseadas em tecnologias, existentes
 e evolutivas, de informação e comunicação" ([ITU 2012]) ([Wortmann, 2015]).
 
 [ASHTON, 2009]:(<http://www.rfidjournal.com/articles/view?4986> "That 'Internet of Things' Thing")
@@ -41,23 +41,23 @@ e evolutivas, de informação e comunicação" ([ITU 2012]) ([Wortmann, 2015]).
 [Wortmann, 2015]:(<http://link.springer.com/article/10.1007%2Fs12599-015-0383-3> "Internet of Things: Technology and Value Added")
 [Wortmann, 2015](<http://link.springer.com/article/10.1007%2Fs12599-015-0383-3> "Internet of Things: Technology and Value Added")
 
-Hoje em dia quase qualquer tecnologia de comunicação acessível a computadores
-pode ser utilizada como meio de comunicação entre nós da IoT tornado RFID mais
+Hoje em dia, quase qualquer tecnologia de comunicação acessível a computadores
+pode ser utilizada como meio de comunicação entre nós da IoT, tornando RFID mais
 uma, porém de grande importância, tecnologia info-comunicacional a disposição
-das coias para sua conexão. Esta gama de tecnologias possibilita uma gama
-equivalente de coias conectadas, se a coisa pode usar de uma tecnologia de
+das coisas para sua conexão. Esta gama de tecnologias possibilita uma variedade
+equivalente de coisas conectadas. Se a coisa pode usar de uma tecnologia de
 conexão, considerando suas restrições de volume, custo e utilidade, muito
-provavelmente vai faze-lo gerando ao menos uma identidade virtual representando
+provavelmente vai fazê-lo gerando ao menos uma identidade virtual representando
 seu objeto físico e seus atributos. Esta identidade virtual e atributos virtuais
-serão expostos para todos individuos, humanos ou coisas, que lhe forem
-convenientes de qualquer lugar do universo virtual fazendo efetivamente parte da
+serão expostos para todos indivíduos, humanos ou coisas, que lhe forem
+convenientes de qualquer lugar do universo virtual, fazendo efetivamente parte da
 internet.
 
 ## Localização contextual de dispositivos
 
-O terno *"Contexto"* e *"Consciência de Contexto"* em ciência da computação
-expressa uma ideia recente estudada nos campos de inteligência artifical e
-ciência cognitiva desde 1991 e ainda é considerado um tema atual e promissor a
+Em ciência da computação, os termos *"Contexto"* e *"Consciência de Contexto"*
+expressam uma ideia recente estudada nos campos de inteligência artifical e
+ciência cognitiva desde 1991. O tema "Contexto" ainda é considerado atual e promissor a
 ponto de mudar o cenário de negócios nos próximos 10 anos porém sem definição
 simples. Tamanha é a falta de uma definição geral que realmente funcione para
 casos reais que existe uma proposta de definir o termo utlizando uma nova
@@ -94,12 +94,12 @@ uma boa meta a ser alcançada com a coleta da localização do cliente ([Bellavi
 et al, 2008]).
 
 Na categoria de Serviços Baseados em Localização (LBS - *Location-Based
-Services*) existem duas gerações. A primeira orientada a conteúdo que falhou
+Services*) existem duas gerações. A primeira orientada a conteúdo que falhou,
 pois a informação de localização era armazenada pela rede, podendo até ser
 vendida pelo provedor a terceiros, causando a sensação de Spam no usuário final
-ao receber conteúdo desta provedora. Já na segunda geração a posse da informação
-moveu para o cliente móvel, deixando a cargo do usuário escolher se ela seria
-compartilhada e com quem, esta mudança trouxe maior engajamento do usuário
+ao receber conteúdo desta provedora. Já na segunda geração, a posse da informação
+foi movida para o cliente móvel, deixando a cargo do usuário escolher se ela seria
+compartilhada e com quem. Esta mudança trouxe maior engajamento do usuário,
 resultando numa maior aceitação dessa geração ([Bellavista et al, 2008]).
 
 [Bellavista et al, 2008]:(<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4487093> "Location-Based Services: Back to the Future")
