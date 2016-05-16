@@ -43,7 +43,7 @@ The result documents and presentation of this phase can be found in the followin
 | Proposal | 2016-04-08 | [proposta.pdf](proposta/proposta.pdf) |
 | Review and Changes  | 2016-05-02 | [proposta-adequacoes.pdf](proposta/proposta-adequacoes.pdf) |
 | Presentation  | 2016-05-02 | [proposta-apresentacao.pdf](proposta/proposta-apresentacao.pdf) |
-| Current | - | [proposta-DeviceAwareBuilding.pdf](proposta/latex/proposta-DeviceAwareBuilding.pdf) |
+| Current | - | [proposta-DeviceAwareBuilding.pdf](proposta/latex/proposta.pdf) |
 | Current Markdown | - | [proposta.md](proposta/proposta.md) |
 
 
@@ -56,6 +56,6 @@ discussed individually so the greater idea can be validated.
 
 | Version | Delivery Date | Location |
 |:--:|:------:|:--:|
-| Foundations | schedule to 2016-05-16 | teorica/fundamentacao.pdf |
-| Current | - | teorica/latex/fundamentacao-DeviceAwareBuilding.pdf |
+| Foundations | 2016-05-16 | teorica/fundamentacao.pdf |
+| Current | - | teorica/latex/fundamentacao.pdf |
 | Current Markdown | - | teorica/fundamentacao.md |

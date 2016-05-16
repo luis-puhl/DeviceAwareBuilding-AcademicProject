@@ -168,7 +168,7 @@ já foram explorados anteriormente ([Abusubaih et al, 2007], [Bahillo et al,
 [Bahillo et al, 2009]:(<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5073583> "IEEE 802.11 Distance Estimation Based on RTS/CTS Two-Frame Exchange Mechanism (2009) By A. Bahillo and J. Prieto and S. Mazuelas and R. M. Lorenzo and J. Blas and P. Fernandez")
 [Bahillo et al, 2009](<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5073583> "IEEE 802.11 Distance Estimation Based on RTS/CTS Two-Frame Exchange Mechanism (2009) By A. Bahillo and J. Prieto and S. Mazuelas and R. M. Lorenzo and J. Blas and P. Fernandez")
 
-[Feldmann et al, 2003]:(	<https://www.researchgate.net/publication/220719209_An_Indoor_Bluetooth-Based_Positioning_System_Concept_Implementation_and_Experimental_Evaluation> "An indoor Bluetooth-based positioning system: concept , Implementation and experimental evaluation")
+[Feldmann et al, 2003]:(<https://www.researchgate.net/publication/220719209_An_Indoor_Bluetooth-Based_Positioning_System_Concept_Implementation_and_Experimental_Evaluation> "An indoor Bluetooth-based positioning system: concept , Implementation and experimental evaluation")
 [Feldmann et al, 2003](<https://www.researchgate.net/publication/220719209_An_Indoor_Bluetooth-Based_Positioning_System_Concept_Implementation_and_Experimental_Evaluation>"An indoor Bluetooth-based positioning system: concept , Implementation and experimental evaluation")
 
 Portanto os sensores seguirão as especificações de *WiFi IEEE 802.11* ([Crow et

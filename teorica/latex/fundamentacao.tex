@@ -36,7 +36,7 @@
 \usepackage[alf]{abntex2cite}				% Citações padrão ABNT
 
 
-% CONFIGURAÇÕES DE PACOTES
+%  CONFIGURAÇÕES DE PACOTES
 % Configurações do pacote backref
 % Usado sem a opção hyperpageref de backref
 \renewcommand{\backrefpagesname}{ }
@@ -123,7 +123,7 @@ Faculdade de Ciências, Campus Bauru }
 \frenchspacing
 
 % ----------------------------------------------------------
-% ELEMENTOS PRÉ-TEXTUAIS
+%  ELEMENTOS PRÉ-TEXTUAIS
 % ----------------------------------------------------------
 \pretextual
 
@@ -132,28 +132,36 @@ Faculdade de Ciências, Campus Bauru }
 % Capa
 \imprimircapa
 
-% INSERIR O SUMARIO
+%  INSERIR O SUMARIO
 \pdfbookmark[0]{\contentsname}{toc}
 \tableofcontents*
 \cleardoublepage
 
 
 % ------------------------------------------------------------------------------
-% ELEMENTOS TEXTUAIS
+%   ELEMENTOS TEXTUAIS
 % ------------------------------------------------------------------------------
 \textual
 
-\chapter[INTRODUÇÃO]{INTRODUÇÃO}
-%\addcontentsline{toc}{chapter}{Introdução}
 
+\include{introducao}
 
-\chapter{PROBLEMA}
-\label{chap:PROBLEMA}
+\include{problema}
+
+\include{justificativa}
+
+\include{objetivos}
+
+\include{teorica}
+
+\include{metodologia}
+
+\include{cronograma}
 
 
 % ----------------------------------------------------------------------------
 
-% ELEMENTOS PÓS-TEXTUAIS
+%   ELEMENTOS PÓS-TEXTUAIS
 
 % Referências bibliográficas
 \bibliography{referencias}
