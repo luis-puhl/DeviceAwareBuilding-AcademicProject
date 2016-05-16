@@ -57,5 +57,6 @@ discussed individually so the greater idea can be validated.
 | Version | Delivery Date | Location |
 |:--:|:------:|:--:|
 | Foundations | 2016-05-16 | [fundamentacao.pdf](teorica/fundamentacao.pdf) |
+| Presentation  | 2016-05-02 | [fundamentacao-apresentacao.pdf](teorica/fundamentacao-apresentacao.pdf) |
 | Current | - | [fundamentacao.pdf](teorica/latex/fundamentacao.pdf) |
 | Current Markdown | - | [fundamentacao.md](teorica/fundamentacao.md) |
