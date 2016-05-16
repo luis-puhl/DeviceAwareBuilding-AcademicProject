@@ -105,21 +105,21 @@ resultando numa maior aceitação dessa geração ([Bellavista et al, 2008]).
 [Bellavista et al, 2008]:(<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4487093> "Location-Based Services: Back to the Future")
 [Bellavista et al, 2008](<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4487093> "Location-Based Services: Back to the Future")
 
-Porém, ao contrário das técnicas atuais, neste trabalho os humanos ou tomadores
-de decisão não estarão em posse do cliente móvel e sim em posse do prédio.
-Portanto a mesma informação sem degradação em sua importância passará a ser
+Ao contrário das técnicas atuais, neste trabalho os humanos ou tomadores
+de decisão não estarão em posse do cliente móvel, e sim em posse do prédio.
+Portanto, a mesma informação, sem degradação em sua importância, passará a ser
 coletada e armazenada pelo provedor da rede como nos LBSs de primeira geração.
-Esta decisão garnate o foco no usuário uma vez que este mudou, antes ele detinha
-um móvel, agora ele detem múltiplos. Isso torna a detenção do todo (coisas
+Esta decisão garante o foco no usuário uma vez que este mudou, antes ele detinha
+um cliente móvel, agora ele detem múltiplos. Isso torna a detenção do todo (coisas
 dentro do prédio) mais precioso do que o das partes (os clientes móveis).
 
 Uma vez encontrada a localização de um dispositivo, metadados sobre o prédio são
-mesclados formando um conjunto rico contextualmente do ponto de vista do prédio
-como fornecedor principal dos dados para a internet e portanto seus usuários.
+mesclados formando um conjunto rico contextualmente do ponto de vista da aplicação IoT Prédio
+como fornecedora principal dos dados para a internet e portanto seus usuários detentores.
 Essa riqueza é garantida com metadados sobre o dispositivo (identificação, nome,
-histórico, carecteristicas) e sobre o prédio (mapa, estrutura de salas, horario
+histórico, carecteristicas) e sobre o prédio (ex.: mapa, estrutura de salas, horário
 de funcionamento, consumo energético, humanos responsáveis e lista de
-equipamentos) que trazem possibilidades de extração de informação sem igual para
+equipamentos) que trazem possibilidades de extração de informação importantes para
 os detentores deste prédio e seu conteúdo. Esta capacidade do prédio deve-se
 pelo papel de coordenador de informações e controlador de meta-informações
 semelhante ao Coordenador em uma aplicação na arquitetura
