@@ -109,7 +109,6 @@ Porém, ao contrário das técnicas atuais, neste trabalho os humanos ou tomador
 de decisão não estarão em posse do cliente móvel e sim em posse do prédio.
 Portanto a mesma informação sem degradação em sua importância passará a ser
 coletada e armazenada pelo provedor da rede como nos LBSs de primeira geração.
-
 Esta decisão garnate o foco no usuário uma vez que este mudou, antes ele detinha
 um móvel, agora ele detem múltiplos. Isso torna a detenção do todo (coisas
 dentro do prédio) mais precioso do que o das partes (os clientes móveis).
@@ -133,9 +132,34 @@ Campbell ([Román e Campbell 2001]).
 
 ### - Contexto de um dispositivo em um prédio
 
+Para os metadados agregados à informação de localização pelo prédio definimos
+que o modelo de divulgação terá de conter além da informação de localização do
+dispositivo informação sobre o dispositivo localizado, informação da estrutura
+do prédio, ligação entre a estrutura do prédio e a localização do dispositivo e
+informação sobre o estado do prédio.
+
+Este modelo visa prover fácil mineração e reutilização de informações por
+terceiros após a implementação do projeto que é medida pela disponibilidade e
+relacionamento das informações providas. Essa métrica também será utilizada para
+avaliar o projeto final.
+
+Este foco em reusabilidade vem da definição de Web Semantica (*Semantic Web*) e
+de uma de suas realisadoras, a Ligação de Dados (*Linked Data*), que sugerem o
+uso de um formato padrão além de ser acessível e gerenciável pelas ferramentas
+de exploração. Desta forma a Web de Dados (*Web of Data*) é construida opondo
+uma simples coleção de dados [W3C, 2015].
+
+[W3C, 2015]:(<https://www.w3.org/standards/semanticweb/data> "Data - W3C")
+[W3C, 2015](<https://www.w3.org/standards/semanticweb/data> "Data - W3C")
+
+
+Para esse
+
 divisões lógicas dentro de um predio
 
 estrutura de URI para o prédio
+-informações derivadas dos metadados ex: dados que serão processados pelo marcelo
+-descrever exemplo de metadados ex: mapa (semântico), estrutura de árvore
 
 ## Localização baseada em redes sem fio
 
