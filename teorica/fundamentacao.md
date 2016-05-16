@@ -168,25 +168,17 @@ já foram explorados anteriormente ([Abusubaih et al, 2007], [Bahillo et al,
 [Bahillo et al, 2009]:(<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5073583> "IEEE 802.11 Distance Estimation Based on RTS/CTS Two-Frame Exchange Mechanism (2009) By A. Bahillo and J. Prieto and S. Mazuelas and R. M. Lorenzo and J. Blas and P. Fernandez")
 [Bahillo et al, 2009](<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5073583> "IEEE 802.11 Distance Estimation Based on RTS/CTS Two-Frame Exchange Mechanism (2009) By A. Bahillo and J. Prieto and S. Mazuelas and R. M. Lorenzo and J. Blas and P. Fernandez")
 
-[Feldmann et al, 2003]:(
-	<https://www.researchgate.net/publication/220719209_An_Indoor_Bluetooth-Based_Positioning_System_Concept_Implementation_and_Experimental_Evaluation>
-	"An indoor Bluetooth-based positioning system: concept , Implementation and experimental evaluation")
-[Feldmann et al, 2003](
-	<https://www.researchgate.net/publication/220719209_An_Indoor_Bluetooth-Based_Positioning_System_Concept_Implementation_and_Experimental_Evaluation>
-	"An indoor Bluetooth-based positioning system: concept , Implementation and experimental evaluation")
+[Feldmann et al, 2003]:(	<https://www.researchgate.net/publication/220719209_An_Indoor_Bluetooth-Based_Positioning_System_Concept_Implementation_and_Experimental_Evaluation> "An indoor Bluetooth-based positioning system: concept , Implementation and experimental evaluation")
+[Feldmann et al, 2003](<https://www.researchgate.net/publication/220719209_An_Indoor_Bluetooth-Based_Positioning_System_Concept_Implementation_and_Experimental_Evaluation>"An indoor Bluetooth-based positioning system: concept , Implementation and experimental evaluation")
 
 Portanto os sensores seguirão as especificações de *WiFi IEEE 802.11* ([Crow et
 al, 1997]) e *Bluetooth low energy* (BLE) ([Hossain e Soh, 2007]).
 
-[Crow et al, 1997]:(<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=620533>
-	"IEEE 802.11 Wireless Local Area Networks (1997) By Crow, B.P. and Widjaja, I. and Kim, L.G. and Sakai, P.T.")
-[Crow et al, 1997](<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=620533>
-	"IEEE 802.11 Wireless Local Area Networks (1997) By Crow, B.P. and Widjaja, I. and Kim, L.G. and Sakai, P.T.")
+[Crow et al, 1997]:(<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=620533> "IEEE 802.11 Wireless Local Area Networks (1997) By Crow, B.P. and Widjaja, I. and Kim, L.G. and Sakai, P.T.")
+[Crow et al, 1997](<http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=620533> "IEEE 802.11 Wireless Local Area Networks (1997) By Crow, B.P. and Widjaja, I. and Kim, L.G. and Sakai, P.T.")
 
-[Hossain e Soh, 2007]:(<http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=853758>
-	"A Comprehensive Study of Bluetooth Signal Parameters for Localization (2007) By Hossain, A. K. M. Mahtab and Soh, Wee-Seng")
-[Hossain e Soh, 2007](<http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=853758>
-	"A Comprehensive Study of Bluetooth Signal Parameters for Localization (2007) By Hossain, A. K. M. Mahtab and Soh, Wee-Seng")
+[Hossain e Soh, 2007]:(<http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=853758> "A Comprehensive Study of Bluetooth Signal Parameters for Localization (2007) By Hossain, A. K. M. Mahtab and Soh, Wee-Seng")
+[Hossain e Soh, 2007](<http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=853758> "A Comprehensive Study of Bluetooth Signal Parameters for Localization (2007) By Hossain, A. K. M. Mahtab and Soh, Wee-Seng")
 
 Para construir estes sensores uma plataforma de hardware adequada é necessária,
 para esta plataforma escolhemos o Raspberry Pi ([Maksimović, 2014] e
@@ -196,28 +188,14 @@ a capacidade de sensor *WiFi* e *Bluetooth* em sua placa principal sem
 necessidade de adaptadores externos destacando ainda mais sua escolha
 ([RASPBERRY PI FOUNDATION, 2016]).
 
-[Ferreira, 2016]:(<http://hdl.handle.net/10400.21/6162>
-	"Sistema localizador interior de baixo custo (2016) By Ferreira, Luís Carlos Paula")
-[Ferreira, 2016](<http://hdl.handle.net/10400.21/6162>
-	"Sistema localizador interior de baixo custo (2016) By Ferreira, Luís Carlos Paula")
+[Ferreira, 2016]:(<http://hdl.handle.net/10400.21/6162> "Sistema localizador interior de baixo custo (2016) By Ferreira, Luís Carlos Paula")
+[Ferreira, 2016](<http://hdl.handle.net/10400.21/6162> "Sistema localizador interior de baixo custo (2016) By Ferreira, Luís Carlos Paula")
 
-[Maksimović, 2014]:(
-	<https://www.researchgate.net/publication/272175660_Raspberry_Pi_as_Internet_of_Things_hardware_Performances_and_Constraints>
-	"Raspberry Pi as Internet of Things hardware: Performances and Constraints")
-[Maksimović, 2014](
-	https://www.researchgate.net/publication/272175660_Raspberry_Pi_as_Internet_of_Things_hardware_Performances_and_Constraints
-	"Raspberry Pi as Internet of Things hardware: Performances and Constraints")
+[Maksimović, 2014]:(<https://www.researchgate.net/publication/272175660_Raspberry_Pi_as_Internet_of_Things_hardware_Performances_and_Constraints> "Raspberry Pi as Internet of Things hardware: Performances and Constraints")
+[Maksimović, 2014](https://www.researchgate.net/publication/272175660_Raspberry_Pi_as_Internet_of_Things_hardware_Performances_and_Constraints "Raspberry Pi as Internet of Things hardware: Performances and Constraints")
 
-[Maksimović, 2015]:(
-	<http://www.sciencedirect.com/science/article/pii/S0045790615000257>
-	"Raspberry Pi as a Sensor Web node for home automation")
-[Maksimović, 2015](
-	<http://www.sciencedirect.com/science/article/pii/S0045790615000257>
-	"Raspberry Pi as a Sensor Web node for home automation")
+[Maksimović, 2015]:(<http://www.sciencedirect.com/science/article/pii/S0045790615000257> "Raspberry Pi as a Sensor Web node for home automation")
+[Maksimović, 2015](<http://www.sciencedirect.com/science/article/pii/S0045790615000257> "Raspberry Pi as a Sensor Web node for home automation")
 
-[RASPBERRY PI FOUNDATION, 2016]:(
-	<https://www.raspberrypi.org/products/raspberry-pi-3-model-b/>
-	"Raspberry Pi 3 Model B - Raspberry Pi")
-[RASPBERRY PI FOUNDATION, 2016](
-	<https://www.raspberrypi.org/products/raspberry-pi-3-model-b/>
-	"Raspberry Pi 3 Model B - Raspberry Pi")
+[RASPBERRY PI FOUNDATION, 2016]:(<https://www.raspberrypi.org/products/raspberry-pi-3-model-b/> "Raspberry Pi 3 Model B - Raspberry Pi")
+[RASPBERRY PI FOUNDATION, 2016]( <https://www.raspberrypi.org/products/raspberry-pi-3-model-b/> "Raspberry Pi 3 Model B - Raspberry Pi")
