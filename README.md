@@ -40,11 +40,11 @@ The result documents and presentation of this phase can be found in the followin
 
 | Version | Delivery Date | Location |
 |:--:|:------:|:--:|
-| Proposal | 2016-04-08 | [proposta.pdf](proposta/proposta.pdf) |
-| Review and Changes  | 2016-05-02 | [proposta-adequacoes.pdf](proposta/proposta-adequacoes.pdf) |
-| Presentation  | 2016-05-02 | [proposta-apresentacao.pdf](proposta/proposta-apresentacao.pdf) |
-| Current | - | [proposta-DeviceAwareBuilding.pdf](proposta/latex/proposta.pdf) |
-| Current Markdown | - | [proposta.md](proposta/proposta.md) |
+| Proposal | 2016-04-08 | [proposta.pdf](deliver-1-proposta/proposta.pdf) |
+| Review and Changes  | 2016-05-02 | [proposta-adequacoes.pdf](deliver-1-proposta/proposta-adequacoes.pdf) |
+| Presentation  | 2016-05-02 | [proposta-apresentacao.pdf](deliver-1-proposta/proposta-apresentacao.pdf) |
+| Current | - | [proposta-DeviceAwareBuilding.pdf](deliver-1-proposta/latex/proposta.pdf) |
+| Current Markdown | - | [proposta.md](deliver-1-proposta/proposta.md) |
 
 
 ## Theoretical Validity (fundamentação teórica)
@@ -56,7 +56,7 @@ discussed individually so the greater idea can be validated.
 
 | Version | Delivery Date | Location |
 |:--:|:------:|:--:|
-| Foundations | 2016-05-16 | [fundamentacao.pdf](teorica/fundamentacao.pdf) |
-| Presentation  | 2016-05-02 | [fundamentacao-apresentacao.pdf](teorica/fundamentacao-apresentacao.pdf) |
-| Current | - | [fundamentacao.pdf](teorica/latex/fundamentacao.pdf) |
-| Current Markdown | - | [fundamentacao.md](teorica/fundamentacao.md) |
+| Foundations | 2016-05-16 | [fundamentacao.pdf](deliver-2-teorica/fundamentacao.pdf) |
+| Presentation  | 2016-05-02 | [fundamentacao-apresentacao.pdf](deliver-2-teorica/fundamentacao-apresentacao.pdf) |
+| Current | - | [fundamentacao.pdf](deliver-2-teorica/latex/fundamentacao.pdf) |
+| Current Markdown | - | [fundamentacao.md](deliver-2-teorica/fundamentacao.md) |
