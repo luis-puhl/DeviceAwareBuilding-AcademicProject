@@ -17,15 +17,23 @@ identifican-se 6 referencias sobre o assunto IoT. São elas:
 	- [Goldman Sachs, 2014](http://www.goldmansachs.com/our-thinking/pages/internet-of-things/)
 -> [Report](http://www.goldmansachs.com/our-thinking/outlook/internet-of-things/iot-report.pdf)
 - [Kevin Ashton, 2009](http://www.rfidjournal.com/articles/view?4986)
-- [R NASCIMENTO, 2015](http://computerworld.com.br/negocios/2015/03/12/o-que-de-fato-e-internet-das-coisas-e-que-revolucao-ela-pode-trazer)
-- [Patrick Thibodeau, 2015](http://computerworld.com.br/um-em-cada-cinco-desenvolvedores-ja-trabalham-em-projetos-de-iot) - Fraco, precisa de login e tem cheiro de tabloide;
-- [Gil Press, 2014 ](http://www.forbes.com/sites/gilpress/2014/08/18/its-official-the-internet-of-things-takes-over-big-data-as-the-most-hyped-technology/#4fe9598e1aaa) -> [printable](http://www.forbes.com/sites/gilpress/2014/08/18/its-official-the-internet-of-things-takes-over-big-data-as-the-most-hyped-technology/print/) -> [Permalink](http://onforb.es/1ricSSH)
+- [R NASCIMENTO, 2015]
+- [Patrick Thibodeau, 2015] - Fraco, precisa de login e tem cheiro de tabloide;
+- [Gil Press, 2014 ] -> [printable](http://www.forbes.com/sites/gilpress/2014/08/18/its-official-the-internet-of-things-takes-over-big-data-as-the-most-hyped-technology/print/) -> [Permalink](http://onforb.es/1ricSSH)
 - [Jayavardhana Gubbi, Rajkumar Buyya, Slaven Marusic, Marimuthu Palaniswami, 2013] -> [DOI](http://dx.doi.org/10.1016/j.future.2013.01.010)
+
+
+[R NASCIMENTO, 2015]:(http://computerworld.com.br/negocios/2015/03/12/o-que-de-fato-e-internet-das-coisas-e-que-revolucao-ela-pode-trazer)
+
+[Patrick Thibodeau, 2015]:(http://computerworld.com.br/um-em-cada-cinco-desenvolvedores-ja-trabalham-em-projetos-de-iot)
+
+[Gil Press, 2014 ]:(http://www.forbes.com/sites/gilpress/2014/08/18/its-official-the-internet-of-things-takes-over-big-data-as-the-most-hyped-technology/#4fe9598e1aaa)
 
 ## Referencias Academicas
 
 - Goldman Sanchs: [Report](http://www.goldmansachs.com/our-thinking/outlook/internet-of-things/iot-report.pdf)
 - [Jayavardhana Gubbi, Rajkumar Buyya, Slaven Marusic, Marimuthu Palaniswami, 2013]
+
 
 - [ASHTON, 2009]
 - [Atzori et al, 2010]
@@ -34,10 +42,13 @@ identifican-se 6 referencias sobre o assunto IoT. São elas:
 - [Wortmann, 2015]
 
 
-
 [Jayavardhana Gubbi, Rajkumar Buyya, Slaven Marusic, Marimuthu Palaniswami, 2013]:(http://www.sciencedirect.com/science/article/pii/S0167739X13000241)
 
 ## Referencias Empiricas
+
+- [R NASCIMENTO, 2015]
+- [Patrick Thibodeau, 2015]
+- [Gil Press, 2014 ]
 
 ## Texto resultado associado
 
