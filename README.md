@@ -70,6 +70,6 @@ discussed individually so the greater idea can be validated.
 
 | Version | Delivery Date | Location |
 |:--:|:------:|:--:|
-| Cronogram | 2016-05-16 | [cronograma-2sem.pdf](deliver-3-cronograma-2sem/cronograma-2sem.pdf) |
+| Cronogram | 2016-10-24 | [cronograma-2sem.pdf](deliver-3-cronograma-2sem/cronograma-2sem.pdf) |
 | Current | - | [cronograma-2sem.pdf](deliver-3-cronograma-2sem/latex/cronograma-2sem.pdf) |
 | Current Markdown | - | [cronograma-2sem.md](deliver-3-cronograma-2sem/cronograma-2sem.md) |
