@@ -1,0 +1,76 @@
+
+\chapter{MÉTODO DE PESQUISA}
+\label{chap:MÉTODO DE PESQUISA}
+
+Abordagens para medir distâncias através de redes sem fio Wi-Fi
+\cite{bahillo2009ieee} e Bluetooth já existem e, propor novas maneiras não é o
+foco deste trabalho. Utilizando essas técnicas, propomos estabelecer uma rede de
+nós sensores colaborativos fixos no ambiente onde deseja-se obter a localização
+dos dispositivos. As informações de distância serão compartilhadas entre os nós
+para maior precisão da informação.
+
+Para a implementação, pretende-se utilizar os softwares de maior destaque
+recentemente nos ramos de comunicação de baixa energia (\textit{MQTT}), serviços
+\textit{Web} para armazenamento (\textit{MongoDB}) e publicação
+(\textit{NodeJS}), além de softwares para medição da distância sem interferir na
+comuncação (\textit{Sniffing}) e das plataformas de hardware disponíveis e
+recomendadas para IoT com capacidade Wi-Fi e Bluetooth (\textit{Raspberry Pi
+3}).
+
+Mesmo com a grande quantidade de dispositivos já conectados são poucos os
+documentos descrevendo boas práticas para concepção, construção e manutenção de
+aplicações IoT, especialmente sobre os cuidados tomados quanto a segurança e
+análise de custos para a implementação e manutenção.
+
+Além disso, a falta de referências neste sentido é agravada quando considera-se
+a implementação no interior do estado de São Paulo. Nesta região, poucas são as
+organizações atualizadas neste tema, levando a uma falta enorme de conteúdo
+escrito na linguagem local além de serviços e produtos disponíveis para
+construção de uma plataforma completa e competitiva nesta região.
+
+Devido a falta de conteúdo e instrução, utilizaremos prototipagem ágil para este
+projeto, uma vez que esta metodologia de desenvolvimento é recomendada para
+projetos cujas especificações e definições não são claras, demandando muitas
+modificações das mesmas durante a execução do mesmo. Esse método entra em
+contraste com metodologias clássicas, como a cascata que apesar de previsíveis,
+não reagem bem a ambientes de extrema incerteza.
+
+Mais especificamente, utilizaremos uma variante da metodologia \textit{Scrum}
+\cite{James2016} que será adaptada para o projeto. Nela, serão executadas
+iterações de uma semana em que a cada iteração, uma nova versão melhorada do
+produto completo (hardware, software, documentação e resultados) será entregue.
+
+Dentro de cada iteração, as camadas da aplicação IoT serão escolhidas,
+implementadas, justificadas e avaliadas, sendo todo processo documentado. Como
+resultado de cada uma delas, será gerado um relatório das mudanças a partir da
+iteração anterior.
+
+Com mais detalhes, cada iteração cumprirá uma parte de cada objetivo no trabalho
+completo levando o projeto integralmente para um estágio de completude maior a
+cada iteração. Serão foco de cada iteração os objetivos abaixo, gerando um
+relatório utilizado para tomar e justificar decisões durante a execução do
+projeto bem como servir de posterior documentação. Os objetivos de cada iteração
+são:
+
+\begin{alineas}
+
+	\item Escolha de provedores de serviços, dispositivos e ferramentas para o
+desenvolvimento;
+
+	\item construir, avaliar, testar e manter dos sensores;
+
+	\item construir um dispositivo agregador e sua API;
+
+	\item Estimar o custo total do projeto piloto;
+
+	\item Estimar o custo de replicação;
+
+	\item Identificar os desafios para o desenvolvimento.
+
+\end{alineas}
+
+Desta forma, esperamos garantir a liberdade necessária para o projeto ser
+executado com sucesso, mesmo no ambiente de incerteza no qual o mercado local de
+IoT encontra-se, cumprindo as premissas de de funcionamento, manutenção e
+segurança que são grande importância para os interessados na área.
+

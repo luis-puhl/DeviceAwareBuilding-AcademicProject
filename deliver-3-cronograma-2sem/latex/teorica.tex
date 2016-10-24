@@ -1,0 +1,148 @@
+\chapter{Fundamentação teórica}
+\label{chap:Fundamentação teorica}
+
+
+Para conceituar, fundamentar e dar suporte teórico ao presente trabalho
+apresentamos nesta seção os tópicos: Iot, localização contextual de dispositivos
+e localização baseada em redes sem fio.
+
+\section{Internet das coisas (IoT)}
+\label{sec:INTERNET DAS COISAS (IOT)}
+
+Uma das primeiras aplicações e definições de IoT foi feita por Kevin Ashton em
+1999 para a \textit{Procter \& Gamble} (P\&G) \cite{ASHTON2009} e
+simultaneamente no laboratório Auto-ID Labs no Instituto de Tecnologia de
+Massachusetts (MIT - \textit{Massachusetts Institute of Technology}) utilizando
+identificação por radio-frequência (RFID - \textit{radio-frequency
+identification}) \cite{ATZORI2010} \cite{Friedemann2011} e desde então cresceu
+ultrapassando o escopo da tecnologia RFID porém sempre com as premissas de ``uma
+infraestrutura global para a Sociedade da Informação, habilitando serviços
+avançados através da interconexão de coisas (físicas e virtuais) baseadas em
+tecnologias, existentes e evolutivas, de informação e comunicação''
+\citeonline[p.~1]{InternationalTelecommunicationUnion2012} \cite{Wortmann2015}.
+
+Hoje em dia, quase qualquer tecnologia de comunicação acessível a computadores
+pode ser utilizada como meio de comunicação entre nós da IoT, tornando RFID mais
+uma, porém de grande importância, tecnologia info-comunicacional a disposição
+das coisas para sua conexão. Esta gama de tecnologias possibilita uma variedade
+equivalente de coisas conectadas. Se a coisa pode usar de uma tecnologia de
+conexão, considerando suas restrições de volume, custo e utilidade, muito
+provavelmente vai fazê-lo gerando ao menos uma identidade virtual representando
+seu objeto físico e seus atributos. Esta identidade virtual e atributos virtuais
+serão expostos para todos indivíduos, humanos ou coisas, que lhe forem
+convenientes de qualquer lugar do universo virtual, fazendo efetivamente parte
+da internet.
+
+\section{Localização contextual de dispositivos}
+\label{sec:Localização contextual de dispositivos}
+
+Em ciência da computação, os termos \textit{"Contexto"} e \textit{"Consciência
+de Contexto"} expressam uma ideia recente estudada nos campos de inteligência
+artificial e ciência cognitiva desde 1991. O tema "Contexto" ainda é considerado
+atual e promissor a ponto de mudar o cenário de negócios nos próximos 10 anos
+porém sem definição simples. Tamanha é a falta de uma definição geral que
+realmente funcione para casos reais que existe uma proposta de definir o termo
+utilizando uma nova metodologia de pesquisa holística através de mineração e
+agrupamento de texto advindo de publicações cientificas \cite{Pascalau2013}.
+
+
+Mesmo sem uma definição permanente em vista, utilizaremos o que é considerado
+estado da arte para o termo \textit{"Contexto"} que foi introduzido por
+\citeonline{Dey1999} e reforçado por \citeonline{Dey2000}:
+
+\begin{citacao}
+
+	``Contexto é qualquer informação que pode ser utilizada para caracterizar a
+	situação de uma entidade. Uma entidade é uma pessoa, lugar ou objeto que é
+	considerado relevante para a interação entre um usuário e uma aplicação,
+	incluindo o próprio usuário e a aplicação.'' \
+
+	\citeonline[p.~3]{Dey1999} Tradução Nossa.
+\end{citacao}
+
+\subsection{Localização contextual}
+\label{subsec:Localização contextual}
+
+Das informações contextuais que uma aplicação de cliente móvel pode obter, a
+localização é uma das mais importantes. Ajudar pessoas a navegar por mapas,
+encontrar objetos e pessoas com os quais tem interesse de interagir é sem dúvida
+uma boa meta a ser alcançada com a coleta da localização do cliente
+\cite{Bellavista2008}.
+
+Na categoria de Serviços Baseados em Localização (LBS - \textit{Location-Based
+Services}) existem duas gerações. A primeira orientada a conteúdo que falhou,
+pois a informação de localização era armazenada pela rede, podendo até ser
+vendida pelo provedor a terceiros, causando a sensação de Spam no usuário final
+ao receber conteúdo desta provedora. Já na segunda geração, a posse da
+informação foi movida para o cliente móvel, deixando a cargo do usuário escolher
+se ela seria compartilhada e com quem. Esta mudança trouxe maior engajamento do
+usuário, resultando numa maior aceitação dessa geração \cite{Bellavista2008}.
+
+
+Ao contrário das técnicas atuais, neste trabalho os humanos ou tomadores de
+decisão não estarão em posse do cliente móvel, e sim em posse do prédio.
+Portanto, a mesma informação, sem degradação em sua importância, passará a ser
+coletada e armazenada pelo provedor da rede como nos LBSs de primeira geração.
+Esta decisão garante o foco no usuário uma vez que este mudou, antes ele detinha
+um cliente móvel, agora ele detem múltiplos. Isso torna a detenção do todo
+(coisas dentro do prédio) mais precioso do que o das partes (os clientes
+móveis).
+
+Uma vez encontrada a localização de um dispositivo, metadados sobre o prédio são
+mesclados formando um conjunto rico contextualmente do ponto de vista da
+aplicação IoT Prédio como fornecedora principal dos dados para a internet e
+portanto seus usuários detentores. Essa riqueza é garantida com metadados sobre
+o dispositivo (identificação, nome, histórico, carecteristicas) e sobre o prédio
+(ex.: mapa, estrutura de salas, horário de funcionamento, consumo energético,
+humanos responsáveis e lista de equipamentos) que trazem possibilidades de
+extração de informação importantes para os detentores deste prédio e seu
+conteúdo. Esta capacidade do prédio deve-se pelo papel de coordenador de
+informações e controlador de meta-informações semelhante ao Coordenador em uma
+aplicação na arquitetura Modelo-Apresentação-Adaptador-Controlador-Coordenador
+(MPACC - \textit{Model-PresentationAdapter-Controller-Coordinator}) proposto por
+Román e Campbell \citeonline{Roman2001}.
+
+
+\subsection{Contexto de um dispositivo em um prédio}
+\label{subsec:Contexto de um dispositivo em um prédio}
+
+Para os metadados agregados à informação de posição pelo prédio definimos que o
+modelo de divulgação terá de conter além da posição do dispositivo informação
+sobre este (nome, histórico), informação da estrutura do prédio (mapa imagem,
+mapa lógico, nome, localização global, endereço, etc), ligação entre a estrutura
+do prédio e a localização do dispositivo (posição no mapa lógico) e informação
+sobre o estado do prédio (horário de funcionamento, frequentadores, etc).
+
+
+Este modelo visa prover fácil mineração e reutilização de informações por
+terceiros após a implementação do projeto que é medida pela disponibilidade e
+relacionamento das informações providas. Essa métrica também será utilizada para
+avaliar o projeto final.
+
+Este foco em reusabilidade vem da definição de Web Semantica (\textit{Semantic
+Web}) e de uma de suas realizadoras, a Ligação de Dados (\textit{Linked Data}),
+que sugerem o uso de um formato padrão além de ser acessível e gerenciável pelas
+ferramentas de exploração. Desta forma a Web de Dados (\textit{Web of Data}) é
+construída opondo uma simples coleção de dados \cite{Bizer2009}.
+
+\section{Localização baseada em redes sem fio}
+\label{sec:Localização baseada em redes sem fio}
+
+Para o sistema de posicionamento nos baseamos em técnicas de triangulação de
+distâncias adquiridas com a medição de características eletromagnéticas (ex.:
+potência de sinal) e dos protocolos (ex.: Tempo de chegada) que já foram
+explorados anteriormente
+\cite{Abusubaih2007} \cite{bahillo2009ieee} \cite{Feldmann2003}.
+
+
+Portanto os sensores seguirão as especificações de \textit{WiFi IEEE 802.11}
+\cite{Crow1997} e \textit{Bluetooth low energy (BLE)} \cite{Hossain2007}.
+
+
+Para construir estes sensores uma plataforma de hardware adequada é necessária,
+para esta escolhemos o Raspberry Pi \cite{Vujovic2014} \cite{Vujovic2015} que já
+foi provado funcional no caso de Localização através WiFi por
+\citeonline{Ferreira2016} especialmente a sua versão 3 que adiciona a capacidade
+de sensor \textit{WiFi} e \textit{Bluetooth} em sua placa principal sem
+necessidade de adaptadores externos destacando ainda mais sua escolha
+\cite{RPI2016}.
