@@ -60,3 +60,16 @@ discussed individually so the greater idea can be validated.
 | Presentation  | 2016-05-02 | [fundamentacao-apresentacao.pdf](deliver-2-teorica/fundamentacao-apresentacao.pdf) |
 | Current | - | [fundamentacao.pdf](deliver-2-teorica/latex/fundamentacao.pdf) |
 | Current Markdown | - | [fundamentacao.md](deliver-2-teorica/fundamentacao.md) |
+
+## Revised Schedule (cronograma segundo semestre)
+
+At this point with a solid proposal we build a set of theoretical assumptions
+surrounding every fundamental stone to the main idea. This process consists in
+the idea itself been is broken in aspects, this aspects will be exposed and
+discussed individually so the greater idea can be validated.
+
+| Version | Delivery Date | Location |
+|:--:|:------:|:--:|
+| Cronogram | 2016-05-16 | [cronograma-2sem.pdf](deliver-3-cronograma-2sem/cronograma-2sem.pdf) |
+| Current | - | [cronograma-2sem.pdf](deliver-3-cronograma-2sem/latex/cronograma-2sem.pdf) |
+| Current Markdown | - | [cronograma-2sem.md](deliver-3-cronograma-2sem/cronograma-2sem.md) |
