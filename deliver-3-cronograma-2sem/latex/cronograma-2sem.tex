@@ -1,3 +1,12 @@
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% Monografia Device Aware Building
+% Trabalho de Conclusão de Curso
+% Baseia-se no documento modelo de TCC do abntex2
+% Para saber mais, acesse https://github.com/abntex/abntex2
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
@@ -14,71 +23,155 @@
 	brazil				% o último idioma é o principal do documento
 	]{abntex2}
 
-% Pacotes básicos
-\usepackage{helvet}			% Usa a fonte Latin Modern - Mudei para Helvetica
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+
+% ----------------------------------------------------------
+% Pacotes básicos 
+% ----------------------------------------------------------
+%\usepackage{helvet}			
+\usepackage[scaled]{helvet}
+\renewcommand*\familydefault{\sfdefault}	% Only if the base font of the document is to be sans serif (by Gabriel Oliveira)
+\usepackage[T1]{fontenc}	% Selecao de codigos de fonte.
 \usepackage[utf8]{inputenc}	% Codificacao do documento (conversão automática dos acentos)
 \usepackage{lastpage}		% Usado pela Ficha catalográfica
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{indentfirst}	% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color}			% Controle das cores
 \usepackage{graphicx}		% Inclusão de gráficos
-\usepackage{microtype} 		% para melhorias de justificação
+\usepackage{microtype}		% para melhorias de justificação
+% ----------------------------------------------------------
 
 
+% ----------------------------------------------------------
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
-\usepackage{lipsum}				% para geração de dummy text
-\usepackage{customizacoes} 		% customizações feitas pelo autor
+%% ----------------------------------------------------------
+% \usepackage{lipsum}				% para geração de dummy text
+\usepackage{customizacoes}		% customizações feitas pelo autor
+% ----------------------------------------------------------
 
+% ----------------------------------------------------------
 % Pacotes de citações
+% ----------------------------------------------------------
 \usepackage[brazilian,hyperpageref]{backref}	% Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}				% Citações padrão ABNT
+\usepackage[alf]{abntex2cite}					% Citações padrão ABNT
 
+% ----------------------------------------------------------
+% CONFIGURAÇÕES DE PACOTES
+% ----------------------------------------------------------
 
-%  CONFIGURAÇÕES DE PACOTES
+% ----------------------------------------------------------
 % Configurações do pacote backref
+% ----------------------------------------------------------
+\definecolor{thered}{rgb}{0.65,0.04,0.07}
+\definecolor{thegreen}{rgb}{0.06,0.44,0.08}
+\definecolor{thegrey}{gray}{0.5}
+\definecolor{theshade}{rgb}{1,1,0.97}
+\definecolor{theframe}{gray}{0.6}
+% ----------------------------------------------------------
+
 % Usado sem a opção hyperpageref de backref
 \renewcommand{\backrefpagesname}{ }
 % Texto padrão antes do número das páginas
 \renewcommand{\backref}{\ABNTEXchapterfont}
 % Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
-	\ifcase #1 %
-		%
-	\or
-		%
-	\else
-		%
-	\fi}%
 
+
+% ----------------------------------------------------------
 % Informações de dados para CAPA e FOLHA DE ROSTO
+% ----------------------------------------------------------
+
 \titulo{Habilitando um Prédio a Localizar Contextualmente Dispositivos utilizando Redes Sem Fio}
 \autor{Luís Henrique Puhl de Souza}
 \local{Bauru}
 \data{2016}
 \orientador{Prof. Dr. Eduardo Martins Morgado}
 
-\instituicao{%
-  Universidade Estadual Paulista ``Júlio de Mesquita Filho''
-  %\par
-  Faculdade de Ciências - Campus Bauru
-  %\par
-  Departamento de Computação
-}
-\tipotrabalho{Monografia (Trabalho de Conclusão de Curso)}
 % O preambulo deve conter o tipo do trabalho, o objetivo,
 % o nome da instituição e a área de concentração
-\preambulo{ Projeto de Trabalho de Conclusão de Curso de Bacharelado em Ciência
-da Computação da Universidade Estadual Paulista ``Júlio de Mesquita Filho'',
-Faculdade de Ciências, Campus Bauru }
+% foi necessário utilizar \~{a} e etc para os acentos por problemas na geração do PDF
 
+\instituicao{%
+ Universidade Estadual Paulista ``Júlio de Mesquita Filho''
+ \par
+ Faculdade de Ciências - Campus Bauru
+ \par
+ Departamento de Computação
+}
+
+\tipotrabalho{Monografia (Trabalho de Conclusão de Curso)}
+
+\preambulo{Trabalho de Conclus\~{a}o do Curso de Bacharelado em Ci\^{e}ncia da
+Computa\c{c}\~{a}o apresentado ao Departamento de Computa\c{c}\~{a}o da
+Faculdade de Ci\^{e}ncias da Universidade Estadual Paulista ``J\'{ú}lio de
+Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
+
+% ----------------------------------------------------------
 % Configurações de projeto
-\newif\iffinal
-\finalfalse % define se é um arquivo final, se for não for retira umas partes.
+% ----------------------------------------------------------
+% MODIFICA A APRESENTACAO DAS PARTES OPCIONAIS
+% ----------------------------------------------------------
+% PARTE EXTERNA
+%	Capa				(obrigatorio)
+%	*Lombada			(opcional)
+\newif\iflombada
+\lombadafalse
+% ELEMENTOS PRE-TEXTUAIS
+%	Folha de rosto		(obrigatorio)
+%	*Ficha Catalografica	(opcional) (obrigatoria para a UNESP-FC-BAURU)
+\newif\ifficha
+\fichatrue
+%	*Errata			(opcional)
+\newif\iferrata
+\erratafalse
+%	Folha Aprovacao		(obrigatorio)
+%	*Dedicatoria		(opcional)
+\newif\ifdedicatoria
+\dedicatoriafalse
+%	*Agradecimentos		(opcional)
+\newif\ifagradecimentos
+\agradecimentosfalse
+%	*Epigrafe			(opcional)
+\newif\ifepigrafe
+\epigrafefalse
+%	Resumo				(obrigatorio)
+\newif\ifresumo
+\resumotrue
+%	Resumo ingles		(obrigatorio)
+%	*Lista Ilustracoes	(opcional)
+\newif\iffiguras
+\figurasfalse
+%	*Lista Tabelas		(opcional)
+\newif\iftabelas
+\tabelasfalse
+%	*Lista Abreviaturas	(opcional)
+\newif\ifabreviaturas
+\abreviaturasfalse
+%	*Lista Simbolos		(opcional)
+\newif\ifsimbolos
+\simbolosfalse
+%	Sumario				(obrigatorio)
+% ELEMENTOS TEXTUAIS
+%	Introducao
+%	Desenvolvimento		(capitulos e subcapitulos)
+%	Conclusao
+% ELEMENTOS POS-TEXTUAIS
+%	Referencias			(obrigatorio)
+%	*Glossario			(opcional)
+\newif\ifglossario
+\glossariofalse
+%	*Apendice			(opcional)
+\newif\ifapendice
+\apendicefalse
+%	*Anexo				(opcional)
+\newif\ifanexo
+\anexofalse
+%	*Indice		(opcional)
+\newif\ifindice
+\indicefalse
+% ----------------------------------------------------------
 
-\newif\ifabstract
-\abstractfalse % define se mostra o abstract em inglês ou não.
-
+% ----------------------------------------------------------
 % Configurações de aparência do PDF final
+% ----------------------------------------------------------
+
 % alterando o aspecto da cor azul
 \definecolor{blue}{RGB}{0,0,0}
 
@@ -86,31 +179,44 @@ Faculdade de Ciências, Campus Bauru }
 \makeatletter
 \hypersetup{
 		%pagebackref=true,
-		pdftitle={\@title},
+		pdftitle={\@title}, 
 		pdfauthor={\@author},
 		pdfsubject={\imprimirpreambulo},
-		 pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={beacon}{raspberry pi}{internet das coisas}{abntex2}{trabalho acadêmico},
-		colorlinks=true,		 		% false: boxed links; true: colored links
-		linkcolor=blue,			 	% color of internal links
-		citecolor=blue,		  		% color of links to bibliography
-		filecolor=magenta,				% color of file links
+		pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={iot}{raspberry pi}{internet das coisas}{abntex2}{trabalho acadêmico}, 
+		colorlinks=true,			% false: boxed links; true: colored links
+		linkcolor=blue,			% color of internal links
+		citecolor=blue,				% color of links to bibliography
+		filecolor=magenta,			% color of file links
 		urlcolor=blue,
 		bookmarksdepth=4
 }
 \makeatother
+% ----------------------------------------------------------
 
-% Espaçamentos entre linhas e parágrafos
+% ----------------------------------------------------------
+% Espaçamentos entre linhas e parágrafos 
+% ----------------------------------------------------------
+
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
 
 % Controle do espaçamento entre um parágrafo e outro:
-\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+\setlength{\parskip}{0.2cm} % tente também \onelineskip
 
+% ----------------------------------------------------------
 % compila o indice
+% ----------------------------------------------------------
 \makeindex
+% ----------------------------------------------------------
 
+
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
 % Início do documento
+% ----------------------------------------------------------
 \begin{document}
 
 % Seleciona o idioma do documento (conforme pacotes do babel)
@@ -118,27 +224,273 @@ Faculdade de Ciências, Campus Bauru }
 \selectlanguage{brazil}
 
 % Retira espaço extra obsoleto entre as frases.
-\frenchspacing
+\frenchspacing 
 
 % ----------------------------------------------------------
-%  ELEMENTOS PRÉ-TEXTUAIS
+% ELEMENTOS PRÉ-TEXTUAIS
 % ----------------------------------------------------------
 \pretextual
 
-\ABNTEXchapterfont {
 
+% ----------------------------------------------------------
 % Capa
+% ----------------------------------------------------------
 \imprimircapa
+% ----------------------------------------------------------
 
-%  INSERIR O SUMARIO
+
+% ----------------------------------------------------------
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ----------------------------------------------------------
+\imprimirfolhaderosto
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% Inserir a ficha catalográfica
+% ----------------------------------------------------------
+
+% Isto é um exemplo de Ficha Catalográfica, ou "Dados internacionais de
+% catalogação-na-publicação''. Você pode utilizar este modelo como referência. 
+% Porém, provavelmente a biblioteca da sua universidade lhe fornecerá um PDF
+% com a ficha catalográfica definitiva após a defesa do trabalho. Quando estiver
+% com o documento, salve-o como PDF no diretório do seu projeto e substitua todo
+% o conteúdo de implementação deste arquivo pelo comando abaixo:
+%
+% \begin{fichacatalografica}
+%	\includepdf{fig_ficha_catalografica.pdf}
+% \end{fichacatalografica}
+
+\ifficha
+ \begin{fichacatalografica}
+	\sffamily
+	\vspace*{\fill}					% Posição vertical
+	\begin{center}					% Minipage Centralizado
+	\fbox{\begin{minipage}[c][8cm]{13.5cm}		% Largura
+	\small
+	\imprimirautor
+	%Sobrenome, Nome do autor
+	
+	\hspace{0.5cm} \imprimirtitulo / \imprimirautor. --
+	\imprimirlocal, \imprimirdata-
+	
+	\hspace{0.5cm} \pageref{LastPage} p. : il. (algumas color.) ; 30 cm.\\
+	
+	\hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
+	
+	\hspace{0.5cm}
+	\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~\\ \imprimirinstituicao,
+	\imprimirdata.}\\
+	
+	\hspace{0.5cm}
+		1. Beacon.
+		2. Raspberry Pi.
+		3. Internet das Coisas.
+		I. \imprimirorientador.
+		II. Universidade Estadual Paulista "Júlio de Mesquita Filho".
+		III. Faculdade de Ciências.
+		IV. Título
+	\end{minipage}}
+	\end{center}
+ \end{fichacatalografica}
+\fi
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% Inserir errata
+% ----------------------------------------------------------
+%\begin{errata}
+%Elemento opcional da \citeonline[4.2.1.2]{NBR14724:2011}. Exemplo:
+
+%\vspace{\onelineskip}
+
+%FERRIGNO, C. R. A. \textbf{Tratamento de neoplasias ósseas apendiculares com
+%reimplantação de enxerto ósseo autólogo autoclavado associado ao plasma
+%rico em plaquetas}: estudo crítico na cirurgia de preservação de membro em
+%cães. 2011. 128 f. Tese (Livre-Docência) - Faculdade de Medicina Veterinária e
+%Zootecnia, Universidade de São Paulo, São Paulo, 2011.
+
+%\begin{table}[htb]
+%\center
+%\footnotesize
+%\begin{tabular}{|p{1.4cm}|p{1cm}|p{3cm}|p{3cm}|}
+% \hline
+% \textbf{Folha} & \textbf{Linha} & \textbf{Onde se lê} & \textbf{Leia-se} \\
+%	\hline
+%	1 & 10 & auto-conclavo & autoconclavo\\
+% \hline
+%\end{tabular}
+%\end{table}
+
+%\end{errata}
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% Inserir folha de aprovação
+% ----------------------------------------------------------
+
+% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
+% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
+% do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
+% imagem da página assinada pela banca com o comando abaixo:
+%
+% \includepdf{folhadeaprovacao_final.pdf}
+%
+\begin{folhadeaprovacao}
+	\begin{center}
+		{\ImprimirAutor}
+		
+		\vspace*{\fill}\vspace*{\fill}
+		\begin{center}
+			\bfseries\large\ImprimirTitulo
+		\end{center}
+		\vspace*{\fill}
+ 
+		\hspace{.45\textwidth}
+		\begin{minipage}{.5\textwidth}
+			\imprimirpreambulo
+		\end{minipage}%
+		\vspace*{\fill}
+	\end{center}
+	
+	Aprovado em \detokenize{--/02/2017}.
+	
+	\vspace*{\fill}
+	\begin{center}
+		\uppercase{Banca examinadora}
+	\end{center}
+
+	\assinatura{\textbf{\imprimirorientador} \\ Orientador} 
+	\assinatura{\textbf{Profa. Dra. Simone das G. D. Prado}}
+t\assinatura{\textbf{Prof. Convidado}}
+	%\assinatura{\textbf{Professor} \\ Convidado 3}
+	%\assinatura{\textbf{Professor} \\ Convidado 4}
+	\vspace*{\fill}
+
+\end{folhadeaprovacao}
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% Dedicatória
+% ----------------------------------------------------------
+\ifdedicatoria
+	\begin{dedicatoria} 
+		\vspace*{\fill}
+		\centering
+		\noindent
+		\textit{ Dedicatória } 
+		\vspace*{\fill}
+	\end{dedicatoria}
+\fi
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% Agradecimentos
+% ----------------------------------------------------------
+\ifagradecimentos
+	\begin{agradecimentos}
+
+
+	\end{agradecimentos}
+\fi
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% Epígrafe
+% ----------------------------------------------------------
+\ifepigrafe
+	\begin{epigrafe}
+		\vspace*{\fill}
+		\begin{flushright}
+			Epigrafe
+		\end{flushright}
+	\end{epigrafe}
+\fi
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% RESUMOS
+% ----------------------------------------------------------
+\ifresumo
+	% resumo em português
+	\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+	\begin{resumo}		
+	\end{resumo}
+	
+	% resumo em inglês
+	\begin{resumo}[Abstract]
+		\begin{otherlanguage*}{english}
+			
+		\end{otherlanguage*}
+	\end{resumo}
+	
+\fi
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% inserir lista de ilustrações
+% ----------------------------------------------------------
+\iffiguras
+	\pdfbookmark[0]{\listfigurename}{lof}
+	\listoffigures*
+	\cleardoublepage
+\fi
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% inserir lista de tabelas
+% ----------------------------------------------------------
+\iftabelas
+	\pdfbookmark[0]{\listtablename}{lot}
+	\listoftables*
+	\cleardoublepage
+\fi
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% inserir lista de abreviaturas e siglas
+% ----------------------------------------------------------
+\ifabreviaturas
+	\begin{siglas}
+			\item[IoT] \textit{Internet of Things} - Internet das Coisas
+	\end{siglas}
+\fi
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% inserir lista de símbolos
+% ----------------------------------------------------------
+\ifsimbolos
+	\begin{simbolos}
+			\item[$ \Lambda $] Lambda
+	\end{simbolos}
+\fi
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% inserir o sumario
+% ----------------------------------------------------------
 \pdfbookmark[0]{\contentsname}{toc}
 \tableofcontents*
 \cleardoublepage
+% ----------------------------------------------------------
 
 
-% ------------------------------------------------------------------------------
-%   ELEMENTOS TEXTUAIS
-% ------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% -----------------------------------------------------------------------------
 \textual
 
 
@@ -159,9 +511,26 @@ Faculdade de Ciências, Campus Bauru }
 
 % ----------------------------------------------------------------------------
 
-%   ELEMENTOS PÓS-TEXTUAIS
+% ELEMENTOS PÓS-TEXTUAIS
 
 % Referências bibliográficas
 \bibliography{referencias}
+
+
+\ifglossario
+	Glossário
+\fi
+
+\ifapendice
+	Apêndice de meu desenvolvimento.
+\fi
+
+\ifanexo
+	Anexo de outros autores.
+\fi
+
+\ifindice
+	Indice Remissivo
+\fi
 
 \end{document}
