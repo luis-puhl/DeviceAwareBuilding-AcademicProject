@@ -11,10 +11,11 @@ específico para cada usuário e situação é necessário coletar informações
 contextuais. Para a maioria das aplicações, a informação contextual de maior
 relevância é a localização física.
 
-Destacamos a necessidade da criação desta informação através de sensores ativos
-sempre que necessário para que o dispositivo tenha ciência deste contexto em
-suas tomadas de decisão e para que outros (sistemas, pessoas e coisas) saibam a
-localização de qualquer dispositivo ao qual têm interesse de interagir.
+Este tipo de situação destaca a necessidade da criação desta informação através
+de sensores ativos sempre que necessário para que o dispositivo tenha ciência
+deste contexto em suas tomadas de decisão e para que outros (sistemas, pessoas e
+coisas) saibam a localização de qualquer dispositivo ao qual têm interesse de
+interagir.
 
 Um exemplo da necessidade de localização de dispositivos dentro de um prédio
 seria um profissional saber onde está o dispositivo em seu local de trabalho,
@@ -32,8 +33,8 @@ oferecida pelo sistema.
 
 Também faz parte do sistema o ponto móvel (MU - \textit{Mobile User}) sobre o
 qual temos interesse em determinar a posição que é feita pelo PS encontrando uma
-distância (com dimensão variável de acordo com o método utilizado para
-adquirir a distância) relativa a um sub-conjunto de RPs. Feito isso, é possível utilizar
+distância (com dimensão variável de acordo com o método utilizado para adquirir
+a distância) relativa a um sub-conjunto de RPs. Feito isso, é possível utilizar
 modelos matemáticos para, a partir das distâncias, encontrar uma posição do MU
 em relação aos RPs e uma nova transformação é aplicada para encontrar a posição
 relativa ao \textit{O}.
@@ -55,8 +56,8 @@ diferencial de tempo de chegada (TDOA - \textit{Time Difference Of Arrival}) e
 
 Para maior precisão, é comum a utilização de múltiplas RPs geralmente com o
 número mínimo igual ao número de dimensões espaciais que deseja-se calcular.
-Notamos que para sistemas distribuídos a sincronização de relógios é um problema
-clássico então o tempo conta como dimensão.
+Nota que para sistemas distribuídos a sincronização de relógios é um problema
+intrínseco então é fundamental que o tempo seja contado como dimensão.
 
 Os sistemas classificados como ``Sistema de Navegação Global por Satélite''
 (GNSS - \textit{Global Navigation Satellite System}), como o tradicional
@@ -77,9 +78,9 @@ Sistema de Posicionamento para Ambientes Fechados (IPS - \textit{Indoor
 Positioning System}) sendo a ubiquidade deste essencial para conquistar o mesmo
 nível de confiança trazido pelos GNSSs.
 
-Para implementar este IPS, propomos o uso de tecnologias já implantadas em
+Para implementar este IPS, propoem-se o uso de tecnologias já implantadas em
 dispositivos móveis e essenciais para o funcionamento dos mesmos, especialmente
 as de camadas de comunicação, que são ubíquas no ambiente dos dispositivos
-móveis, como Wi-Fi (padrão \textit{IEEE 802.11}) e Bluetooth (padrão \textit{Bluetooth
-SIG}), para que os objetos conectados em que temos interesse de encontrar o
-contexto locativo não necessitem de modificações.
+móveis, como Wi-Fi (padrão \textit{IEEE 802.11}) e Bluetooth (padrão
+\textit{Bluetooth SIG}), para que os objetos conectados no qual tem-se interesse
+de encontrar o contexto locativo não necessitem de modificações.

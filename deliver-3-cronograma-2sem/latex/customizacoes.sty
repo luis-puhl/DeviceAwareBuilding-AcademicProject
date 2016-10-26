@@ -1,66 +1,56 @@
 %%
-%% Customizações do abnTeX2 (http://abnTeX2.googlecode.com) para a Universidade XXXX
+%% Customizações do abnTeX2 (http://abnTeX2.googlecode.com) para a Universidade UNESP FC BAURU
 %%
 %% This work may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3
 %% of this license or (at your option) any later version.
 %% The latest version of this license is in
-%%   http://www.latex-project.org/lppl.txt
+%%	 http://www.latex-project.org/lppl.txt
 %% and version 1.3 or later is part of all distributions of LaTeX
 %% version 2005/12/01 or later.
 %%
 %% This work has the LPPL maintenance status `maintained'.
 %%
-%% The Current Maintainer of this work is SEU_NOME, SEU_EMAIL
+%% The Current Maintainer of this work is Luis Puhl, luispuhl@gmail.com
 %%
 %% Further information about abnTeX2 are available on http://abntex2.googlecode.com/
 %%
 
 % ---
-% INICIO DAS CUSTOMIZACOES PARA A UNIVERSIDADE XXX
+% INICIO DAS CUSTOMIZACOES PARA A UNIVERSIDADE UNESP FC BAURU
 % ---
 
-\ProvidesPackage{customizacoes}[2014/09/01 Criacao desta customizacao do abnTeX2]
+\ProvidesPackage{customizacoes}[2016-10-25 Criacao desta customizacao do abnTeX2]
 
 \newcommand{\ImprimirAutor}{\expandafter\MakeUppercase\expandafter{\imprimirautor}}
-\newcommand{\ImprimirAutorCapa}{{\imprimirautor}}
 \newcommand{\ImprimirLocal}{\expandafter\MakeUppercase\expandafter{\imprimirlocal}}
 \newcommand{\ImprimirTitulo}{\expandafter\MakeUppercase\expandafter{\imprimirtitulo}}
+\addto\captionsbrazil{
+	\renewcommand{\listfigurename}{Lista de Figuras}
+}
 
 % alterando a capa
 \renewcommand{\imprimircapa}{%
-  \begin{capa}%
-    \center
-      \ABNTEXchapterfont{
-        { \uppercase {\textbf{Universidade Estadual Paulista\\"Júlio de Mesquita Filho"}} \\Faculdade de Ciências - Campus Bauru}
+	\begin{capa}%
+			\center
+			\ABNTEXchapterfont{
+				{ \uppercase {\textbf{Universidade Estadual Paulista "Júlio de Mesquita Filho"} } } \\
+				{ \uppercase {Faculdade de Ciências - Campus Bauru}}\\
+				{ \uppercase {Departamento de Computação} }\\
+				{ \uppercase {Bacharelado em Ciência da Computação}}
 
-        %\vspace*{0.5cm}
+				\vfill
+				{\ImprimirAutor}
 
-        { \uppercase {Departamento de Computação}}
+				\vfill
+					\begin{center}
+						\bfseries \large \ImprimirTitulo
+					\end{center}
+				\vfill
 
-        %\vspace*{0.5cm}
-
-        { \uppercase {Bacharelado em Ciência da Computação}}
-
-        %{\ABNTEXchapterfont\large\ImprimirAutor}
-
-        \vfill
-          \begin{center}
-            \bfseries \large \ImprimirTitulo
-          \end{center}
-        \vfill
-        \vfill
-        % \begin{center}
-	    %     	\imprimirautor{} \\ RA 11026006
-	    % \end{center}
-		\assinatura{\textbf{\imprimirautor} \\ Graduando RA 11026006 }
-		\assinatura{\textbf{\imprimirorientador} \\ Orientador }
-		% \assinatura{\textbf{\imprimircoorientador} \\ Coorientador}
-		\vspace*{0.5cm}
-		\vfill
-        \ImprimirLocal \\ \imprimirdata
-      }
-  \end{capa}
+				\ImprimirLocal \\ \imprimirdata
+			}
+	\end{capa}
 }
 
 
@@ -69,41 +59,37 @@
 \makeatletter
 
 \renewcommand{\folhaderostocontent}{
-  \begin{center}
-    \center
-    \ABNTEXchapterfont{
-      {\ImprimirAutor}
+	\begin{center}
+		\center
+		\ABNTEXchapterfont{
+			{\ImprimirAutor}
 
-      \vspace*{\fill}\vspace*{\fill}
+			\vspace*{\fill}\vspace*{\fill}
 
-      \begin{center}
-        \bfseries\large\ImprimirTitulo
-      \end{center}
+			\begin{center}
+				\bfseries\large\ImprimirTitulo
+			\end{center}
 
-      \vspace*{\fill}
+			\vspace*{\fill}
 
-      \abntex@ifnotempty{\imprimirpreambulo}{%
-        \hspace{.45\textwidth}
-        \begin{minipage}{.5\textwidth}
-          \SingleSpacing
-          \imprimirpreambulo
-        \end{minipage}%
-        \vspace*{\fill}
-      }%
+			\abntex@ifnotempty{\imprimirpreambulo}{%
+				\hspace{.45\textwidth}
+				\begin{minipage}{.5\textwidth}
+					\SingleSpacing
+					\imprimirpreambulo \\
+					\imprimirorientadorRotulo~\imprimirorientador \\
+					 \abntex@ifnotempty{\imprimircoorientador}{%
+						 \imprimircoorientadorRotulo~\imprimircoorientador
+					}%
+				\end{minipage}%
+				\vspace*{\fill}
+			}%
 
-      {\large\imprimirorientadorRotulo~\imprimirorientador}
+			\vspace*{\fill}
 
-      \abntex@ifnotempty{\imprimircoorientador}{%
-        {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
-      }%
-
-      \vspace*{\fill}
-
-      {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
-
-      {\ImprimirLocal\\\imprimirdata}
-    }
-  \end{center}
+			{\ImprimirLocal \\ \imprimirdata}
+		}
+	\end{center}
 }
 
 \makeatother
@@ -111,5 +97,5 @@
 
 
 % ---
-% FIM DAS CUSTOMIZACOES PARA A UNIVERSIDADE XXX
+% FIM DAS CUSTOMIZACOES PARA A UNIVERSIDADE UNESP FC BAURU
 % ---
