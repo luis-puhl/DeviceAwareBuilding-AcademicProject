@@ -159,5 +159,8 @@ pythontex-files-*/
 TSWLatexianTemp*
 
 
+# TeXnicCenter sempre altera esse arquivo, nunca adiciona ao projeto final.
+**.tps
+
 # removendo tarefas
 tarefas/**
