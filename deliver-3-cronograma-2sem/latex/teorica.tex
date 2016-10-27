@@ -3,8 +3,8 @@
 
 
 Para conceituar, fundamentar e dar suporte teórico ao presente trabalho
-apresentamos nesta seção os tópicos: Iot, localização contextual de dispositivos
-e localização baseada em redes sem fio.
+apresentam-se nesta seção os tópicos e definições dos segmentos: IoT,
+localização contextual de dispositivos e localização baseada em redes sem fio.
 
 \section{Internet das coisas (IoT)}
 \label{sec:INTERNET DAS COISAS (IOT)}
@@ -14,24 +14,25 @@ Uma das primeiras aplicações e definições de IoT foi feita por Kevin Ashton 
 simultaneamente no laboratório Auto-ID Labs no Instituto de Tecnologia de
 Massachusetts (MIT - \textit{Massachusetts Institute of Technology}) utilizando
 identificação por radio-frequência (RFID - \textit{radio-frequency
-identification}) \cite{ATZORI2010} \cite{Friedemann2011} e desde então cresceu
+identification}) \cite{ATZORI2010, Friedemann2011} e desde então cresceu
 ultrapassando o escopo da tecnologia RFID porém sempre com as premissas de ``uma
 infraestrutura global para a Sociedade da Informação, habilitando serviços
 avançados através da interconexão de coisas (físicas e virtuais) baseadas em
-tecnologias, existentes e evolutivas, de informação e comunicação''
-\citeonline[p.~1]{InternationalTelecommunicationUnion2012} \cite{Wortmann2015}.
+tecnologias, existentes e evolutivas, de informação e comunicação'' descrita por
+\apudonline[p.~1, grifo e tradução
+nossa]{Wortmann2015}{InternationalTelecommunicationUnion2012}.
 
 Hoje em dia, quase qualquer tecnologia de comunicação acessível a computadores
-pode ser utilizada como meio de comunicação entre nós da IoT, tornando RFID mais
-uma, porém de grande importância, tecnologia info-comunicacional a disposição
-das coisas para sua conexão. Esta gama de tecnologias possibilita uma variedade
-equivalente de coisas conectadas. Se a coisa pode usar de uma tecnologia de
-conexão, considerando suas restrições de volume, custo e utilidade, muito
-provavelmente vai fazê-lo gerando ao menos uma identidade virtual representando
-seu objeto físico e seus atributos. Esta identidade virtual e atributos virtuais
-serão expostos para todos indivíduos, humanos ou coisas, que lhe forem
-convenientes de qualquer lugar do universo virtual, fazendo efetivamente parte
-da internet.
+pode ser utilizada como meio de comunicação entre dispositivos IoT, tornando
+RFID mais uma, porém de grande importância, tecnologia info-comunicacional a
+disposição das coisas para sua conexão. Esta gama de tecnologias possibilita uma
+variedade equivalente de coisas conectadas. Se a coisa pode usar de uma
+tecnologia de conexão, considerando suas restrições de volume, custo e
+utilidade, muito provavelmente vai fazê-lo gerando ao menos uma identidade
+virtual representando seu objeto físico e seus atributos. Esta identidade
+virtual e atributos virtuais serão expostos para todos indivíduos, humanos ou
+coisas, que lhe forem convenientes de qualquer lugar do universo virtual,
+fazendo efetivamente parte da internet.
 
 \section{Localização contextual de dispositivos}
 \label{sec:Localização contextual de dispositivos}
@@ -44,7 +45,6 @@ porém sem definição simples. Tamanha é a falta de uma definição geral que
 realmente funcione para casos reais que existe uma proposta de definir o termo
 utilizando uma nova metodologia de pesquisa holística através de mineração e
 agrupamento de texto advindo de publicações cientificas \cite{Pascalau2013}.
-
 
 Mesmo sem uma definição permanente em vista, utilizaremos o que é considerado
 estado da arte para o termo \textit{"Contexto"} que foi introduzido por
@@ -71,12 +71,14 @@ uma boa meta a ser alcançada com a coleta da localização do cliente
 
 Na categoria de Serviços Baseados em Localização (LBS - \textit{Location-Based
 Services}) existem duas gerações. A primeira orientada a conteúdo que falhou,
-pois a informação de localização era armazenada pela rede, podendo até ser
-vendida pelo provedor a terceiros, causando a sensação de Spam no usuário final
-ao receber conteúdo desta provedora. Já na segunda geração, a posse da
-informação foi movida para o cliente móvel, deixando a cargo do usuário escolher
-se ela seria compartilhada e com quem. Esta mudança trouxe maior engajamento do
-usuário, resultando numa maior aceitação dessa geração \cite{Bellavista2008}.
+pois a informação de localização era armazenada pela rede (que geralmetne era
+administrada por uma empresa de telecomunicações), podendo até ser vendida pelo
+provedor a terceiros, causando a sensação de \textit{Spam} (conteúdo não
+solicitado) no usuário final ao receber conteúdo desta provedora. Já na segunda
+geração, a posse da informação foi movida para o cliente móvel, deixando a cargo
+do usuário escolher se ela seria compartilhada e com quem. Esta mudança trouxe
+maior engajamento do usuário, resultando numa maior aceitação dessa geração
+\cite{Bellavista2008}.
 
 
 Ao contrário das técnicas atuais, neste trabalho os humanos ou tomadores de
@@ -85,8 +87,9 @@ Portanto, a mesma informação, sem degradação em sua importância, passará a
 coletada e armazenada pelo provedor da rede como nos LBSs de primeira geração.
 Esta decisão garante o foco no usuário uma vez que este mudou, antes ele detinha
 um cliente móvel, agora ele detem múltiplos. Isso torna a detenção do todo
-(coisas dentro do prédio) mais precioso do que o das partes (os clientes
-móveis).
+(coisas dentro do prédio) mais precioso do que o das partes (os clientes móveis)
+além da mudança da propriedade da rede para o usuário final, na comparação
+celular \textit{versus} \textit{Wi-Fi}.
 
 Uma vez encontrada a localização de um dispositivo, metadados sobre o prédio são
 mesclados formando um conjunto rico contextualmente do ponto de vista da
@@ -100,7 +103,7 @@ conteúdo. Esta capacidade do prédio deve-se pelo papel de coordenador de
 informações e controlador de meta-informações semelhante ao Coordenador em uma
 aplicação na arquitetura Modelo-Apresentação-Adaptador-Controlador-Coordenador
 (MPACC - \textit{Model-PresentationAdapter-Controller-Coordinator}) proposto por
-Román e Campbell \citeonline{Roman2001}.
+\citeonline{Roman2001}.
 
 
 \subsection{Contexto de um dispositivo em um prédio}
@@ -128,21 +131,25 @@ construída opondo uma simples coleção de dados \cite{Bizer2009}.
 \section{Localização baseada em redes sem fio}
 \label{sec:Localização baseada em redes sem fio}
 
-Para o sistema de posicionamento nos baseamos em técnicas de triangulação de
-distâncias adquiridas com a medição de características eletromagnéticas (ex.:
-potência de sinal) e dos protocolos (ex.: Tempo de chegada) que já foram
-explorados anteriormente
-\cite{Abusubaih2007} \cite{bahillo2009ieee} \cite{Feldmann2003}.
-
+Para o sistema de posicionamento nos baseamos em técnicas de
+\textit{n-lateração?} de distâncias adquiridas com a medição de características
+eletromagnéticas (ex.: potência de sinal) e dos protocolos (ex.: Tempo de
+chegada) que já foram explorados anteriormente \cite{Abusubaih2007,
+bahillo2009ieee, Feldmann2003}.
 
 Portanto os sensores seguirão as especificações de \textit{WiFi IEEE 802.11}
-\cite{Crow1997} e \textit{Bluetooth low energy (BLE)} \cite{Hossain2007}.
-
+\cite{Crow1997} e técnicas definidas para \textit{Bluetooth Low Energy (BLE)}
+\cite{Hossain2007} devido a semelhança da área de cobertura (até 100 metros,
+geralmente utilizado até 20 metros) e frequência (no caso de 2.4GHz).
 
 Para construir estes sensores uma plataforma de hardware adequada é necessária,
-para esta escolhemos o Raspberry Pi \cite{Vujovic2014} \cite{Vujovic2015} que já
-foi provado funcional no caso de Localização através WiFi por
+para esta escolhemos o Raspberry Pi \cite{Vujovic2014, Vujovic2015} que já
+foi provado funcional no caso de Localização através \textit{Wi-Fi} por
 \citeonline{Ferreira2016} especialmente a sua versão 3 que adiciona a capacidade
-de sensor \textit{WiFi} e \textit{Bluetooth} em sua placa principal sem
+de sensor \textit{Wi-Fi} e \textit{Bluetooth} em sua placa principal sem
 necessidade de adaptadores externos destacando ainda mais sua escolha
 \cite{RPI2016}.
+
+Em adição, na construção dos sensores é testada a plataforma ESP-8266 bem como
+outras alternativas que demonstrarem afinidade com o projeto não limitando as
+escolhas durante o projeto a aquelas mencionadas na proposta original.

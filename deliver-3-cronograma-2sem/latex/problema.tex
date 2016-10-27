@@ -7,9 +7,9 @@ quanto virtual é necessário o contato entre as partes para a existência de um
 interação.
 
 Mais ainda, para melhor funcionamento de aplicações como o uso de conteúdo
-específico para cada usuário e situação é necessário coletar informações
-contextuais. Para a maioria das aplicações, a informação contextual de maior
-relevância é a localização física.
+específico feito sob medida para cada usuário e situação é necessário coletar
+informações contextuais. Para a maioria das aplicações, a informação contextual
+de maior relevância é a localização física.
 
 Este tipo de situação destaca a necessidade da criação desta informação através
 de sensores ativos sempre que necessário para que o dispositivo tenha ciência
@@ -81,6 +81,33 @@ nível de confiança trazido pelos GNSSs.
 Para implementar este IPS, propoem-se o uso de tecnologias já implantadas em
 dispositivos móveis e essenciais para o funcionamento dos mesmos, especialmente
 as de camadas de comunicação, que são ubíquas no ambiente dos dispositivos
-móveis, como 	\textit{Wi-Fi} (padrão \textit{IEEE 802.11}) e \textit{Bluetooth} (padrão
-\textit{Bluetooth SIG}), para que os objetos conectados no qual tem-se interesse
-de encontrar o contexto locativo não necessitem de modificações.
+móveis, como \textit{Wi-Fi} (padrão \textit{IEEE 802.11}) e \textit{Bluetooth}
+(padrão \textit{Bluetooth SIG}), para que os objetos conectados no qual tem-se
+interesse de encontrar o contexto locativo não necessitem de modificações.
+
+Outros protocolos de comunicação sem fio ubiquos existem (em especial o
+celulares em todas as gerações 2G, 3G, 4G) porém não oferecem a mesma
+flexibilidade por trabalharem em uma faixa de radio-frequência licenciada e por
+questões de propriedade da rede que serão abordadas na seção de Localização
+Contextual desta mesma obra.
+
+De forma semelhante, existem protocolos mais flexíveis (nas faixas não
+licenciadas como \textit{NFC}, infra-vermelho, \textit{ZigBee} ou
+\textit{SIGFOX}) porém estes não estão presentes na maiora dos aparelhos
+utilizados tanto globalmente quanto localmente removendo a característica da
+forma de comunicação ubíquoa que é foco deste trabalho.
+
+Devido as restrições anteriores justifica-se o foco nas tecnologias de
+comunicação \textit{Wi-Fi} e \textit{Bluetooth} porém trabalhar com as duas
+tecnologias simultaneamente é um problema complexo por si só, então, a escolha
+de um ou outro apesar de a nível global serem de equivalente importância para
+esta obra (ambas tem mesma importância e presença no mercado atual, permitem
+flexibilidade por possuirem protocolos conhecidos por todos em frequencias
+livres de licenciamento, dentro da área de cobertura que são de nosso interesse
+e o usuário final já ser o proprietário da rede local criada) deve ser feita.
+Esta escolha toma um único parametro como decisivo que é a observação do
+ambiente de teste do protótipo onde pouco existe o uso de \textit{Bluetooth} que
+reflete o costume local de mante-lo desligado e em comparação com \textit{Wi-Fi}
+que está sempre ligado em todos dispositivos, conectando os mesmos diretamente à
+internet. Portanto \textit{Wi-Fi} é a tecnologia de maior interesse por pequena
+margem.
