@@ -25,9 +25,9 @@
 
 
 % ----------------------------------------------------------
-% Pacotes básicos 
+% Pacotes básicos
 % ----------------------------------------------------------
-%\usepackage{helvet}			
+%\usepackage{helvet}
 \usepackage[scaled]{helvet}
 \renewcommand*\familydefault{\sfdefault}	% Only if the base font of the document is to be sans serif (by Gabriel Oliveira)
 \usepackage[T1]{fontenc}	% Selecao de codigos de fonte.
@@ -44,7 +44,7 @@
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 %% ----------------------------------------------------------
 % \usepackage{lipsum}				% para geração de dummy text
-\usepackage{customizacoes}		% customizações feitas pelo autor
+\usepackage{000-sty/customizacoes}		% customizações feitas pelo autor
 % ----------------------------------------------------------
 
 % ----------------------------------------------------------
@@ -179,11 +179,11 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 \makeatletter
 \hypersetup{
 		%pagebackref=true,
-		pdftitle={\@title}, 
+		pdftitle={\@title},
 		pdfauthor={\@author},
 		pdfsubject={\imprimirpreambulo},
 		pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={iot}{raspberry pi}{internet das coisas}{abntex2}{trabalho acadêmico}, 
+		pdfkeywords={iot}{raspberry pi}{internet das coisas}{abntex2}{trabalho acadêmico},
 		colorlinks=true,			% false: boxed links; true: colored links
 		linkcolor=blue,			% color of internal links
 		citecolor=blue,				% color of links to bibliography
@@ -195,7 +195,7 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 % ----------------------------------------------------------
 
 % ----------------------------------------------------------
-% Espaçamentos entre linhas e parágrafos 
+% Espaçamentos entre linhas e parágrafos
 % ----------------------------------------------------------
 
 % O tamanho do parágrafo é dado por:
@@ -224,7 +224,7 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 \selectlanguage{brazil}
 
 % Retira espaço extra obsoleto entre as frases.
-\frenchspacing 
+\frenchspacing
 
 % ----------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
@@ -252,7 +252,7 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 % ----------------------------------------------------------
 
 % Isto é um exemplo de Ficha Catalográfica, ou "Dados internacionais de
-% catalogação-na-publicação''. Você pode utilizar este modelo como referência. 
+% catalogação-na-publicação''. Você pode utilizar este modelo como referência.
 % Porém, provavelmente a biblioteca da sua universidade lhe fornecerá um PDF
 % com a ficha catalográfica definitiva após a defesa do trabalho. Quando estiver
 % com o documento, salve-o como PDF no diretório do seu projeto e substitua todo
@@ -271,18 +271,18 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 	\small
 	\imprimirautor
 	%Sobrenome, Nome do autor
-	
+
 	\hspace{0.5cm} \imprimirtitulo / \imprimirautor. --
 	\imprimirlocal, \imprimirdata-
-	
+
 	\hspace{0.5cm} \pageref{LastPage} p. : il. (algumas color.) ; 30 cm.\\
-	
+
 	\hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
-	
+
 	\hspace{0.5cm}
 	\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~\\ \imprimirinstituicao,
 	\imprimirdata.}\\
-	
+
 	\hspace{0.5cm}
 		1. Beacon.
 		2. Raspberry Pi.
@@ -342,28 +342,28 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 \begin{folhadeaprovacao}
 	\begin{center}
 		{\ImprimirAutor}
-		
+
 		\vspace*{\fill}\vspace*{\fill}
 		\begin{center}
 			\bfseries\large\ImprimirTitulo
 		\end{center}
 		\vspace*{\fill}
- 
+
 		\hspace{.45\textwidth}
 		\begin{minipage}{.5\textwidth}
 			\imprimirpreambulo
 		\end{minipage}%
 		\vspace*{\fill}
 	\end{center}
-	
+
 	Aprovado em \detokenize{--/02/2017}.
-	
+
 	\vspace*{\fill}
 	\begin{center}
 		\uppercase{Banca examinadora}
 	\end{center}
 
-	\assinatura{\textbf{\imprimirorientador} \\ Orientador} 
+	\assinatura{\textbf{\imprimirorientador} \\ Orientador}
 	\assinatura{\textbf{Profa. Dra. Simone das G. D. Prado}}
 	\assinatura{\textbf{Prof. Convidado}}
 	%\assinatura{\textbf{Professor} \\ Convidado 3}
@@ -378,11 +378,11 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 % Dedicatória
 % ----------------------------------------------------------
 \ifdedicatoria
-	\begin{dedicatoria} 
+	\begin{dedicatoria}
 		\vspace*{\fill}
 		\centering
 		\noindent
-		\textit{ Dedicatória } 
+		\textit{ Dedicatória }
 		\vspace*{\fill}
 	\end{dedicatoria}
 \fi
@@ -421,16 +421,16 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 \ifresumo
 	% resumo em português
 	\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
-	\begin{resumo}		
+	\begin{resumo}
 	\end{resumo}
-	
+
 	% resumo em inglês
 	\begin{resumo}[Abstract]
 		\begin{otherlanguage*}{english}
-			
+
 		\end{otherlanguage*}
 	\end{resumo}
-	
+
 \fi
 % ----------------------------------------------------------
 
@@ -494,19 +494,19 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 \textual
 
 
-\include{introducao}
+\include{010-introducao/introducao}
 
-\include{problema}
+\include{020-problema/problema}
 
-\include{justificativa}
+\include{030-justificativa/justificativa}
 
-\include{objetivos}
+\include{040-objetivos/objetivos}
 
-\include{teorica}
+\include{050-fundamentacao/teorica}
 
-\include{metodologia}
+\include{060-metodologia/metodologia}
 
-\include{cronograma}
+\include{070-cronograma/cronograma}
 
 
 % ----------------------------------------------------------------------------
@@ -514,7 +514,7 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 % ELEMENTOS PÓS-TEXTUAIS
 
 % Referências bibliográficas
-\bibliography{referencias}
+\bibliography{900-referencias/referencias}
 
 
 \ifglossario
