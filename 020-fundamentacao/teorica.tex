@@ -10,10 +10,10 @@ localização contextual de dispositivos e localização baseada em redes sem fi
 \label{sec:INTERNET DAS COISAS (IOT)}
 
 Uma das primeiras aplicações e definições de IoT foi feita por Kevin Ashton em
-1999 para a \textit{Procter \& Gamble} (P\&G) \cite{ASHTON2009} e
+1999 para a \emph{Procter \& Gamble} (P\&G) \cite{ASHTON2009} e
 simultaneamente no laboratório Auto-ID Labs no Instituto de Tecnologia de
-Massachusetts (MIT - \textit{Massachusetts Institute of Technology}) utilizando
-identificação por radio-frequência (RFID - \textit{radio-frequency
+Massachusetts (MIT - \emph{Massachusetts Institute of Technology}) utilizando
+identificação por radio-frequência (RFID - \emph{radio-frequency
 identification}) \cite{ATZORI2010, Friedemann2011} e desde então cresceu
 ultrapassando o escopo da tecnologia RFID porém sempre com as premissas de ``uma
 infraestrutura global para a Sociedade da Informação, habilitando serviços
@@ -37,7 +37,7 @@ fazendo efetivamente parte da internet.
 \section{Localização contextual de dispositivos}
 \label{sec:Localização contextual de dispositivos}
 
-Em ciência da computação, os termos \textit{"Contexto"} e \textit{"Consciência
+Em ciência da computação, os termos \emph{"Contexto"} e \emph{"Consciência
 de Contexto"} expressam uma ideia recente estudada nos campos de inteligência
 artificial e ciência cognitiva desde 1991. O tema "Contexto" ainda é considerado
 atual e promissor a ponto de mudar o cenário de negócios nos próximos 10 anos
@@ -47,7 +47,7 @@ utilizando uma nova metodologia de pesquisa holística através de mineração e
 agrupamento de texto advindo de publicações cientificas \cite{Pascalau2013}.
 
 Mesmo sem uma definição permanente em vista, utilizaremos o que é considerado
-estado da arte para o termo \textit{"Contexto"} que foi introduzido por
+estado da arte para o termo \emph{"Contexto"} que foi introduzido por
 \citeonline{Dey1999} e reforçado por \citeonline{Dey2000}:
 
 \begin{citacao}
@@ -69,11 +69,11 @@ encontrar objetos e pessoas com os quais tem interesse de interagir é sem dúvi
 uma boa meta a ser alcançada com a coleta da localização do cliente
 \cite{Bellavista2008}.
 
-Na categoria de Serviços Baseados em Localização (LBS - \textit{Location-Based
+Na categoria de Serviços Baseados em Localização (LBS - \emph{Location-Based
 Services}) existem duas gerações. A primeira orientada a conteúdo que falhou,
 pois a informação de localização era armazenada pela rede (que geralmetne era
 administrada por uma empresa de telecomunicações), podendo até ser vendida pelo
-provedor a terceiros, causando a sensação de \textit{Spam} (conteúdo não
+provedor a terceiros, causando a sensação de \emph{Spam} (conteúdo não
 solicitado) no usuário final ao receber conteúdo desta provedora. Já na segunda
 geração, a posse da informação foi movida para o cliente móvel, deixando a cargo
 do usuário escolher se ela seria compartilhada e com quem. Esta mudança trouxe
@@ -89,7 +89,7 @@ Esta decisão garante o foco no usuário uma vez que este mudou, antes ele detin
 um cliente móvel, agora ele detem múltiplos. Isso torna a detenção do todo
 (coisas dentro do prédio) mais precioso do que o das partes (os clientes móveis)
 além da mudança da propriedade da rede para o usuário final, na comparação
-celular \textit{versus} \textit{Wi-Fi}.
+celular \emph{versus} \emph{Wi-Fi}.
 
 Uma vez encontrada a localização de um dispositivo, metadados sobre o prédio são
 mesclados formando um conjunto rico contextualmente do ponto de vista da
@@ -102,7 +102,7 @@ extração de informação importantes para os detentores deste prédio e seu
 conteúdo. Esta capacidade do prédio deve-se pelo papel de coordenador de
 informações e controlador de meta-informações semelhante ao Coordenador em uma
 aplicação na arquitetura Modelo-Apresentação-Adaptador-Controlador-Coordenador
-(MPACC - \textit{Model-PresentationAdapter-Controller-Coordinator}) proposto por
+(MPACC - \emph{Model-PresentationAdapter-Controller-Coordinator}) proposto por
 \citeonline{Roman2001}.
 
 
@@ -122,31 +122,31 @@ terceiros após a implementação do projeto que é medida pela disponibilidade 
 relacionamento das informações providas. Essa métrica também será utilizada para
 avaliar o projeto final.
 
-Este foco em reusabilidade vem da definição de Web Semantica (\textit{Semantic
-Web}) e de uma de suas realizadoras, a Ligação de Dados (\textit{Linked Data}),
+Este foco em reusabilidade vem da definição de Web Semantica (\emph{Semantic
+Web}) e de uma de suas realizadoras, a Ligação de Dados (\emph{Linked Data}),
 que sugerem o uso de um formato padrão além de ser acessível e gerenciável pelas
-ferramentas de exploração. Desta forma a Web de Dados (\textit{Web of Data}) é
+ferramentas de exploração. Desta forma a Web de Dados (\emph{Web of Data}) é
 construída opondo uma simples coleção de dados \cite{Bizer2009}.
 
 \section{Localização baseada em redes sem fio}
 \label{sec:Localização baseada em redes sem fio}
 
 Para o sistema de posicionamento nos baseamos em técnicas de
-\textit{n-lateração?} de distâncias adquiridas com a medição de características
+\emph{n-lateração?} de distâncias adquiridas com a medição de características
 eletromagnéticas (ex.: potência de sinal) e dos protocolos (ex.: Tempo de
 chegada) que já foram explorados anteriormente \cite{Abusubaih2007,
 bahillo2009ieee, Feldmann2003}.
 
-Portanto os sensores seguirão as especificações de \textit{WiFi IEEE 802.11}
-\cite{Crow1997} e técnicas definidas para \textit{Bluetooth Low Energy (BLE)}
+Portanto os sensores seguirão as especificações de \emph{WiFi IEEE 802.11}
+\cite{Crow1997} e técnicas definidas para \emph{Bluetooth Low Energy (BLE)}
 \cite{Hossain2007} devido a semelhança da área de cobertura (até 100 metros,
 geralmente utilizado até 20 metros) e frequência (no caso de 2.4GHz).
 
 Para construir estes sensores uma plataforma de hardware adequada é necessária,
 para esta escolhemos o Raspberry Pi \cite{Vujovic2014, Vujovic2015} que já
-foi provado funcional no caso de Localização através \textit{Wi-Fi} por
+foi provado funcional no caso de Localização através \emph{Wi-Fi} por
 \citeonline{Ferreira2016} especialmente a sua versão 3 que adiciona a capacidade
-de sensor \textit{Wi-Fi} e \textit{Bluetooth} em sua placa principal sem
+de sensor \emph{Wi-Fi} e \emph{Bluetooth} em sua placa principal sem
 necessidade de adaptadores externos destacando ainda mais sua escolha
 \cite{RPI2016}.
 

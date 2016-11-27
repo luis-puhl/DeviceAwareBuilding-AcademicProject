@@ -164,3 +164,10 @@ TSWLatexianTemp*
 
 # removendo tarefas
 tarefas/**
+
+# deixa o projeto mais leve (são 700 MB)
+fotos-TCC/**
+
+# Referencias em PDF
+pdf-ref/**
+TCC.zip
