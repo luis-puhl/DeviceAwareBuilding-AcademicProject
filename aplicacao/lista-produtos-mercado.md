@@ -75,10 +75,57 @@ O maior problema dessas SDKs foi a configuração delas. Elas requisitavam de um
 **Conclusão sobre o ESP**
 Apesar do baixo custo e documentação da comunidade aberta, o ESP8266 não foi adotado como sensor, pois não foi possível colocá-lo em modo prosmícuo, essencial para detectar pacotes entre dispositivo e os pontos de acesso.
 
+**Raspberry Pi**
+**Especificações técnicas**
+  O Raspberry PI 3 Model B é um computador *single-board* (única placa) que tem o tamanho próximo ao de um cartão de crédito. Foi desenvolvido pela Raspberry Pi Foundation para promover o ensino da computação nas escolas. Este computador possui:
+  * Antena Wifi embutida 802.11n;
+  * Bluetooth 4.1;
+  * Bluetooth Low Energy (BLE);
+  * 1 GB RAM;
+  * 4 portas USB;
+  * 40 pinos GPIOs;
+  * Porta HDMI;
+  * Porta Ethernet;
+  * Saída de aúdio e vídeo 3.5 mm;
+  * Interface para câmera (CSI) e monitor(DSI);
+  * Slot para cartão micro SD;
+  * VideoCore IV 3D grapichs core;
+  * ARM CPU de 1.2 GHz quad-core 64-bit.
 
+Figura X.X -  Raspberry Pi 3 Model B
+![](rpi-3.jpg)
+Fonte: Elaborada pelo autor.
 
+Figura X.X - Raspberry Pi 3b panorâmica
+![](rpi.jpg)
+Fonte: Raspberry Foundation
 
-* Raspberry Pi 3 B plus
-  * mini adaptador wifi
-  * fonte 5v 2A 10W
-  * cartão micro sd 16gb
+**Segunda tentativa**
+Após da tentativa com o ESP8266, o Raspberry Pi foi escolhido como plataforma para hospedar o sensor.
+Em média, no exterior, o RPi (Raspberry Pi) é vendido por $ 35,00 (Raspberry Foundation) e, no Brasil, por R$ 250,00 (Mercado Livre). Apesar de não ser tão barato como o ESP8266, ele possui recursos que facilitam a programação e justificam seu preço.
+A escolha deste dispositivo ocorreu principalmente devido a interface "amigável" com usuário, comunidade *open source* e perfomance de processamento. Como o Raspberry Pi "roda" um sistema operacional, o acesso a seus recursos e recursos externos possui maior nível de abstração, bastando apenas alguns comandos para acessá-los e estabelecer comunicação. Além de facilitar a programação destes dispositivos por esse aspecto, com o sistema operacional IDEs externas podem ser utilizadas.
+Além deste recurso a nível de sistema, a comunidade e número de projetos "faça você mesmo" é muito maior que a do ESP8266, devido a sua simplicidade em conectar-se a um monitor e "sair" programando. Por ser um computador completo e, dependendo do projeto, não é necessário mais nada além do RPi, pois ele possui armazenamento, processamento e canal de comunicação (acesso à rede e portas USB).
+Outro aspecto é o processamento, como dito anteriormente, este computador possui um poder de processamento para hospedar e processar inúmeras aplicações IoT.
+
+**Alimentação**
+O Raspberry é ligado por uma fonte de 2A, 5V e 10W através de uma entrada micro USB. Para ligá-la, foi adquirido uma fonte USB tipo A para iPad, pois além de poder desconectar o cabo da fonte, facilitando a manutenção, fornece a quantidade exata de amperagem que o computador precisa. A primeira aquisição foi de um carregador de *smartphone* que não forneceu os amperes necessários.
+
+Figura x.x - Carregador USB
+![](carregador-ipad.jpg)
+
+**Sistema Operacional**
+O Raspberry Pi comporta sistemas operacionais que são carregados através no micro cartão SD. Alguns exemplos de sistemas compatíveis: Archlinux, OpenELECE, Raspbian, Risc, Pidora, Kali Linux, Windows 10 IoT, entre outros. Para este trabalho, foi utilizado o Raspbian.
+
+Figura X.X - Raspbian
+![](raspbian.png)
+Fonte: Elaborada pelo autor.
+
+**Conclusão sobre Raspberry Pi**
+O Raspberry foi adotado como o sensor para detectar os dispositivos. O modo promíscuo conseguiu ser acessado através de adaptador/módulo USB Wifi. Mais detalhes sobre a construção e adoção deste computador serão apresentados no capítulo "Construção".
+
+**Comparativo RPi X ESP8266**
+Em comparação com o ESP8266, o Raspberry Pi compensou seu preço mais caro devido a facilidade de programação e acesso aos seus recursos e integração e acesso a recursos externos. Além disso, foi possível chegar ao modo promíscuo facilmente através do Bash e do sistema operacional. A seguir, uma tabela comparando as principais características do RPi e do módulo ESP12F.
+
+Figura X.X - RPi x ESP12F
+![](rpi-esp.png)
+Fonte: Elaborada pelo autor.
