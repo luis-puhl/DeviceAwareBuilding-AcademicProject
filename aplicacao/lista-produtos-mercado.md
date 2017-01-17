@@ -77,8 +77,55 @@ Apesar do baixo custo e documentação da comunidade aberta, o ESP8266 não foi 
 
 
 
+**Raspberry Pi**
+**Especificações técnicas**
+  O Raspberry PI 3 Model B é um computador *single-board* (única placa) que tem o tamanho próximo ao de um cartão de crédito. Foi desenvolvido pela Raspberry Pi Foundation para promover o ensino da computação nas escolas. Este computador possui:
+  * Antena Wifi embutida 802.11n;
+  * Blueetooth 4.1;
+  * Bluetooth Low Energy (BLE);
+  * 1 GB RAM;
+  * 4 portas USB;
+  * 40 pinos GPIOs;
+  * porta HDMI;
+  * Saída de aúdio e vídeo 3.5 mm;
+  * Interface para câmera (CSI) e monitor(DSI);
+  * Slot para cartão micro SD;
+  * VideoCore IV 3D grapichs core;
+  * ARM CPU de 1.2 GHz quad-core 64-bit.
 
-* Raspberry Pi 3 B plus
+Figura X.X -  Raspberry Pi 3 Model B
+![](rpi-3.jpg)
+Fonte: Elaborada pelo autor.
+
+Figura X.X - Raspberry Pi 3b panorâmica
+![](rpi.jpg)
+Fonte: Raspberry Foundation
+
+**Segunda tentativa**
+Após da tentativa com o ESP8266, o Raspberry Pi foi escolhido como plataforma para hospedar o sensor.
+Em média, no exterior, o RPi (Raspberry Pi) é vendido por $ 35,00 (Raspberry Foundation) e, no Brasil, por R$ 250,00 (Mercado Livre). Apesar de não ser tão barato como o ESP8266, ele possui recursos que facilitam a programação e justificam seu preço.
+A escolha deste dispositivo ocorreu principalmente devido a interface "amigável" com usuário, comunidade *open source* e perfomance de processamento. Como o Raspberry Pi "roda" um sistema operacional, a programação de dispositivos externo ou própria para ele, pode ser feita nele através de IDEs externa ou as que o sistema fornecer. Portanto, há facilidade em acessar os recursos do RPi para aplicações hospedadas e/ou controladas por ele.
+Além deste recurso a nível de sistema, a comunidade e número de projetos "faça você mesmo" é muito maior que a do ESP8266, devido a sua simplicidade em conectar-se a um monitor e "sair" programando. Por ser um computador completo e, dependendo do projeto, não necessário mais nada além do RPi, pois ele possui armazenamento, processamento e canal de comunicação (acesso à rede e portas USB).
+Outro aspecto é o processamento, como dito anteriormente, este computador possui um poder de processamento muito se comparar o que um simples sensor de IoT precisa.
+
+**Alimentação**
+O Raspberry é ligado por uma fonte de 2A, 5V e 10W através de uma entrada micro USB. Para ligá-la, foi adquirido uma fonte USB tipo A para iPad, pois além de pode desconectar o cabo da fonte, facilitando a manutenção, fornece a quantidade exata que o computador precisa. A primeira aquisição foi de carregador de *smartphone* que não forneceu a quantidade exata de amperagem.
+
+Figura x.x - Carregador USB
+![](carregador-ipad.jpg)
+
+**Sistema Operacional**
+O Raspberry Pi comporta sistemas operacionais que são carregados através no micro cartão SD. Alguns exemplos de sistemas compatíveis: Archlinux, OpenELECE, Raspbian, Risc, Pidora, Kali Linux, Windows 10 IoT, entre outros. Para este trabalho, foi utilizado o Raspbian.
+
+Figura X.X - Raspbian
+![](raspbian.png)
+Fonte: Elaborada pelo autor.
+
+
+
+
+
+
   * mini adaptador wifi
   * fonte 5v 2A 10W
   * cartão micro sd 16gb
