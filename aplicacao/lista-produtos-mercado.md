@@ -27,11 +27,24 @@ Figura X - Módulos ESP
 ![](modulos-esp.jpg)
 Fonte: Elaborada pelo autor
 
+//Colocar foto - SERIAL ESPETADO NO ESP 12 e na BreadBoard
+
+
+
 **Primeira tentativa**
 A escolha do ESP8266 como primeira tentativa está relacionada com o fato de ser um módulo Wifi de baixo cussto, de tamanho reduzido e grande comunidade *open source*. No exterior, ele pode ser encontrado por $ 6,95 (Sparkfun), e no Brasil, em média, por R$ 15,00 (Mercado Livre).  Devido ao seu tamanho, ele é de fácil integração com demais dispositivos, bastando o uso de uma comunicação serial. Já sobre a comunidade, há inúmeros projetos DIY (em inglês *do it yourself*, em português "faça você mesmo") que ensinam a como construir e manipular projetos que envolvem o módulo. Além disso, há empresas como a Espressif que disponibiliza no GitHub projetos com documentação e código aberto.
-O acesso ao módulo
+
 
 **Programação do módulo**
+**Alimentação**
+Para ligar um módulo ESP foram utilizadas formas diferentes. Quando o módulo possuía regulador de tensão *onboard*, utilizava-se o próprio conectado a uma porta USB. Quando o módulo não possuía tal, utilizava-se um circuito com fonte externa (pilhas ou USB) e regulador de tensão conectandos aos pinos 3V3 e GND. Todo ESP precisa de um regulador de tensão de 3.3V. Para este trabalho, foi utilizado o regular AMS1117 3V3. 
+
+FOTO --> PILHA + regulador tensão +serial
+
+**Barramento Serial**
+Todo código produzido é carregado para o módulo ESP através de seu barramento serial. Alguns modelos, como o LoLin e D1 mini, já apresentam conversor serial para micro USB. Para os que não possuem tal interface é necessário utilizar um conversor serial - USB. As imagens a seguir demonstram como é o acesso de alguns módulos utilizados.
+Figura X.X - Acesso ao módulo LoLin
+![](lolin-acesso.jpg)
 **Comandos AT**
 A programação foi feita de primeiro modo através de um *firmware* genérico chamado AT. Este é um conjunto de instruções enviados via serial para o módulo ESP que permite configurá-lo. Entretanto, os comandos AT não funcionaram, pois eles não conseguiram atingir o modo promíscuo
 A programação dos módulos escolhidos foi feita através de *toolchains* (conjunto de ferramentas para desenvolvimento de software) da empresa Espressif e de um usuário do Github, muito utilizado para projetos de ESPs, Paulo Sokolovsky (*pfalcon*). Ambas as *toolchains* são SDKs de código aberto.
