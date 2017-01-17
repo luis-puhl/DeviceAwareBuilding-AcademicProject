@@ -37,32 +37,49 @@ A escolha do ESP8266 como primeira tentativa está relacionada com o fato de ser
 
 **Programação do módulo**
 **Alimentação**
-Para ligar um módulo ESP foram utilizadas formas diferentes. Quando o módulo possuía regulador de tensão *onboard*, utilizava-se o próprio conectado a uma porta USB. Quando o módulo não possuía tal, utilizava-se um circuito com fonte externa (pilhas ou USB) e regulador de tensão conectandos aos pinos 3V3 e GND. Todo ESP precisa de um regulador de tensão de 3.3V. Para este trabalho, foi utilizado o regular AMS1117 3V3. 
+Para ligar um módulo ESP foram utilizadas formas diferentes. Quando o módulo possuía regulador de tensão *onboard*, utilizava-se o próprio conectado a uma porta USB. Quando o módulo não possuía tal, utilizava-se um circuito com fonte externa (pilhas ou USB) e regulador de tensão conectandos aos pinos 3V3 e GND. Depedendo da complexidade do circuito para ligar e ter acesso à serial do módulo, é necessário o uso de uma placa *breadboard*, como a imagem a seguir. Todo ESP precisa de um regulador de tensão de 3.3V. Para este trabalho, foi utilizado o regular AMS1117 3V3.
 
-FOTO --> PILHA + regulador tensão +serial
+FOTO --> PILHA + regulador tensão + serial + breadboard
+
+**Carregadores**
+Todo código produzido em uma linguagem de programação é compilado por uma ferramenta e, então, carrega-se os arquivos binários para o ESP8266 através da serial, para que a execução do código seja iniciada. Na figura a seguir, é apresentado um modelo de caminho desde o código até chegar no módulo ESP e a lista de carregadores usados.
+
+Figura X.X - Modelo de caminho
+![](toolchain.png)
+Fonte: Elaborada pelo autor.
 
 **Barramento Serial**
-Todo código produzido é carregado para o módulo ESP através de seu barramento serial. Alguns modelos, como o LoLin e D1 mini, já apresentam conversor serial para micro USB. Para os que não possuem tal interface é necessário utilizar um conversor serial - USB. As imagens a seguir demonstram como é o acesso de alguns módulos utilizados.
+Todo código produzido é carregado para o módulo ESP através de seu barramento serial. Alguns modelos, como o LoLin e D1 mini, já apresentam conversor serial para micro USB. Para os que não possuem tal interface é necessário utilizar um conversor serial - USB. As imagens a seguir demonstram como é o acesso de alguns módulos utilizados. As GPIOs do ESP 12 são acessadas somente através de placas de circuito impresso, então uma foi adquirida para a programação do mesmo.
+Dos conversores serial-USB adquiridos, o modelo CH340 G não funcionou por não ter driver compatível com o Windows 10, então a saída foi utilizar o modelo CP2102.
+
 Figura X.X - Acesso ao módulo LoLin
 ![](lolin-acesso.jpg)
-**Comandos AT**
-A programação foi feita de primeiro modo através de um *firmware* genérico chamado AT. Este é um conjunto de instruções enviados via serial para o módulo ESP que permite configurá-lo. Entretanto, os comandos AT não funcionaram, pois eles não conseguiram atingir o modo promíscuo
-A programação dos módulos escolhidos foi feita através de *toolchains* (conjunto de ferramentas para desenvolvimento de software) da empresa Espressif e de um usuário do Github, muito utilizado para projetos de ESPs, Paulo Sokolovsky (*pfalcon*). Ambas as *toolchains* são SDKs de código aberto.
+
+FOTO --> serial espetado no ESP e na BreadBoard
+FOTO --> ESP12 na placa de circuito impresso
+
+**Abordagem de programação**
+O intuito com os modos de programação descritos nas seções a seguir é acessar o ponto da API de hardware do ESP8266 onde os pacotes destinados a outros dispositivos são descartados, habilitando assim o modo promíscuo.
+
+**IDE Arduino**
+A programação foi feita de primeiro modo através de um *firmware* genérico chamado AT. Este é um conjunto de instruções enviados via serial para o módulo ESP que permite configurá-lo. A IDE Arduino e o Cool Term possuem um emulador de terminal serial que aceita os comandos AT e os envia direto para a serial. Além disso, utilizou-se a linguagem C que foi compilada na IDE Arduino e enviada ao ESP.
+Nenhuma dessas abordagens funcionou, pois nenhuma delas forneceu uma API que funcionasse a baixo nível para atingir o modo promíscuo do ESP, que é essencial para a descoberta de pacotes que trafegam entre dispositivos e a os APs (pontos de acesso).
+
+FOTO ARDUINO IDE + C +comandos AT
+
+**Toolchains**
+A segunda tentativa para a programação  dos módulos escolhidos foi feita através de *toolchains* (conjunto de ferramentas para desenvolvimento de software) da empresa Espressif e de um usuário do Github, muito utilizado para projetos de ESPs, Paulo Sokolovsky (*pfalcon*). Ambas as *toolchains* são SDKs de código aberto.
 Os *scripts* foram feitos na linguagem C, compilados nessas SDKs e transferidos para os módulos através de barramento serial.
+Essas SDKs não resolveram o problema do acesso ao modo promíscuo dos ESPs.  Elas apresentaram SO incompatível com a máquina, pois foram projetadas para um Ubuntu com versão específica que a máquina utilizada para as fazer os códigos não suporta.
+
 
 **Não adoção do chip**
-Apesar de todos as vantagens citadas no parágrafo anterior, o ESP8266 não foi adotado como sensor final, pois não conseguiu-se colocá-lo no modo promíscuo (item X.X). C
+Apesar do baixo custo e documentação da comunidade aberta, o ESP8266 não foi adotado como sensor final, pois não conseguiu-se colocá-lo no modo promíscuo, essencial para detectar pacotes entre dispositivo e os pontos de acesso. Além disso, cada módulo escolhido
+
+//TABELA DO PQ CADA CHIP NAO FOI ADOTADO
 
 
 
--variedade de modelos
--modelos usados
--problemas que apresentou
--variedade de modelos
-
--esp 01,  LoL win, D1 M1  (já tem pinos para programação)
-- esp 12 (placa de circuito impresso)
- * ams 1117 --> regulador de tensão
  * adaptador serial - usb cp2102
  * adaptador serial ch340
 
@@ -71,6 +88,3 @@ Apesar de todos as vantagens citadas no parágrafo anterior, o ESP8266 não foi 
   * mini adaptador wifi
   * fonte 5v 2A 10W
   * cartão micro sd 16gb
-
-
-* Quadro Comparativo --> comparação entre os três sensores
