@@ -15,4 +15,4 @@ Segundo Claudio Bessa, diretor de markegin digital do shopping, este tipo de ser
  Esta tecnologia pode ser implementada independente do ambiente, através do Wifi, ou do microposicionamento através do Bluetooth. Com a união dessas duas plataformas é possível saber o tempo exato e posição exata de onde alguém está.
 
 **Radio Frequency ToF Distance**
-**Decimeter-level with 1 Ap
+**Decimeter-level Localization**
