@@ -210,3 +210,35 @@ satisfações e ajudar a monitorar os pontos de venda.
 	\end{center}
 	\legend{Fonte: Zebra Technologies}
 \end{figure}
+
+\subsection{Outras tentativas}
+\label{subsec:Outras tentativas}
+
+Outras tentativas bem sucedidas de localizar dispositivos móveis através da rede
+\emph{Wi-Fi} são o caso do \emph{Decimeter Level Localization with a Single
+Access Point} \cite{Vasisht} e do \emph{Radio Frequency Time-of-flight Distance
+Measurement for low-cost Wireless Sensor localization} \cite{Lanzisera2011}.
+
+No primeiro exemplo, uma placa de rede sem fio Intel 5300 com 3 antenas calcula o tempo
+de vôo entre uma antena e outra além de utilizar técnicas de mitigação de
+multi-caminho, mitigação de identificação de pacote entre outras características
+importantes do protocolo \emph{Wi-fi}, como a frequência e sincronização de clientes
+para alcançar até 10 centímetros de precisão. Neste caso, as três antenas atuam
+como três sensores independentes justa posicionados para executar trilateração.
+Esta aplicação é implementada em uma placa instalada em um computador moderno
+através do barramento PCI Express com sistema operacional Ubuntu. Ela possui habilidade
+de injetar pacotes na rede o que difere muito das arquiteturas embarcadas que
+normalmente são encontradas no ambiente de IoT.
+
+O segundo exemplo de aplicação bem sucedida se utiliza de modificações no
+hardware de um ponto de acesso do padrão 802.15.4 e alcança precisões de 1 a 3
+metros. Este protocolo é mais encontrado em comunicações de longa distância ou
+sensíveis a uso de energia que são frequentes em aplicações embarcadas.
+
+\begin{figure}[htb]
+	\caption{\label{fig:projeto}Radio Frequency Time-of-Flight Distance Measurement}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{020-fundamentacao/img/radio.png}
+	\end{center}
+	\legend{Fonte: \citeonline{Vasisht}}
+\end{figure}
