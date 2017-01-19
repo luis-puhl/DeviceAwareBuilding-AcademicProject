@@ -20,28 +20,20 @@ Neste sentido elegeram duas plataformas de notável importância no mercado atua
 e notável facilidade de acesso para qualquer interessado na área. As plataformas
 testadas são o microcomputador *Raspberry Pi* e o microcontrolador *ESP8266*.
 Ambos  foram escolhidos pelo domínio do segmento de Prototipação e Faça Você
-Mesmo  (*Do It Yourself* - *DYI*) dentro do campo de IoT. Outro líder de
+Mesmo  (*Do It Yourself* - *DIY*) dentro do campo de IoT. Outro líder de
 segmento, o *Arduino*  foi prontamente descartado por não conter nativamente a
 habilidade de conectar-se à *internet* sendo constantemte combinado com um dos
 escolhidos para ganhar esta habilidade  demonstrando claramente menor afinidade
 a este projeto em comparação aos seus igualmente famosos concorrentes.
 
-
-
-
-
-**Pré-construção**
-
-Para chegar ao modelo final do sensor de dispositivos, foram testadas algumas
-plataformas capazes de se comunicar com o Wifi. A seguir, serão apresentadas
-cada uma dessas plataformas quanto as suas especificações técnicas e aos
-produtos utilizados em conjunto para que elas pudessem funcionar e serem
+Após escolhidas as plataformas de intersse alguns exemplares de cada uma delas
+foi adquirido para implementar a aplicação proposta. Neste sentido, serão
+apresentadas cada uma dessas plataformas quanto as suas especificações técnicas
+e aos produtos utilizados em conjunto para que elas pudessem funcionar e serem
 programadas e os motivos pela adoção ou não delas.
 
 
-**ESP8266**
-
-**Especificações Técnicas**
+## ESP8266
 
 O ESP8266 é um SOC (*system on chip*), ou seja, é um chip com todos os circuitos
 eletrônicos necessários e partes para um dado sistema em único cirtuito
@@ -54,40 +46,49 @@ Este chip possui:
 * CPU que opera em  80 MHz, com possibilidade de operar em 160 MHz;
 * 64 KB de ROM para *boot*;
 * 64 KB de RAM para instruções;
-* 96 KB de RAM para dados.
-* Memória Flash SPI de 512 KB.
+* 96 KB de RAM para dados;
+* Memória Flash SPI de 512 KB a 4 MB (dependente de módulo externo);
 * Núcleo baseado no IP Diamand Standard LX3 da Tensilica.
 
-**Módulos**
-
-Diversos fabricantes utilizam este chip com diferentes configurações, os
-chamados módulos. Estes módulos usam o ESP8266 com diferenças perceptíveis, por
-exemplo, quantidade de pinos, tamanho e alguns podem até operar de modo
-*standalone*. Neste trabalho, foram usados os módulos: ESP01, LoLin, D1 mini e
-ESP12F. A seguir, uma imagem com os módulos adquiridos e uma tabela com a
-descrição de cada um.
+Para o mercado de prototipação, fabricantes constroem placas de diferentes configurações com
+este chip como elemento central, os chamados módulos. Estes módulos usam o
+ESP8266 com diferenças perceptíveis, por exemplo, quantidade de pinos, dimensões
+físicas e alguns podem até operar de modo *standalone* (sem outro *hardware* de
+suporte como reguladores de tensão, conversores serial-USB) e especialmente a *Memória Flash SPI*. Neste trabalho, foram usados os módulos:
+ESP-01, LoLin, D1 mini e ESP-12F.
 
 
 Figura X - Módulos ESP
-![](modulos-esp.jpg)
+![](Plataformas DIY e comparacao\modulos-esp.jpg)
 Fonte: Elaborada pelo autor
 
+As diferentes especificações implicam em diferentes produtos e mercado para
+eles, isto resulta em diferentes preços em diferentes regiões.
+
+| Módulo			| N° de pinos	| Memória	| Preço 		|
+|-----				|-----------	| -------	| --------		|
+| ESP-01			| 8				| 1 MB		| R$ 16,80		|
+| ESP-12F			| 22			| 4 MB		| R$ 14,90		|
+| PCB (sem ESP-12F)	| 16			| 4 MB		| R$ 3,45		|
+| D1 mini (ESP-12F)	| 16 + microUSB	| 4 MB		| R$ 12,56 [1]	|
+| LoLin (ESP-12F)	| 30 + microUSB	| 4 MB		| R$ 35,87		|
+
+*[1]: D1 mini (ESP-12F) foi adquirido do mercado chinês*
+
 Figura X - Descrição módulos ESP
-![](preco-modulos.png)
+![](Plataformas DIY e comparacao\preco-modulos.png)
 
-**Primeira tentativa**
+A escolha do ESP8266 como primeira tentativa devido o seu baixo custo e de tamanho reduzido. No exterior, ele pode ser encontrado por de USD $1.76 a 2.2 [Alibaba], e no
+Brasil, em média, por R$ 15,00 (Mercado Livre).
 
-A escolha do ESP8266 como primeira tentativa está relacionada com o fato de ser
-um módulo Wifi de baixo custo, de tamanho reduzido e grande comunidade *open
-source*. No exterior, ele pode ser encontrado por $ 6,95 (Sparkfun), e no
-Brasil, em média, por R$ 15,00 (Mercado Livre).  Devido ao seu tamanho, ele é de
-fácil integração com demais dispositivos, bastando o uso de uma comunicação
-serial. Já sobre a comunidade, há inúmeros projetos DIY (em inglês *do it
-yourself*, em português "faça você mesmo") que ensinam a como construir e
-manipular projetos que envolvem diferentes módulos. Além disso, há empresas como
-a Espressif que disponibiliza no GitHub projetos com documentação e código
-aberto.
+Devido ao seu tamanho, ele é de fácil integração com demais dispositivos,
+bastando o uso de uma comunicação serial. Já sobre a comunidade, há inúmeros
+projetos DIY (em inglês *do it yourself*, em português "faça você mesmo") que
+ensinam a como construir e manipular projetos que envolvem diferentes módulos.
+Além disso, a empresa  idealizadora e fabricante do chip, Espressif,
+disponibiliza no GitHub projetos com documentação e código aberto.
 
+[Alibaba]:https://www.alibaba.com/product-detail/ESP-12F-Esp8266-Remote-Serial-Port_60518607068.html?s=p
 
 **Programação do módulo**
 

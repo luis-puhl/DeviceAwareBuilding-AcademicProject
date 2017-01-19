@@ -28,3 +28,105 @@ conter nativamente a habilidade de conectar-se à \emph{internet} sendo
 constantemte combinado com um dos escolhidos para ganhar esta habilidade
 demonstrando claramente menor afinidade a este projeto em comparação aos seus
 igualmente famosos concorrentes.
+
+Após escolhidas as plataformas de intersse alguns exemplares de cada uma delas
+foi adquirido para implementar a aplicação proposta. Neste sentido, serão
+apresentadas cada uma dessas plataformas quanto as suas especificações técnicas
+e aos produtos utilizados em conjunto para que elas pudessem funcionar e serem
+programadas e os motivos pela adoção ou não delas.
+
+\section{ESP8266}
+
+O ESP8266 é um SOC (\emph{System On a Chip} -  Sistema em um \emph{chip}), ou
+seja, é um chip com todos os circuitos eletrônicos necessários e partes para um
+dado sistema em único cirtuito integrado. Este chip possui:
+
+\begin{alineas}
+
+	\item \emph{WiFi} embutido com capacidade de 2,4 GHz (802.11 b/g/n);
+
+	\item 16 GPIOs (\emph{general-purpose input/output}) - I2U, SPI, UART,
+entrada ADC, saída PWM;
+
+	\item Arquitetura RISC de 32 bits para segurança \emph{WiFi};
+
+	\item CPU que opera em  80 MHz, com possibilidade de operar em 160 MHz;;
+
+	\item 64 KB de ROM para \emph{boot};
+
+	\item 64 KB de RAM para instruções;
+
+	\item 96 KB de RAM para dados;
+
+	\item  Memória \emph{Flash SPI} de 512 KB a 4 MB (dependente de módulo externo);
+
+	\item Núcleo baseado no \emph{IP Diamand Standard LX3} da \emph{Tensilica}.
+
+\end{alineas}
+
+Para o mercado de prototipação, fabricantes constroem placas de diferentes
+configurações com este chip como elemento central, os chamados módulos. Estes
+módulos usam o ESP8266 com diferenças perceptíveis, por exemplo, quantidade de
+pinos, dimensões físicas e alguns podem até operar de modo \emph{standalone}
+(sem outro \emph{hardware} de suporte como reguladores de tensão, conversores
+serial-USB) e especialmente a \emph{Memória Flash SPI}. Neste trabalho, foram
+usados os módulos: ESP-01, LoLin, D1 mini e ESP-12F.
+
+\begin{figure}[htb]
+	\caption{\label{fig:modulos-esp}Módulos ESP8266 Adquiridos}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{040-plataformas/modulos-esp.jpg}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+\begin{figure}[htb]
+	\caption{\label{fig:modulos-esp}Programação de um módulo ESP-12f com \emph{breadboard}}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{040-plataformas/esp-dev/breadboard.jpg}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+
+Sem modo promiscuo
+
+\begin{figure}[htb]
+	\caption{\label{fig:modulos-esp}Raspberry Pi 3}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/rpi-onboard.jpg}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+
+Sem modo promiscuo
+
+\begin{figure}[htb]
+	\caption{\label{fig:modulos-esp}Dongle WiFi Dlink}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/dlink.jpg}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+
+Com modo promiscuo
+
+\begin{figure}[htb]
+	\caption{\label{fig:modulos-esp}Dongle WiFi Ralink EPUB}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/ralink-epub.jpg}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+Com modo promiscuo
+
+\begin{figure}[htb]
+	\caption{\label{fig:modulos-esp}Dongle WiFi Ralink}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/ralink.jpg}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
