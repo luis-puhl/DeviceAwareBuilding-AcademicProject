@@ -148,3 +148,97 @@ de sensor \emph{Wi-Fi} e \emph{Bluetooth} em sua placa principal sem
 necessidade de adaptadores externos destacando ainda mais sua escolha
 \cite{RPI2016}. Em adição, na construção dos sensores foi testada a plataforma ESP8266 bem como
 outras alternativas que demonstraram afinidade com essas características.
+
+
+\section{Trabalhos correlatos}
+\label{Trabalhos correlatos}
+Neste subcapítulo, apresentaremos alguns projetos semelhantes em objetivo ao daqui
+proposto e que motivaram a construção do sensor resultante deste trabalho.
+
+\subsection{Zebra}
+\label{subsec:Zebra}
+
+A Zebra é um empresa estadunidense que fabrica e vende tecnologia de marcação,
+rastreamento e impressão por computador. Dentre os seus produtos, estão:
+computadores móveis, RFID, software, impressoras, tablets, leitores de códigos
+de barras, kiosks interativos, entre outros. Já na área de serviços, a empresa
+oferece desde o planejamento até a execução de projetos.
+
+A Zebra realizou um estudo (Global Shopper Study) que indicou que os varejistas
+apostaram em recursos online que podem aumentar o envolvimento e fidelidade do
+consumidor, além, claro, do volume de vendas. Segundo o mesmo estudo, 51% dos
+compradores tem um forte interesse em serviços baseados em localização e
+\emph{Wi-Fi} em lojas para cupons \emph{mobile}, mapas de compras e receber
+assistência. Além disso, 64% dos compradores dizem que estão dispostos a comprar
+mais itens se receberem um serviço melhor e mais atenção dos vendedores,
+enquanto mais da metade prefere que os varejistas usem a tecnologia para criar
+experiência de compra mais eficiente.
+
+A empresa possui o projeto MPact que é um \emph{indoor location} que unifica
+\emph{Wi-Fi} e \emph{Bluetooth}. Ele fornece a localização do consumidor em três
+níves: presença, zona e posição. Com estas informações é possível saber sobre o
+indíviduo: quem é, onde está, quanto tempo fica em certas áreas e quais
+produtos está comprando. Esta tecnologia pode ser implementada independente do
+ambiente, através do \emph{Wi-Fi}, ou do microposicionamento através do
+\emph{Bluetooth}. Com a união dessas duas plataformas é possível saber o tempo
+exato e posição exata de onde alguém está.
+
+Em 2016, a empresa implantou no Shopping Cidade Jardim, em São Paulo, uma rede
+LAN/WAN sem fio de alta velocidade, com a tecnologia MPact que proporciona aos
+seus clientes acesso gratuito ao \emph{Wi-Fi}, juntamente com uma experiência de
+compra mais personalizada. Funciona assim, o consumidor assim que possível
+acessa o \emph{Wi-Fi} do shopping que pede o \emph{login} no Facebook ou Google. Assim
+que o \emph{login} é feito, o MPact fornece visibilidade instantânea ao operador do
+shopping em relação aos locais dos compradores no shopping e habilita os
+operadores a enviar saudações pessoais, oferecer ofertas especiais ou fornecer
+instruções passo-a-passo para um venda ou promoção específica. Hoje, o Cidade
+Jardim conta com 180 lojas numa área de 46.000 metros quadrados.
+
+Segundo Claudio Bessa, diretor de markegin digital do shopping, este tipo de
+serviço fornece um excelente experiência para os compradores devido a alta
+velocidade do \emph{Wi-Fi} e a cobertura. Além disso, segundo ele, os operadores
+e varejistas podem entender melhor o comportamento do consumidores, pois eles
+podem saber que parte do corredor ou de uma loja o cliente está, quanto tempo
+permanece na frente de uma loja e quais produtos mais vendem. Oferecer este tipo
+de serviço é uma maneira de ganhar e manter consumidores, crescer no número de
+satisfações e ajudar a monitorar os pontos de venda.
+
+\begin{figure}[htb]
+	\caption{\label{fig:projeto}Cidade Jardim }
+	\begin{center}
+		\includegraphics[width=1\textwidth]{020-fundamentacao/img/cidade-jardim.png}
+	\end{center}
+	\legend{Fonte: Zebra Technologies}
+\end{figure}
+
+\subsection{Outras tentativas}
+\label{subsec:Outras tentativas}
+
+Outras tentativas bem sucedidas de localizar dispositivos móveis através da rede
+\emph{Wi-Fi} são o caso do \emph{Decimeter Level Localization with a Single
+Access Point} \cite{Vasisht} e do \emph{Radio Frequency Time-of-flight Distance
+Measurement for low-cost Wireless Sensor localization} \cite{Lanzisera2011}.
+
+No primeiro exemplo, uma placa de rede sem fio Intel 5300 com 3 antenas calcula o tempo
+de vôo entre uma antena e outra além de utilizar técnicas de mitigação de
+multi-caminho, mitigação de identificação de pacote entre outras características
+importantes do protocolo \emph{Wi-fi}, como a frequência e sincronização de clientes
+para alcançar até 10 centímetros de precisão. Neste caso, as três antenas atuam
+como três sensores independentes justa posicionados para executar trilateração.
+Esta aplicação é implementada em uma placa instalada em um computador moderno
+através do barramento PCI Express com sistema operacional Ubuntu. Ela possui habilidade
+de injetar pacotes na rede o que difere muito das arquiteturas embarcadas que
+normalmente são encontradas no ambiente de IoT.
+
+O segundo exemplo de aplicação bem sucedida se utiliza de modificações no
+hardware de um ponto de acesso do padrão 802.15.4 e alcança precisões de 1 a 3
+metros. Este protocolo é mais encontrado em comunicações de longa distância ou
+sensíveis a uso de energia que são frequentes em aplicações embarcadas.
+
+\begin{figure}[htb]
+	\caption{\label{fig:projeto}Radio Frequency Time-of-Flight Distance Measurement}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{020-fundamentacao/img/radio.png}
+	\end{center}
+	\legend{Fonte: \citeonline{Vasisht}}
+\end{figure}
