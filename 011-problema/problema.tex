@@ -2,21 +2,21 @@
 \label{sec:Problema}
 
 Tamanha quantidade de dispositivos conectados pouco acrescenta na vida diária se
-humanos ou coisas não puderem simplesmente se encontrar, tanto em ambiente real
+humanos ou coisas não puderem simplesmente se encontrar. Tanto em ambiente real
 quanto virtual é essencial o contato e conhecimento entre as partes envolvidas
 para que uma interação complexa seja executada. Portanto, para que uma aplicação
-IoT funcione corretamente o conhecimento do contexto em que todos os
+IoT funcione corretamente, o conhecimento do contexto em que todos os
 interessados, sejam coisas ou pessoas, estão inseridos é indispensável. Para a
 maioria das aplicações, a informação contextual de maior relevância é a
 localização física.
 
-Em situações em que o contexto locativo é essencial para a aplicação destaca-se
-a necessidade da coleta desta informação através de sensores que são ativos
-sempre que o dispositivo requisite a ciência deste contexto em suas tomadas de
-decisão e, para que outros (sistemas, pessoas e coisas) saibam a localização de
-qualquer dispositivo ao qual têm interesse de interagir efetivamente
-distribuindo essa informação coletada sobre o contexto com todos os que se
-encontram envolvidos pelo mesmo.
+Em situações em que a localização contextual é essencial para o bom funcionamento
+de uma aplicação IoT, destaca-se a necessidade da coleta desta informação através
+de sensores ativos sempre que a aplicação requisite a ciência deste contexto
+em suas tomadas de decisão. E, também, para que outros (sistemas, pessoas e coisas)
+saibam a localização de qualquer dispositivo ao qual têm interesse de interagir,
+distribuindo efetivamente essa informação coletada sobre o contexto com todos os
+que se encontram envolvidos no mesmo contexto.
 
 Um exemplo desta necessidade de localização de dispositivos dentro de um prédio
 seria um profissional saber onde está o dispositivo em seu local de trabalho,
@@ -27,14 +27,13 @@ estoque em uma loja ou um médico e seu equipamento portátil.
 \label{subsec:Sobre Sistemas de Posicionamento}
 
 Sistemas de posicionamento (PS - \emph{Positioning System}) são geralmente
-constituídos de um Ponto Origem Global escolhido (\emph{O}) e um conjuto não
+constituídos de um Ponto Origem Global escolhido (\emph{O}) e um conjunto não
 vazio de Pontos de Referência (RP - \emph{Reference Point}) cuja localização
-global em relação ao \emph{O} é conhecida com precisão maior ou igual a
-oferecida pelo sistema.
-
-O ponto móvel (MU - \emph{Mobile User}) sobre o qual ele tem interesse em
-determinar a posição também faz parte do sistema. A localização dele é feita
-pelo PS encontrando um conjunto de distâncias associadas a cada um dos RPs em um
+global em relação ao \emph{O} é conhecida com uma certa precisão quando o sistema
+é construído - precisão interna. Então, para o usuário, um sistema de posicionamento
+oferece como resultado uma precisão de visualização menor que a sua precisão interna.
+Um PS tem interesse em determinar a posição de um ponto móvel (MU - \emph{Mobile User}).
+Essa localização é feita encontrando um conjunto de distâncias associadas a cada um dos RPs em um
 sub-conjunto com dimensão variável de acordo com o método utilizado. Feito isso, é
 possível utilizar modelos matemáticos para, a partir das distâncias, encontrar
 uma posição do MU em relação aos RPs e uma nova transformação é aplicada para
@@ -58,11 +57,11 @@ diferencial de tempo de chegada (TDOA - \emph{Time Difference Of Arrival}) e
 Para maior precisão, é comum a utilização de múltiplas RPs geralmente com o
 número mínimo igual ao número de dimensões espaciais que deseja-se calcular.
 Nota que para sistemas distribuídos a sincronização de relógios é um problema
-intrínseco então é fundamental que o tempo seja contado como dimensão.
+intrínseco, então é fundamental que o tempo seja contado como dimensão.
 
 Os sistemas classificados como ``Sistema de Navegação Global por Satélite''
 (GNSS - \emph{Global Navigation Satellite System}), como o tradicional
-Estadunidense Sistema de Posicionamento Global (GPS - \emph{Global Positioning
+estadunidense Sistema de Posicionamento Global (GPS - \emph{Global Positioning
 System}), utilizam a técnica em que o dispositivo móvel contém o receptor e os
 transmissores são fixos em satélites na órbita terrestre \cite{Djuknic2001}.
 Devido a posição e número de satélites, o GPS e seus correlatos estão sempre
@@ -76,39 +75,39 @@ muitas vezes permite a leitura em ambientes fechados, porém o cálculo da posi�
 não será confiável \cite{Chen2000}. Portanto, apesar da ubiquidade dos
 GNSSs em ambientes abertos, são necessárias soluções diferentes para obter um
 Sistema de Posicionamento para Ambientes Fechados (IPS - \emph{Indoor
-Positioning System}) sendo a ubiquidade deste essencial para conquistar o mesmo
+Positioning System}), sendo a ubiquidade deste essencial para conquistar o mesmo
 nível de confiança trazido pelos GNSSs.
 
-Para implementar este IPS, propoem-se o uso de tecnologias já implantadas em
+Para implementar este IPS, propõem-se o uso de tecnologias já implantadas em
 dispositivos móveis e essenciais para o funcionamento dos mesmos, especialmente
 as de camadas de comunicação, que são ubíquas no ambiente dos dispositivos
 móveis, como \emph{Wi-Fi} (padrão \emph{IEEE 802.11}) e \emph{Bluetooth}
-(padrão \emph{Bluetooth SIG}), para que os objetos conectados no qual tem-se
-interesse de encontrar o contexto locativo não necessitem de modificações.
+(padrão \emph{Bluetooth SIG}), para que os objetos conectados os quais tem-se
+interesse de encontrar a localização contextual não necessitem de modificações.
 
-Outros protocolos de comunicação sem fio ubiquos existem (em especial o
-celulares em todas as gerações 2G, 3G, 4G) porém não oferecem a mesma
+Outros protocolos de comunicação sem fio ubíquos existem (em especial, o
+celulares em todas as gerações 2G, 3G, 4G), porém não oferecem a mesma
 flexibilidade por trabalharem em uma faixa de radio-frequência licenciada e por
 questões de propriedade da rede que serão abordadas na seção de Localização
 Contextual desta mesma obra.
 
 De forma semelhante, existem protocolos mais flexíveis (nas faixas não
 licenciadas como \emph{NFC}, infra-vermelho, \emph{ZigBee} ou
-\emph{SIGFOX}) porém estes não estão presentes na maiora dos aparelhos
-utilizados tanto globalmente quanto localmente removendo a característica da
+\emph{SIGFOX}), porém estes não estão presentes na maiora dos aparelhos
+utilizados, tanto globalmente quanto localmente, removendo a característica da
 forma de comunicação ubíquoa que é foco deste trabalho.
 
-Devido as restrições anteriores justifica-se o foco nas tecnologias de
-comunicação \emph{Wi-Fi} e \emph{Bluetooth} porém trabalhar com as duas
+Devido às restrições anteriores, justifica-se o foco nas tecnologias de
+comunicação \emph{Wi-Fi} e \emph{Bluetooth}, porém trabalhar com as duas
 tecnologias simultaneamente é um problema complexo por si só, então, a escolha
-de um ou outro apesar de a nível global serem de equivalente importância para
+de um ou outro deve ser feita, apesar de a nível global serem de equivalente importância para
 esta obra (ambas tem mesma importância e presença no mercado atual, permitem
-flexibilidade por possuirem protocolos conhecidos por todos em frequencias
+flexibilidade por possuírem protocolos conhecidos por todos em frequências
 livres de licenciamento, dentro da área de cobertura que são de nosso interesse
-e o usuário final já ser o proprietário da rede local criada) deve ser feita.
-Esta escolha toma um único parametro como decisivo que é a observação do
-ambiente de teste do protótipo onde pouco existe o uso de \emph{Bluetooth} que
-reflete o costume local de mante-lo desligado e em comparação com \emph{Wi-Fi}
-que está sempre ligado em todos dispositivos, conectando os mesmos diretamente à
-internet. Portanto \emph{Wi-Fi} é a tecnologia de maior interesse por pequena
+e o usuário final já ser o proprietário da rede local criada).
+Esta escolha toma um único parâmetro como decisivo que é a observação do
+ambiente de teste do protótipo onde pouco existe o uso de \emph{Bluetooth}  que
+reflete o costume local de mantê-lo desligado em comparação com \emph{Wi-Fi}
+que está sempre ligado em todos dispositivos, conectando estes diretamente à
+Internet. Portanto \emph{Wi-Fi} é a tecnologia de maior interesse por pequena
 margem.
