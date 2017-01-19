@@ -22,8 +22,9 @@ até aproximadamente 11:25 totalizando aproximadamente 8 horas de captura
 A captura foi executada com o comando
 
 
-$ tshark -I -i wlan0 -T fields -E header=y -E quote=d -e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved -e radiotap.dbm_antsignal -e wlan_mgt.ssid >> 2017-01-17--02-48--rpi-02.csv & $
-
+\begin{lstlisting}[language=bash]
+tshark -I -i wlan0 -T fields -E header=y -E quote=d -e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved -e radiotap.dbm_antsignal -e wlan_mgt.ssid >> 2017-01-17--02-48--rpi-02.csv &
+\end{lstlisting}
 
 A análise de dados foi feita com a função \emph{summary} da ferramenta \emph{Ron’s editor}
 e a filtragem com a função \emph{Filter} da ferramenta \emph{RecCsvEditor}
