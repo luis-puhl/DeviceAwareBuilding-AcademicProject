@@ -3,19 +3,19 @@
 
 
 Para conceituar, fundamentar e dar suporte teórico ao presente trabalho
-apresentam-se nesta seção os tópicos e definições dos segmentos: IoT,
+apresentam-se neste capítulox os tópicos e definições dos segmentos: IoT,
 localização contextual de dispositivos e localização baseada em redes sem fio.
 
 \section{Internet das coisas (IoT)}
 \label{sec:INTERNET DAS COISAS (IOT)}
 
-Uma das primeiras aplicações e definições de IoT foi feita por Kevin Ashton em
+Uma das primeiras aplicações e definições de IoT foi feita simultaneamente por Kevin Ashton em
 1999 para a \emph{Procter \& Gamble} (P\&G) \cite{ASHTON2009} e
-simultaneamente no laboratório Auto-ID Labs no Instituto de Tecnologia de
+pelo laboratório Auto-ID Labs no Instituto de Tecnologia de
 Massachusetts (MIT - \emph{Massachusetts Institute of Technology}) utilizando
 identificação por radio-frequência (RFID - \emph{radio-frequency
-identification}) \cite{ATZORI2010, Friedemann2011} e desde então cresceu
-ultrapassando o escopo da tecnologia RFID porém sempre com as premissas de ``uma
+identification}) \cite{ATZORI2010, Friedemann2011}. Desde então, a IoT cresceu
+ultrapassando o escopo da tecnologia RFID, porém sempre com as premissas de ``uma
 infraestrutura global para a Sociedade da Informação, habilitando serviços
 avançados através da interconexão de coisas (físicas e virtuais) baseadas em
 tecnologias, existentes e evolutivas, de informação e comunicação'' descrita por
@@ -24,7 +24,7 @@ nossa]{Wortmann2015}{InternationalTelecommunicationUnion2012}.
 
 Hoje em dia, quase qualquer tecnologia de comunicação acessível a computadores
 pode ser utilizada como meio de comunicação entre dispositivos IoT, tornando
-RFID mais uma, porém de grande importância, tecnologia info-comunicacional a
+o RFID mais uma, porém de grande importância, tecnologia info-comunicacional a
 disposição das coisas para sua conexão. Esta gama de tecnologias possibilita uma
 variedade equivalente de coisas conectadas. Se a coisa pode usar de uma
 tecnologia de conexão, considerando suas restrições de volume, custo e
@@ -32,7 +32,7 @@ utilidade, muito provavelmente vai fazê-lo gerando ao menos uma identidade
 virtual representando seu objeto físico e seus atributos. Esta identidade
 virtual e atributos virtuais serão expostos para todos indivíduos, humanos ou
 coisas, que lhe forem convenientes de qualquer lugar do universo virtual,
-fazendo efetivamente parte da internet.
+fazendo efetivamente parte da Internet.
 
 \section{Localização contextual de dispositivos}
 \label{sec:Localização contextual de dispositivos}
@@ -40,13 +40,13 @@ fazendo efetivamente parte da internet.
 Em ciência da computação, os termos \emph{"Contexto"} e \emph{"Consciência
 de Contexto"} expressam uma ideia recente estudada nos campos de inteligência
 artificial e ciência cognitiva desde 1991. O tema "Contexto" ainda é considerado
-atual e promissor a ponto de mudar o cenário de negócios nos próximos 10 anos
-porém sem definição simples. Tamanha é a falta de uma definição geral que
+atual e promissor a ponto de mudar o cenário de negócios nos próximos 10 ano, mas
+sem definição simples. Tamanha é a falta de uma definição geral que
 realmente funcione para casos reais que existe uma proposta de definir o termo
 utilizando uma nova metodologia de pesquisa holística através de mineração e
-agrupamento de texto advindo de publicações cientificas \cite{Pascalau2013}.
+agrupamento de texto advindo de publicações científicas \cite{Pascalau2013}.
 
-Mesmo sem uma definição permanente em vista, utilizaremos o que é considerado
+Mesmo sem uma definição permanente em vista, utilizou-se o que é considerado
 estado da arte para o termo \emph{"Contexto"} que foi introduzido por
 \citeonline{Dey1999} e reforçado por \citeonline{Dey2000}:
 
@@ -93,11 +93,10 @@ celular \emph{versus} \emph{Wi-Fi}.
 
 Uma vez encontrada a localização de um dispositivo, metadados sobre o prédio são
 mesclados formando um conjunto rico contextualmente do ponto de vista da
-aplicação IoT Prédio como fornecedora principal dos dados para a internet e
-portanto seus usuários detentores. Essa riqueza é garantida com metadados sobre
-o dispositivo (identificação, nome, histórico, carecteristicas) e sobre o prédio
-(ex.: mapa, estrutura de salas, horário de funcionamento, consumo energético,
-humanos responsáveis e lista de equipamentos) que trazem possibilidades de
+aplicação IoT Prédio como fornecedora principal dos dados para a Internet e,
+portanto, seus usuários detentores. Essa riqueza é garantida com metadados sobre
+o dispositivo (identificação, nome, histórico, carecterísticas) e sobre o prédio
+(ex.: mapa, estrutura de salas, humanos responsáveis e lista de equipamentos) que trazem possibilidades de
 extração de informação importantes para os detentores deste prédio e seu
 conteúdo. Esta capacidade do prédio deve-se pelo papel de coordenador de
 informações e controlador de meta-informações semelhante ao Coordenador em uma
@@ -109,20 +108,19 @@ aplicação na arquitetura Modelo-Apresentação-Adaptador-Controlador-Coordenad
 \subsection{Contexto de um dispositivo em um prédio}
 \label{subsec:Contexto de um dispositivo em um prédio}
 
-Para os metadados agregados à informação de posição pelo prédio definimos que o
-modelo de divulgação terá de conter além da posição do dispositivo informação
-sobre este (nome, histórico), informação da estrutura do prédio (mapa imagem,
-mapa lógico, nome, localização global, endereço, etc), ligação entre a estrutura
-do prédio e a localização do dispositivo (posição no mapa lógico) e informação
-sobre o estado do prédio (horário de funcionamento, frequentadores, etc).
+Para metadados agregados à informação de posição pelo prédio defini-se que, para uma aplicação IoT, o
+modelo de divulgação tem de conter além da posição do dispositivo informação
+sobre este (nome, histórico), informação da estrutura do prédio, ligação entre a estrutura
+do prédio e a localização do dispositivo e informação
+sobre o estado do prédio.
 
 
 Este modelo visa prover fácil mineração e reutilização de informações por
-terceiros após a implementação do projeto que é medida pela disponibilidade e
+terceiros que é medida pela disponibilidade e
 relacionamento das informações providas. Essa métrica também será utilizada para
-avaliar o projeto final.
+avaliar o projeto.
 
-Este foco em reusabilidade vem da definição de Web Semantica (\emph{Semantic
+Este foco em reusabilidade vem da definição de Web Semântica (\emph{Semantic
 Web}) e de uma de suas realizadoras, a Ligação de Dados (\emph{Linked Data}),
 que sugerem o uso de um formato padrão além de ser acessível e gerenciável pelas
 ferramentas de exploração. Desta forma a Web de Dados (\emph{Web of Data}) é
@@ -131,25 +129,22 @@ construída opondo uma simples coleção de dados \cite{Bizer2009}.
 \section{Localização baseada em redes sem fio}
 \label{sec:Localização baseada em redes sem fio}
 
-Para o sistema de posicionamento nos baseamos em técnicas de
+Um sistema de posicionamento pode ser baseado em técnicas
 \emph{n-lateração?} de distâncias adquiridas com a medição de características
 eletromagnéticas (ex.: potência de sinal) e dos protocolos (ex.: Tempo de
 chegada) que já foram explorados anteriormente \cite{Abusubaih2007,
 bahillo2009ieee, Feldmann2003}.
 
-Portanto os sensores seguirão as especificações de \emph{WiFi IEEE 802.11}
+Portanto, os sensores seguem as especificações de \emph{WiFi IEEE 802.11}
 \cite{Crow1997} e técnicas definidas para \emph{Bluetooth Low Energy (BLE)}
 \cite{Hossain2007} devido a semelhança da área de cobertura (até 100 metros,
 geralmente utilizado até 20 metros) e frequência (no caso de 2.4GHz).
 
 Para construir estes sensores uma plataforma de hardware adequada é necessária,
-para esta escolhemos o Raspberry Pi \cite{Vujovic2014, Vujovic2015} que já
+para esta escolheu-se o Raspberry Pi \cite{Vujovic2014, Vujovic2015} que já
 foi provado funcional no caso de Localização através \emph{Wi-Fi} por
 \citeonline{Ferreira2016} especialmente a sua versão 3 que adiciona a capacidade
 de sensor \emph{Wi-Fi} e \emph{Bluetooth} em sua placa principal sem
 necessidade de adaptadores externos destacando ainda mais sua escolha
-\cite{RPI2016}.
-
-Em adição, na construção dos sensores é testada a plataforma ESP-8266 bem como
-outras alternativas que demonstrarem afinidade com o projeto não limitando as
-escolhas durante o projeto a aquelas mencionadas na proposta original.
+\cite{RPI2016}. Em adição, na construção dos sensores foi testada a plataforma ESP8266 bem como
+outras alternativas que demonstraram afinidade com essas características.
