@@ -40,7 +40,7 @@ suporte como reguladores de tensão, conversores serial-USB) e especialmente a
 
 
 \begin{figure}[htb]
-	\caption{\label{fig:modelos-esp}Módulos ESP8266}
+	\caption{\label{fig-modelos-esp}Módulos ESP8266}
 	\begin{center}
 		\includegraphics[width=1\textwidth]{040-plataformas/esp-dev/modulos-esp.jpg}
 	\end{center}
@@ -134,11 +134,11 @@ Quando o módulo não possuía tal, utilizava-se um circuito com fonte externa
 (pilhas ou USB) e um regulador de tensão conectados aos pinos \emph{3v3} e
 \emph{GND}. Depedendo da complexidade do circuito para ligar e ter acesso à
 serial do módulo, é necessário o uso de uma placa \emph{breadboard}, como na
-\autoref{fig:esp-pilha-serial}. Para este trabalho foi utilizado o regular
+\autoref{fig-esp-pilha-serial}. Para este trabalho foi utilizado o regular
 \emph{AMS1117 3v3} e dois capacitores de $100 \mu F$.
 
 \begin{figure}[htb]
-	\caption{\label{fig:esp-pilha-serial}ESP-12f com regulador tensão e serial}
+	\caption{\label{fig-esp-pilha-serial}ESP-12f com regulador tensão e serial}
 	\begin{center}
 		\includegraphics[width=1\textwidth]{040-plataformas/esp-dev/breadboard.jpg}
 	\end{center}
@@ -152,12 +152,12 @@ serial do módulo, é necessário o uso de uma placa \emph{breadboard}, como na
 Todo código produzido em uma linguagem de programação é compilado por uma
 ferramenta e, então, carrega-se os arquivos binários para o ESP8266 através da
 serial, para que a execução do código seja iniciada. Na
-\autoref{fig:esp-toolchain}, é apresentado um modelo de desenvolvimento e
+\autoref{fig-esp-toolchain}, é apresentado um modelo de desenvolvimento e
 implantação desde o código até chegar no módulo ESP e, também, a lista de
 carregadores usados.
 
 \begin{figure}[htb]
-	\caption{\label{fig:esp-toolchain}ESP-12f com regulador tensão e serial}
+	\caption{\label{fig-esp-toolchain}ESP-12f com regulador tensão e serial}
 	\begin{center}
 		\begin{verbatim}
 		+--------+           +-----------+
@@ -217,7 +217,7 @@ Todo código produzido é carregado para o módulo ESP através de seu barrament
 serial. Alguns modelos, como o \emph{LoLin} e \emph{D1 mini}, já apresentam
 conversor serial para \emph{micro-USB}. Para os que não possuem tal interface é
 necessário utilizar um conversor serial-USB externo, a
-\selfef{fig:esp-pilha-serial} demonstra esse método.
+\autoref{fig-esp-pilha-serial} demonstra esse método.
 
 As \emph{GPIOs} do \emph{ESP-12f} são acessadas somente através de placas
 de circuito impresso, então uma foi adquirida para a programação do mesmo.
@@ -252,7 +252,7 @@ código  executável pelo ESP8266. Mesmo nesta API, nenhuma capacidade de ativar
 Modo Promíscuo foi encontrada.
 
 \begin{figure}[htb]
-	\caption{\label{fig:esp-arduino}Código em C compilado e implantado em um ESP8266}
+	\caption{\label{fig-esp-arduino}Código em C compilado e implantado em um ESP8266}
 	\begin{center}
 		\includegraphics[width=1\textwidth]{040-plataformas/esp-dev/arduino-ide.png}
 	\end{center}
