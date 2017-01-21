@@ -33,14 +33,15 @@ integrado. Este chip possui:
 Para o mercado de prototipação, fabricantes constroem placas de diferentes configurações com
 este chip como elemento central, os chamados módulos. Estes módulos usam o
 ESP8266 com diferenças perceptíveis, por exemplo, quantidade de pinos, dimensões
-físicas e alguns podem até operar de modo \emph{standalone} (sem outro \emph{hardware} de
-suporte como reguladores de tensão, conversores serial-USB) e especialmente a
+físicas, alguns podem até operar de modo \emph{standalone} (sem outro \emph{hardware} de
+suporte como reguladores de tensão e conversores serial-USB) e, especialmente, a
  \emph{Memória Flash SPI}. Neste trabalho, foram usados os módulos:
 \emph{ESP-01}, \emph{LoLin}, \emph{D1 mini} e \emph{ESP-12f} com placa adaptadora de pinos.
+Cada um deles pode ser encontrado na \autoref{fig:modelos-esp} a seguir.
 
 
 \begin{figure}[htb]
-	\caption{\label{fig-modelos-esp}Módulos ESP8266}
+	\caption{\label{fig:modelos-esp}Módulos ESP8266}
 	\begin{center}
 		\includegraphics[width=1\textwidth]{040-plataformas/esp-dev/modulos-esp.jpg}
 	\end{center}
@@ -92,19 +93,19 @@ LoLin (ESP-12f)		&	30 + microUSB										&	4 MB	&	R\$ 35,87 		\\
 }{%
 \begin{tabular}{ccc}
 	\toprule
-	Acessórios						&	Descrição									&	Custo		\\
+	Acessórios						&	Descrição									&	Custo			\\
 	\midrule
-	Esp8266 Placa Para Soldar		& Placa com 16 pinos conectados aos				&				\\
-	Esp-07, Esp-08, Esp-12, Esp-12e	& pontos de superficie do ESP-12f				&	R\$ 3,45 	\\
+	Esp8266 Placa Para Soldar		& Placa com 16 pinos conectados aos				&					\\
+	Esp-07, Esp-08, Esp-12, Esp-12e	& pontos de superficie do ESP-12f				&	R\$ 3,45 		\\
 	\midrule
-	Conversor Usb Serial 			&	Fornece uma conexão serial-USB entre		& 	 			\\
-	Ch340 Rs232 - 3,3v 5v^{1}		&	o ESP8266 e o computador de desenvolvimento	&	R\$ 6,87 	\\
+	Conversor Usb Serial 			&	Fornece uma conexão serial-USB entre		& 	 				\\
+	Ch340 Rs232 - 3,3v 5v^{1}		&	o ESP8266 e o computador de desenvolvimento	&	R\$ 6,87 		\\
 	\midrule
 	Adaptador Usb Serial			&	Fornece uma conexão serial-USB entre		&		\\
-	Ttl Conversor Cp2102^{2}		&	o ESP8266 e o computador de desenvolvimento	&	R\$ 20,00	\\
+	Ttl Conversor Cp2102^{2}		&	o ESP8266 e o computador de desenvolvimento	&	R\$ 20,00		\\
 	\midrule
 	Ams1117 3,3v (3.3v) - Lm1117	&	Regula a tensão de uma USB ou pilhas para	&		\\
-									&	3.3\emph{V} 1\emph{A} usado nos módulos		&	R\$ 1,50	\\
+									&	3.3\emph{V} 1\emph{A} usado nos módulos		&	R\$ 14,99 (10 unidades) \\
 	\midrule
 \bottomrule
 \end{tabular}%
@@ -116,8 +117,8 @@ LoLin (ESP-12f)		&	30 + microUSB										&	4 MB	&	R\$ 35,87 		\\
 \end{table}
 
 
-A escolha do ESP8266 como primeira tentativa devido o seu baixo custo e de
-tamanho reduzido. No exterior, ele pode ser encontrado por de USD\$ 1,76 a 2,2
+O ESP8266 foi escolhido como primeira tentativa devido ao seu baixo custo e ao
+tamanho reduzido. No exterior, ele pode ser encontrado de USD\$ 1,76 a 2,2
 \cite{AlibabaESP}, e no Brasil por aproximadamente BRL R\$ 15,00 \cite{mercadolivreEsp}.
 
 Devido ao seu tamanho, ele é de fácil integração com demais dispositivos,
@@ -128,36 +129,18 @@ módulos. Além disso, a empresa  idealizadora e fabricante do chip, Espressif,
 disponibiliza no GitHub projetos com documentação e código aberto.
 
 Para desenvolver na plataforma, os módulos ESP foram utilizados de formas
-diferentes dependendo das capacidades de cada módulo. Quando o módulo possuía
+diferentes dependendo das capacidades de um deles. Quando o módulo possuía
 regulador de tensão embarcado, utilizava-se o próprio conectado a uma porta USB.
 Quando o módulo não possuía tal, utilizava-se um circuito com fonte externa
 (pilhas ou USB) e um regulador de tensão conectados aos pinos \emph{3v3} e
 \emph{GND}. Depedendo da complexidade do circuito para ligar e ter acesso à
-serial do módulo, é necessário o uso de uma placa \emph{breadboard}, como na
-\autoref{fig-esp-pilha-serial}. Para este trabalho foi utilizado o regular
-\emph{AMS1117 3v3} e dois capacitores de $100 \mu F$.
+serial do módulo, foi necessário o uso de uma placa \emph{breadboard}, como na
+\autoref{fig:esp-pilha-serial}. Para este trabalho foi utilizado o regular
+\emph{AMS1117 3v3} e dois capacitores de $100 \mu F$. Na \autoref{table:custo-esp} e \autoref{table:acessorios-esp},
+são apresentados os custos de cada módulo testado e dos acessórios utilizados em conjunto.
 
 \begin{figure}[htb]
-	\caption{\label{fig-esp-pilha-serial}ESP-12f com regulador tensão e serial}
-	\begin{center}
-		\includegraphics[width=1\textwidth]{040-plataformas/esp-dev/breadboard.jpg}
-	\end{center}
-	\legend{Fonte: Elaborada pelo autor}
-\end{figure}
-
-
-\subsection{Desenvolvimento e Implantação}
-\label{subsec:dev-esp}
-
-Todo código produzido em uma linguagem de programação é compilado por uma
-ferramenta e, então, carrega-se os arquivos binários para o ESP8266 através da
-serial, para que a execução do código seja iniciada. Na
-\autoref{fig-esp-toolchain}, é apresentado um modelo de desenvolvimento e
-implantação desde o código até chegar no módulo ESP e, também, a lista de
-carregadores usados.
-
-\begin{figure}[htb]
-	\caption{\label{fig-esp-toolchain}ESP-12f com regulador tensão e serial}
+	\caption{\label{fig:esp-toolchain}Sequência de ferramentas para implantação}
 	\begin{center}
 		\begin{verbatim}
 		+--------+           +-----------+
@@ -180,6 +163,24 @@ carregadores usados.
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
+\begin{figure}[htb]
+	\caption{\label{fig:esp-pilha-serial}ESP-12f com regulador tensão e serial}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{040-plataformas/esp-dev/breadboard.jpg}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+
+\subsection{Desenvolvimento e Implantação}
+\label{subsec:dev-esp}
+
+Todo código produzido em uma linguagem de programação é compilado por uma
+ferramenta e, então, carrega-se os arquivos binários para o ESP8266 através da
+serial, para que a execução do código seja iniciada. Na
+\autoref{fig:esp-toolchain}, é apresentado um modelo de desenvolvimento e
+implantação desde o código até chegar no módulo ESP e, na \autoref{table:tools-esp},
+são apresentadas as ferramentas utilizadas como compiladores e carregadores.
 
 \begin{table}[htb]
 \IBGEtab{%
@@ -217,7 +218,7 @@ Todo código produzido é carregado para o módulo ESP através de seu barrament
 serial. Alguns modelos, como o \emph{LoLin} e \emph{D1 mini}, já apresentam
 conversor serial para \emph{micro-USB}. Para os que não possuem tal interface é
 necessário utilizar um conversor serial-USB externo, a
-\autoref{fig-esp-pilha-serial} demonstra esse método.
+\autoref{fig:esp-pilha-serial} demonstra esse método.
 
 As \emph{GPIOs} do \emph{ESP-12f} são acessadas somente através de placas
 de circuito impresso, então uma foi adquirida para a programação do mesmo.
@@ -230,14 +231,14 @@ não ter driver compatível com o \emph{Windows 10}, em contraste com o modelo
 \subsection{Testes e resultados}
 \label{subsec:mercado-esp}
 
-O primeiro objetivo durante a programação dos módulos ESP8266 é cumprir a
+O primeiro objetivo durante a programação dos módulos ESP8266 foi cumprir a
 premissa  estabelecida no início deste capítulo de acessar o Modo Promíscuo da
-interface Wi-Fi. Neste caso, procurou-se pelo ponto da \emph{API} de
+interface \emph{Wi-Fi}. Neste caso, procurou-se pelo ponto da API de
 \emph{hardware} do ESP8266 onde os pacotes destinados a outros dispositivos são
 descartados, desativar este filtro, capturar e avaliar o pacote para localizar o
 seu emissor.
 
-A principio, com o \emph{firmware AT} que é o padrão do módulo ESP-01 e com o
+A princípio, com o \emph{firmware AT}, que é o padrão do módulo ESP-01, e com o
 emulador de serial da \emph{Arduino IDE} ou a aplicação \emph{Cool Term} é
 possível configurar e utilizar o módulo por completo apenas com instuções AT
 enviadas através da conexão serial. A primeira investigação sobre a API do protocolo
@@ -252,7 +253,7 @@ código  executável pelo ESP8266. Mesmo nesta API, nenhuma capacidade de ativar
 Modo Promíscuo foi encontrada.
 
 \begin{figure}[htb]
-	\caption{\label{fig-esp-arduino}Código em C compilado e implantado em um ESP8266}
+	\caption{\label{fig:esp-arduino}Código em C compilado e implantado em um ESP8266}
 	\begin{center}
 		\includegraphics[width=1\textwidth]{040-plataformas/esp-dev/arduino-ide.png}
 	\end{center}
@@ -263,20 +264,20 @@ Modo Promíscuo foi encontrada.
 \end{figure}
 
 
-Nova tentativa para a programação  dos módulos escolhidos foi feita através de
+Uma nova tentativa para a programação  dos módulos escolhidos foi feita através de
 \emph{toolchains} (conjunto de ferramentas para desenvolvimento de software) da
 empresa \emph{Espressif} e de um usuário do \emph{Github}, muito utilizado para
 projetos de ESPs, \citeonline{Pfalcon}. Ambas as \emph{toolchains}
 são \emph{SDKs} de código aberto. Os \emph{scripts} foram feitos na linguagem C,
 compilados nessas SDKs e transferidos para os módulos ESP. Neste caso,
-a configuração delas mostrou-se um desafio pois requisitavam uma versão
+a configuração delas mostrou-se um desafio, pois requisitavam uma versão
 específica do \emph{Ubuntu Linux} que a máquina utilizada para o desenvolvimento
 não suporta. Também foi testada a utilização de máquinas virtuais mas, novamente,
-a máquina do desenvolvedor não possui virtualização impossibilitando esta opção.
+a máquina do desenvolvedor não possui virtualização, impossibilitando esta opção.
 
-Em conclusão, apesar do baixo custo e documentação da comunidade aberta, o
+Em conclusão, apesar do baixo custo e da documentação da comunidade aberta, o
 ESP8266 não foi adotado como sensor, pois não foi possível colocá-lo em modo
 prosmícuo, essencial para detectar pacotes entre dispositivo e os pontos de
-acesso inviabilizando completamente o uso desta plataforma mesmo esta sendo a
+acesso, inviabilizando completamente o uso desta plataforma mesmo sendo a
 mais adequada e promissora no ponto de vista da construção de um produto final
 por seu extremo baixo custo.
