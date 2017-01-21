@@ -219,11 +219,49 @@ aparência externa difere do anterior e pode ser visualizada na
 
 
 Para capturar e avaliar pacotes É necessário uma ferramenta  para tal. Na área
-de segurança da informação podemos encontrar Aero Jump que é utilizado para
-Avaliar explorar vulnerabilidades de segurança em rede sem fio.  Outra área que
+de segurança da informação podemos encontrar \emph{airodump} que é utilizado para
+avaliar e explorar vulnerabilidades de segurança em redes Wi-Fi. Outra área que
 forneceu uma ferramenta adequada é a área de qualidade de serviço em redes de
-computadores onde o software wireshark é bem popular,  uma interface alternativa
-do mesmo  feita para uso em terminal é chamada tShark.
+computadores onde o \emph{software Wireshark} é bem popular, uma interface alternativa
+do mesmo feita para uso em terminal é chamada \emph{tshark}.
+
+Para testar a viabilidade do sensor utilizou-se \emph{airodump} que é uma
+ferramenta de terminal interativa. Ela provê a seguinte tela:
+
+\begin{figure}[htb]
+	\caption{\label{fig-airodump}Airodump-ng}
+	\begin{center}
+		\begin{verbatim}
+pi@sensor-01:~ $ sudo airodump-ng wlan0
+
+CH 11 ][ Elapsed: 24 s ][ 2017-01-21 22:49
+
+BSSID              PWR  #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID
+
+58:66:BA:9A:94:02  -30      0    0   1  54e. WPA2 CCMP   MGT  wfu
+58:66:BA:9A:94:01  -30      0    0   1  54e. WPA  TKIP   PSK  wfuVisitante
+58:66:BA:9A:94:03  -30      0    0   1  54e. WPA2 CCMP   MGT  eduroam
+06:27:22:B3:E5:FB  -41    144    0   1  54e. WPA2 CCMP   PSK  LTIA PSK
+32:CD:A7:CB:85:93  -48      0    0   1  54e  WPA2 CCMP   PSK  DIRECT-KJM2070 Series
+58:66:BA:9A:89:23  -66      0    0  11  54e. WPA2 CCMP   MGT  eduroam
+58:66:BA:9A:89:21  -67      0    0  11  54e. WPA  TKIP   PSK  wfuVisitante
+58:66:BA:9A:89:22  -67      0    0  11  54e. WPA2 CCMP   MGT  wfu
+06:27:22:B3:E5:FE  -68      0    0   1  54e. WPA2 CCMP   PSK  LTIA PSK
+5E:CF:7F:D3:54:C2  -72      0    0   1  48   OPN              AI-THINKER_D354C2
+32:CD:A7:C9:F8:72  -76      0    0  11  54e  WPA2 CCMP   PSK  DIRECT-aVM2070 Series
+58:66:BA:9A:8F:C1  -77      0    0   6  54e. WPA  TKIP   PSK  wfuVisitante
+58:66:BA:9A:8F:C3  -78      0    0   6  54e. WPA2 CCMP   MGT  eduroam
+00:1B:11:4A:7C:93  -83      2    0   6  54 . WPA2 CCMP   PSK  nanolab
+
+BSSID              STATION            PWR   Rate    Lost    Frames  Probe
+
+(not associated)   58:66:BA:9A:8F:C0  -76    0 -11      0        2
+06:27:22:B3:E5:FB  B8:27:EB:9F:6A:80  -38    0e- 1      0       94
+
+		\end{verbatim}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
 
 
 **Conclusão sobre Raspberry Pi**
