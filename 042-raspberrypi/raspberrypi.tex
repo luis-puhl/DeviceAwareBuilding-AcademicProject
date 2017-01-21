@@ -141,20 +141,34 @@ Edup Usb 150mbps Raspberry Pi		&	permite modo promíscuo					&	R\$ 16,88	\\
 \label{subsec:mercado-esp}
 
 De maneira análoga à feita com o ESP8266 analisamos a capacidade do Raspberry Pi
-de  operar com sua wi-fi em modo promíscuo porém, diferentes ferramentas foram
-utilizadas  devido  a diferença de camada de software envolvida. Neste caso
-utilizamos as ferramentas airodump e tshark além das ferramentas de Wi-Fi
-padrões do sistema operacional raspbian.
+de operar com sua Wi-Fi em modo promíscuo porém,  devido  a diferença de camada
+de software envolvida diferentes ferramentas foram utilizadas.
+
+Neste caso utilizamos as ferramentas airodump e tshark além das ferramentas de
+Wi-Fi padrões do sistema operacional \emph{raspbian}. Para verificar o modo
+promíscuo no ambiente raspbian utiliza-se os comandos \emph{ifconfig},
+\emph{iwconfig} e \emph{iw}, que são padrão do sistema operacional Debian, como
+demonstrado a seguir.
 
 \begin{verbatim}
-	sudo ifconfig wlan0 down
-	sudo iwconfig wlan0 mode monitor
+pi@sensor-01:~ $ sudo ifconfig wlan0 down
+pi@sensor-01:~ $ sudo iwconfig wlan0 mode monitor
+pi@sensor-01:~ $ sudo ifconfig wlan0 up
 \end{verbatim}
 
-Para verificar o modo  promíscuo no ambiente raspbian utiliza-se os comandos iw
-que são padrão do sistema operacional Debian.  como   Este comando foi realizado
-teste  utilizando somente o adaptador  de wi-fi integrado   no rpi.  o resultado
-foi negativo portanto  outros adaptadores foram necessários.
+Este processo é
+O resultado pode ser observado com o comando
+
+\begin{verbatim}
+pi@sensor-01:~ $ sudo iwconfig wlan0
+wlan0   IEEE 802.11bgn  Mode:Monitor  Frequency:2.412 GHz  Tx-Power=20 dBm
+        Retry short limit:7   RTS thr:off   Fragment thr:off
+        Power Management:off
+\end{verbatim}
+
+Quando este processo foi realizado utilizando somente o adaptador  de wi-fi
+integrado no RPI3 o resultado foi negativo portanto outros adaptadores foram
+necessários.
 
 No ambiente do laboratório encontramos adaptadores wi-fi USB d-link Porém
 executando o mesmo teste neles não foi possível Ativar o modo promíscuo.  Com
