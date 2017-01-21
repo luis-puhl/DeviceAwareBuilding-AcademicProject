@@ -22,9 +22,12 @@ até aproximadamente 11:25 totalizando aproximadamente 8 horas de captura
 A captura foi executada com o comando
 
 
-\begin{lstlisting}[language=bash]
-tshark -I -i wlan0 -T fields -E header=y -E quote=d -e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved -e radiotap.dbm_antsignal -e wlan_mgt.ssid >> 2017-01-17--02-48--rpi-02.csv &
-\end{lstlisting}
+\begin{verbatim}
+tshark -I -i wlan0 -T fields -E header=y -E quote=d \
+-e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved \
+-e radiotap.dbm_antsignal -e wlan_mgt.ssid \
+>> 2017-01-17--02-48--rpi-02.csv &
+\end{verbatim}
 
 A análise de dados foi feita com a função \emph{summary} da ferramenta \emph{Ron’s editor}
 e a filtragem com a função \emph{Filter} da ferramenta \emph{RecCsvEditor}
@@ -83,9 +86,12 @@ pontos de acesso para rede wi-fi do laboratório.
 Neste modo de uso os resultados são direcionadas para a saída padrão
 (stdout)  do terminal e podem ser capturados por outro programa no formato
 de valores separados por vírgula (csv).  os campos escolhidos para captura
-são *wlan.sa*, *wlan.sa_resolved*, *wlan.ta*, *wlan.ta_resolved*, *radiotap.dbm_antsignal* e *wlan_mgt.ssid*
+são \emph{wlan.sa}, \emph{wlan.sa\_resolved}, \emph{wlan.ta},
+\emph{wlan.ta\_resolved}, \emph{radiotap.dbm\_antsignal} e \emph{wlan\_mgt.ssid}.
 
-Teste relação de distância com smartphone como objetivo
+
+\section{Teste relação de distância com smartphone como objetivo}
+
 
 Para verificar a capacidade do sensores de localizar contextualmente um dispositivo
 móvel, smartphone, foi utilizado. Este foi posicionado em duas salas diferentes, Em
@@ -95,9 +101,11 @@ na rede o dispositivo móvel foi configurado para receber um stream de vídeo no
 A captura foi realizada utilizando a ferramenta TShark da mesma maneira que é utilizada no
 aplicativo. A descrição deste modo de operação pode ser encontrada no capítulo de construção.
 
-$
-tshark -I -i wlan1 -T fields -E separator=, -E quote=d -e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved -e radiotap.dbm_antsignal -e wlan_mgt.ssid >> sensor-02-distance-test-01.csv
-$
+\begin{verbatim}
+tshark -I -i wlan1 -T fields -E separator=, -E quote=d \
+-e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved \
+-e radiotap.dbm_antsignal -e wlan_mgt.ssid >> sensor-02-distance-test-01.csv
+\end{verbatim}
 
 Para o primeiro caso o dispositivo estava na mesma sala do sensor número 2 que é a maior
 sala do prédio com 12  metros de comprimento por 10 metros  De largura. neste caso foram
@@ -108,7 +116,8 @@ No segundo teste o dispositivo móvel estava posicionado no corredor fora da sal
 e distante do sensor 2.  neste teste o sensor 1 capturou 103555 pacotes totalizando 6.4 megabytes
 de captura e o sensor 2 capturou 22635 pacotes totalizando 2 megabytes de captura
 
- posteriormente os arquivos de captura foram analisados com a ferramenta *Ron’s Editor*  para que um sumário fosse construído.
+Posteriormente os arquivos de captura foram analisados com a ferramenta
+\emph{Ron’s Editor} para que um sumário fosse construído.
 
 
 \begin{figure}[htb]
