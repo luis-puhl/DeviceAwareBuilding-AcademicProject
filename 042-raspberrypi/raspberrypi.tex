@@ -180,21 +180,21 @@ promíscuo no ambiente raspbian utiliza-se os comandos \emph{ifconfig},
 \emph{iwconfig} e \emph{iw}, que são padrão do sistema operacional Debian, como
 demonstrado a seguir.
 
-\begin{verbatim}
+\begin{lstlisting}
 pi@sensor-01:~ $ sudo ifconfig wlan0 down
 pi@sensor-01:~ $ sudo iwconfig wlan0 mode monitor
 pi@sensor-01:~ $ sudo ifconfig wlan0 up
-\end{verbatim}
+\end{lstlisting}
 
 Este processo é
 O resultado pode ser observado com o comando
 
-\begin{verbatim}
+\begin{lstlisting}
 pi@sensor-01:~ $ sudo iwconfig wlan0
-wlan0   IEEE 802.11bgn  Mode:Monitor  Frequency:2.412 GHz  Tx-Power=20 dBm
-        Retry short limit:7   RTS thr:off   Fragment thr:off
-        Power Management:off
-\end{verbatim}
+wlan0  IEEE 802.11bgn Mode:Monitor Frequency:2.412 GHz Tx-Power=20 dBm
+	   Retry short limit:7   RTS thr:off   Fragment thr:off
+       Power Management:off
+\end{lstlisting}
 
 Quando este processo foi realizado utilizando somente o adaptador de Wi-Fi
 integrado no RPI3, cuja antena de cerâmica pode está em destaque na
@@ -294,20 +294,20 @@ fabricante como prefixo (wlan.sa\_resolved, wlan.ta\_resolved), a potência de s
 e o nome da rede anunciada se o pacote for um Beacon, da mesma
 maneira que o airodump mostra.
 
-\begin{verbatim}
+\begin{lstlisting}
 pi@sensor-01:~ $ tshark -I -i wlan0 -T fields -E header=y -E quote=d \
 -e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved \
 -e radiotap.dbm_antsignal -e wlan_mgt.ssid
-\end{verbatim}
+\end{lstlisting}
 
 Por último a configuração padrão do Shark não permite execução em modo supervisor
 (root) requisitos de segurança somente usuários do grupo WireShark podem
 executar o programa com segurança. Para isso é necessário adicionar usuário pi ao ao
 grupo WireShark com o seguinte comando.
 
-\begin{verbatim}
+\begin{lstlisting}
 pi@sensor-01:~ $ sudo usermod -a -G wireshark pi
-\end{verbatim}
+\end{lstlisting}
 
 Este modo de operação permite executar aplicação final sem necessidade de eleva-
 ção de privilégios (root) tornando aplicação mais segura pois, mesmo que aplicação seja
