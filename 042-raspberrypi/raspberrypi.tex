@@ -319,13 +319,13 @@ comprometida o sistema todo não poderá ser subvertido.
 Em comparação com o ESP8266, o RPI3 compensou seu custo elevado devido a
 facilidade de programação, acesso aos seus recursos, acesso a recursos externos uma
 vez que foi possível chegar ao modo promíscuo facilmente através de recursos nativos do
-sistema operacional. Para uma comparação das plataformas veja a \autoref{}.
+sistema operacional. Para uma comparação das plataformas veja a \autoref{table:comp-hardware-esp-rpi}.
 
 \begin{table}[htb]
 \IBGEtab{%
 \ABNTEXchapterfont {
-	\caption{Ferramentas para desenvolvimento com ESP8266}%
-	\label{table:tools-esp}
+	\caption{Comparação das plataformas ESP8266 e RPI3}%
+	\label{table:comp-hardware-esp-rpi}
 }
 }{%
 \begin{tabular}{cccc}
@@ -362,9 +362,76 @@ Custo				&	 de R\$ 190,00 a R\$ 270,00				&	 de R\$ 12,56 a R\$ 35,87		\\
 }
 \end{table}
 
-O RPI3 foi adotado como plataforma para o sensor de detecção de dispositivos pois
-o modo promíscuo (monitor mode) conseguiu ser acessado através de adaptador USB Wi-Fi
-apesar do esforço de utilização da plataforma ESP8266 que reduziria significativamente o
-custo de cada sensor. Para comparação do custo da aplicação aqui proposta veja a Tabela
+O RPI3 foi adotado como plataforma para o sensor de detecção de dispositivos
+pois o modo promíscuo (monitor mode) conseguiu ser acessado através de adaptador
+USB Wi-Fi apesar do esforço de utilização da plataforma ESP8266 que reduziria
+significativamente o custo de cada sensor. Para comparação do custo da aplicação
+aqui proposta veja a \autoref{table:comp-app-sensor}.
 
-tabela
+\begin{table}[htb]
+\IBGEtab{%
+\ABNTEXchapterfont {
+	\caption{Comparação de custos para o sensor da aplicação proposta em função da plataforma}%
+	\label{table:comp-app-sensor}
+}
+}{%
+\begin{tabular}{c|cr|cr}
+	\toprule
+	\multicolumn{5}{c}{Sensor} \\
+	\midrule
+	Plataforma				&	\multicolumn{2}{|c|}{Raspberry Pi}		&	\multicolumn{2}{|c}{ESP8266}	\\
+	\midrule
+	Item					&	Descrição			&	Custo em R\$	&	Descrição					&	Custo em R\$	\\
+	\midrule
+	Plataforma				&	RPI3				&	190,00			&	D1 mini (ESP-12f)			&	12,56	\\
+	Fonte de alimentação	&	Fonte Usb iPad		&	13,99			&	Fonte Usb Celular com cabo	&	7,85	\\
+	Fonte de alimentação	&	Cabo Usb A-micro	&	2,00			&								&		\\
+	Adaptador Wi-Fi 		&	Edup Usb			&	16,88			&								&		\\
+	Memória			 		&	SD c10 16GB			&	21,99			&								&		\\
+	\midrule
+	Total por Sensor		&						&	244,86			&								&	20,41	\\
+	\midrule\midrule
+\end{tabular}%
+}{%
+	\fonte{Produzido pelo autor.}%
+}
+\end{table}
+
+É importante notar a proporção de custo entre as duas plataformas onde o RPI3
+custa aproximadamente 10 vezes mais por sensor do que a plataforma ESP8266. Isto
+justifica o esforço realizado durante o desenvolvimento deste trabalho para
+explorar e, com esperança, ativar o modo promíscuo no pequeno dispositivo que
+infelizmente não rendeu frutos.
+
+Para a construção do \emph{Gateway IoT} as exigências de \emph{hardware}, onde
+espera-se do \emph{gateway} capacidades de mínimas de processamento,
+armazenamento e comunicação, e de \emph{software}, onde o mínimo é um sistema
+operacional quee suporte um \emph{MQTT Broker}. Portanto para o \emph{gateway} a
+plataforma ESP8266 clarmente não é adequada e um RPI3 representa o custo mínimo.
+
+\begin{table}[htb]
+\IBGEtab{%
+\ABNTEXchapterfont {
+	\caption{Custos para o gateway da aplicação proposta}%
+	\label{table:custo-app-gw}
+}
+}{%
+\begin{tabular}{c|cr}
+	\toprule
+	\multicolumn{3}{c}{Gateway}\\
+	\midrule
+	Item					&	Descrição			&	Custo em R\$	\\
+	\midrule
+	Plataforma				&	RPI3				&	190,00			\\
+	Fonte de alimentação	&	Fonte Usb iPad		&	13,99			\\
+	Fonte de alimentação	&	Cabo Usb A-micro	&	2,00			\\
+	Memória			 		&	SD c10 16GB			&	21,99			\\
+	\midrule
+	Total por Gateway		&						&	227,98			\\
+	\midrule
+	\bottomrule
+\end{tabular}%
+}{%
+	\fonte{Produzido pelo autor.}%
+}
+\end{table}
