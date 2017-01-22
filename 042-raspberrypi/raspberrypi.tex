@@ -5,20 +5,20 @@
 Após constatado que o ESP8266 não oferece modo promíscuo, foi testado e
 desenvolvido software para transformar o Raspberry Pi em uma plataforma para
 hospedar o sensor. Sua principal diferença é o sistema operacional linux
-(inexistente no ESP8266) que favorece o Raspberry e o alto custo que o
-desfavorece. Em média no exterior o Raspberry Pi é vendido por USD \$ 35,00
-\cite{RPI2016} e no Brasil entre R\$ 270 em Março de 2016 e R\$ 190 em Janeiro
+(inexistente no ESP8266) que favorece esta plataforma, porém seu alto custo a
+desfavorece. Em média, no exterior, o Raspberry Pi é vendido por USD \$ 35,00
+\cite{RPI2016} e, no Brasil, entre R\$ 270 em Março de 2016 e R\$ 190 em Janeiro
 de 2017 \cite{rpi3-mercadolivre}.
 
 As vantagens de ter um computador moderno completo sobrepõem seu custo em muitas
-vezes, dentre as quais destacamos a interface "amigável" com usuário devido ao
+vezes, dentre as quais destacamos o poder computacional e a interface "amigável"  com usuário devido ao
 sistema operacional oferecendo maior nível de abstração (bastando apenas alguns
-comandos para acessá-los realizar tarefas complexas) e o poder computacional.
-Além deste recurso a nível de sistema, a comunidade e número de projetos "faça
-você mesmo" é muito maior que a do ESP8266, devido a sua simplicidade em
+comandos para acessá-los e realizar tarefas complexas).
+Além deste recurso a nível de sistema, a comunidade e o número de projetos "faça
+você mesmo"  é muito maior que a do ESP8266, devido a sua simplicidade em
 conectar-se a um monitor e construir protótipos e aplicações.
 
-O RPI3 (\emph{Raspberry PI 3 Model B}) é um computador \emph{single-board}  (única
+O RPi3 (\emph{Raspberry PI 3 Model B}) é um computador \emph{single-board}  (única
 placa) que tem o tamanho próximo ao de um cartão de crédito. Foi desenvolvido
 pela \emph{Raspberry Pi Foundation} para promover o ensino da computação nas
 escolas. Este computador possui:
@@ -47,7 +47,7 @@ escolas. Este computador possui:
 
 	\item \emph{Wi-Fi LAN} embutida 802.11n;
 
-	\item \emph{Bluetooth 4.1} e \emph{Bluetooth Low Energy} (BLE);
+	\item \emph{Bluetooth 4.1} e \emph{Bluetooth Low Energy} (BLE).
 
 \end{alineas}
 
@@ -65,17 +65,17 @@ escolas. Este computador possui:
 \label{subsec:mercado-esp}
 
 Para abordar a disponibilidade no mercado devemos também contar os periféricos
-que são necessários para desenvolver na plataforma  RPI3 da mesma maneira que
+que são necessários para desenvolver na plataforma  RPi3 da mesma maneira que
 foi feito com o ESP8266.
 
 O RPI3 é ligado por uma fonte de 2A, 5V e 10W através de uma entrada micro
-USB. Para ligá-la, foi adquirido uma fonte USB tipo A para iPad, pois além de
+USB. Para ligá-lo, foi adquirido uma fonte USB tipo A para iPad, pois além de
 poder desconectar o cabo da fonte, facilitando a manutenção, fornece a
 quantidade exata de amperagem que o computador precisa. A primeira aquisição foi
 de um carregador de \emph{smartphone} que não forneceu os amperes necessários.
 
-Em comparação com a anterior, esta geração  tem uma exigência energética maior,
-muito disto é devido a \emph{Wi-Fi} integrado que é um destaque desta geração.
+Em comparação com a anterior, esta plataforma tem uma exigência energética maior,
+muito disto é devido a \emph{Wi-Fi} integrado que é um destaque.
 A antena de cerâmica do adaptador integrado pode ser vista no primeiro plano da
 \autoref{fig-rpi-3}. Contudo, o adaptador não possui modo promíscuo e fez-se
 necessário o uso de adaptadores \emph{Wi-Fi} USB. As recomendações da comunidade
@@ -83,22 +83,13 @@ quanto a escolha do adaptador USB (também conhecido como \emph{dongle Wi-Fi})
 são o \emph{Edimax EW-7811Un} que não é tão comum no Brasil e o
 \emph{EDUP EP-N85xx} que tem muitos genéricos no mercado nacional.
 
-Como camada de \emph{software} o RPI3 comporta diversos sistemas operacionais que são carregados de seu
+Como camada de \emph{software}, o RPi3 comporta diversos sistemas operacionais que são carregados de seu
 cartão \emph{microSD}. Alguns exemplos de sistemas compatíveis são
 \emph{Archlinux}, \emph{OpenELECE}, \emph{Raspbian}, \emph{Risc OS},
 \emph{Pidora}, \emph{Kali Linux}, \emph{Windows 10 IoT}, entre outros. Para este
-trabalho, foi utilizado o \emph{Raspbian} cuja interface é mostrada na
-\autoref{fig-raspbian-jessie}.
+trabalho, foi utilizado o \emph{Raspbian}.
 
-\begin{figure}[htb]
-	\caption{\label{fig-raspbian-jessie}Raspbian Jessie com Pixel}
-	\begin{center}
-		\includegraphics[width=1\textwidth]{040-plataformas/RPi-Wi-Fi-dongles/raspbian.jpg}
-	\end{center}
-	\legend{Fonte: Elaborada pelo autor}
-\end{figure}
-
-Portanto Para funcionamento e desenvolvimento de aplicações com RPI3 são
+Portanto, para funcionamento e desenvolvimento de aplicações com RPI3 são
 necessários componentes extra que são  demonstrados na
 \autoref{table:custo-rpi}.
 
