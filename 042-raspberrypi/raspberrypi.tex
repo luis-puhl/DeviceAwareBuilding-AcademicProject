@@ -275,25 +275,96 @@ do sensor com a informação de potência de sinal.
 \end{figure}
 
 
-**Conclusão sobre Raspberry Pi**
+Após a avaliação de viabilidade fez-se necessário uma aplicação mais flexível do que
+o airodump onde fosse possível escolher Campos gerar relatórios mais longos e complexos.
+para essa tarefa o software tshark mostrou-se ideal. Nele podemos escolher, através de
+argumentos na execução por terminal, a interface com a opção “-i wlan0”, O modo monitor
+com opção “-I”, a opção “-T fields” que Altera o funcionamento normal dele para que com
+as opções “-e field.field\_child” possamos escolher os campos mostrados E juntamente
+com as opções “-E separator=, -E quote=d” o formato do relatório é o mesmo de csv
+(comma separated values - valores separados por vírgula). Desta maneira Todos os pacotes
+capturados são processados pelo tshark e escritos na saída padrão do terminal (stdout)
+dando a possibilidade usar a ferramenta de criação de arquivo, acrescentar em arquivo e
+redirecionamento para outro processo do terminal Linux (respectivamnte ‘>’, ‘»’ e ‘|’). Esta
+capacidade, ausente no airodump-ng, é essencial para este trabalho.
 
-O Raspberry foi adotado como o sensor para detectar os dispositivos. O modo
-promíscuo conseguiu ser acessado através de adaptador/módulo USB Wi-Fi. Mais
-detalhes sobre a construção e adoção deste computador serão apresentados no
-capítulo "Construção".
+Para este trabalho, o comando mais utilizado foi o que mostra os endereços MAC
+de origem e transmissão (wlan.sa, wlan.ta), os mesmos endereços porém com nome de
+fabricante como prefixo (wlan.sa\_resolved, wlan.ta\_resolved), a potência de sinal (radiotap.dbm\_antsignal)
+e o nome da rede anunciada se o pacote for um Beacon, da mesma
+maneira que o airodump mostra.
 
-**Comparativo RPi X ESP8266**
+\begin{verbatim}
+pi@sensor-01:~ $ tshark -I -i wlan0 -T fields -E header=y -E quote=d \
+-e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved \
+-e radiotap.dbm_antsignal -e wlan_mgt.ssid
+\end{verbatim}
 
-Em comparação com o ESP8266, o Raspberry Pi compensou seu custo mais caro devido
-a facilidade de programação e acesso aos seus recursos e integração e acesso a
-recursos externos. Além disso, foi possível chegar ao modo promíscuo facilmente
-através do Bash e do sistema operacional. A seguir, uma tabela comparando as
-principais características do RPi e do módulo ESP12F.
+Por último a configuração padrão do Shark não permite execução em modo supervisor
+(root) requisitos de segurança somente usuários do grupo WireShark podem
+executar o programa com segurança. Para isso é necessário adicionar usuário pi ao ao
+grupo WireShark com o seguinte comando.
 
-\begin{figure}[htb]
-	\caption{\label{fig-raspbian-jessie}Raspbian Jessie com Pixel}
-	\begin{center}
-		\includegraphics[width=1\textwidth]{040-plataformas/Plataformas DIY e comparacao/rpi-esp.png}
-	\end{center}
-	\legend{Fonte: Elaborada pelo autor}
-\end{figure}
+\begin{verbatim}
+pi@sensor-01:~ $ sudo usermod -a -G wireshark pi
+\end{verbatim}
+
+Este modo de operação permite executar aplicação final sem necessidade de eleva-
+ção de privilégios (root) tornando aplicação mais segura pois, mesmo que aplicação seja
+comprometida o sistema todo não poderá ser subvertido.
+
+\section{Escolha e conclusão}
+\label{sec:escolha-plataforma}
+
+Em comparação com o ESP8266, o RPI3 compensou seu custo elevado devido a
+facilidade de programação, acesso aos seus recursos, acesso a recursos externos uma
+vez que foi possível chegar ao modo promíscuo facilmente através de recursos nativos do
+sistema operacional. Para uma comparação das plataformas veja a \autoref{}.
+
+\begin{table}[htb]
+\IBGEtab{%
+\ABNTEXchapterfont {
+	\caption{Ferramentas para desenvolvimento com ESP8266}%
+	\label{table:tools-esp}
+}
+}{%
+\begin{tabular}{cccc}
+\toprule
+Aspecto				&	 Raspberry Pi 3 model B					&	ESP-12f		\\
+\midrule \midrule
+GPIO				&	 27 GPIOs (0 a 26) digitais				&	17 GPIOs digitias e analógicos		\\
+\midrule
+Número de pinos		&	 40 pinos								&	22 pinos	\\
+\midrule
+Processamento		&	\emph{ARMv8 64-bit quad-core 1.2 GHz}	&	\emph{Tensilica L106 32-bit (MCU)} com 80		\\
+					&	e \emph{VideoCore IV 3D GPU}			&	ou 160 MHz e instruções \emph{16-bit RSIC}	\\
+\midrule
+Memória RAM			&	  1 GB									&	RAM < 50 kB	\\
+\midrule
+Memória logo termo	&	 cartão SD (usualmente 8 ou 16 GB)		&	\emph{SPI flash} de 4 MB		\\
+\midrule
+Tamanho físico		&	 85x56mm								&	 24x13mm	\\
+\midrule
+Rede embutito		&	 Megabit Ethernet, 802.11 b/g/n			&	802.11 b/g/n	\\
+\midrule
+Expanção			&	  USB, DSI, CSI e GPIO					&	Somente GPIO	\\
+\midrule
+Sistema operacional	&	  Qualquer linux/windowns/risc			&	\\
+					&	  compilado em ARMv8					&	Não possui	\\
+\midrule
+Custo				&	 de R\$ 190,00 a R\$ 270,00				&	 de R\$ 12,56 a R\$ 35,87		\\
+\midrule
+\midrule
+\bottomrule
+\end{tabular}%
+}{%
+	\fonte{Produzido pelo autor.}%
+}
+\end{table}
+
+O RPI3 foi adotado como plataforma para o sensor de detecção de dispositivos pois
+o modo promíscuo (monitor mode) conseguiu ser acessado através de adaptador USB Wi-Fi
+apesar do esforço de utilização da plataforma ESP8266 que reduziria significativamente o
+custo de cada sensor. Para comparação do custo da aplicação aqui proposta veja a Tabela
+
+tabela
