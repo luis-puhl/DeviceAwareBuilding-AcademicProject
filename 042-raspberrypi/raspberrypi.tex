@@ -62,7 +62,7 @@ escolas. Este computador possui:
 
 
 \subsection{Disponibilidade no mercado}
-\label{subsec:mercado-esp}
+\label{subsec:mercado-rpi}
 
 Para abordar a disponibilidade no mercado devemos também contar os periféricos
 que são necessários para desenvolver na plataforma  RPI3 da mesma maneira que
@@ -83,11 +83,11 @@ quanto a escolha do adaptador USB (também conhecido como \emph{dongle Wi-Fi})
 são o \emph{Edimax EW-7811Un} que não é tão comum no Brasil e o
 \emph{EDUP EP-N85xx} que tem muitos genéricos no mercado nacional.
 
-Como camada de \emph{software} o RPI3 comporta diversos sistemas operacionais que são carregados de seu
-cartão \emph{microSD}. Alguns exemplos de sistemas compatíveis são
-\emph{Archlinux}, \emph{OpenELECE}, \emph{Raspbian}, \emph{Risc OS},
-\emph{Pidora}, \emph{Kali Linux}, \emph{Windows 10 IoT}, entre outros. Para este
-trabalho, foi utilizado o \emph{Raspbian} cuja interface é mostrada na
+Como camada de \emph{software} o RPI3 comporta diversos sistemas operacionais
+que são carregados de seu cartão \emph{microSD}. Alguns exemplos de sistemas
+compatíveis são \emph{Archlinux}, \emph{OpenELECE}, \emph{Raspbian}, \emph{Risc
+OS}, \emph{Pidora}, \emph{Kali Linux}, \emph{Windows 10 IoT}, entre outros. Para
+este trabalho, foi utilizado o \emph{Raspbian} cuja interface é mostrada na
 \autoref{fig-raspbian-jessie}.
 
 \begin{figure}[htb]
@@ -105,8 +105,7 @@ necessários componentes extra que são  demonstrados na
 \begin{table}[htb]
 \IBGEtab{%
 \ABNTEXchapterfont {
-	\caption{Descrição e custos com Raspberry Pi 3}%
-	\label{table:custo-rpi}
+	\caption{\label{table:custo-rpi}Descrição e custos com Raspberry Pi 3}%
 }
 }{%
 \begin{tabular}{ccc}
@@ -137,8 +136,48 @@ Edup Usb 150mbps Raspberry Pi		&	permite modo promíscuo					&	R\$ 16,88	\\
 }
 \end{table}
 
+
+\subsection{Desenvolvimento e Implantação}
+\label{subsec:devel-rpi}
+
+Para desenvolver com o RPI3 é necessário instalar um sistema operacional
+em seu cartão SD,  esse processo é simplificado com o uso do \emph{bootloader noobs}
+pode ser encontrado no site oficial do respirar Prime  para download.  após
+feito download os arquivos são extraídos do arquivo comprimido e colocados  na
+pasta raiz do cartão SD.  o próximo passo é ligar a fonte ao responder,
+colocar o cartão SD,  conectar monitor teclado e mouse ligar a fonte na tomada
+para que imediatamente o computador ligue  e a tela escolha do sistema
+operacional seja apresentada.    Nela deve escolher uma rede com ou sem fio para
+conectar-se à internet e,  após conectado E é possível escolher o sistema
+operacional que será baixado é instalado no próprio cartão SD.
+
+O sistema operacional escolhido para a construção da plataforma de sensor É o
+raspbian que é a distribuição Linux recomendada para o RPI. Nela já estão
+instaladas e configuradas muitas ferramentas utilizadas para desenvolvimento e
+implementação de projetos como git, ssh e nodejs que foram utilizados para a
+construção da aplicação como discutido no próximo capítulo.
+
+Para tornar o sistema completamente funcional para o desenvolvimento é
+necessário somente executar os passos de segurança  e dar acessibilidade remota
+ao sistema. Na interface gráfica de configuração do raspbian  deve ser alterado
+a senha do usuário ‘pi’  e ativado serviço SSH que permite acesso remoto através
+de um terminal.  os últimos três passos  são a atualização da lista de pacotes,
+a atualização dos pacotes instalados e uma reinicialização do sistema  para
+garantir o bom funcionamento e segurança do mesmo.
+
+Feito isto qualquer desenvolvimento e implantação pode ser realizado com riscos
+e falhas minimizados. Este processo é fundamental para a segurança da aplicação,
+usuários e construtores pois, como foi revelado após os ataques de 21 de Outubro
+de 2016, dispositivos IoT atualmente não oferecem estes níveis mínimos de
+segurança (\emph{software} atualizado e senhas seguras) tornando-se um terreno
+fértil para a construção de \emph{botnets} como foi o caso do \emph{malware
+Mirai} utilizado para infectar milhares de dispositivos e causar o maior ataque
+\emph{DDoS} até o momento com 1,2 terabits por segundo
+\cite{guardianMirai} \cite{nytimesMirai}.
+
+
 \subsection{Testes e resultados}
-\label{subsec:mercado-esp}
+\label{subsec:testes-rpi}
 
 De maneira análoga à feita com o ESP8266 analisamos a capacidade do Raspberry Pi
 de operar com sua Wi-Fi em modo promíscuo porém,  devido  a diferença de camada
@@ -226,39 +265,20 @@ computadores onde o \emph{software Wireshark} é bem popular, uma interface alte
 do mesmo feita para uso em terminal é chamada \emph{tshark}.
 
 Para testar a viabilidade do sensor utilizou-se \emph{airodump} que é uma
-ferramenta de terminal interativa. Ela provê a seguinte tela:
+ferramenta de terminal interativa como vista na \autoref{fig-airodump} onde é
+demonstrado a capacidade de capturar pacotes do tipo \emph{Beacon} (tabela com
+BSSID, PWR e Beacons na parte superior da \autoref{fig-airodump}) que anunciam
+a presença de AP (\emph{Access Point} - ponto de acesso) e o nome da rede que
+ele está servindo e, também os pacotes entre os dispositivos (\emph{Stations})
+associados a um AP (tabela com BSSID, STATION e PWR na parte inferior da
+\autoref{fig-airodump}). Em ambos os casos é mostrado um valor de potência de
+sinal (PWR) associado a cada transmissor portanto, demostrando a viabilidade
+do sensor com a informação de potência de sinal.
 
 \begin{figure}[htb]
-	\caption{\label{fig-airodump}Airodump-ng}
+	\caption{\label{fig-airodump}Interface do airodump-ng}
 	\begin{center}
-		\begin{verbatim}
-pi@sensor-01:~ $ sudo airodump-ng wlan0
-
-CH 11 ][ Elapsed: 24 s ][ 2017-01-21 22:49
-
-BSSID              PWR  #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID
-
-58:66:BA:9A:94:02  -30      0    0   1  54e. WPA2 CCMP   MGT  wfu
-58:66:BA:9A:94:01  -30      0    0   1  54e. WPA  TKIP   PSK  wfuVisitante
-58:66:BA:9A:94:03  -30      0    0   1  54e. WPA2 CCMP   MGT  eduroam
-06:27:22:B3:E5:FB  -41    144    0   1  54e. WPA2 CCMP   PSK  LTIA PSK
-32:CD:A7:CB:85:93  -48      0    0   1  54e  WPA2 CCMP   PSK  DIRECT-KJM2070 Series
-58:66:BA:9A:89:23  -66      0    0  11  54e. WPA2 CCMP   MGT  eduroam
-58:66:BA:9A:89:21  -67      0    0  11  54e. WPA  TKIP   PSK  wfuVisitante
-58:66:BA:9A:89:22  -67      0    0  11  54e. WPA2 CCMP   MGT  wfu
-06:27:22:B3:E5:FE  -68      0    0   1  54e. WPA2 CCMP   PSK  LTIA PSK
-5E:CF:7F:D3:54:C2  -72      0    0   1  48   OPN              AI-THINKER_D354C2
-32:CD:A7:C9:F8:72  -76      0    0  11  54e  WPA2 CCMP   PSK  DIRECT-aVM2070 Series
-58:66:BA:9A:8F:C1  -77      0    0   6  54e. WPA  TKIP   PSK  wfuVisitante
-58:66:BA:9A:8F:C3  -78      0    0   6  54e. WPA2 CCMP   MGT  eduroam
-00:1B:11:4A:7C:93  -83      2    0   6  54 . WPA2 CCMP   PSK  nanolab
-
-BSSID              STATION            PWR   Rate    Lost    Frames  Probe
-
-(not associated)   58:66:BA:9A:8F:C0  -76    0 -11      0        2
-06:27:22:B3:E5:FB  B8:27:EB:9F:6A:80  -38    0e- 1      0       94
-
-		\end{verbatim}
+	\includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/wifi-sniff-rpi/4-rpi-airodump.png}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
