@@ -11,7 +11,7 @@ desfavorece. Em média, no exterior, o Raspberry Pi é vendido por USD \$ 35,00
 de 2017 \cite{rpi3-mercadolivre}.
 
 As vantagens de ter um computador moderno completo sobrepõem seu custo em muitas
-vezes, dentre as quais destacamos o poder computacional e a interface "amigável"  com usuário devido ao
+vezes, dentre as quais destaca-se o poder computacional e a interface "amigável"  com usuário devido ao
 sistema operacional oferecendo maior nível de abstração (bastando apenas alguns
 comandos para acessá-los e realizar tarefas complexas).
 Além deste recurso a nível de sistema, a comunidade e o número de projetos "faça
@@ -64,8 +64,8 @@ escolas. Este computador possui:
 \subsection{Disponibilidade no mercado}
 \label{subsec:mercado-rpi}
 
-Para abordar a disponibilidade no mercado devemos também contar os periféricos
-que são necessários para desenvolver na plataforma  RPi3 da mesma maneira que
+Para abordar a disponibilidade no mercado deve-se também contar os periféricos
+que são necessários para desenvolvv er na plataforma  RPI3 da mesma maneira que
 foi feito com o ESP8266.
 
 O RPI3 é ligado por uma fonte de 2A, 5V e 10W através de uma entrada micro
@@ -83,7 +83,7 @@ quanto a escolha do adaptador USB (também conhecido como \emph{dongle Wi-Fi})
 são o \emph{Edimax EW-7811Un} que não é tão comum no Brasil e o
 \emph{EDUP EP-N85xx} que tem muitos genéricos no mercado nacional.
 
-Como camada de \emph{software}, o RPi3 comporta diversos sistemas operacionais que são carregados de seu
+Como camada de \emph{software}, o RPI3 comporta diversos sistemas operacionais que são carregados de seu
 cartão \emph{microSD}. Alguns exemplos de sistemas compatíveis são
 \emph{Archlinux}, \emph{OpenELECE}, \emph{Raspbian}, \emph{Risc OS},
 \emph{Pidora}, \emph{Kali Linux}, \emph{Windows 10 IoT}, entre outros. Para este
@@ -128,40 +128,38 @@ Edup Usb 150mbps Raspberry Pi		&	permite modo promíscuo					&	R\$ 16,88	\\
 \end{table}
 
 
-\subsection{Desenvolvimento e Implantação}
+\subsection{Desenvolvimento e implantação}
 \label{subsec:devel-rpi}
 
 Para desenvolver com o RPI3 é necessário instalar um sistema operacional
-em seu cartão SD,  esse processo é simplificado com o uso do \emph{bootloader noobs}
-pode ser encontrado no site oficial do respirar Prime  para download.  após
-feito download os arquivos são extraídos do arquivo comprimido e colocados  na
-pasta raiz do cartão SD.  o próximo passo é ligar a fonte ao responder,
-colocar o cartão SD,  conectar monitor teclado e mouse ligar a fonte na tomada
-para que imediatamente o computador ligue  e a tela escolha do sistema
-operacional seja apresentada.    Nela deve escolher uma rede com ou sem fio para
-conectar-se à internet e,  após conectado E é possível escolher o sistema
-operacional que será baixado é instalado no próprio cartão SD.
+em seu cartão SD, esse processo é simplificado com o uso do \emph{bootloader noobs}
+que pode ser encontrado no site oficial do Raspberry para download (raspberrypi.org). Após
+feito o download, os arquivos são extraídos do arquivo comprimido e colocados na
+pasta raiz do cartão SD. Os próximos passos são conectar o cartão SD, a fonte,
+monitor, teclado e mouse no RPi e ligar a fonte na tomada
+para que imediatamente o computador ligue. Na tela inicial deve-se escolher uma rede com ou sem fio.
+Após conectado, é possível escolher o sistema operacional que será baixado e instalado no próprio cartão SD.
 
-O sistema operacional escolhido para a construção da plataforma de sensor É o
-raspbian que é a distribuição Linux recomendada para o RPI. Nela já estão
-instaladas e configuradas muitas ferramentas utilizadas para desenvolvimento e
-implementação de projetos como git, ssh e nodejs que foram utilizados para a
-construção da aplicação como discutido no próximo capítulo.
+O sistema operacional escolhido para a construção da plataforma de sensor foi o
+Raspbian que é a distribuição Linux recomendada para o RPI. Nela, já estão
+instaladas e configuradas muitas ferramentas utilizadas para o desenvolvimento e
+	a implementação de projetos, como \emph{git}, SSH e \emph{nodejs} que foram utilizados para a
+construção da aplicação como será discutido no próximo capítulo.
 
-Para tornar o sistema completamente funcional para o desenvolvimento é
-necessário somente executar os passos de segurança  e dar acessibilidade remota
-ao sistema. Na interface gráfica de configuração do raspbian  deve ser alterado
-a senha do usuário ‘pi’  e ativado serviço SSH que permite acesso remoto através
-de um terminal.  os últimos três passos  são a atualização da lista de pacotes,
-a atualização dos pacotes instalados e uma reinicialização do sistema  para
+Para tornar o sistema completamente funcional para o desenvolvimento, é
+necessário somente executar os passos de segurança e dar acesso remoto
+ao sistema. Na interface gráfica de configuração do Raspbian deve ser alterado
+a senha do usuário ‘pi’ e ativado o serviço SSH que permite acesso remoto através
+de um terminal. Os últimos três passos são a atualização da lista de pacotes,
+a atualização dos pacotes instalados e uma reinicialização do sistema para
 garantir o bom funcionamento e segurança do mesmo.
 
-Feito isto qualquer desenvolvimento e implantação pode ser realizado com riscos
+Feito isto, qualquer desenvolvimento e implantação pode ser realizado com riscos
 e falhas minimizados. Este processo é fundamental para a segurança da aplicação,
-usuários e construtores pois, como foi revelado após os ataques de 21 de Outubro
+usuários e construtores, pois, como foi revelado após os ataques de 21 de Outubro
 de 2016, dispositivos IoT atualmente não oferecem estes níveis mínimos de
-segurança (\emph{software} atualizado e senhas seguras) tornando-se um terreno
-fértil para a construção de \emph{botnets} como foi o caso do \emph{malware
+segurança (\emph{software} atualizado e senhas seguras), tornando-se um terreno
+fértil para a construção de \emph{botnets},s como foi o caso do \emph{malware
 Mirai} utilizado para infectar milhares de dispositivos e causar o maior ataque
 \emph{DDoS} até o momento com 1,2 terabits por segundo
 \cite{guardianMirai} \cite{nytimesMirai}.
@@ -170,13 +168,13 @@ Mirai} utilizado para infectar milhares de dispositivos e causar o maior ataque
 \subsection{Testes e resultados}
 \label{subsec:testes-rpi}
 
-De maneira análoga à feita com o ESP8266 analisamos a capacidade do Raspberry Pi
-de operar com sua Wi-Fi em modo promíscuo porém,  devido  a diferença de camada
-de software envolvida diferentes ferramentas foram utilizadas.
+De maneira análoga à feita com o ESP8266, analisou-se a capacidade do Raspberry Pi
+de operar com sua \emph{Wi-Fi} em modo promíscuo, porém, devido a diferença de camada
+de software envolvida, diferentes ferramentas foram utilizadas.
 
-Neste caso utilizamos as ferramentas airodump e tshark além das ferramentas de
-Wi-Fi padrões do sistema operacional \emph{raspbian}. Para verificar o modo
-promíscuo no ambiente raspbian utiliza-se os comandos \emph{ifconfig},
+Neste caso, utilizou-se as ferramentas \emph{airodump-ng} (aircrack-ng.org) e \emph{tshark} além das ferramentas de
+\emph{Wi-Fi} padrões do sistema operacional \emph{Raspbian}. Para verificar o modo
+promíscuo no ambiente Raspbian, utiliza-se os comandos \emph{ifconfig},
 \emph{iwconfig} e \emph{iw}, que são padrão do sistema operacional Debian, como
 demonstrado a seguir.
 
@@ -186,8 +184,7 @@ pi@sensor-01:~ $ sudo iwconfig wlan0 mode monitor
 pi@sensor-01:~ $ sudo ifconfig wlan0 up
 \end{lstlisting}
 
-Este processo é
-O resultado pode ser observado com o comando
+O resultado pode ser observado com o comando a seguir.
 
 \begin{lstlisting}
 pi@sensor-01:~ $ sudo iwconfig wlan0
@@ -196,19 +193,19 @@ wlan0  IEEE 802.11bgn Mode:Monitor Frequency:2.412 GHz Tx-Power=20 dBm
        Power Management:off
 \end{lstlisting}
 
-Quando este processo foi realizado utilizando somente o adaptador de Wi-Fi
-integrado no RPI3, cuja antena de cerâmica pode está em destaque na
-\autoref{fig-rpi-onboard} o resultado foi negativo portanto outros adaptadores
+Quando este processo foi realizado utilizando somente o adaptador de \emph{Wi-Fi}
+integrado no RPI3, cuja antena de cerâmica está em destaque na
+\autoref{fig-rpi-onboard}, o resultado foi negativo, portanto outros adaptadores
 foram necessários.
 
-No ambiente do laboratório encontramos adaptadores \emph{Wi-Fi USB D-link}
+No ambiente do laboratório (LTIA- Laboratório de Tecnologia da Informação Aplicada),
+encontrou-se adaptadores \emph{Wi-Fi USB D-link}
 (\autoref{fig-dlink}), porém executando o mesmo teste neles não foi possível
-Ativar o modo promíscuo. Com um colega de laboratorio, pudemos emprestar um
-terceiro adaptador, este do modelo \emph{Edup} (\autoref{fig-ralink-epub}) com
-fabricanteidentificado por software de nome \emph{Ralink}, que teve resultado
-positivo. Para a construção dos dois sensores foi necessária a aquisição, e
+ativar o modo promíscuo. Um terceiro adaptador emprestado foi o modelo \emph{Edup} (\autoref{fig-ralink-epub}) da
+fabricante \emph{Ralink} que teve resultado
+positivo. Para a construção dos dois sensores, foi necessária a aquisição, e
 subsequente teste, de mais um modelo de adaptador que está listado na
-\autoref{table:custo-rpi} que também tem fabricante \emph{Ralink} porém a sua
+\autoref{table:custo-rpi} que também tem como fabricante a \emph{Ralink}, porém a sua
 aparência externa difere do anterior e pode ser visualizada na
 \autoref{fig-ralink}, mesmo que a aquisição foi do mesmo anúncio.
 
@@ -219,14 +216,14 @@ aparência externa difere do anterior e pode ser visualizada na
     \centering
     \caption{Antena cerâmica de Wi-Fi e Bluetooth do Raspberry Pi 3 \label{fig-rpi-onboard}}
     \includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/cut_rpi-onboard.jpg}
-    \legend{Fonte: Produzido pelos autores}
+    \legend{Fonte: Produzido pelo autor}
   \end{minipage}
   \hfill
   \begin{minipage}{0.49\textwidth}
 	\centering
   	\caption{Adaptador Wi-Fi USB D-Link do laboratório \label{fig-dlink}}
   	\includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/cut_dlink.jpg}
-  	\legend{Fonte: Produzido pelos autores}
+  	\legend{Fonte: Produzido pelo autor}
   \end{minipage}
 \end{figure}
 
@@ -236,34 +233,34 @@ aparência externa difere do anterior e pode ser visualizada na
 	  \centering
 	  \caption{Adaptador Wi-Fi USB Ralink Epub emprestado \label{fig-ralink-epub}}
 	  \includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/cut_ralink-epub.jpg}
-	  \legend{Fonte: Produzido pelos autores}
+	  \legend{Fonte: Produzido pelo autor}
   \end{minipage}
   \hfill
   \begin{minipage}{0.45\textwidth}
 	  \centering
 	  \caption{Adaptador Wi-Fi USB Ralink Epub comprado \label{fig-ralink}}
 	  \includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/cut_ralink.jpg}
-	  \legend{Fonte: Produzido pelos autores}
+	  \legend{Fonte: Produzido pelo autor}
   \end{minipage}
 \end{figure}
 
 
-Para capturar e avaliar pacotes É necessário uma ferramenta  para tal. Na área
-de segurança da informação podemos encontrar \emph{airodump} que é utilizado para
-avaliar e explorar vulnerabilidades de segurança em redes Wi-Fi. Outra área que
-forneceu uma ferramenta adequada é a área de qualidade de serviço em redes de
-computadores onde o \emph{software Wireshark} é bem popular, uma interface alternativa
+Para capturar e avaliar pacotes uma ferramenta é necessária. Na área
+de segurança da informação pode-se encontrar o \emph{airodump-ng} que é utilizado para
+avaliar e explorar vulnerabilidades de segurança em redes \emph{Wi-Fi}. Outra área que
+forneceu uma ferramenta adequada foi a área de qualidade de serviço em redes de
+computadores (QoS) onde o \emph{software Wireshark} é bem popular, uma interface alternativa
 do mesmo feita para uso em terminal é chamada \emph{tshark}.
 
-Para testar a viabilidade do sensor utilizou-se \emph{airodump} que é uma
-ferramenta de terminal interativa como vista na \autoref{fig-airodump} onde é
+Para testar a viabilidade do sensor, utilizou-se o \emph{airodump-ng} que é uma
+ferramenta de terminal interativa, como vista na \autoref{fig-airodump}, onde é
 demonstrado a capacidade de capturar pacotes do tipo \emph{Beacon} (tabela com
 BSSID, PWR e Beacons na parte superior da \autoref{fig-airodump}) que anunciam
 a presença de AP (\emph{Access Point} - ponto de acesso) e o nome da rede que
-ele está servindo e, também os pacotes entre os dispositivos (\emph{Stations})
+ele está servindo. Além disso, é possível observar também os pacotes entre os dispositivos (\emph{Stations})
 associados a um AP (tabela com BSSID, STATION e PWR na parte inferior da
-\autoref{fig-airodump}). Em ambos os casos é mostrado um valor de potência de
-sinal (PWR) associado a cada transmissor portanto, demostrando a viabilidade
+\autoref{fig-airodump}). Em ambos os casos, é mostrado um valor de potência de
+sinal (PWR) associado a cada transmissor, portanto, demostrando a viabilidade
 do sensor com a informação de potência de sinal.
 
 \begin{figure}[htb]
@@ -275,24 +272,24 @@ do sensor com a informação de potência de sinal.
 \end{figure}
 
 
-Após a avaliação de viabilidade fez-se necessário uma aplicação mais flexível do que
-o airodump onde fosse possível escolher Campos gerar relatórios mais longos e complexos.
-para essa tarefa o software tshark mostrou-se ideal. Nele podemos escolher, através de
-argumentos na execução por terminal, a interface com a opção “-i wlan0”, O modo monitor
-com opção “-I”, a opção “-T fields” que Altera o funcionamento normal dele para que com
-as opções “-e field.field\_child” possamos escolher os campos mostrados E juntamente
-com as opções “-E separator=, -E quote=d” o formato do relatório é o mesmo de csv
-(comma separated values - valores separados por vírgula). Desta maneira Todos os pacotes
-capturados são processados pelo tshark e escritos na saída padrão do terminal (stdout)
-dando a possibilidade usar a ferramenta de criação de arquivo, acrescentar em arquivo e
-redirecionamento para outro processo do terminal Linux (respectivamnte ‘>’, ‘»’ e ‘|’). Esta
-capacidade, ausente no airodump-ng, é essencial para este trabalho.
+Após a avaliação de viabilidade, fez-se necessário o uso de uma aplicação mais flexível do que
+o \emph{airodump-ng} onde fosse possível escolher campos e gerar relatórios mais longos e complexos.
+Para essa tarefa o software \emph{tshark} mostrou-se ideal. Nele, pode-se escolher, através de
+argumentos na execução por terminal, a interface com a opção “-i wlan0”, o modo monitor
+com opção “-I”, a opção “-T fields” que altera o funcionamento normal dele para que com
+as opções “-e field.field\_child” seja permitido escolher os campos mostrados e juntamente
+com as opções “-E separator=, -E quote=d” o formato do relatório que é o mesmo de um .csv
+(comma separated values - valores separados por vírgula). Desta maneira, todos os pacotes
+capturados são processados pelo \emph{tshark} e escritos na saída padrão do terminal (stdout),
+dando a possibilidade de usar a ferramenta de criação de arquivo, acrescentar em arquivo e
+redirecionar para outro processo do terminal Linux (respectivamnte ‘>’, ‘»’ e ‘|’). Esta
+capacidade, ausente no \emph{airodump-ng}, é essencial para este trabalho.
 
 Para este trabalho, o comando mais utilizado foi o que mostra os endereços MAC
-de origem e transmissão (wlan.sa, wlan.ta), os mesmos endereços porém com nome de
+de origem e transmissão (wlan.sa, wlan.ta), os mesmos endereços, porém com nome de
 fabricante como prefixo (wlan.sa\_resolved, wlan.ta\_resolved), a potência de sinal (radiotap.dbm\_antsignal)
 e o nome da rede anunciada se o pacote for um Beacon, da mesma
-maneira que o airodump mostra.
+maneira que o \emph{airodump-ng} mostra.
 
 \begin{lstlisting}
 pi@sensor-01:~ $ tshark -I -i wlan0 -T fields -E header=y -E quote=d \
@@ -300,24 +297,24 @@ pi@sensor-01:~ $ tshark -I -i wlan0 -T fields -E header=y -E quote=d \
 -e radiotap.dbm_antsignal -e wlan_mgt.ssid
 \end{lstlisting}
 
-Por último a configuração padrão do Shark não permite execução em modo supervisor
-(root) requisitos de segurança somente usuários do grupo WireShark podem
-executar o programa com segurança. Para isso é necessário adicionar usuário pi ao ao
-grupo WireShark com o seguinte comando.
+Por último, a configuração padrão do \emph{tshark} não permite execução em modo supervisor
+(\emph{root}), portanto, por segurança, somente usuários do grupo \emph{WireShark} podem
+executar o programa. Para isso, é necessário adicionar o usuário "pi"  ao
+grupo \emph{WireShark} com o seguinte comando.
 
 \begin{lstlisting}
 pi@sensor-01:~ $ sudo usermod -a -G wireshark pi
 \end{lstlisting}
 
-Este modo de operação permite executar aplicação final sem necessidade de eleva-
-ção de privilégios (root) tornando aplicação mais segura pois, mesmo que aplicação seja
-comprometida o sistema todo não poderá ser subvertido.
+Este modo de operação permite executar a aplicação final sem necessidade de eleva-
+ção de privilégios (root), tornando-a mais segura, pois mesmo que aplicação seja
+subvertida o sistema todo não poderá ser comprometido.
 
 \section{Escolha e conclusão}
 \label{sec:escolha-plataforma}
 
 Em comparação com o ESP8266, o RPI3 compensou seu custo elevado devido a
-facilidade de programação, acesso aos seus recursos, acesso a recursos externos uma
+facilidade de programação, acesso aos seus recursos e acesso a recursos externos uma
 vez que foi possível chegar ao modo promíscuo facilmente através de recursos nativos do
 sistema operacional. Para uma comparação das plataformas veja a \autoref{table:comp-hardware-esp-rpi}.
 
@@ -341,19 +338,18 @@ Processamento		&	\emph{ARMv8 64-bit quad-core 1.2 GHz}	&	\emph{Tensilica L106 32
 \midrule
 Memória RAM			&	  1 GB									&	RAM < 50 kB	\\
 \midrule
-Memória logo termo	&	 cartão SD (usualmente 8 ou 16 GB)		&	\emph{SPI flash} de 4 MB		\\
+Memória longo termo	&	 cartão SD (usualmente 8 ou 16 GB)		&	\emph{SPI flash} de 4 MB		\\
 \midrule
 Tamanho físico		&	 85x56mm								&	 24x13mm	\\
 \midrule
-Rede embutito		&	 Megabit Ethernet, 802.11 b/g/n			&	802.11 b/g/n	\\
+Rede embutida		&	 Megabit Ethernet, 802.11 b/g/n			&	802.11 b/g/n	\\
 \midrule
-Expanção			&	  USB, DSI, CSI e GPIO					&	Somente GPIO	\\
+Expansão			&	  USB, DSI, CSI e GPIO					&	Somente GPIO	\\
 \midrule
 Sistema operacional	&	  Qualquer linux/windowns/risc			&	\\
 					&	  compilado em ARMv8					&	Não possui	\\
 \midrule
 Custo				&	 de R\$ 190,00 a R\$ 270,00				&	 de R\$ 12,56 a R\$ 35,87		\\
-\midrule
 \midrule
 \bottomrule
 \end{tabular}%
@@ -362,11 +358,11 @@ Custo				&	 de R\$ 190,00 a R\$ 270,00				&	 de R\$ 12,56 a R\$ 35,87		\\
 }
 \end{table}
 
-O RPI3 foi adotado como plataforma para o sensor de detecção de dispositivos
-pois o modo promíscuo (monitor mode) conseguiu ser acessado através de adaptador
-USB Wi-Fi apesar do esforço de utilização da plataforma ESP8266 que reduziria
+O RPI3 foi adotado como plataforma para o sensor de detecção de dispositivos,
+pois o modo promíscuo (\emph{monitor mode}) conseguiu ser acessado através de adaptador
+USB \emph{Wi-Fi}. Apesar do esforço para ativação do modo promíscuo na plataforma ESP8266, o uso desta reduziria
 significativamente o custo de cada sensor. Para comparação do custo da aplicação
-aqui proposta veja a \autoref{table:comp-app-sensor}.
+aqui proposta, veja a \autoref{table:comp-app-sensor}.
 
 \begin{table}[htb]
 \IBGEtab{%
@@ -383,13 +379,13 @@ aqui proposta veja a \autoref{table:comp-app-sensor}.
 	\midrule
 	Item					&	Descrição			&	Custo em R\$	&	Descrição					&	Custo em R\$	\\
 	\midrule
-	Plataforma				&	RPI3				&	190,00			&	D1 mini (ESP-12f)			&	12,56	\\
+	Plataforma				&	RPI3				&	269,99			&	D1 mini (ESP-12f)			&	12,56	\\
 	Fonte de alimentação	&	Fonte Usb iPad		&	13,99			&	Fonte Usb Celular com cabo	&	7,85	\\
-	Fonte de alimentação	&	Cabo Usb A-micro	&	2,00			&								&		\\
+												&	Cabo Usb A-micro	&	2,00			&								&		\\
 	Adaptador Wi-Fi 		&	Edup Usb			&	16,88			&								&		\\
 	Memória			 		&	SD c10 16GB			&	21,99			&								&		\\
 	\midrule
-	Total por Sensor		&						&	244,86			&								&	20,41	\\
+	Total por Sensor		&						&	324,85			&								&	20,41	\\
 	\midrule\midrule
 \end{tabular}%
 }{%
@@ -398,16 +394,16 @@ aqui proposta veja a \autoref{table:comp-app-sensor}.
 \end{table}
 
 É importante notar a proporção de custo entre as duas plataformas onde o RPI3
-custa aproximadamente 10 vezes mais por sensor do que a plataforma ESP8266. Isto
+custa aproximadamente 15 vezes mais por sensor do que a plataforma ESP8266. Isto
 justifica o esforço realizado durante o desenvolvimento deste trabalho para
 explorar e, com esperança, ativar o modo promíscuo no pequeno dispositivo que
 infelizmente não rendeu frutos.
 
-Para a construção do \emph{Gateway IoT} as exigências de \emph{hardware}, onde
-espera-se do \emph{gateway} capacidades de mínimas de processamento,
-armazenamento e comunicação, e de \emph{software}, onde o mínimo é um sistema
-operacional quee suporte um \emph{MQTT Broker}. Portanto para o \emph{gateway} a
-plataforma ESP8266 clarmente não é adequada e um RPI3 representa o custo mínimo.
+Para a construção do \emph{Gateway IoT}, as exigências de \emph{hardware} são
+capacidades mínimas de processamento,
+armazenamento e comunicação, e a exigência de \emph{software} é um sistema
+operacional que suporte um \emph{MQTT Broker}. Portanto, para o \emph{gateway}, a
+plataforma ESP8266 claramente não é adequada, então um RPI3 representa o custo mínimo.
 
 \begin{table}[htb]
 \IBGEtab{%
@@ -422,12 +418,12 @@ plataforma ESP8266 clarmente não é adequada e um RPI3 representa o custo míni
 	\midrule
 	Item					&	Descrição			&	Custo em R\$	\\
 	\midrule
-	Plataforma				&	RPI3				&	190,00			\\
+	Plataforma				&	RPI3				&	269,99			\\
 	Fonte de alimentação	&	Fonte Usb iPad		&	13,99			\\
-	Fonte de alimentação	&	Cabo Usb A-micro	&	2,00			\\
+												&	Cabo Usb A-micro	&	2,00			\\
 	Memória			 		&	SD c10 16GB			&	21,99			\\
 	\midrule
-	Total por Gateway		&						&	227,98			\\
+	Total por Gateway		&						&	307,97			\\
 	\midrule
 	\bottomrule
 \end{tabular}%
