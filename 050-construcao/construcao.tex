@@ -109,23 +109,14 @@ necessário e configura-lo interpretar os resultados \cite{fast-csv}.
 const csv = require("fast-csv");
 let csvStream = csv()
   .on("data", function(data){
-    let wlan = {
-      sa            : data[0], // sender address
-      sa_resolved   : data[1], // sender address resolved
-      ta            : data[2], // transmitter address
-      ta_resolved   : data[3], // transmitter address resolved
-    };
-    let radiotap = {
-      dbm_antsignal : data[4], // potencia de sinal (rss)
-    };
-    let wlan_mgt = {
-      ssid          : data[5], // nome da rede no pacote Beacon
-    };
-    let packet = {
-      wlan     : wlan,
-      radiotap : radiotap,
-      wlan_mgt : wlan_mgt,
-    };
+    let packet = new Packet(
+      data[0], // sender address
+      data[1], // sender address resolved
+      data[2], // transmitter address
+      data[3], // transmitter address resolved
+      data[4], // potencia de sinal (rss)
+      data[5], // nome da rede no pacote Beacon
+    );
     processarPacote(packet);
   })
   .on("end", function(){
@@ -142,9 +133,128 @@ de \emph{stream} da saída padrão do processo filho (\emph{stdout}) para o
 faltante é o processamento dos pacotes e envio das inferências do sensor para o
 \emph{gateway}.
 
-// inferencias
+Para as inferências e estatísticas foi criada uma classe onde as informações
+sobre cada dispositivo são agregadas e um objeto para armazenamento indexado
+pelo endereço MAC. Desta forma cada novo pacote pode ser acrescentado ao
+histórico de cada dispositivo.
 
-// mqtt
+\begin{lstlisting}[language=java]
+let devices = {};	// lista indexada de dispositivos
+
+class Device {
+  [...]
+  appendPacket(packet){
+    let curTime = ( new Date() ).toISOString();
+    this.rssHistory.push(packet.radiotap.dbm_antsignal);
+    this.ssidHistory[packet.wlan_mgt.ssid] = curTime;
+    this.taHistory[packet.wlan.ta] = {
+      ta      : packet.wlan.ta,
+      ta_resolved  : packet.wlan.ta_resolved,
+    };
+  }
+}
+
+function processarPacote(packet) {
+  let sa = packet.wlan.sa;
+  if (! devices[sa]){
+    devices[sa] = new Device(sa, packet.wlan.sa_resolved);
+  }
+  devices[sa].appendPacket(packet);
+}
+\end{lstlisting}
+
+A partir desta lista é posível calcular a média e desvio padrão de potência de
+sinal para cada dispositivo descoberto.
+
+
+\begin{lstlisting}[language=java]
+class Device {
+  [...]
+  get rssStatistics(){
+    let sum = 0;
+    let avg = 0;
+    let variance = 0;
+    let stdDeviation = 0;
+    if (this.rssHistory.length > 0){
+      for (let rss of this.rssHistory){
+        sum += rss;
+      }
+      avg = sum / this.rssHistory.length;
+
+      sum = 0;
+      for (let rss of this.rssHistory){
+        sum += Math.pow(( rss - avg ), 2);
+      }
+      variance = sum / (this.rssHistory.length - 1);
+      stdDeviation = Math.sqrt(variance);
+    }
+    return {
+      size      : this.rssHistory.length,
+      avg        : avg,
+      variance    : variance,
+      stdDeviation  : stdDeviation,
+      time      : ( new Date() ).toISOString(),
+    };
+  }
+}
+\end{lstlisting}
+
+Por fim, é necessário comunicar aos interessados nessas inferências, o que é
+feito através do módulo \citeonline{mqttjs}.
+
+\begin{lstlisting}[language=java]
+const mqtt = require('mqtt');
+let clientMqtt  = mqtt.connect(`mqtt://${config.mqttHost}:${config.mqttPort}`, {
+  username  : config.mqttUser,
+  password  : config.mqttPwd,
+})
+clientMqtt.on('connect', function () {
+  clientMqtt.subscribe('devices');
+  startTshark();
+});
+clientMqtt.on('message', function (topic, message) {
+  if (topic.toString() == 'devices') {
+    switch (message.toString()) {
+    case 'list':
+      clientMqtt.publish(
+        'devices/report',
+        JSON.stringify( tshark.getDevices() )
+      );
+      break;
+    case 'report':
+      clientMqtt.publish(
+        'devices/report',
+        JSON.stringify( tshark.getReport() )
+      );
+      break;
+    default:
+      let mac = message.toString();
+      clientMqtt.publish(
+        'devices/report',
+        JSON.stringify( tshark.getDeviceReport(mac) )
+      );
+      break;
+    }
+  }
+});
+\end{lstlisting}
+
+Neste caso, quando a aplicação é iniciada ela conecta-se ao \emph{MQTT Broker},
+quando a conexão é estabelecida ela solicita ao \emph{MQTT Broker} a inscrição
+para receber as publicações no tópico 'devices' e o processo filho \emph{TShark}
+é iniciado. O processo filho é executado, os resultados são capturados e
+guardados.
+
+Quando uma mensagem no tópico 'devices' é recebida três reações podem acontecer:
+A lista de dispositivos deve ser fornecida, o relatório do sensor deve ser
+fornecido ou um relatório sobre um dispositivo específico deve ser fornecido.
+Para todos os casos uma resposta adequada é imediatamente processada e enviada
+para o tópico 'devices/report'.
+
+Em conclusão, a aplicação sensor instancia o processo de aquisição de dados
+\emph{TShark} assincronamente e captura, classifica e armazena todos os pacotes
+que ficam acessíveis através de requisições ao tópico \emph{MQTT} 'devices'.
+
 
 \section{Gateway}
 \label{sec:app-gw}
