@@ -100,7 +100,7 @@ de maneira análoga ao operador '|' no terminal também chamado de \emph{pipe},
 redirecionar a saída de um processo ou \emph{stream} de leitura para outro
 processo ou \emph{stream} de escrita.
 
-Com isso nos falta apenas um \emph{stream} de escrita que receba a saída do
+Com isso nos falta um \emph{stream} de escrita que receba a saída do
 \emph{TShark} que foi definida no formato CSV. Para isso biblioteca extra
 \emph{fast-csv} deve ser instalada. Com ela podemos criar o \emph{stream}
 necessário e configura-lo interpretar os resultados \cite{fast-csv}.
@@ -204,7 +204,8 @@ feito através do módulo \citeonline{mqttjs}.
 
 \begin{lstlisting}[language=java]
 const mqtt = require('mqtt');
-let clientMqtt  = mqtt.connect(`mqtt://${config.mqttHost}:${config.mqttPort}`, {
+const mqttBrok = `mqtt://${config.mqttHost}:${config.mqttPort}`;
+let clientMqtt  = mqtt.connect(mqttBrok, {
   username  : config.mqttUser,
   password  : config.mqttPwd,
 })
@@ -239,7 +240,7 @@ clientMqtt.on('message', function (topic, message) {
 });
 \end{lstlisting}
 
-Neste caso, quando a aplicação é iniciada ela conecta-se ao \emph{MQTT Broker},
+No caso desta listagem de código, quando a aplicação é iniciada ela conecta-se ao \emph{MQTT Broker},
 quando a conexão é estabelecida ela solicita ao \emph{MQTT Broker} a inscrição
 para receber as publicações no tópico 'devices' e o processo filho \emph{TShark}
 é iniciado. O processo filho é executado, os resultados são capturados e
@@ -254,6 +255,45 @@ para o tópico 'devices/report'.
 Em conclusão, a aplicação sensor instancia o processo de aquisição de dados
 \emph{TShark} assincronamente e captura, classifica e armazena todos os pacotes
 que ficam acessíveis através de requisições ao tópico \emph{MQTT} 'devices'.
+Isso cobre os requisitos funcionais desta aplicação.
+
+Os requisitos não-funcionais desta aplicação estão ligados com ambiente de
+implantação que é um RPI3 remoto, sem outro dispositivo de entrada e saída
+exceto a comunicação \emph{MQTT} portanto, sem nenhum aspecto permitindo
+monitoração de um humano que garanta que o aplicativo continue funcionando.
+
+Este ambiente se assemelha muito a aplicações em núvem, onde não tem-se acesso
+físico ao computador onde a aplicação é executada. Neste ambiente procura-se
+garantir que a aplicação seja executada constantemente e atualizada
+automaticamente sempre que uma nova versão é construida e testada. Estas
+garantias podem ser alcançadas com ferramentas de integração contínua
+(\emph{Continuous Integration} - CI). No caso do Github, a escolha de hospedagem
+de código deste projeto, diversas opções deste tipo de ferramenta podem ser
+encontradas em \cite{githubdeploy}.
+
+Para esta aplicação no entando, construiu-se uma solução extremamente
+simplificada destas ferramentas utilizando a arquitetura existente do programa
+\emph{git} para garantir que novas versões fossem instaladas assim que possível.
+A implementação consiste da adição, nas primeiras instruções do aplicativo,
+uma rotina que executa sincronamente um programa extreno através do terminal
+(diferente da execução do \emph{TShark} que é assíncrona). Este programa é
+o \emph{git} com a opção \emph{pull} que, quando executado em um diretório que
+é repositório, solicita ao servidor configurado como \emph{origin} a atualização
+do código do \emph{branch} atual. Se a mensagem encontrada na saída padrão
+(\emph{stdout})resultante deste comando for diferente de
+\emph{"Already up-to-date."} o programa finaliza imediatamente pois uma nova
+versão foi baixada e uma reinicialização da aplicação é necessária.
+Em resumo, uma vez instalada a aplicação utliziando a ferramenta \emph{git} ela
+será atulizada com o mesmo processo com que foi instalada.
+
+O outro requisito é que a aplicação seja executada constantemente. Para isso o
+podemos utilizar a aplicação também escrita em \emph{Node.js} e disponível no
+gerenciador de pacotes \emph{npm}: \emph{forever-service}. Ela, juntamente com
+sua dependencia \emph{forever}, registra um novo serviço no sistema operacional
+linux para que a infra-estrutura de gerenciamento de serviços  existente seja
+aproveitada (por exemplo: início automático após o início do sistema) e, com o
+\emph{forever} garante que a aplicação seja reinicializada sempre que finalize,
+executando constantemente \cite{forever-service}.
 
 
 \section{Gateway}
