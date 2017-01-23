@@ -172,7 +172,7 @@ De maneira análoga à feita com o ESP8266, analisou-se a capacidade do Raspberr
 de operar com sua \emph{Wi-Fi} em modo promíscuo, porém, devido a diferença de camada
 de software envolvida, diferentes ferramentas foram utilizadas.
 
-Neste caso, utilizou-se as ferramentas \emph{airodump-ng} (aircrack-ng.org) e \emph{tshark} além das ferramentas de
+Neste caso, utilizou-se as ferramentas \emph{airodump-ng} (aircrack-ng.org) e \emph{TShark} além das ferramentas de
 \emph{Wi-Fi} padrões do sistema operacional \emph{Raspbian}. Para verificar o modo
 promíscuo no ambiente Raspbian, utiliza-se os comandos \emph{ifconfig},
 \emph{iwconfig} e \emph{iw}, que são padrão do sistema operacional Debian, como
@@ -250,7 +250,7 @@ de segurança da informação pode-se encontrar o \emph{airodump-ng} que é util
 avaliar e explorar vulnerabilidades de segurança em redes \emph{Wi-Fi}. Outra área que
 forneceu uma ferramenta adequada foi a área de qualidade de serviço em redes de
 computadores (QoS) onde o \emph{software Wireshark} é bem popular, uma interface alternativa
-do mesmo feita para uso em terminal é chamada \emph{tshark}.
+do mesmo feita para uso em terminal é chamada \emph{TShark}.
 
 Para testar a viabilidade do sensor, utilizou-se o \emph{airodump-ng} que é uma
 ferramenta de terminal interativa, como vista na \autoref{fig-airodump}, onde é
@@ -272,24 +272,29 @@ do sensor com a informação de potência de sinal.
 \end{figure}
 
 
-Após a avaliação de viabilidade, fez-se necessário o uso de uma aplicação mais flexível do que
-o \emph{airodump-ng} onde fosse possível escolher campos e gerar relatórios mais longos e complexos.
-Para essa tarefa o software \emph{tshark} mostrou-se ideal. Nele, pode-se escolher, através de
-argumentos na execução por terminal, a interface com a opção “-i wlan0”, o modo monitor
-com opção “-I”, a opção “-T fields” que altera o funcionamento normal dele para que com
-as opções “-e field.field\_child” seja permitido escolher os campos mostrados e juntamente
-com as opções “-E separator=, -E quote=d” o formato do relatório que é o mesmo de um .csv
-(comma separated values - valores separados por vírgula). Desta maneira, todos os pacotes
-capturados são processados pelo \emph{tshark} e escritos na saída padrão do terminal (stdout),
-dando a possibilidade de usar a ferramenta de criação de arquivo, acrescentar em arquivo e
-redirecionar para outro processo do terminal Linux (respectivamnte ‘>’, ‘»’ e ‘|’). Esta
+Após a avaliação de viabilidade, fez-se necessário o uso de uma aplicação mais
+flexível do que o \emph{airodump-ng} onde fosse possível escolher campos e gerar
+relatórios mais flexíveis. Para essa tarefa o software \emph{TShark} mostrou-se
+ideal.
+
+Nele, pode-se escolher, através de argumentos na execução por terminal, a
+interface com a opção “-i wlan0”, o modo monitor com opção “-I”, a opção “-T
+fields” que altera o funcionamento normal dele para que com as opções “-e
+field.field\_child” seja permitido escolher os campos mostrados e juntamente com
+as opções “-E separator=, -E quote=d” o formato do relatório gerado torna-se CSV
+(\emph{comma separated values} - valores separados por vírgula).
+
+Desta maneira, todos os pacotes capturados são processados pelo \emph{TShark} e
+escritos na saída padrão do terminal (\emph{stdout}), dando a possibilidade de
+usar a ferramenta de criação de arquivo, acrescentar em arquivo e redirecionar
+para outro processo do terminal Linux (respectivamnte ‘>’, ‘»’ e ‘|’). Esta
 capacidade, ausente no \emph{airodump-ng}, é essencial para este trabalho.
 
 Para este trabalho, o comando mais utilizado foi o que mostra os endereços MAC
-de origem e transmissão (wlan.sa, wlan.ta), os mesmos endereços, porém com nome de
-fabricante como prefixo (wlan.sa\_resolved, wlan.ta\_resolved), a potência de sinal (radiotap.dbm\_antsignal)
-e o nome da rede anunciada se o pacote for um Beacon, da mesma
-maneira que o \emph{airodump-ng} mostra.
+de origem e transmissão (wlan.sa, wlan.ta), os mesmos endereços, porém com nome
+de fabricante como prefixo (wlan.sa\_resolved, wlan.ta\_resolved), a potência de
+sinal (radiotap.dbm\_antsignal) e o nome da rede anunciada se o pacote for um
+Beacon, da mesma maneira que o \emph{airodump-ng} mostra.
 
 \begin{lstlisting}
 pi@sensor-01:~ $ tshark -I -i wlan0 -T fields -E header=y -E quote=d \
@@ -297,7 +302,7 @@ pi@sensor-01:~ $ tshark -I -i wlan0 -T fields -E header=y -E quote=d \
 -e radiotap.dbm_antsignal -e wlan_mgt.ssid
 \end{lstlisting}
 
-Por último, a configuração padrão do \emph{tshark} não permite execução em modo supervisor
+Por último, a configuração padrão do \emph{TShark} não permite execução em modo supervisor
 (\emph{root}), portanto, por segurança, somente usuários do grupo \emph{WireShark} podem
 executar o programa. Para isso, é necessário adicionar o usuário "pi"  ao
 grupo \emph{WireShark} com o seguinte comando.

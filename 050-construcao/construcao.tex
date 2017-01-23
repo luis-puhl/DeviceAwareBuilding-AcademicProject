@@ -36,7 +36,22 @@ A aplicação sensor tem como objetivo capturar, avaliar e classificar pacotes d
 Wi-Fi, inferir estatísticas de dispositivos e fornecer estas informações para
 os interessados através do \emph{gateway}.
 
-Como foi estabelecido no capítulo anterior, \emph{tshark}  utiliza a saída
+Para fazer a caputra dos pacotes na aplicação final, diferente do que foi
+demonstrado na \autoref{subsec:testes-rpi}, em especial o \emph{airodump-ng} e
+sua interface demonstrada na \autoref{fig-airodump}, foi utilizado o programa
+\emph{TShark} cujo modo de operação serve melhor para a construção dos
+\emph{Streams} que serão abodados em breve.
+
+\begin{citacao}
+
+	TShark é uma versão orientada ao terminal do Wireshark projetada para capturar
+	e exibir pacotes quando uma interface de usuário interativa não é necessária ou
+	disponível. Ele suporta as mesmas opções como wireshark. \
+
+	\citeonline{tshark} Tradução Nossa.
+\end{citacao}
+
+Como foi estabelecido no capítulo anterior, \emph{TShark}  utiliza a saída
 padrão  do terminal (\emph{stdout}) como sua saída principal, esta
 característica foi explorada com aplicação \emph{nodejs}. Mais especificamente
 com módulo \emph{child\_process},  que provê uma API que permite a criação e
@@ -53,26 +68,15 @@ controle de processos filhos do processo \emph{nodejs}.
 	\citeonline{nodejs} Tradução Nossa.
 \end{citacao}
 
-\begin{citacao}
-
-	TShark is a terminal oriented version of Wireshark designed for capturing
-	and displaying packets when an interactive user interface isn’t necessary or
-	available. It supports the same options as wireshark. For more information
-	on tshark see the manual pages (man tshark). \
-
-	\citeonline{nodejs} Tradução Nossa.
-\end{citacao}
-
-
-Como também foi estabelecido no capítulo anterior o \emph{tshark} é executado
-com o comando e argumentos como mostrado à seguir, a diferença em relação aos
-testes e na escolha da plataforma é a forma de execução, na maneira mostrada o
-processo é criado utilizando o módulo \emph{child\_process} e os argumentos são
-passados como um vetor (\emph{Array})
+Como também foi estabelecido anterioremte o \emph{TShark} é executado com o
+comando e argumentos como mostrado à seguir, a diferença em relação aos testes e
+na escolha da plataforma é a forma de execução, na maneira mostrada o processo é
+criado utilizando o módulo \emph{child\_process} \cite{child_process} e os
+argumentos são passados como um vetor (\emph{Array}).
 
 \begin{lstlisting}[language=java]
 const spawn = require('child_process').spawn;
-const tsharkChild = spawn(
+const tsharkProcessoFilho = spawn(
 	'tshark', [
 		'-I',
 		'-i', childIface,
@@ -87,9 +91,60 @@ const tsharkChild = spawn(
 		'-e', 'wlan_mgt.ssid',
 		'-Y', 'wlan.sa'
 	]);
-tsharkChild.stdout.setEncoding('utf8');
 \end{lstlisting}
 
+Para utilizar o resultado gerado pelo \emph{TShark} utilizamos outro método do
+módulo \emph{child\_process} juntamente com a estrutura de \emph{Stream}
+\cite{stream} que provê o método \emph{pipe(destination[, options])} que permite,
+de maneira análoga ao operador '|' no terminal também chamado de \emph{pipe},
+redirecionar a saída de um processo ou \emph{stream} de leitura para outro
+processo ou \emph{stream} de escrita.
+
+Com isso nos falta apenas um \emph{stream} de escrita que receba a saída do
+\emph{TShark} que foi definida no formato CSV. Para isso biblioteca extra
+\emph{fast-csv} deve ser instalada. Com ela podemos criar o \emph{stream}
+necessário e configura-lo interpretar os resultados \cite{fast-csv}.
+
+\begin{lstlisting}[language=java]
+const csv = require("fast-csv");
+let csvStream = csv()
+  .on("data", function(data){
+    let wlan = {
+      sa            : data[0], // sender address
+      sa_resolved   : data[1], // sender address resolved
+      ta            : data[2], // transmitter address
+      ta_resolved   : data[3], // transmitter address resolved
+    };
+    let radiotap = {
+      dbm_antsignal : data[4], // potencia de sinal (rss)
+    };
+    let wlan_mgt = {
+      ssid          : data[5], // nome da rede no pacote Beacon
+    };
+    let packet = {
+      wlan     : wlan,
+      radiotap : radiotap,
+      wlan_mgt : wlan_mgt,
+    };
+    processarPacote(packet);
+  })
+  .on("end", function(){
+    console.log("done with tshark");
+  });
+
+tsharkProcessoFilho.stdout.setEncoding('utf8');
+tsharkProcessoFilho.stdout.pipe(csvStream);
+\end{lstlisting}
+
+Nesta ultima linha pode-se observar a operação de redirecionamento (\emph{pipe})
+de \emph{stream} da saída padrão do processo filho (\emph{stdout}) para o
+\emph{stream} de escrita descrito e configurado com o \emph{fast-csv}. A parte
+faltante é o processamento dos pacotes e envio das inferências do sensor para o
+\emph{gateway}.
+
+// inferencias
+
+// mqtt
 
 \section{Gateway}
 \label{sec:app-gw}
