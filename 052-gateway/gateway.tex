@@ -20,13 +20,14 @@ Para a construção do \emph{Gateway} foi feita a instalação e a configuraçã
 A instalação é realizada com o gerenciador de pacotes \emph{apt-get} padrão do
 \emph{raspbian} como mostrado na primeira linha da listagem abaixo.
 
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}[language=bash,caption={Instalação e configuração do Mosquitto},label=code-mosquitto]
 pi@broker:~ $ sudo apt-get install mosquitto
 pi@broker:~ $ sudo sh -c 'echo "password_file /etc/mosquitto/passwd"
 	>> /etc/mosquitto/mosquitto.conf'
 pi@broker:~ $ sudo mosquitto_passwd -c /etc/mosquitto/passwd user
 Password:
 Reenter password:
+pi@broker:~ $ 
 \end{lstlisting}
 
 Nas linhas 2 e 3, adiciona-se ao arquivo padrão de configuração padrão do
@@ -58,8 +59,8 @@ resposta de confirmação (\emph{ack}) de cada um dos sensores.
 A aplicação \emph{MQTT.fx}, em especial a tela mostrada na
 \autoref{fig-mqttfx-stats}, revela estatísticas do \emph{Broker}, como a versão,
 tempo \emph{online}, número de clientes, mensagens e utilização de rede.
-Na aplicação \emph{mqtt-spy}, o comando de listagem mencionado na
-\autopageref{code-sensor-mqtt} é demonstrado.
+Na aplicação \emph{mqtt-spy}, o comando de listagem (mencionado na
+\autopageref{code-sensor-mqtt}) é demonstrado.
 
 \begin{figure}[htb]
 \centering
@@ -90,9 +91,7 @@ Na aplicação \emph{mqtt-spy}, o comando de listagem mencionado na
 	\caption{\label{fig-mqttfx-stats}MQTT.fx: Estatísticas do \emph{Broker}}
 	\includegraphics[width=1\textwidth]{052-gateway/mqtt/mqttfx-stats.png}
 	\legend{Fonte: Produzido pelo autor}
-\end{figure}
-
-\begin{figure}[htb]
+\hfill
 	\centering
 	\caption{\label{fig-mqtt-spy-list}mqtt-spy: Listagem de dispositivos}
 	\includegraphics[width=1\textwidth]{052-gateway/mqtt/mqtt-spy-list.png}

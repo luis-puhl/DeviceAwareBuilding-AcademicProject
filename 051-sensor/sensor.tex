@@ -44,7 +44,7 @@ na escolha da plataforma é a forma de execução, na maneira mostrada, o proces
 criado utilizando o módulo \emph{child\_process} \cite{child_process} e os
 argumentos são passados como um vetor (\emph{Array}).
 
-\begin{lstlisting}
+\begin{lstlisting}[language=javascript,caption={TShark e opções executado pelo Node.js},label=code-node-tshark]
 const spawn = require('child_process').spawn;
 const tsharkProcessoFilho = spawn(
 	'tshark', [
@@ -75,7 +75,7 @@ Com isso, ainda falta um \emph{stream} de escrita que receba a saída do
 \emph{fast-csv}, deve ser instalada. Com ela, pode-se criar o \emph{stream}
 necessário e configurá-lo para interpretar os resultados \cite{fast-csv}.
 
-\begin{lstlisting}
+\begin{lstlisting}[language=javascript,caption={Uso do fast-csv},label=code-node-csv]
 const csv = require("fast-csv");
 let csvStream = csv()
 	.on("data", function(data){
@@ -108,7 +108,7 @@ sobre cada dispositivo são agregadas. Desta forma, cada novo pacote pode ser ac
 histórico de cada dispositivo.
 
 
-\begin{lstlisting}
+\begin{lstlisting}[language=javascript,caption={Adição do pacote ao histórico do dispositivo},label=code-device-packet]
 let devices = {};	// lista indexada de dispositivos
 class Device {
 	[...]
@@ -134,7 +134,7 @@ function processarPacote(packet) {
 A partir desta lista, é posível calcular a média e o desvio padrão de potência de
 sinal para cada dispositivo descoberto.
 
-\begin{lstlisting}
+\begin{lstlisting}[language=javascript,caption={Extração das estatísticas do dispositivo},label=code-device-stats]
 class Device {
 	[...]
 	get rssStatistics(){
@@ -164,8 +164,7 @@ class Device {
 Por fim, é necessário comunicar aos interessados nessas inferências, o que é
 feito através do módulo \citeonline{mqttjs}.
 
-\label{code-sensor-mqtt}
-\begin{lstlisting}
+\begin{lstlisting}[language=javascript,caption={Cliente MQTT.js},label=code-mqttjs-client]
 const mqtt = require('mqtt');
 const mqttBrok = `mqtt://${config.mqttHost}:${config.mqttPort}`;
 let clientMqtt	= mqtt.connect(mqttBrok, {

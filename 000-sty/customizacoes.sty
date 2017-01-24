@@ -13,7 +13,7 @@
 %%
 %% The Current Maintainer of this work is Luis Puhl, luispuhl@gmail.com
 %%
-%% Further information about abnTeX2 are available on http://abntex2.googlecode.com/
+%% Further information about abnTeX2 are available on https://github.com/abntex/abntex2
 %%
 
 % ---
@@ -26,7 +26,8 @@
 \newcommand{\ImprimirLocal}{\expandafter\MakeUppercase\expandafter{\imprimirlocal}}
 \newcommand{\ImprimirTitulo}{\expandafter\MakeUppercase\expandafter{\imprimirtitulo}}
 \addto\captionsbrazil{
-	\renewcommand{\listfigurename}{Lista de Figuras}
+	\renewcommand{\listfigurename}{Lista de figuras}
+	\renewcommand{\listtablename}{Lista de tabelas}
 }
 
 % alterando a capa
@@ -93,6 +94,47 @@
 }
 
 \makeatother
+
+
+% ---
+% Formatação de código-fonte
+% ---
+
+% Altera o nome padrão do rótulo usado no comando \autoref{}
+\renewcommand{\lstlistingname}{Código-fonte}
+
+% Altera o rótulo a ser usando no elemento pré-textual "Lista de código"
+\renewcommand{\lstlistlistingname}{Lista de códigos-fonte}
+
+% Configura a ``Lista de Códigos'' conforme as regras da ABNT (para abnTeX2)
+\begingroup\makeatletter
+\let\newcounter\@gobble\let\setcounter\@gobbletwo
+  \globaldefs\@ne \let\c@loldepth\@ne
+  \newlistof{listings}{lol}{\lstlistlistingname}
+  \newlistentry{lstlisting}{lol}{0}
+\endgroup
+
+\renewcommand{\cftlstlistingaftersnum}{\hfill--\hfill}
+
+\let\oldlstlistoflistings\lstlistoflistings
+\renewcommand{\lstlistoflistings}{%
+   \begingroup%
+   \let\oldnumberline\numberline%
+   \renewcommand{\numberline}{\lstlistingname\space\oldnumberline}%
+   \oldlstlistoflistings%
+   \endgroup}
+
+\lstset{ %
+	basicstyle=\footnotesize,
+	language=bash,
+	tabsize=2,
+	stepnumber=1,
+	numbers=left,
+	stringstyle=\textit,
+}
+\lstdefinelanguage{javascript}{
+	morekeywords={const,class,get,let,if,this,then,for,case,break,switch,function,default},
+}
 
 
 

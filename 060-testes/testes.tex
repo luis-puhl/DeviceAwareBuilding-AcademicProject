@@ -36,7 +36,7 @@ até aproximadamente 11:25 totalizando aproximadamente 8 horas de captura
 A captura foi executada com o comando
 
 
-\begin{lstlisting}
+\begin{lstlisting}[language=bash,caption={TShark e redirecionamento da saída para arquivo assíncrono},label=code-tshark-pipe]
 pi@sensor-01:~ $ tshark -I -i wlan0 -T fields -E header=y -E quote=d \
 -e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved \
 -e radiotap.dbm_antsignal -e wlan_mgt.ssid \
@@ -115,7 +115,7 @@ na rede o dispositivo móvel foi configurado para receber um stream de vídeo no
 A captura foi realizada utilizando a ferramenta TShark da mesma maneira que é utilizada no
 aplicativo. A descrição deste modo de operação pode ser encontrada no capítulo de construção.
 
-\begin{lstlisting}
+\begin{lstlisting}[language=bash,caption={TShark e redirecionamento da saída para arquivo},label=code-tshark-pipe]
 pi@sensor-01:~ $ tshark -I -i wlan1 -T fields -E separator=, -E quote=d \
 -e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved \
 -e radiotap.dbm_antsignal -e wlan_mgt.ssid >> sensor-02-distance-test-01.csv

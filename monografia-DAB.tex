@@ -37,21 +37,13 @@
 \usepackage{color}			% Controle das cores
 \usepackage{graphicx}		% Inclusão de gráficos
 \usepackage{microtype}		% para melhorias de justificação
-\usepackage{listings}		% para listagem de código
 % ----------------------------------------------------------
 
-\lstset{ %
-	basicstyle=\footnotesize,
-	language=bash,
-	tabsize=2,
-	stepnumber=1,
-	numbers=left,
-	morekeywords={const,class,get,let,if,this,then,for,case,break,switch,function,default},
-	stringstyle=\textit,
-}
-\lstdefinelanguage{custom}{
-	morekeywords={const,class,get,let,if,this,then,for,case,break,switch,function,default},
-}
+% ---
+% Formatação de código-fonte
+% ---
+\usepackage{listings}
+
 
 % ----------------------------------------------------------
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
@@ -150,10 +142,13 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 %	Resumo ingles		(obrigatorio)
 %	*Lista Ilustracoes	(opcional)
 \newif\iffiguras
-\figurasfalse
+\figurastrue
+%	*Lista Tabelas		(opcional)
+\newif\ifcodigos
+\codigostrue
 %	*Lista Tabelas		(opcional)
 \newif\iftabelas
-\tabelasfalse
+\tabelastrue
 %	*Lista Abreviaturas	(opcional)
 \newif\ifabreviaturas
 \abreviaturastrue
@@ -373,6 +368,18 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 \fi
 % ----------------------------------------------------------
 
+
+% ---
+% inserir lista de listings
+% ---
+\ifcodigos
+	\pdfbookmark[0]{\lstlistlistingname}{lol}
+	\begin{KeepFromToc}
+	\lstlistoflistings
+	\end{KeepFromToc}
+	\cleardoublepage
+\fi
+% ---
 
 % ----------------------------------------------------------
 % inserir lista de tabelas
