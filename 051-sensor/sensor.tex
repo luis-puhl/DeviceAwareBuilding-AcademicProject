@@ -164,7 +164,7 @@ class Device {
 Por fim, é necessário comunicar aos interessados nessas inferências, o que é
 feito através do módulo \citeonline{mqttjs}.
 
-
+\label{code-sensor-mqtt}
 \begin{lstlisting}
 const mqtt = require('mqtt');
 const mqttBrok = `mqtt://${config.mqttHost}:${config.mqttPort}`;
