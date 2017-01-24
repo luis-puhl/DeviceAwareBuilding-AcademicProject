@@ -41,10 +41,17 @@
 % ----------------------------------------------------------
 
 \lstset{ %
-	basicstyle=\small,
-	language=bash
+	basicstyle=\footnotesize,
+	language=bash,
+	tabsize=2,
+	stepnumber=1,
+	numbers=left,
+	morekeywords={const,class,get,let,if,this,then,for,case,break,switch,function,default},
+	stringstyle=\textit,
 }
-
+\lstdefinelanguage{custom}{
+	morekeywords={const,class,get,let,if,this,then,for,case,break,switch,function,default},
+}
 
 % ----------------------------------------------------------
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
@@ -438,6 +445,9 @@ Mesquita Filho'' – UNESP, C\^{a}mpus de Bauru.}
 \include{042-raspberrypi/raspberrypi}
 
 \include{050-construcao/construcao}
+\include{051-sensor/sensor}
+\include{052-gateway/gateway}
+\include{053-web/web}
 
 \include{060-testes/testes}
 
