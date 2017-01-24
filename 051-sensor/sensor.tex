@@ -96,7 +96,7 @@ tsharkProcessoFilho.stdout.setEncoding('utf8');
 tsharkProcessoFilho.stdout.pipe(csvStream);
 \end{lstlisting}
 
-Nesta última linha, pode-se observar a operação de redirecionamento (\emph{pipe})
+Na linha 18, pode-se observar a operação de redirecionamento (\emph{pipe})
 de \emph{stream} da saída padrão do processo filho (\emph{stdout}) para o
 \emph{stream} de escrita descrito e configurado com o \emph{fast-csv}. A parte
 faltante é o processamento dos pacotes e envio das inferências do sensor para o
