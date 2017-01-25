@@ -1,4 +1,4 @@
-\section{Teste relação de distância com smartphone como objetivo}
+\section{Teste de localização com smartphone}
 \label{sec:teste-smarphone}
 
 Para verificar a capacidade do sensores de localizar contextualmente um
@@ -7,15 +7,20 @@ diferentes, em cada uma das salas foi executada uma captura de 10 minutos. Para
 que houvesse tráfego na rede o dispositivo móvel foi configurado para receber um
 stream de vídeo no aplicativo \emph{Netflix}.
 
+\begin{figure}[htb]
+	\caption{\label{fig-planta-baixa}Ambiente de teste}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{060-testes/data-analisis/planta-baixa-smartphone.png}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+	\nota[Em azul]{Sensores da aplicação}%
+	\nota[Em vermelho]{Pontos do dispositivo teste}%
+\end{figure}
+
+
 A captura foi realizada utilizando a ferramenta TShark da mesma maneira que é utilizada no
 aplicativo. A descrição deste modo de operação pode ser encontrada no capítulo de construção.
 
-\begin{lstlisting}[language=bash,caption={TShark e redirecionamento da saída para arquivo},label=code-tshark-pipe]
-pi@sensor-01:~ $ tshark -I -i wlan1 -T fields -E separator=, -E quote=d \
--e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved \
--e radiotap.dbm_antsignal -e wlan_mgt.ssid >> sensor-02-distance-test-01.csv
-pi@sensor-01:~ $
-\end{lstlisting}
 
 Para o primeiro caso o dispositivo estava na mesma sala do sensor número 2 que é a maior
 sala do prédio com 12  metros de comprimento por 10 metros  De largura. neste caso foram
