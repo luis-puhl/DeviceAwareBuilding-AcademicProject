@@ -302,19 +302,20 @@ pi@sensor-01:~ $ tshark -I -i wlan0 -T fields -E header=y -E quote=d \
 -e radiotap.dbm_antsignal -e wlan_mgt.ssid
 \end{lstlisting}
 
-Por último, a configuração padrão do \emph{TShark} não permite execução em modo supervisor
-(\emph{root}), portanto, por segurança, somente usuários do grupo \emph{WireShark} podem
-executar o programa. Para isso, é necessário adicionar o usuário "pi"  ao
-grupo \emph{WireShark} com o seguinte comando.
+Por último, a configuração padrão do \emph{TShark} não permite execução em modo
+supervisor (\emph{root}), portanto, por segurança, somente usuários do grupo
+\emph{WireShark} podem executar o programa. Para isso, é necessário adicionar o
+usuário "pi"  ao grupo \emph{wireshark} com o seguinte comando.
 
-\begin{lstlisting}[language=bash,caption={Adição do usuário pi ao grupo wireshark},label=code-usermod]
+\begin{lstlisting}[language=bash,caption={Adição do usuário pi ao grupo \emph{wireshark}},label=code-usermod]
 pi@sensor-01:~ $ sudo usermod -a -G wireshark pi
 \end{lstlisting}
 
-Este modo de operação permite executar a aplicação final sem necessidade de eleva-
-ção de privilégios (root), tornando-a mais segura, pois mesmo que aplicação seja
-subvertida o sistema todo não poderá ser comprometido.
+Este modo de operação permite executar a aplicação final sem necessidade de
+elevação de privilégios (\emph{root}), tornando-a mais segura, pois mesmo que
+aplicação seja subvertida o sistema operacional não poderá ser comprometido.
 
+\clearpage
 \section{Escolha e conclusão}
 \label{sec:escolha-plataforma}
 

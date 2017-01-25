@@ -1,5 +1,11 @@
-\chapter{Testes e Discussão}
-\label{chap:Testes}
+\chapter{Resultados e Discussão}
+\label{chap:resultados}
+
+Neste capitulo são abordados, analisados e discutidos os resultados encontrados
+durante a exploração do tema e das plataformas, durante da implementação das
+aplicações além de verificar a precisão atingida com a aplicação implementada.
+
+
 
 \section{Método de teste}
 \label{sec:metodo-teste}
@@ -12,6 +18,28 @@ capacidades combinadas do \emph{hardware} adaptador Wi-Fi e do \emph{software}
 analisar diretamente as capacidades deste último par. Esta descisão também se
 deve pela facilidade de armazenar e analisar arquivos CSV gerados pelo
 \emph{TShark}.
+
+
+A captura foi executada com o comando
+
+\begin{lstlisting}[language=bash,caption={TShark e redirecionamento da saída para arquivo assíncrono},label=code-tshark-pipe]
+pi@sensor-01:~ $ tshark -I -i wlan0 -T fields -E header=y -E quote=d \
+-e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved \
+-e radiotap.dbm_antsignal -e wlan_mgt.ssid \
+>> 2017-01-17--02-48--rpi-02.csv &
+pi@sensor-01:~ $ exit
+\end{lstlisting}
+
+Neste modo de uso os resultados são direcionadas para a saída padrão
+(stdout)  do terminal e podem ser capturados por outro programa no formato
+de valores separados por vírgula (csv).  os campos escolhidos para captura
+são \emph{wlan.sa}, \emph{wlan.sa\_resolved}, \emph{wlan.ta},
+\emph{wlan.ta\_resolved}, \emph{radiotap.dbm\_antsignal} e \emph{wlan\_mgt.ssid}.
+
+\clearpage
+\section{Avaliação de ruído e consistência}
+\label{sec:teste-ruido}
+
 
 Para entender  o ambiente onde a aplicação foi desenvolvida e testada no âmbito
 de ruído wi-fi e pontos de referência wi-fi foi executada uma captura de teste
@@ -33,17 +61,6 @@ até aproximadamente 11:25 totalizando aproximadamente 8 horas de captura
 \end{figure}
 
 
-A captura foi executada com o comando
-
-
-\begin{lstlisting}[language=bash,caption={TShark e redirecionamento da saída para arquivo assíncrono},label=code-tshark-pipe]
-pi@sensor-01:~ $ tshark -I -i wlan0 -T fields -E header=y -E quote=d \
--e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved \
--e radiotap.dbm_antsignal -e wlan_mgt.ssid \
->> 2017-01-17--02-48--rpi-02.csv &
-pi@sensor-01:~ $ exit
-\end{lstlisting}
-
 A análise de dados foi feita com a função \emph{summary} da ferramenta \emph{Ron’s editor}
 e a filtragem com a função \emph{Filter} da ferramenta \emph{RecCsvEditor}
 
@@ -59,28 +76,28 @@ pontos de acesso para rede wi-fi do laboratório.
 \begin{figure}[htb]
 	\begin{minipage}{0.49\textwidth}
 	\centering
-		\caption{\label{fig-062722b3e5fb-s1}Distribuição do dBm pelo tempo - 062722b3e5fb sensor 1}
+		\caption{\label{fig-062722b3e5fb-s1}Sinal em dBm por pacote capturado - 062722b3e5fb sensor 1}
 		\includegraphics[width=1\textwidth]{060-testes/data-analisis/night-run/062722b3e5fb-sensor-01.png}
 		\legend{Fonte: Elaborada pelo autor}
 	\end{minipage}
 \hfill
 	\begin{minipage}{0.49\textwidth}
 	\centering
-		\caption{\label{fig-062722b3e5fb-s2}Distribuição do dBm pelo tempo - 062722b3e5fb sensor 2}
+		\caption{\label{fig-062722b3e5fb-s2}Sinal em dBm por pacote capturado - 062722b3e5fb sensor 2}
 		\includegraphics[width=1\textwidth]{060-testes/data-analisis/night-run/062722b3e5fb-sensor-02.png}
 		\legend{Fonte: Elaborada pelo autor}
 	\end{minipage}
 \hfill
 	\begin{minipage}{0.49\textwidth}
 	\centering
-		\caption{\label{fig-062722b3e5fe-s1}Distribuição do dBm pelo tempo - 062722b3e5fe sensor 1}
+		\caption{\label{fig-062722b3e5fe-s1}Sinal em dBm por pacote capturado - 062722b3e5fe sensor 1}
 		\includegraphics[width=1\textwidth]{060-testes/data-analisis/night-run/062722b3e5fe-sensor-01.png}
 		\legend{Fonte: Elaborada pelo autor}
 	\end{minipage}
 \hfill
 	\begin{minipage}{0.49\textwidth}
 	\centering
-		\caption{\label{fig-062722b3e5fe-s2}Distribuição do dBm pelo tempo - 062722b3e5fe sensor 2}
+		\caption{\label{fig-062722b3e5fe-s2}Sinal em dBm por pacote capturado - 062722b3e5fe sensor 2}
 		\includegraphics[width=1\textwidth]{060-testes/data-analisis/night-run/062722b3e5fe-sensor-02.png}
 		\legend{Fonte: Elaborada pelo autor}
 	\end{minipage}
@@ -95,22 +112,15 @@ pontos de acesso para rede wi-fi do laboratório.
 \end{figure}
 
 
-// Modo de uso do tshark na aplicação,utilizar na construção
-
-Neste modo de uso os resultados são direcionadas para a saída padrão
-(stdout)  do terminal e podem ser capturados por outro programa no formato
-de valores separados por vírgula (csv).  os campos escolhidos para captura
-são \emph{wlan.sa}, \emph{wlan.sa\_resolved}, \emph{wlan.ta},
-\emph{wlan.ta\_resolved}, \emph{radiotap.dbm\_antsignal} e \emph{wlan\_mgt.ssid}.
-
-
+\clearpage
 \section{Teste relação de distância com smartphone como objetivo}
+\label{sec:teste-smarphone}
 
-
-Para verificar a capacidade do sensores de localizar contextualmente um dispositivo
-móvel, smartphone, foi utilizado. Este foi posicionado em duas salas diferentes, Em
-cada uma das salas foi executada uma captura de 10 minutos. Para que houvesse tráfego
-na rede o dispositivo móvel foi configurado para receber um stream de vídeo no aplicativo Netflix.
+Para verificar a capacidade do sensores de localizar contextualmente um
+dispositivo móvel, smartphone, foi utilizado. Este foi posicionado em duas salas
+diferentes, em cada uma das salas foi executada uma captura de 10 minutos. Para
+que houvesse tráfego na rede o dispositivo móvel foi configurado para receber um
+stream de vídeo no aplicativo \emph{Netflix}.
 
 A captura foi realizada utilizando a ferramenta TShark da mesma maneira que é utilizada no
 aplicativo. A descrição deste modo de operação pode ser encontrada no capítulo de construção.
@@ -119,6 +129,7 @@ aplicativo. A descrição deste modo de operação pode ser encontrada no capít
 pi@sensor-01:~ $ tshark -I -i wlan1 -T fields -E separator=, -E quote=d \
 -e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved \
 -e radiotap.dbm_antsignal -e wlan_mgt.ssid >> sensor-02-distance-test-01.csv
+pi@sensor-01:~ $
 \end{lstlisting}
 
 Para o primeiro caso o dispositivo estava na mesma sala do sensor número 2 que é a maior
@@ -132,7 +143,6 @@ de captura e o sensor 2 capturou 22635 pacotes totalizando 2 megabytes de captur
 
 Posteriormente os arquivos de captura foram analisados com a ferramenta
 \emph{Ron’s Editor} para que um sumário fosse construído.
-
 
 \begin{figure}[htb]
 	\label{mg4-noise}
