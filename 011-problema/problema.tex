@@ -30,8 +30,8 @@ Sistemas de posicionamento (PS - \emph{Positioning System}) são geralmente
 constituídos de um Ponto Origem Global escolhido (\emph{O}) e um conjunto não
 vazio de Pontos de Referência (RP - \emph{Reference Point}) cuja localização
 global em relação ao \emph{O} é conhecida com uma certa precisão quando o sistema
-é construído - precisão interna. Então, para o usuário, um sistema de posicionamento
-oferece como resultado uma precisão de visualização menor que a sua precisão interna.
+é construído - precisão de construção. Então, para o usuário, um sistema de posicionamento
+oferece como resultado uma precisão de visualização menor que a sua precisão de construção.
 Um PS tem interesse em determinar a posição de um ponto móvel (MU - \emph{Mobile User}).
 Essa localização é feita encontrando um conjunto de distâncias associadas a cada um dos RPs em um
 sub-conjunto com dimensão variável de acordo com o método utilizado. Feito isso, é
@@ -57,7 +57,7 @@ diferencial de tempo de chegada (TDOA - \emph{Time Difference Of Arrival}) e
 Para maior precisão, é comum a utilização de múltiplas RPs geralmente com o
 número mínimo igual ao número de dimensões espaciais que deseja-se calcular.
 Nota que para sistemas distribuídos a sincronização de relógios é um problema
-intrínseco, então é fundamental que o tempo seja contado como dimensão.
+intrínseco, então é fundamental que o tempo seja incluído como dimensão.
 
 Os sistemas classificados como ``Sistema de Navegação Global por Satélite''
 (GNSS - \emph{Global Navigation Satellite System}), como o tradicional
@@ -72,7 +72,7 @@ Entretanto, a força do sinal GNSS não é suficiente para penetrar a maioria do
 prédios, uma vez que estes dependem de visão direta (LOS -
 \emph{Line-Of-Sight}) entre os satélites e o receptor. A reflexão do sinal
 muitas vezes permite a leitura em ambientes fechados, porém o cálculo da posição
-não será confiável \cite{Chen2000}. Portanto, apesar da ubiquidade dos
+não será confiável \cite{Chen2000}. Logo, apesar da ubiquidade dos
 GNSSs em ambientes abertos, são necessárias soluções diferentes para obter um
 Sistema de Posicionamento para Ambientes Fechados (IPS - \emph{Indoor
 Positioning System}), sendo a ubiquidade deste essencial para conquistar o mesmo
@@ -82,8 +82,8 @@ Para implementar este IPS, propõem-se o uso de tecnologias já implantadas em
 dispositivos móveis e essenciais para o funcionamento dos mesmos, especialmente
 as de camadas de comunicação, que são ubíquas no ambiente dos dispositivos
 móveis, como \emph{Wi-Fi} (padrão \emph{IEEE 802.11}) e \emph{Bluetooth}
-(padrão \emph{Bluetooth SIG}), para que os objetos conectados os quais tem-se
-interesse de encontrar a localização contextual não necessitem de modificações.
+(padrão \emph{Bluetooth SIG}), para que os objetos que deseja-se obter a localização
+contextual não necessitem de modificações.
 
 Outros protocolos de comunicação sem fio ubíquos existem (em especial, o
 celulares em todas as gerações 2G, 3G, 4G), porém não oferecem a mesma
@@ -93,21 +93,18 @@ Contextual desta mesma obra.
 
 De forma semelhante, existem protocolos mais flexíveis (nas faixas não
 licenciadas como \emph{NFC}, infra-vermelho, \emph{ZigBee} ou
-\emph{SIGFOX}), porém estes não estão presentes na maiora dos aparelhos
-utilizados, tanto globalmente quanto localmente, removendo a característica da
+\emph{SIGFOX}), porém estes não estão presentes na maioria dos aparelhos
+utilizados, tanto global quanto localmente, removendo a característica da
 forma de comunicação ubíquoa que é foco deste trabalho.
 
-Devido às restrições anteriores, justifica-se o foco nas tecnologias de
-comunicação \emph{Wi-Fi} e \emph{Bluetooth}, porém trabalhar com as duas
-tecnologias simultaneamente é um problema complexo por si só, então, a escolha
-de um ou outro deve ser feita, apesar de a nível global serem de equivalente importância para
-esta obra (ambas tem mesma importância e presença no mercado atual, permitem
+Devido às restrições anteriores, justifica-se o foco deste trabalho em tecnologias de
+comunicação \emph{Wi-Fi} e \emph{Bluetooth}. Ambas as tecnologias
+tem interesse para esta obra, pois, a nível global, elas possuem mesma importância e presença no mercado atual, permitem
 flexibilidade por possuírem protocolos conhecidos por todos em frequências
-livres de licenciamento, dentro da área de cobertura que são de nosso interesse
-e o usuário final já ser o proprietário da rede local criada).
-Esta escolha toma um único parâmetro como decisivo que é a observação do
-ambiente de teste do protótipo onde pouco existe o uso de \emph{Bluetooth}  que
-reflete o costume local de mantê-lo desligado em comparação com \emph{Wi-Fi}
-que está sempre ligado em todos dispositivos, conectando estes diretamente à
-Internet. Portanto \emph{Wi-Fi} é a tecnologia de maior interesse por pequena
-margem.
+livres de licenciamento e dentro da área de cobertura que são de nosso interesse
+e o usuário final já ser o proprietário da rede local criada. Porém, trabalhar com as duas
+tecnologias simultaneamente é um problema complexo por si só, então, a escolha
+de uma ou outra deve ser feita. Para o presente trabalho, escolheu-se a tecnologia \emph{Wi-Fi}, visto que está sempre
+ligado em todos os dispositivos, conectando-os à Internet, enquanto o \emph{Bluetooth} tende
+a ser mantido desligado. Logo, por considerar como fator decisivo a observação do ambiente teste do protótipo
+desenvolvido, o \emph{Wi-Fi} apresenta-se como opção de maior interesse.
