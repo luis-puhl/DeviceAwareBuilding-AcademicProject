@@ -10,7 +10,7 @@ localização contextual de dispositivos e localização baseada em redes sem fi
 \label{sec:INTERNET DAS COISAS (IOT)}
 
 Uma das primeiras aplicações e definições de IoT foi feita simultaneamente por
-Kevin Ashton em 1999 para a \emph{Procter \& Gamble} (P\&G) \cite{Ashton2009} e
+Kevin Ashton em 1999 para a P\&G (\emph{Procter \& Gamble}) \cite{Ashton2009} e
 pelo laboratório Auto-ID Labs no Instituto de Tecnologia de Massachusetts (MIT -
 \emph{Massachusetts Institute of Technology}) utilizando identificação por
 radio-frequência (RFID - \emph{radio-frequency identification})
@@ -22,9 +22,7 @@ e evolutivas, de informação e comunicação'' descrita por \apudonline[p.~1, g
 e tradução nossa]{Wortmann2015}{InternationalTelecommunicationUnion2012}.
 
 Hoje em dia, quase qualquer tecnologia de comunicação acessível a computadores
-pode ser utilizada como meio de comunicação entre dispositivos IoT, tornando
-o RFID de grande importância como tecnologia info-comunicacional a
-disposição da conexão das coisas. Esta gama de tecnologias possibilita uma
+pode ser utilizada como meio de comunicação entre dispositivos IoT. Esta gama de tecnologias possibilita uma
 variedade equivalente de coisas conectadas. Se a coisa pode usar de uma
 tecnologia de conexão, considerando suas restrições de volume, custo e
 utilidade, muito provavelmente vai fazê-lo gerando ao menos uma identidade
@@ -38,7 +36,7 @@ fazendo efetivamente parte da Internet.
 
 Em ciência da computação, os termos \emph{"Contexto"} e \emph{"Consciência
 de Contexto"} expressam uma ideia recente estudada nos campos de inteligência
-artificial e ciência cognitiva desde 1991. O tema "Contexto" ainda é considerado
+artificial e ciência cognitiva desde 1991. O tema "Contexto"  ainda é considerado
 atual e promissor a ponto de mudar o cenário de negócios nos próximos 10 anos, mas
 sem definição simples. Tamanha é a falta de uma definição geral que
 realmente funcione para casos reais que existe uma proposta de definir o termo
@@ -130,13 +128,12 @@ construída opondo uma simples coleção de dados \cite{Bizer2009}.
 \label{sec:Localização baseada em redes sem fio}
 
 Um sistema de posicionamento pode ser baseado em técnicas
-\emph{n-lateração?} de distâncias adquiridas com a medição de características
-eletromagnéticas (ex.: potência de sinal) e dos protocolos (ex.: Tempo de
-chegada) que já foram explorados anteriormente \cite{Abusubaih2007,
+\emph{n-lateração} de distâncias adquiridas com a medição de características
+eletromagnéticas (RSS) e dos protocolos (ToA) que já foram explorados anteriormente \cite{Abusubaih2007,
 bahillo2009ieee, Feldmann2003}.
 
-Portanto, os sensores seguem as especificações de \emph{Wi-Fi IEEE 802.11}
-\cite{Crow1997} e técnicas definidas para \emph{Bluetooth Low Energy (BLE)}
+Portanto, os sensores seguem as especificações de Wi-Fi IEEE 802.11
+\cite{Crow1997} e técnicas definidas para \emph{Bluetooth Low Energy} (BLE)
 \cite{Hossain2007} devido a semelhança da área de cobertura (até 100 metros,
 geralmente utilizado até 20 metros) e frequência (no caso de 2.4GHz).
 
@@ -152,29 +149,29 @@ outras alternativas que demonstraram afinidade com essas características.
 
 \section{Trabalhos correlatos}
 \label{Trabalhos correlatos}
-Neste subcapítulo, apresentaremos alguns projetos semelhantes em objetivo ao daqui
+Nesta seção, apresentaremos alguns projetos semelhantes em objetivo ao daqui
 proposto e que motivaram a construção do sensor resultante deste trabalho.
 
-\subsection{Zebra}
-\label{subsec:Zebra}
+\subsection{Zebra na comunidade empresarial}
+\label{subsec:Zebra na comunidade empresarial}
 
 A Zebra é um empresa estadunidense que fabrica e vende tecnologia de marcação,
 rastreamento e impressão por computador. Dentre os seus produtos, estão:
 computadores móveis, RFID, software, impressoras, tablets, leitores de códigos
-de barras, kiosks interativos, entre outros. Já na área de serviços, a empresa
-oferece desde o planejamento até a execução de projetos.
+de barras, quiosques interativos, entre outros. Já na área de serviços, a empresa
+oferece planejamento e execução de projetos para identificação e rastreamento computadorizado.
 
 A Zebra realizou um estudo (Global Shopper Study) que indicou que os varejistas
 apostaram em recursos online que podem aumentar o envolvimento e fidelidade do
-consumidor, além, claro, do volume de vendas. Segundo o mesmo estudo, 51% dos
+consumidor, além, claro, do volume de vendas. Segundo o mesmo estudo, 51\% dos
 compradores tem um forte interesse em serviços baseados em localização e
 Wi-Fi em lojas para cupons \emph{mobile}, mapas de compras e receber
-assistência. Além disso, 64% dos compradores dizem que estão dispostos a comprar
+assistência. Além disso, 64\% dos compradores dizem que estão dispostos a comprar
 mais itens se receberem um serviço melhor e mais atenção dos vendedores,
 enquanto mais da metade prefere que os varejistas usem a tecnologia para criar
 experiência de compra mais eficiente.
 
-A empresa possui o projeto MPact que é um \emph{indoor location} que unifica
+A empresa possui o projeto MPact que é um IPS que unifica
 Wi-Fi e Bluetooth. Ele fornece a localização do consumidor em três
 níves: presença, zona e posição. Com estas informações é possível saber sobre o
 indíviduo: quem é, onde está, quanto tempo fica em certas áreas e quais
@@ -184,32 +181,24 @@ Bluetooth. Com a união dessas duas plataformas é possível saber o tempo
 exato e posição exata de onde alguém está.
 
 Em 2016, a empresa implantou no Shopping Cidade Jardim, em São Paulo, uma rede
-LAN/WAN sem fio de alta velocidade, com a tecnologia MPact que proporciona aos
-seus clientes acesso gratuito ao Wi-Fi, juntamente com uma experiência de
-compra mais personalizada. Funciona assim, o consumidor assim que possível
-acessa o Wi-Fi do shopping que pede o \emph{login} no Facebook ou Google. Assim
-que o \emph{login} é feito, o MPact fornece visibilidade instantânea ao operador do
-shopping em relação aos locais dos compradores no shopping e habilita os
-operadores a enviar saudações pessoais, oferecer ofertas especiais ou fornecer
-instruções passo-a-passo para uma venda ou promoção específica. Hoje, o Cidade
-Jardim conta com 180 lojas numa área de 46.000 metros quadrados.
+Wi-Fi de alta velocidade, com a tecnologia MPact que proporciona aos
+seus clientes acesso gratuito a Internet, juntamente com uma experiência de
+compra mais personalizada.
 
-Segundo Claudio Bessa, diretor de markegin digital do shopping, este tipo de
-serviço fornece um excelente experiência para os compradores devido a alta
-velocidade do Wi-Fi e a cobertura. Além disso, segundo ele, os operadores
-e varejistas podem entender melhor o comportamento do consumidores, pois eles
+Este tipo de serviço fornece aos operadores
+e varejistas um melhor entendimento sobre o comportamento dos consumidores, pois eles
 podem saber que parte do corredor ou de uma loja o cliente está, quanto tempo
 permanece na frente de uma loja e quais produtos mais vendem. Oferecer este tipo
 de serviço é uma maneira de ganhar e manter consumidores, crescer no número de
-satisfações e ajudar a monitorar os pontos de venda.
+satisfações e ajudar a monitorar os pontos de venda \cite{ZebraCidadeJardim}.
 
-\subsection{Outras tentativas}
-\label{subsec:Outras tentativas}
+\subsection{Outras tentativas na comunidade acadêmica}
+\label{subsec:Outras tentativas na comunidade acadêmica}
 
 Outras tentativas bem sucedidas de localizar dispositivos móveis através da rede
 Wi-Fi são o caso de \citeonline{Vasisht} e de \citeonline{Lanzisera2011}.
 
-No primeiro exemplo, uma placa de rede sem fio Intel 5300 com três antenas calcula o tempo
+No primeiro exemplo, um adaptador Wi-Fi Intel 5300 com três antenas calcula o tempo
 de vôo entre uma antena e outra além de utilizar técnicas de mitigação de
 multi-caminho, mitigação de identificação de pacote entre outras características
 importantes do protocolo Wi-Fi, como a frequência e sincronização de clientes
@@ -221,6 +210,10 @@ de injetar pacotes na rede o que difere muito das arquiteturas embarcadas que
 normalmente são encontradas no ambiente de IoT.
 
 O segundo exemplo de aplicação bem sucedida se utiliza de modificações no
-hardware de um ponto de acesso do padrão \emph{IEEE 802.15.4} e alcança precisões de 1 a 3
+hardware de um ponto de acesso do padrão IEEE 802.15.4 e alcança precisões de 1 a 3
 metros. Este protocolo é mais encontrado em comunicações de longa distância ou
 sensíveis a uso de energia que são frequentes em aplicações embarcadas.
+
+Outra tentativa é encontrada na tese de mestrado de \citeonline{Ferreira2016} onde ele constrói
+um protótipo geolocalizador de dispositivos através de RSS de Wi-Fi. Muito semelhante a aplicação
+aqui implementada. Mais detalhes são discutidos no capítulo de Conclusão.
