@@ -2,6 +2,54 @@
 \label{chap:Conclusao}
 
 
+Esse projeto teve como objetivo o aprofundamento na área de Internet das Coisas,
+especialmente nas características de desenvolivmento local e independente que
+foram encontradas durante a construção da aplicação localizadora de contexto de
+dispositivos. Esta aplicação foi construida, instalada e testada no prédio
+piloto fornecendo um ambiente real onde pode-se avaliar as reais capacidades de
+um sistema localizador desse gênero.
+
+Confirmou-se que um sistema de
+geolocalização que utiliza somente FSPL com RSS tem poucas chances de ser
+preciso. Porém, com as mesmas ferramentas, pode-se construir uma rede de sensores
+onde cada nó é responsável por monitorar um contexto (sala, área ou parte de um
+prédio) e neste sentido os dispositivos podem ser associados ao contexto e a
+localização do sensor, efetivamente identificando a localização deles
+e seus portadores dentro de um modelo lógico do prédio.
+
+Para que a implementação pudesse ser replicada o custo associado foi determinado
+como sendo de R\$ 324 por sensor onde é necessário um sensor por contexto além
+de uma estrutura de rede já existente. Analogamente, o custo total do projeto
+piloto foi definido como R\$ 995\footnote{Valor total das aquisições no
+MercadoLivre.com} para os custos de \emph{harware} incluindo os protótipos e 400
+horas\footnote{Estimado de 200 funcionalidades (\emph{git commit}) implementas
+com média de 2 horas de implementação cada} de desenvolvimento.
+
+Quanto ao estado da arte do ramo de Internet das Coisas foram identificadas
+algumas características de destaque que nescecitam de nota:
+
+\begin{alineas}
+	\item Num ambiente onde
+	idealmente todos os objetos e coisas estão conectados, poucos padrões globais
+	existem para garantir essa conexão, tanto a nível jurídico (direitos e
+	obrigações de fabricantes, desenvolvedores e usuários) quanto técnico
+	(protocolos de comunicação, arquiteturas e recomendações unificados);
+
+	\item Muitos protudos e soluções são muito jovens e carecem amadurecimento,
+	especialmente no mercado residencial e comercial, onde as exigências de
+	segurança, padronização, conformidade legal e disponibilidae são inferiores
+	as encontradas no ramo industrial;
+
+	\item Foi encontrado uma dificuldade durante a aquisição das plataformas pois,
+	sem uma orientação de um profissional da área de sistemas embarcados, a
+	comparação e escolha de uma plafarma é uma tarefa muito complexa;
+
+	\item Comparado com a comunidade de desenvolvedores \emph{Web}, a comunidade
+	de desenvolvedores IoT é muito jovem e não desenvolveu ferramentas para
+	construir, compartilhar e reutiliazar projetos de maneira eficiente.
+\end{alineas}
+
+
 \section{Resultados para comunidade e trabalhos futuros}
 \label{sec:trab-futuros}
 
