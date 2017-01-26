@@ -83,7 +83,7 @@ quanto a escolha do adaptador USB (também conhecido como \emph{dongle Wi-Fi})
 são o \emph{Edimax EW-7811Un} que não é tão comum no Brasil e o
 \emph{EDUP EP-N85xx} que tem muitos genéricos no mercado nacional.
 
-Como camada de \emph{software}, o RPI3 comporta diversos sistemas operacionais que são carregados de seu
+Como camada de software, o RPI3 comporta diversos sistemas operacionais que são carregados de seu
 cartão \emph{microSD}. Alguns exemplos de sistemas compatíveis são
 \emph{Archlinux}, \emph{OpenELECE}, \emph{Raspbian}, \emph{Risc OS},
 \emph{Pidora}, \emph{Kali Linux}, \emph{Windows 10 IoT}, entre outros. Para este
@@ -158,7 +158,7 @@ Feito isto, qualquer desenvolvimento e implantação pode ser realizado com risc
 e falhas minimizados. Este processo é fundamental para a segurança da aplicação,
 usuários e construtores, pois, como foi revelado após os ataques de 21 de Outubro
 de 2016, dispositivos IoT atualmente não oferecem estes níveis mínimos de
-segurança (\emph{software} atualizado e senhas seguras), tornando-se um terreno
+segurança (software atualizado e senhas seguras), tornando-se um terreno
 fértil para a construção de \emph{botnets},s como foi o caso do \emph{malware
 Mirai} utilizado para infectar milhares de dispositivos e causar o maior ataque
 \emph{DDoS} até o momento com 1,2 terabits por segundo
@@ -172,7 +172,7 @@ De maneira análoga à feita com o ESP8266, analisou-se a capacidade do Raspberr
 de operar com sua Wi-Fi em modo promíscuo, porém, devido a diferença de camada
 de software envolvida, diferentes ferramentas foram utilizadas.
 
-Neste caso, utilizou-se as ferramentas \emph{airodump-ng} (aircrack-ng.org) e \emph{TShark} além das ferramentas de
+Neste caso, utilizou-se as ferramentas \emph{airodump-ng} (aircrack-ng.org) e TShark além das ferramentas de
 Wi-Fi padrões do sistema operacional \emph{Raspbian}. Para verificar o modo
 promíscuo no ambiente Raspbian, utiliza-se os comandos \emph{ifconfig},
 \emph{iwconfig} e \emph{iw}, que são padrão do sistema operacional Debian, como
@@ -250,7 +250,7 @@ de segurança da informação pode-se encontrar o \emph{airodump-ng} que é util
 avaliar e explorar vulnerabilidades de segurança em redes Wi-Fi. Outra área que
 forneceu uma ferramenta adequada foi a área de qualidade de serviço em redes de
 computadores (QoS) onde o \emph{software Wireshark} é bem popular, uma interface alternativa
-do mesmo feita para uso em terminal é chamada \emph{TShark}.
+do mesmo feita para uso em terminal é chamada TShark.
 
 Para testar a viabilidade do sensor, utilizou-se o \emph{airodump-ng} que é uma
 ferramenta de terminal interativa, como vista na \autoref{fig-airodump}, onde é
@@ -274,7 +274,7 @@ do sensor com a informação de potência de sinal.
 
 Após a avaliação de viabilidade, fez-se necessário o uso de uma aplicação mais
 flexível do que o \emph{airodump-ng} onde fosse possível escolher campos e gerar
-relatórios mais flexíveis. Para essa tarefa o software \emph{TShark} mostrou-se
+relatórios mais flexíveis. Para essa tarefa o software TShark mostrou-se
 ideal.
 
 Nele, pode-se escolher, através de argumentos na execução por terminal, a
@@ -284,7 +284,7 @@ field.field\_child” seja permitido escolher os campos mostrados e juntamente c
 as opções “-E separator=, -E quote=d” o formato do relatório gerado torna-se CSV
 (\emph{comma separated values} - valores separados por vírgula).
 
-Desta maneira, todos os pacotes capturados são processados pelo \emph{TShark} e
+Desta maneira, todos os pacotes capturados são processados pelo TShark e
 escritos na saída padrão do terminal (\emph{stdout}), dando a possibilidade de
 usar a ferramenta de criação de arquivo, acrescentar em arquivo e redirecionar
 para outro processo do terminal Linux (respectivamnte ‘>’, ‘»’ e ‘|’). Esta
@@ -302,10 +302,10 @@ pi@sensor-01:~ $ tshark -I -i wlan0 -T fields -E header=y -E quote=d \
 -e radiotap.dbm_antsignal -e wlan_mgt.ssid
 \end{lstlisting}
 
-Por último, a configuração padrão do \emph{TShark} não permite execução em modo
+Por último, a configuração padrão do TShark não permite execução em modo
 supervisor (\emph{root}), portanto, por segurança, somente usuários do grupo
-\emph{WireShark} podem executar o programa. Para isso, é necessário adicionar o
-usuário "pi"  ao grupo \emph{wireshark} com o seguinte comando.
+wireshark podem executar o programa. Para isso, é necessário adicionar o
+usuário "pi"  ao grupo wireshark com o seguinte comando.
 
 \begin{lstlisting}[language=bash,caption={Adição do usuário pi ao grupo wireshark},label=code-usermod]
 pi@sensor-01:~ $ sudo usermod -a -G wireshark pi
@@ -404,9 +404,9 @@ justifica o esforço realizado durante o desenvolvimento deste trabalho para
 explorar e, com esperança, ativar o modo promíscuo no pequeno dispositivo que
 infelizmente não rendeu frutos.
 
-Para a construção do \emph{Gateway IoT}, as exigências de \emph{hardware} são
+Para a construção do \emph{Gateway IoT}, as exigências de hardware são
 capacidades mínimas de processamento,
-armazenamento e comunicação, e a exigência de \emph{software} é um sistema
+armazenamento e comunicação, e a exigência de software é um sistema
 operacional que suporte um \emph{MQTT Broker}. Portanto, para o \emph{gateway}, a
 plataforma ESP8266 claramente não é adequada, então um RPI3 representa o custo mínimo.
 

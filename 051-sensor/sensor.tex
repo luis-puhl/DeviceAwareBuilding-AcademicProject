@@ -9,7 +9,7 @@ os interessados através do \emph{gateway}.
 Para fazer a captura dos pacotes na aplicação final, diferente do que foi
 demonstrado na \autoref{subsec:testes-rpi}, em especial o \emph{airodump-ng} e
 sua interface demonstrada na \autoref{fig-airodump}, foi utilizado o programa
-\emph{TShark} cujo modo de operação serve melhor para a construção dos
+TShark cujo modo de operação serve melhor para a construção dos
 \emph{Streams} que serão abordados em breve.
 
 \begin{citacao}
@@ -21,7 +21,7 @@ sua interface demonstrada na \autoref{fig-airodump}, foi utilizado o programa
 	\citeonline{tshark} Tradução Nossa.
 \end{citacao}
 
-Como foi estabelecido no capítulo anterior, \emph{TShark}	utiliza a saída
+Como foi estabelecido no capítulo anterior, TShark	utiliza a saída
 padrão	do terminal (\emph{stdout}) como sua saída principal, esta
 característica foi explorada com a aplicação \emph{nodejs}. Mais especificamente,
 com o módulo \emph{child\_process},	que provê uma API que permite a criação e
@@ -38,7 +38,7 @@ controle de processos filhos do processo \emph{nodejs}.
 	\citeonline{nodejs} Tradução Nossa.
 \end{citacao}
 
-Como também foi estabelecido anteriormente, o \emph{TShark} é executado com o
+Como também foi estabelecido anteriormente, o TShark é executado com o
 comando e argumentos como mostrado a seguir, a diferença em relação aos testes e
 na escolha da plataforma é a forma de execução, na maneira mostrada, o processo é
 criado utilizando o módulo \emph{child\_process} \cite{child_process} e os
@@ -63,7 +63,7 @@ const tsharkProcessoFilho = spawn(
 	]);
 \end{lstlisting}
 
-Para utilizar o resultado gerado pelo \emph{TShark}, utilizou-se outro método do
+Para utilizar o resultado gerado pelo TShark, utilizou-se outro método do
 módulo \emph{child\_process} juntamente com a estrutura de \emph{Stream}
 \cite{stream} que provê o método \emph{pipe(destination[, options])} que permite,
 de maneira análoga ao operador '|' no terminal também chamado de \emph{pipe},
@@ -71,7 +71,7 @@ redirecionar a saída de um processo ou \emph{stream} de leitura para outro
 processo ou \emph{stream} de escrita.
 
 Com isso, ainda falta um \emph{stream} de escrita que receba a saída do
-\emph{TShark} que foi definida no formato CSV. Para isso, uma biblioteca extra,
+TShark que foi definida no formato CSV. Para isso, uma biblioteca extra,
 \emph{fast-csv}, deve ser instalada. Com ela, pode-se criar o \emph{stream}
 necessário e configurá-lo para interpretar os resultados \cite{fast-csv}.
 
@@ -204,7 +204,7 @@ clientMqtt.on('message', function (topic, message) {
 
 No caso desta listagem de código, quando a aplicação é iniciada ela conecta-se ao \emph{MQTT Broker}.
 Quando a conexão é estabelecida, ela solicita ao \emph{MQTT Broker} a inscrição
-para receber as publicações no tópico 'devices' e o processo filho \emph{TShark}
+para receber as publicações no tópico 'devices' e o processo filho TShark
 é iniciado. O processo filho é executado, os resultados são capturados e
 guardados.
 
@@ -215,13 +215,13 @@ Para todos os casos, uma resposta adequada é imediatamente processada e enviada
 para o tópico 'devices/report'.
 
 Em conclusão, a aplicação sensor instancia o processo de aquisição de dados
-\emph{TShark} assincronamente e captura, classifica e armazena todos os pacotes
-que ficam acessíveis através de requisições ao tópico \emph{MQTT} 'devices'.
+TShark assincronamente e captura, classifica e armazena todos os pacotes
+que ficam acessíveis através de requisições ao tópico MQTT 'devices'.
 Isso cobre os requisitos funcionais desta aplicação.
 
 Os requisitos não-funcionais desta aplicação estão ligados com o ambiente de
 implantação que é um RPI3 remoto, sem outro dispositivo de entrada e saída
-exceto a comunicação \emph{MQTT}, portanto, sem nenhum aspecto permitindo
+exceto a comunicação MQTT, portanto, sem nenhum aspecto permitindo
 monitoração de um humano que garanta que o aplicativo continue funcionando.
 
 Este ambiente se assemelha muito a aplicações em núvem, onde não há acesso
@@ -238,7 +238,7 @@ simplificada destas ferramentas utilizando a arquitetura existente do programa
 \emph{git} para garantir que novas versões fossem instaladas assim que possível.
 A implementação consiste da adição, nas primeiras instruções do aplicativo,
 uma rotina que executa sincronamente um programa externo através do terminal
-(diferente da execução do \emph{TShark} que é assíncrona). Este programa é
+(diferente da execução do TShark que é assíncrona). Este programa é
 o \emph{git} com a opção \emph{pull} que, quando executado em um diretório que
 é repositório, solicita ao servidor configurado, como \emph{origin}, a atualização
 do código do \emph{branch} atual. Se a mensagem encontrada na saída padrão
@@ -249,7 +249,7 @@ Em resumo, uma vez instalada a aplicação utilizando a ferramenta \emph{git}, e
 será atualizada com o mesmo processo com que foi instalada.
 
 O outro requisito é que a aplicação seja executada constantemente. Para isso,
-pode-se utilizar uma aplicação também escrita em \emph{Node.js} e disponível no
+pode-se utilizar uma aplicação também escrita em Node.js e disponível no
 gerenciador de pacotes \emph{npm}: \emph{forever-service}. Ela registra um novo serviço no sistema operacional
 linux para que a infra-estrutura de gerenciamento de serviços	existente seja
 aproveitada (por exemplo: início automático após o início do sistema). Além disso, a sua dependência
