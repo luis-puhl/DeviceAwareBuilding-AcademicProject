@@ -2,7 +2,7 @@
 \label{sec:app-gw}
 
 Para a construção do \emph{Gateway} foi feita a instalação e a configuração do
-\emph{MQTT Broker} \emph{Mosquitto} em um dos RPI3.
+MQTT \emph{Broker} Mosquitto em um dos RPI3.
 
 \begin{citacao}
 
@@ -18,7 +18,7 @@ Para a construção do \emph{Gateway} foi feita a instalação e a configuraçã
 
 
 A instalação é realizada com o gerenciador de pacotes \emph{apt-get} padrão do
-\emph{raspbian} como mostrado na primeira linha da listagem abaixo.
+raspbian como mostrado na primeira linha da listagem abaixo.
 
 \begin{lstlisting}[language=bash,caption={Instalação e configuração do Mosquitto},label=code-mosquitto]
 pi@broker:~ $ sudo apt-get install mosquitto
@@ -31,35 +31,35 @@ pi@broker:~ $
 \end{lstlisting}
 
 Nas linhas 2 e 3, adiciona-se ao arquivo padrão de configuração padrão do
-\emph{Mosquitto} a linha 'password\_file /etc/mosquitto/passwd' que
+\emph{Mosquitto} a linha \texttt{``password\_file /etc/mosquitto/passwd''} que
 indica o arquivo de senhas a ser utilizado para autenticação. Na linha 4, é
-adicionado o usuário 'user' ao arquivo, a senha é solicitada  nas
+adicionado o usuário ``user'' ao arquivo, a senha é solicitada  nas
 linhas 5 e 6.
 
 Feito isso, o acesso ao \emph{Broker} está limitado aos usuários e senhas
 configurados neste processo. As demais configurações permaneceram sem alterações.
 
 Na configuração do sensor, deve ser adicionado o endereço (nome ou IP), a porta
-\emph{1883} e o par usuário e senha para que o sensor acesse o \emph{Gateway} com
+\texttt{1883} e o par usuário e senha para que o sensor acesse o \emph{Gateway} com
 sucesso.
 
 Para verificar o funcionamento do conjunto sensor e distribuidor (\emph{Gateway}), utiliza-se um
-cliente \emph{MQTT}, como o aplicativo para a plataforma \emph{Android} \emph{MQTT Dashboard}
-\cite{mqttdash} ou os aplicativos para as plataformas \emph{Java} \emph{mqtt-spy}
-\cite{mqttspy} e \emph{Windows} \emph{MQTT.fx} \cite{mqttfx}.
+cliente \emph{MQTT}, como o aplicativo para a plataforma Android ``MQTT Dashboard''
+\cite{mqttdash} ou os aplicativos para as plataformas Java ``mqtt-spy''
+\cite{mqttspy} e Windows ``MQTT.fx'' \cite{mqttfx}.
 
 Nas figuras \ref{fig-ad-publish}, \ref{fig-ad-home-ack} e \ref{fig-ad-admin-ack},
-o aplicativo \emph{MQTT Dashboard} é utilizado para verificar quais sensores
-estão online com a mensagem 'echo' publicada no tópico 'ADMIN'. Na
+o aplicativo ``MQTT Dashboard'' é utilizado para verificar quais sensores
+estão online com a mensagem \texttt{``echo''} publicada no tópico \texttt{``ADMIN''}. Na
 \autoref{fig-ad-publish}, os botões enviam mensagens com simplicidade. Na
 \autoref{fig-ad-home-ack}, é visível a lista de tópicos e a última mensagem
 recebida em cada um deles. Na \autoref{fig-ad-admin-ack}, fica evidente a
-resposta de confirmação (\emph{ack}) de cada um dos sensores.
+resposta de confirmação (\texttt{ack}) de cada um dos sensores.
 
-A aplicação \emph{MQTT.fx}, em especial a tela mostrada na
+A aplicação ``MQTT.fx'', em especial a tela mostrada na
 \autoref{fig-mqttfx-stats}, revela estatísticas do \emph{Broker}, como a versão,
 tempo \emph{online}, número de clientes, mensagens e utilização de rede.
-Na aplicação \emph{mqtt-spy}, o comando de listagem (mencionado na
+Na aplicação ``mqtt-spy'', o comando de listagem (mencionado na
 \autopageref{code-mqttjs-client}) é demonstrado.
 
 \begin{figure}[htb]
