@@ -2,7 +2,7 @@
 \label{sec:teste-ruido}
 
 Para entender o ambiente onde a aplicação foi desenvolvida e testada no âmbito
-de ruído e pontos de referência \emph{Wi-Fi}, foi executada uma captura de referência
+de ruído e pontos de referência Wi-Fi, foi executada uma captura de referência
 durante a noite quando ninguém estava no prédio protótipo, ou seja, nenhum
 dispositivo foi movimentado até a manhã seguinte.
 
@@ -18,7 +18,7 @@ aproximadamente \texttt{8} horas de captura.
 		\includegraphics[width=1\textwidth]{060-testes/data-analisis/planta-baixa-ruido.png}
 	\end{center}
 	\nota[Em azul]{Sensores da aplicação}%
-	\nota[Em verde]{Pontos de acesso da rede \emph{Wi-Fi} do laboratório}%
+	\nota[Em verde]{Pontos de acesso da rede Wi-Fi do laboratório}%
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
@@ -27,12 +27,13 @@ As distâncias aproximadas, em linha reta, entre os sensores e o dispositivo
 \texttt{14,6m} e entre os sensores e o dispositivo
 062722b3e5fb (AP na sala de aula) é de \texttt{26,5m}.
 
-Para o primeiro sensor, a função \emph{summary} da ferramenta \emph{Ron’s editor} indicou que foram capturados \texttt{1.729.624}
+Para o primeiro sensor, a função \texttt{``summary''}  da ferramenta Ron’s editor
+ indicou que foram capturados \texttt{1.729.624}
 pacotes num arquivo de \texttt{155 MB} com \texttt{88} transmissores únicos.
 Para o segundo sensor, a mesma função indicou que foram capturados \texttt{1.554.319}
 pacotes num arquivo de \texttt{134 MB} com \texttt{66} transmissores únicos.
 Em ambos os sensores, se destacaram dois endereços MAC que são os pontos de
-acesso para rede \emph{Wi-Fi} do laboratório.
+acesso para rede Wi-Fi do laboratório.
 
 Os pacotes capturados dos pontos de acesso e os valores de potência de sinal
 associados a eles são notáveis para entender a precisão de um sistema de localização
@@ -41,41 +42,43 @@ maior número de pacotes nesta captura.
 
 Nas \autoref{fig-062722b3e5fb-s1}, \autoref{fig-062722b3e5fb-s2},
 \autoref{fig-062722b3e5fe-s1} e \autoref{fig-062722b3e5fe-s2} podemos observar
-a potência de sinal para cada pacote capturado em ordem de chegada. Na \autoref{fig-062722b3e5fb-s1} e
+a potência de sinal para cada pacote capturado em ordem de chegada.
+Na \autoref{fig-062722b3e5fb-s1} e
 na \autoref{fig-062722b3e5fb-s2}, os pacotes
-foram capturados, respectivamente, pelos sensores 1 e 2 para o ponto de acesso de MAC 062722b3e5fb. E na
+foram capturados, respectivamente, pelos sensores 1 e 2 para o ponto de acesso
+de MAC \texttt{06:27:22:b3:e5:fb}. E na
 \autoref{fig-062722b3e5fe-s1} e na \autoref{fig-062722b3e5fe-s2}, os pacotes foram capturados, respectivamente, pelos sensores 1 e 2 para
-o ponto de acesso de MAC 062722b3e5fe.
+o ponto de acesso de MAC \texttt{06:27:22:b3:e5:fe}.
 
 \begin{figure}[htb]
-	\begin{minipage}{0.49\textwidth}
 	\centering
-		\caption{\label{fig-062722b3e5fb-s1}Sinal em dBm por pacote capturado - 062722b3e5fb sensor 1}
-		\includegraphics[width=1\textwidth]{060-testes/data-analisis/night-run/062722b3e5fb-sensor-01.png}
-		\legend{Fonte: Elaborada pelo autor}
-	\end{minipage}
-\hfill
-	\begin{minipage}{0.49\textwidth}
-	\centering
-		\caption{\label{fig-062722b3e5fb-s2}Sinal em dBm por pacote capturado - 062722b3e5fb sensor 2}
-		\includegraphics[width=1\textwidth]{060-testes/data-analisis/night-run/062722b3e5fb-sensor-02.png}
-		\legend{Fonte: Elaborada pelo autor}
-	\end{minipage}
-\hfill
-	\begin{minipage}{0.49\textwidth}
-	\centering
-		\caption{\label{fig-062722b3e5fe-s1}Sinal em dBm por pacote capturado - 062722b3e5fe sensor 1}
-		\includegraphics[width=1\textwidth]{060-testes/data-analisis/night-run/062722b3e5fe-sensor-01.png}
-		\legend{Fonte: Elaborada pelo autor}
-	\end{minipage}
-\hfill
-	\begin{minipage}{0.49\textwidth}
-	\centering
-		\caption{\label{fig-062722b3e5fe-s2}Sinal em dBm por pacote capturado - 062722b3e5fe sensor 2}
-		\includegraphics[width=1\textwidth]{060-testes/data-analisis/night-run/062722b3e5fe-sensor-02.png}
-		\legend{Fonte: Elaborada pelo autor}
-	\end{minipage}
+	\caption{\label{fig-062722b3e5fb-s1}Sinal em dBm por pacote capturado - 062722b3e5fb sensor 1}
+	\includegraphics[width=1\textwidth]{060-testes/data-analisis/night-run/062722b3e5fb-sensor-01.png}
+	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\caption{\label{fig-062722b3e5fb-s2}Sinal em dBm por pacote capturado - 062722b3e5fb sensor 2}
+	\includegraphics[width=1\textwidth]{060-testes/data-analisis/night-run/062722b3e5fb-sensor-02.png}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\caption{\label{fig-062722b3e5fe-s1}Sinal em dBm por pacote capturado - 062722b3e5fe sensor 1}
+	\includegraphics[width=1\textwidth]{060-testes/data-analisis/night-run/062722b3e5fe-sensor-01.png}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\caption{\label{fig-062722b3e5fe-s2}Sinal em dBm por pacote capturado - 062722b3e5fe sensor 2}
+	\includegraphics[width=1\textwidth]{060-testes/data-analisis/night-run/062722b3e5fe-sensor-02.png}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+\clearpage
 
 Imediatamente, percebe-se que, apesar da distância ser invariável durate todo o
 teste, a potência de sinal
@@ -83,8 +86,9 @@ não permaneceu constante. Nota-se também que o valor
 nunca assume valor par. Estas duas características fazem com que o gráfico
 seja feito de 7 linhas paralelas ao centro e alguns grupos de pontos ao redor.
 
-Em todas os gráficos anteriores, nota-se uma abrupta mudança no comportamento próximo do pacote 225.000.
-Estimou-se que esta mudança é devido ao horário (08:00) em que a universidade
+Em todas os gráficos anteriores, nota-se uma abrupta mudança no comportamento
+próximo do pacote \texttt{225.000}.
+Estimou-se que esta mudança é devido ao horário (\texttt{08:00}) em que a universidade
 (incluindo o prédio piloto e seus arredores) inicia o seu funcionamento.
 
 Para ter uma visão geral clara da distribuição das potências de sinal, calculou-se
@@ -107,6 +111,7 @@ Pacotes						&	300403			&	299864				&	305735			&	299264				\\
 \midrule
 Média (dBm)					& 	-57.66137822	&	-52.57644132		&	-73.04459417	&	-76.12900984		\\
 \midrule
+
 $\sigma$ (Desvio Padrão em dBm)	&	4.746974756		&	3.712407998			&	3.05045545		&	2.889560991			\\
 $\sigma$ \%					&	8\%				&	7\%					&	4\%				&	4\%					\\
 \midrule
@@ -139,8 +144,8 @@ equação é utilizada.
 \end{equation}
 
 O $d$ é a distância em metros, $p$ é a potência do sinal em $dB$ e $f$
-é a frequência do sinal em $MHz$. Como as redes \emph{Wi-Fi} utilizam canais na região
-de 2.4GHz e 5GHz \cite{ieee80211}, pode-se simplificar a equação e chegar nos
+é a frequência do sinal em $MHz$. Como as redes Wi-Fi utilizam canais na região
+de $2.4GHz$ e $5GHz$ \cite{ieee80211}, pode-se simplificar a equação e chegar nos
 resultados \autoref{eq:2.4ghz} e \autoref{eq:5ghz} respectivamente.
 
 \begin{align}
@@ -153,10 +158,10 @@ resultados \autoref{eq:2.4ghz} e \autoref{eq:5ghz} respectivamente.
 			&= 10 ^{ \frac{1}{20} \left( \text{p} - 46.4294 \right) } \label{eq:5ghz}
 \end{align}
 
-Utilizando a \autoref{eq:2.4ghz} (para 2.4GHz), pode-se inferir as distâncias entre os sensores
+Utilizando a \autoref{eq:2.4ghz} (para $2.4GHz$), pode-se inferir as distâncias entre os sensores
 e pontos de acesso a partir da \autoref{table:ap-pwr-avg}. Na
 \autoref{table:ap-distance}, estão presentes a distância em função da potência $d(p)$
-calculada para a potência média ($\overline{dBm}$) e para o erro.
+calculada para a potência média $\overline{dBm}$ e para o erro.
 
 
 \begin{table}[htb]
