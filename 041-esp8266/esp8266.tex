@@ -180,7 +180,7 @@ custos de cada módulo testado e dos acessórios utilizados em conjunto.
 \label{subsec:dev-esp}
 
 Todo código produzido em uma linguagem de programação é compilado por uma
-ferramenta e, então, carrega-se os arquivos binários para o ESP8266 através da
+ferramenta (lista na \autoref{table:tools-esp}) e, então, carrega-se os arquivos binários para o ESP8266 através da
 serial, para que a execução do código seja iniciada. Na
 \autoref{fig:esp-toolchain}, é apresentado um modelo de desenvolvimento e
 implantação desde o código até chegar no módulo ESP e, na \autoref{table:tools-esp},
@@ -222,9 +222,8 @@ Todo código produzido é carregado para o módulo ESP através de seu barrament
 serial. Alguns modelos, como o \emph{LoLin} e \emph{D1 mini}, já apresentam
 conversor serial para \emph{micro-USB}. Para os que não possuem tal interface é
 necessário utilizar um conversor serial-USB externo, a
-\autoref{fig:esp-pilha-serial} demonstra esse método.
-
-As \emph{GPIOs} do \emph{ESP-12f} são acessadas somente através de placas
+\autoref{fig:esp-pilha-serial} demonstra esse método. As \emph{GPIOs} do \emph{ESP-12f}
+são acessadas somente através de placas
 de circuito impresso, então uma foi adquirida para a programação do mesmo.
 
 Dos conversores serial-USB adquiridos, o modelo \emph{CH340G} não funcionou por
@@ -232,7 +231,7 @@ não ter driver compatível com o \emph{Windows 10}, em contraste com o modelo
 \emph{CP2102}  que funcionou no mesmo sistema operacional.
 
 
-\subsection{Testes e resultados}
+\subsection{Testes e resultados - ESP8266}
 \label{subsec:testes-esp}
 
 O primeiro objetivo durante a programação dos módulos ESP8266 foi cumprir a
