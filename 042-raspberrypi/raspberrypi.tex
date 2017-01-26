@@ -75,10 +75,10 @@ quantidade exata de amperagem que o computador precisa. A primeira aquisição f
 de um carregador de \emph{smartphone} que não forneceu os amperes necessários.
 
 Em comparação com a anterior, esta plataforma tem uma exigência energética maior,
-muito disto é devido a \emph{Wi-Fi} integrado que é um destaque.
+muito disto é devido a Wi-Fi integrado que é um destaque.
 A antena de cerâmica do adaptador integrado pode ser vista no primeiro plano da
 \autoref{fig-rpi-3}. Contudo, o adaptador não possui modo promíscuo e fez-se
-necessário o uso de adaptadores \emph{Wi-Fi} USB. As recomendações da comunidade
+necessário o uso de adaptadores Wi-Fi USB. As recomendações da comunidade
 quanto a escolha do adaptador USB (também conhecido como \emph{dongle Wi-Fi})
 são o \emph{Edimax EW-7811Un} que não é tão comum no Brasil e o
 \emph{EDUP EP-N85xx} que tem muitos genéricos no mercado nacional.
@@ -169,11 +169,11 @@ Mirai} utilizado para infectar milhares de dispositivos e causar o maior ataque
 \label{subsec:testes-rpi}
 
 De maneira análoga à feita com o ESP8266, analisou-se a capacidade do Raspberry Pi
-de operar com sua \emph{Wi-Fi} em modo promíscuo, porém, devido a diferença de camada
+de operar com sua Wi-Fi em modo promíscuo, porém, devido a diferença de camada
 de software envolvida, diferentes ferramentas foram utilizadas.
 
 Neste caso, utilizou-se as ferramentas \emph{airodump-ng} (aircrack-ng.org) e \emph{TShark} além das ferramentas de
-\emph{Wi-Fi} padrões do sistema operacional \emph{Raspbian}. Para verificar o modo
+Wi-Fi padrões do sistema operacional \emph{Raspbian}. Para verificar o modo
 promíscuo no ambiente Raspbian, utiliza-se os comandos \emph{ifconfig},
 \emph{iwconfig} e \emph{iw}, que são padrão do sistema operacional Debian, como
 demonstrado a seguir.
@@ -193,7 +193,7 @@ wlan0  IEEE 802.11bgn Mode:Monitor Frequency:2.412 GHz Tx-Power=20 dBm
        Power Management:off
 \end{lstlisting}
 
-Quando este processo foi realizado utilizando somente o adaptador de \emph{Wi-Fi}
+Quando este processo foi realizado utilizando somente o adaptador de Wi-Fi
 integrado no RPI3, cuja antena de cerâmica está em destaque na
 \autoref{fig-rpi-onboard}, o resultado foi negativo, portanto outros adaptadores
 foram necessários.
@@ -247,7 +247,7 @@ aparência externa difere do anterior e pode ser visualizada na
 
 Para capturar e avaliar pacotes uma ferramenta é necessária. Na área
 de segurança da informação pode-se encontrar o \emph{airodump-ng} que é utilizado para
-avaliar e explorar vulnerabilidades de segurança em redes \emph{Wi-Fi}. Outra área que
+avaliar e explorar vulnerabilidades de segurança em redes Wi-Fi. Outra área que
 forneceu uma ferramenta adequada foi a área de qualidade de serviço em redes de
 computadores (QoS) onde o \emph{software Wireshark} é bem popular, uma interface alternativa
 do mesmo feita para uso em terminal é chamada \emph{TShark}.
@@ -365,7 +365,7 @@ Custo				&	 de R\$ 190,00 a R\$ 270,00				&	 de R\$ 12,56 a R\$ 35,87		\\
 
 O RPI3 foi adotado como plataforma para o sensor de detecção de dispositivos,
 pois o modo promíscuo (\emph{monitor mode}) conseguiu ser acessado através de adaptador
-USB \emph{Wi-Fi}. Apesar do esforço para ativação do modo promíscuo na plataforma ESP8266, o uso desta reduziria
+USB Wi-Fi. Apesar do esforço para ativação do modo promíscuo na plataforma ESP8266, o uso desta reduziria
 significativamente o custo de cada sensor. Para comparação do custo da aplicação
 aqui proposta, veja a \autoref{table:comp-app-sensor}.
 
