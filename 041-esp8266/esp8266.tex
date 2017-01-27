@@ -3,7 +3,7 @@
 
 O ESP8266 é um SOC (\emph{System On a Chip} - Sistema em um chip),
 ou seja, é um chip com todos os componentes lógicos
-eletrônicos necessários e partes para um dado sistema em único cirtuito
+eletrônicos necessários e partes para um dado sistema em único circuito
 integrado. Este chip possui:
 
 
@@ -29,7 +29,7 @@ integrado. Este chip possui:
 
 \end{alineas}
 
-Para o mercado de prototipação, fabricantes constroem placas de diferentes configurações com
+Para o mercado de prototipagem, fabricantes constroem placas de diferentes configurações com
 este chip como elemento central, os chamados módulos. Estes módulos usam o
 ESP8266 com diferenças perceptíveis, por exemplo, quantidade de pinos, dimensões
 físicas, alguns podem até operar de modo \emph{standalone} (sem outro hardware de
@@ -69,7 +69,7 @@ Módulo				&	Pinos de GPIO e conectores							&	Memória	&	Custo			\\
 ESP-01				&	8 pinos macho, incompatível com \emph{breadboard}	&			&  \\
 					&	(GND, 3v3, TX, RX, CH_PD, RST, GPIO 0, GPIO 2)		&	1 MB	&	R\$ 16,80 		\\
 \midrule
-ESP-12f				&	22 pontos para montagem em superficie, nenhum pino	&	4 MB	&	R\$ 14,90 		\\
+ESP-12f				&	22 pontos para montagem em superfície, nenhum pino	&	4 MB	&	R\$ 14,90 		\\
 \midrule
 D1 mini (ESP-12f)	&	16 + microUSB										&	4 MB	&	R\$ 12,56^{1}	 \\
 \midrule
@@ -95,7 +95,7 @@ LoLin (ESP-12f)		&	30 + microUSB										&	4 MB	&	R\$ 35,87 		\\
 	Acessórios						&	Descrição									&	Custo			\\
 	\midrule
 	Esp8266 Placa Para Soldar		& Placa com 16 pinos conectados aos				&					\\
-	Esp-07, Esp-08, Esp-12, Esp-12e	& pontos de superficie do ESP-12f				&	R\$ 3,45 		\\
+	Esp-07, Esp-08, Esp-12, Esp-12e	& pontos de superfície do ESP-12f				&	R\$ 3,45 		\\
 	\midrule
 	Conversor Usb Serial 			&	Fornece uma conexão serial-USB entre		& 	 				\\
 	Ch340 Rs232 - 3,3v 5v^{1}		&	o ESP8266 e o computador de desenvolvimento	&	R\$ 6,87 		\\
@@ -134,7 +134,7 @@ diferentes dependendo das capacidades de um deles. Quando o módulo possuía
 regulador de tensão embarcado, utilizava-se o próprio conectado a uma porta USB.
 Quando o módulo não possuía tal, utilizava-se um circuito com fonte externa
 (pilhas ou USB) e um regulador de tensão conectados aos pinos 3v3 e
-GND. Depedendo da complexidade do circuito para ligar e ter acesso à
+GND. Dependendo da complexidade do circuito para ligar e ter acesso à
 serial do módulo, foi necessário o uso de uma placa \emph{breadboard}, como na
 \autoref{fig:esp-pilha-serial}. Para este trabalho foi utilizado o regular
 AMS1117 3v3 e dois capacitores de $100 \mu F$. Na
@@ -248,7 +248,7 @@ oficial fornecida por \citeonline{espressifATwiki} do firmware AT e
 não revelou nenhuma capacidade de ativar o Modo Promíscuo.
 
 Também utilizou-se a linguagem C que foi compilada na Arduino IDE e
-enviada ao ESP8266 com a extenção esp8266 by ESP8266 Community que inclui
+enviada ao ESP8266 com a extensão esp8266 by ESP8266 Community que inclui
 os cabeçalhos de funções para que o compilador padrão da Arduino IDE gere
 código  executável pelo ESP8266. Mesmo nesta API, nenhuma capacidade de ativar o
 Modo Promíscuo foi encontrada.
@@ -278,7 +278,7 @@ a máquina do desenvolvedor não possui virtualização, impossibilitando esta o
 
 Em conclusão, apesar do baixo custo e da documentação da comunidade aberta, o
 ESP8266 não foi adotado como sensor, pois não foi possível colocá-lo em modo
-prosmícuo, essencial para detectar pacotes entre dispositivo e os pontos de
+promíscuo, essencial para detectar pacotes entre dispositivo e os pontos de
 acesso, inviabilizando completamente o uso desta plataforma mesmo sendo a
 mais adequada e promissora no ponto de vista da construção de um produto final
 por seu extremo baixo custo.
