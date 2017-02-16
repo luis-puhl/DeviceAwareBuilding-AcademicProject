@@ -255,10 +255,10 @@ do mesmo feita para uso em terminal é chamada TShark.
 Para testar a viabilidade do sensor, utilizou-se o \emph{airodump-ng} que é uma
 ferramenta de terminal interativa, como vista na \autoref{fig-airodump}, onde é
 demonstrado a capacidade de capturar pacotes do tipo \emph{Beacon} (tabela com
-``BSSID'', ``PWR'' e ``Beacons'' na parte superior da \autoref{fig-airodump}) que anunciam
+``BSSID'', ``PWR'' e ``Beacons'' no destaque A da \autoref{fig-airodump}) que anunciam
 a presença de AP e o nome da rede que
 ele está servindo. Além disso, é possível observar também os pacotes entre os dispositivos ``Stations''
-associados a um AP (tabela com ``BSSID'', ``STATION'' e ``PWR'' na parte inferior da
+associados a um AP (tabela com ``BSSID'', ``STATION'' e ``PWR'' no destaque B da
 \autoref{fig-airodump}). Em ambos os casos, é mostrado um valor de RSS
 (``PWR'') associado a cada transmissor, portanto, demostrando a viabilidade
 do sensor com a informação de potência de sinal.
@@ -268,6 +268,8 @@ do sensor com a informação de potência de sinal.
 	\begin{center}
 	\includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/wifi-sniff-rpi/4-rpi-airodump.png}
 	\end{center}
+	\nota[Destaque A]{Pacotes do tipo Beacon e suas redes.}
+	\nota[Destaque B]{Pacotes entre estações e APs.}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
