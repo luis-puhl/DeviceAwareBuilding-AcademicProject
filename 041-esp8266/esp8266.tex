@@ -53,13 +53,17 @@ Cada um deles pode ser encontrado na \autoref{fig:modelos-esp}.
 \label{subsec:mercado-esp}
 
 As diferentes especificações implicam em diferentes produtos e mercado para
-eles, isto resulta em diferentes custos em diferentes regiões.
+eles, isto resulta em diferentes custos em diferentes regiões. Para os módulos
+utlizados na exploração deste trabalho verifique a \autoref{table:custo-esp}.
+
+O ESP8266 foi escolhido como primeira tentativa devido ao seu baixo custo e ao
+tamanho reduzido. No exterior, ele pode ser encontrado de USD\$ 1,76 a 2,2
+\cite{AlibabaESP}, e no Brasil por aproximadamente BRL R\$ 15,00 \cite{mercadolivreEsp}.
 
 \begin{table}[htb]
 \IBGEtab{%
 \ABNTEXchapterfont {
-  \caption{Descrição e custos de módulos ESP8266}%
-  \label{table:custo-esp}
+	\caption{\label{table:custo-esp}Descrição e custos de módulos ESP8266}%
 }
 }{%
 \begin{tabular}{cccc}
@@ -82,6 +86,23 @@ LoLin (ESP-12f)		&	30 + microUSB										&	4 MB	&	R\$ 35,87 		\\
 	\nota[Nota 1]{D1 mini (ESP-12f) foi adquirido do mercado chinês.}%
 }
 \end{table}
+
+Devido ao seu tamanho, ele é de fácil integração com demais dispositivos,
+bastando o uso de uma comunicação serial. Já sobre a comunidade, há inúmeros
+projetos DIY que ensinam a como construir e manipular projetos que envolvem diferentes
+módulos. Além disso, a empresa  idealizadora e fabricante do chip, Espressif,
+disponibiliza no GitHub projetos com documentação e código aberto.
+
+Para desenvolver na plataforma, os módulos ESP8266 foram utilizados de formas
+diferentes dependendo das capacidades de cada um deles (os acessórios podem ser
+vistos na \autoref{table:acessorios-esp}). Quando o módulo possuía regulador de
+tensão embarcado, utilizava-se o próprio conectado a uma porta USB. Quando o
+módulo não possuía tal, utilizava-se um circuito com fonte externa (pilhas ou
+USB) e um regulador de tensão conectados aos pinos 3v3 e GND. Dependendo da
+complexidade do circuito para ligar e ter acesso à serial do módulo, foi
+necessário o uso de uma placa \emph{breadboard}, como na
+\autoref{fig:esp-pilha-serial}. Para este trabalho foi utilizado o regular
+AMS1117 3v3 e dois capacitores de $100 \mu F$.
 
 \begin{table}[htb]
 \IBGEtab{%
@@ -117,30 +138,6 @@ LoLin (ESP-12f)		&	30 + microUSB										&	4 MB	&	R\$ 35,87 		\\
 	\nota[Nota 2]{Compatível com \emph{Windows 10} e com o computador de desenvolvimento.}%
 }
 \end{table}
-
-
-O ESP8266 foi escolhido como primeira tentativa devido ao seu baixo custo e ao
-tamanho reduzido. No exterior, ele pode ser encontrado de USD\$ 1,76 a 2,2
-\cite{AlibabaESP}, e no Brasil por aproximadamente BRL R\$ 15,00 \cite{mercadolivreEsp}.
-
-Devido ao seu tamanho, ele é de fácil integração com demais dispositivos,
-bastando o uso de uma comunicação serial. Já sobre a comunidade, há inúmeros
-projetos DIY que ensinam a como construir e manipular projetos que envolvem diferentes
-módulos. Além disso, a empresa  idealizadora e fabricante do chip, Espressif,
-disponibiliza no GitHub projetos com documentação e código aberto.
-
-Para desenvolver na plataforma, os módulos ESP8266 foram utilizados de formas
-diferentes dependendo das capacidades de um deles. Quando o módulo possuía
-regulador de tensão embarcado, utilizava-se o próprio conectado a uma porta USB.
-Quando o módulo não possuía tal, utilizava-se um circuito com fonte externa
-(pilhas ou USB) e um regulador de tensão conectados aos pinos 3v3 e
-GND. Dependendo da complexidade do circuito para ligar e ter acesso à
-serial do módulo, foi necessário o uso de uma placa \emph{breadboard}, como na
-\autoref{fig:esp-pilha-serial}. Para este trabalho foi utilizado o regular
-AMS1117 3v3 e dois capacitores de $100 \mu F$. Na
-\autoref{table:custo-esp} e \autoref{table:acessorios-esp}, são apresentados os
-custos de cada módulo testado e dos acessórios utilizados em conjunto.
-
 
 \subsection{Desenvolvimento e Implantação}
 \label{subsec:dev-esp}
