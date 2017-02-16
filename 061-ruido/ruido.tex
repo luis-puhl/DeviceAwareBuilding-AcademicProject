@@ -126,21 +126,20 @@ $\sigma$ \%					&	8\%				&	7\%					&	4\%				&	4\%					\\
 \end{table}
 
 
-Em alguns trabalhos, pode-se
-encontrar a equação de FSPL (\emph{Free-space path loss} - perca no caminho em
-espaço aberto) que é usualmente utilizada para determinar a potência do sinal
+A equação de FSPL (\emph{Free-space path loss} - perca no caminho em
+espaço aberto) que é apresentada na \autoref{eq:fspl} é usualmente utilizada para determinar a potência do sinal
 a ser transmitido para que este alcance o seu destinatário.
 
 \begin{equation}
-	{\mbox{FSPL(dB)}}=20\log _{{10}}(\text{d})+20\log _{{10}}(\text{f})+92.45
+	{\mbox{FSPL(dB)}}=20\log _{{10}}(\text{d})+20\log _{{10}}(\text{f})+92.45 \label{eq:fspl}
 \end{equation}
 
 Na aplicação \emph{Android} \emph{Wifi Distance Calculator}, desenvolvida por
-\citeonline{Kuik2016}, e no trabalho de \citeonline{androidtri} a seguinte
-equação é utilizada.
+\citeonline{Kuik2016}, e no trabalho de \citeonline{androidtri} a FSPL é usada de maneira inversa, ou seja, utiliza-se a potência
+de sinal para se encontrar a distância, como mostra a \autoref{eq:distan}.
 
 \begin{equation}
-	\text{d} = 10 ^{ \frac{1}{20} \left( \text{p} - 20 \times log_{10}\left(\text{f}\right)  + 27.55 \right) } \\
+	\text{d} = 10 ^{ \frac{1}{20} \left( \text{p} - 20 \times log_{10}\left(\text{f}\right)  + 27.55 \right) } \label{eq:distan}\\
 \end{equation}
 
 O $d$ é a distância em metros, $p$ é a potência do sinal em $dB$ e $f$
