@@ -48,7 +48,7 @@ Cada um deles pode ser encontrado na \autoref{fig:modelos-esp}.
 \end{figure}
 
 
-\clearpage
+\FloatBarrier
 \subsection{Disponibilidade no mercado}
 \label{subsec:mercado-esp}
 
@@ -71,7 +71,7 @@ tamanho reduzido. No exterior, ele pode ser encontrado de USD\$ 1,76 a 2,2
 Módulo				&	Pinos de GPIO e conectores							&	Memória	&	Custo			\\
 \midrule \midrule
 ESP-01				&	8 pinos macho, incompatível com \emph{breadboard}	&			&  \\
-					&	(GND, 3v3, TX, RX, CH_PD, RST, GPIO 0, GPIO 2)		&	1 MB	&	R\$ 16,80 		\\
+					&	(GND, 3v3, TX, RX, CH\_PD, RST, GPIO 0, GPIO 2)		&	1 MB	&	R\$ 16,80 		\\
 \midrule
 ESP-12f				&	22 pontos para montagem em superfície, nenhum pino	&	4 MB	&	R\$ 14,90 		\\
 \midrule
@@ -133,19 +133,20 @@ AMS1117 3v3 e dois capacitores de $100 \mu F$.
 \bottomrule
 \end{tabular}%
 }{%
+	\nota[Nota 1]{Compatível apenas com Windows 7 em setembro 2016.}%
+	\nota[Nota 2]{Compatível com Windows 10 e com o computador de desenvolvimento.}%
 	\fonte{Produzido pelo autor.}%
-	\nota[Nota 1]{Compatível apenas com \emph{Windows 7}.}%
-	\nota[Nota 2]{Compatível com \emph{Windows 10} e com o computador de desenvolvimento.}%
 }
 \end{table}
 
+\FloatBarrier
 \subsection{Desenvolvimento e Implantação}
 \label{subsec:dev-esp}
 
 Todo código produzido em uma linguagem de programação é compilado por uma
 ferramenta e, então, carrega-se os arquivos binários para o ESP8266 através da
 serial, para que a execução do código seja iniciada. Na
-\autoref{fig:esp-toolchain}, é apresentado um modelo de desenvolvimento e
+\autoref{fig:esp-toolchain} é apresentado um modelo de desenvolvimento e
 implantação desde o código até chegar no módulo ESP8266 e, na \autoref{table:tools-esp},
 são apresentadas as ferramentas utilizadas como compiladores e carregadores.
 
@@ -225,7 +226,7 @@ Dos conversores serial-USB adquiridos, o modelo CH340G} não funcionou por
 não ter driver compatível com o Windows 10, em contraste com o modelo
 CP2102 que funcionou no mesmo sistema operacional.
 
-
+\FloatBarrier
 \subsection{Testes e resultados - ESP8266}
 \label{subsec:testes-esp}
 
@@ -244,11 +245,12 @@ AT indicou \citeonline{room15} como uma fonte sucinta da documentação
 oficial fornecida por \citeonline{espressifATwiki} do firmware AT e
 não revelou nenhuma capacidade de ativar o Modo Promíscuo.
 
-Também utilizou-se a linguagem C que foi compilada na Arduino IDE e
-enviada ao ESP8266 com a extensão esp8266 by ESP8266 Community que inclui
-os cabeçalhos de funções para que o compilador padrão da Arduino IDE gere
-código  executável pelo ESP8266. Mesmo nesta API, nenhuma capacidade de ativar o
-Modo Promíscuo foi encontrada.
+Também utilizou-se a linguagem C que foi compilada na Arduino IDE  com a
+extenção \emph{esp8266 by ESP8266 Community} e enviada ao ESP8266, como pode ser
+visto na \autoref{fig:esp-arduino}. Essa extensão inclui os cabeçalhos de
+funções para que o compilador padrão da Arduino IDE gere código  executável pelo
+ESP8266. Mesmo nesta API, nenhuma capacidade de ativar o Modo Promíscuo foi
+encontrada.
 
 \begin{figure}[htb]
 	\caption{\label{fig:esp-arduino}Código em C compilado e implantado em um ESP8266}
