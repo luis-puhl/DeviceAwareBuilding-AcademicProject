@@ -29,24 +29,58 @@ integrado. Este chip possui:
 
 \end{alineas}
 
-Para o mercado de prototipagem, fabricantes constroem placas de diferentes configurações com
-este chip como elemento central, os chamados módulos. Estes módulos usam o
-ESP8266 com diferenças perceptíveis, por exemplo, quantidade de pinos, dimensões
-físicas, alguns podem até operar de modo \emph{standalone} (sem outro hardware de
-suporte como reguladores de tensão e conversores serial-USB) e, especialmente, a
- Memória Flash SPI. Neste trabalho, foram usados os módulos:
-ESP-01, LoLin, D1 mini e ESP-12f com placa adaptadora de pinos.
-Cada um deles pode ser encontrado na \autoref{fig:modelos-esp}.
+Para o mercado de prototipagem, fabricantes constroem placas de diferentes
+configurações com este chip como elemento central, os chamados módulos. Estes
+módulos usam o ESP8266 com diferenças perceptíveis, por exemplo, quantidade de
+pinos, dimensões físicas, alguns podem até operar de modo \emph{standalone} (sem
+outro hardware de suporte como reguladores de tensão e conversores serial-USB)
+e, especialmente, a Memória Flash SPI.
 
+Neste trabalho, foram usados os módulos: ESP-01 (\autoref{fig:esp-01}), LoLin
+(\autoref{fig:lolin}), D1 mini (\autoref{fig:d1-mini}),  e ESP-12e
+(\autoref{fig:esp-12e}) com placa adaptadora de pinos
+(\autoref{fig:esp-12e-placa}).
 
 \begin{figure}[htb]
-	\caption{\label{fig:modelos-esp}Módulos ESP8266}
-	\begin{center}
-		\includegraphics[width=1\textwidth]{040-plataformas/esp-dev/modulos-esp.jpg}
-	\end{center}
-	\legend{Fonte: Elaborada pelo autor}
+	\centering
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\caption{Módulo ESP-01 \label{fig:esp-01}}
+		\includegraphics[width=1\textwidth]{041-esp8266/img/esp-01.jpg}
+		\legend{Fonte: Produzido pelo autor}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\caption{Módulo LoLin com ESP-12e \label{fig:lolin}}
+		\includegraphics[width=1\textwidth]{041-esp8266/img/esp-12e-lolin.jpg}
+		\legend{Fonte: Produzido pelo autor}
+	\end{minipage}
 \end{figure}
 
+\begin{figure}[htb]
+		\centering
+		\caption{Módulo ESP-12e \label{fig:esp-12e}}
+		\includegraphics[width=1\textwidth]{041-esp8266/img/esp-12e-wide.jpg}
+		\legend{Fonte: Produzido pelo autor}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\caption{Módulo d1 mini com ESP-12f \label{fig:d1-mini}}
+		\includegraphics[width=1\textwidth]{041-esp8266/img/d1-mini.jpg}
+		\legend{Fonte: Produzido pelo autor}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\caption{Módulo ESP-12e com placa adaptadora \label{fig:esp-12e-placa}}
+		\includegraphics[width=1\textwidth]{041-esp8266/img/esp-12e-placa.jpg}
+		\legend{Fonte: Produzido pelo autor}
+	\end{minipage}
+\end{figure}
 
 \FloatBarrier
 \subsection{Disponibilidade no mercado}
@@ -147,8 +181,9 @@ Todo código produzido em uma linguagem de programação é compilado por uma
 ferramenta e, então, carrega-se os arquivos binários para o ESP8266 através da
 serial, para que a execução do código seja iniciada. Na
 \autoref{fig:esp-toolchain} é apresentado um modelo de desenvolvimento e
-implantação desde o código até chegar no módulo ESP8266 e, na \autoref{table:tools-esp},
-são apresentadas as ferramentas utilizadas como compiladores e carregadores.
+implantação desde o código até chegar no módulo ESP8266 e, na
+\autoref{table:tools-esp}, são apresentadas as ferramentas utilizadas como
+compiladores e carregadores.
 
 \begin{figure}[htb]
 	\caption{\label{fig:esp-toolchain}Sequência de ferramentas para implantação}
@@ -214,17 +249,36 @@ são apresentadas as ferramentas utilizadas como compiladores e carregadores.
 }
 \end{table}
 
-Todo código produzido é carregado para o módulo ESP8266 através de seu barramento
-serial. Alguns modelos, como o LoLin e D1 mini, já apresentam
+Todo código produzido é carregado para o módulo ESP8266 através de seu
+barramento serial. Alguns modelos, como o LoLin e D1 mini, já apresentam
 conversor serial para micro-USB. Para os que não possuem tal interface é
 necessário utilizar um conversor serial-USB externo, a
-\autoref{fig:esp-pilha-serial} demonstra esse método. As GPIOs do ESP-12f
-são acessadas somente através de placas
-de circuito impresso, então uma foi adquirida para a programação do mesmo.
+\autoref{fig:esp-pilha-serial} demonstra esse método. As GPIOs do ESP-12f são
+acessadas somente através de placas de circuito impresso, então uma foi
+adquirida para a programação do mesmo.
 
-Dos conversores serial-USB adquiridos, o modelo CH340G} não funcionou por
-não ter driver compatível com o Windows 10, em contraste com o modelo
-CP2102 que funcionou no mesmo sistema operacional.
+Dos conversores serial-USB adquiridos, o modelo CH340G
+(\autoref{fig:serial-340g}) não funcionou por não ter driver compatível com o
+Windows 10, em contraste com o modelo CP2102 (\autoref{fig:serial-Cp2102}) que
+funcionou no mesmo sistema operacional.
+
+
+\begin{figure}[htb]
+	\centering
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\caption{Adaptador Serial-USB ch340g \label{fig:serial-340g}}
+		\includegraphics[width=1\textwidth]{041-esp8266/img/serial-ch340g.jpg}
+		\legend{Fonte: Produzido pelo autor}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\caption{Adaptador Serial-USB Cp2102 \label{fig:serial-Cp2102}}
+		\includegraphics[width=1\textwidth]{041-esp8266/img/serial-Cp2102.jpg}
+		\legend{Fonte: Produzido pelo autor}
+	\end{minipage}
+\end{figure}
 
 \FloatBarrier
 \subsection{Testes e resultados - ESP8266}
