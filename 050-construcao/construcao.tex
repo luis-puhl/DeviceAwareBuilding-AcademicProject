@@ -1,5 +1,5 @@
-\chapter{Construção}
-\label{chap:Construcao}
+\chapter{Aplicação demonstrativa}
+\label{chap:aplicacao_demonstrativa}
 
 Para a construção do software aplicativo, foi utilizado uma arquitetura em
 três camadas: sensor, distribuidor de acesso (\emph{IoT gateway}) e apresentação
@@ -16,11 +16,12 @@ de dados (\emph{Data Mining}).
 A camada de sensor utilizou as tecnologias Node.js, TShark parte
 do Wireshark e MQTT.js. A camada \emph{gateway} foi composta
 basicamente pelo \emph{MQTT Broker} Mosquitto. Por fim a camada de
-apresentação utilizou as tecnologias Node.js, MQTT.js, HTML,
-CSS, Javascript, Bootstrap e Google Maps API.
+apresentação utlizou as tecnologias Node.js, MQTT.js, HTML,
+CSS, Javascript, Bootstrap e Google Maps API. A \autoref{fig-arq-app} apresenta
+a arquitetura geral da aplicação demonstrativa.
 
 \begin{figure}[htb]
-	\caption{\label{fig-arq-app}Arquitetura da aplicação}
+	\caption{\label{fig-arq-app}Arquitetura geral da aplicação demonstrativa}
 	\begin{center}
 		\includegraphics[width=1\textwidth]{050-construcao/esquema-proj.png}
 	\end{center}

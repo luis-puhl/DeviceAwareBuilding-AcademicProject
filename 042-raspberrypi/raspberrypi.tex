@@ -19,7 +19,7 @@ Além deste recurso a nível de sistema, a comunidade e o número de projetos DI
 conectar-se a um monitor e construir protótipos e aplicações.
 
 O RPI3 é um computador \emph{single-board}  (única
-placa) que tem o tamanho próximo ao de um cartão de crédito. Foi desenvolvido
+placa) que tem o tamanho próximo ao de um cartão de crédito. Como visto na \autoref{fig-rpi-3}, foi desenvolvido
 pela Raspberry Pi Foundation para promover o ensino da computação nas
 escolas. Este computador possui:
 
@@ -202,13 +202,11 @@ foram necessários.
 No ambiente do laboratório (LTIA),
 encontrou-se adaptadores Wi-Fi USB D-link
 (\autoref{fig-dlink}), porém executando o mesmo teste neles não foi possível
-ativar o modo promíscuo. Um terceiro adaptador emprestado foi o modelo Edup (\autoref{fig-ralink-epub}) da
-fabricante Ralink que teve resultado
-positivo. Para a construção dos dois sensores, foi necessária a aquisição, e
-subsequente teste, de mais um modelo de adaptador que está listado na
-\autoref{table:custo-rpi} que também tem como fabricante a \emph{Ralink}, porém a sua
-aparência externa difere do anterior e pode ser visualizada na
-\autoref{fig-ralink}, mesmo que a aquisição foi do mesmo anúncio.
+ativar o modo promíscuo. Um terceiro adaptador emprestado foi o modelo Ralink Edup A (\autoref{fig-ralink-edup}) que teve resultado
+positivo. Para a construção dos dois sensores foi necessária a aquisição e
+subsequente teste de mais um modelo de adaptador, Ralink Edup B (\autoref{fig-ralink}), que está listado na
+\autoref{table:custo-rpi}, porém a sua
+aparência externa difere do anterior, mesmo que a aquisição foi do mesmo anúncio.
 
 \begin{figure}[htb]
  \label{adaptadores-usb}
@@ -233,14 +231,14 @@ aparência externa difere do anterior e pode ser visualizada na
  \label{adaptadores-usb-2}
   \begin{minipage}{0.45\textwidth}
 	  \centering
-	  \caption{Adaptador Wi-Fi USB Ralink Epub emprestado \label{fig-ralink-epub}}
+	  \caption{Adaptador Wi-Fi USB Ralink Edup A\label{fig-ralink-edup}}
 	  \includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/cut_ralink-epub.jpg}
 	  \legend{Fonte: Produzido pelo autor}
   \end{minipage}
   \hfill
   \begin{minipage}{0.45\textwidth}
 	  \centering
-	  \caption{Adaptador Wi-Fi USB Ralink Epub comprado \label{fig-ralink}}
+	  \caption{Adaptador Wi-Fi USB Ralink Edup B\label{fig-ralink}}
 	  \includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/cut_ralink.jpg}
 	  \legend{Fonte: Produzido pelo autor}
   \end{minipage}
@@ -257,10 +255,10 @@ do mesmo feita para uso em terminal é chamada TShark.
 Para testar a viabilidade do sensor, utilizou-se o \emph{airodump-ng} que é uma
 ferramenta de terminal interativa, como vista na \autoref{fig-airodump}, onde é
 demonstrado a capacidade de capturar pacotes do tipo \emph{Beacon} (tabela com
-``BSSID'', ``PWR'' e ``Beacons'' na parte superior da \autoref{fig-airodump}) que anunciam
+``BSSID'', ``PWR'' e ``Beacons'' no destaque A da \autoref{fig-airodump}) que anunciam
 a presença de AP e o nome da rede que
 ele está servindo. Além disso, é possível observar também os pacotes entre os dispositivos ``Stations''
-associados a um AP (tabela com ``BSSID'', ``STATION'' e ``PWR'' na parte inferior da
+associados a um AP (tabela com ``BSSID'', ``STATION'' e ``PWR'' no destaque B da
 \autoref{fig-airodump}). Em ambos os casos, é mostrado um valor de RSS
 (``PWR'') associado a cada transmissor, portanto, demostrando a viabilidade
 do sensor com a informação de potência de sinal.
@@ -270,6 +268,8 @@ do sensor com a informação de potência de sinal.
 	\begin{center}
 	\includegraphics[width=1\textwidth]{040-plataformas/RPi-WiFi-dongles/wifi-sniff-rpi/4-rpi-airodump.png}
 	\end{center}
+	\nota[Destaque A]{Pacotes do tipo Beacon e suas redes.}
+	\nota[Destaque B]{Pacotes entre estações e APs.}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
