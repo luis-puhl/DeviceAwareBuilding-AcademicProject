@@ -21,15 +21,15 @@ que houvesse tráfego na rede, o dispositivo móvel foi configurado para receber
 No teste 1, o dispositivo estava na mesma sala do sensor 2. As distâncias
 aproximadas, em linha reta, entre o ponto teste 1 e o sensor 1 é de \texttt{21,52m} e
 entre o mesmo ponto e o sensor 2 é de \texttt{7,00m}. Foram capturados
-\texttt{157.736} pacotes, totalizando \texttt{9,7 MB} pelo sensor 1 e \texttt{21.
-974} pacotes, totalizando \texttt{1.9 MB} de captura pelo sensor 2.
+\texttt{157.736} pacotes (\autoref{fig-mg4-noise-t1} (a)), totalizando \texttt{9,7 MB} pelo sensor 1 e \texttt{21.
+974} pacotes (\autoref{fig-mg4-noise-t1} (b)), totalizando \texttt{1.9 MB} de captura pelo sensor 2.
 
 Para o teste 2, o dispositivo móvel estava posicionado no corredor fora da sala
 do sensor 1 e distante do sensor 2. As distâncias aproximadas, em linha reta, entre o
 ponto de teste 2 e o sensor 1 é de \texttt{9,35m} e entre o mesmo ponto e o sensor
-2 é de \texttt{20,14m}. Neste teste, o sensor 1 capturou \texttt{103.555} pacotes,
+2 é de \texttt{20,14m}. Neste teste, o sensor 1 capturou \texttt{103.555} pacotes (\autoref{fig-mg4-noise-t2} (a)),
 totalizando \texttt{6.4 MB} de captura. Já o sensor 2 capturou \texttt{22.635}
-pacotes totalizando \texttt{2 MB} de captura.
+pacotes (\autoref{fig-mg4-noise-t2} (b)) totalizando \texttt{2 MB} de captura.
 
 Posteriormente, os arquivos de captura foram analisados com a ferramenta
 \emph{Ron’s Editor} para que o \texttt{``summary''} fosse construído.
@@ -39,17 +39,18 @@ Posteriormente, os arquivos de captura foram analisados com a ferramenta
 	\centering
 	\caption{\label{fig-mg4-noise-t1}Sumário de pacotes por dispositivo - Teste 1}
 	\includegraphics[height=0.32\textheight,width=1\textwidth]{060-testes/data-analisis/distance-mg4plus-netflix/Teste1.png}
-	\legend{À esquerda, os pacotes recebidos pelo sensor 1 e a direita do sensor 2.
-	Em preto, o dispositivo móvel. Fonte: Elaborada pelo autor}
+	\nota[Item (a)]{Os pacotes recebidos pelo sensor 1.}
+	\nota[Item (b)]{Os pacotes recebidos pelo sensor 2.}
+	\legend{Fonte: Elaborada pelo autor.}
 \end{figure}
 
 \begin{figure}[hb]
 	\centering
 	\caption{\label{fig-mg4-noise-t2}Sumário de pacotes por dispositivo - Teste 2}
 	\includegraphics[height=0.32\textheight,width=1\textwidth]{060-testes/data-analisis/distance-mg4plus-netflix/Teste2.png}
-	\legend{À esquerda, os pacotes recebidos pelo sensor 1 e a direita do sensor 2.
-	Em preto, o dispositivo móvel.
-	Fonte: Elaborada pelo autor.}
+	\nota[Item (a)]{Os pacotes recebidos pelo sensor 1.}
+	\nota[Item (b)]{Os pacotes recebidos pelo sensor 2.}
+	\legend{Fonte: Elaborada pelo autor.}
 \end{figure}
 
 Pode-se observar que o \emph{smartphone} não representa a maioria dos pacotes
