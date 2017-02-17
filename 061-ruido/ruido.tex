@@ -129,16 +129,28 @@ $\sigma$ \%					&	8\%				&	7\%					&	4\%				&	4\%					\\
 A equação de FSPL (\emph{Free-space path loss} - perca no caminho em espaço
 aberto) que é apresentada na \autoref{eq:fspl} é usualmente utilizada para
 determinar a potência do sinal a ser transmitido para que este alcance o seu
-destinatário.
+destinatário. Para obter o valor de potência em $dB$ utiliza-se a
+\autoref{eq:fspl-db}.
 
-\begin{equation}
-	{\mbox{FSPL(dB)}}=20\log _{{10}}(\text{d})+20\log _{{10}}(\text{f})+92.45 \label{eq:fspl}
-\end{equation}
+\begin{align}
+	\mbox{FSPL}		&= \left ( \frac{4\pi d}{\lambda} \right )^2  \label{eq:fspl}
+\end{align}
 
-Na aplicação \emph{Android} \emph{Wifi Distance Calculator}, desenvolvida por
-\citeonline{Kuik2016}, e no trabalho de \citeonline{androidtri} a FSPL é usada
-de maneira inversa, ou seja, utiliza-se a potência de sinal para se encontrar a
-distância, como mostra a \autoref{eq:distan}.
+Onde, na \autoref{eq:fspl}, $\lambda$ é o comprimento de onda do sinal em metros
+$d$ é a distância do trasmissor em metros.
+
+\begin{align}
+	\mbox{FSPL(dB)}	&= 20\log _{{10}}( d )+20\log _{{10}}( f ) - 27.55 \label{eq:fspl-db}
+\end{align}
+
+Onde, na \autoref{eq:fspl-db}, $f$ é a frequência do sinal em megahertz ($MHz$)
+e $d$ é a distância do trasmissor em metros.
+
+Na aplicação Android \emph{Wifi Distance Calculator} (confirmado no
+\autoref{chap-android-kuik}), desenvolvida por \citeonline{Kuik2016}, e no
+trabalho de \citeonline{androidtri} a FSPL é usada de maneira inversa, ou seja,
+utiliza-se a potência de sinal para se encontrar a distância, como mostra a
+\autoref{eq:distan}.
 
 \begin{equation}
 	\text{d} = 10 ^{ \frac{1}{20} \left( \text{p} - 20 \times log_{10}\left(\text{f}\right)  + 27.55 \right) } \label{eq:distan}\\
