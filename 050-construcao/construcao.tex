@@ -11,14 +11,14 @@ para visualização dos dados capturados.
 
 Esta divisão está de acordo com o padrão encontrado em outras aplicações
 IoT onde a última camada usualmente varia entre apresentação e mineração
-de dados (\emph{Data Mining}).
+de dados (\emph{Data Mining}). A arquitetura geral da aplicação demonstrativa
+e algumas sugestões de integração são apresentadas na \autoref{fig-arq-app}.
 
 A camada de sensor utilizou as tecnologias Node.js, TShark parte
 do Wireshark e MQTT.js. A camada \emph{gateway} foi composta
 basicamente pelo \emph{MQTT Broker} Mosquitto. Por fim a camada de
 apresentação utlizou as tecnologias Node.js, MQTT.js, HTML,
-CSS, Javascript, Bootstrap e Google Maps API. A \autoref{fig-arq-app} apresenta
-a arquitetura geral da aplicação demonstrativa.
+CSS, Javascript, Bootstrap e Google Maps API.
 
 \begin{figure}[htb]
 	\caption{\label{fig-arq-app}Arquitetura geral da aplicação demonstrativa}
