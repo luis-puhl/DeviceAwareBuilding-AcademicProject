@@ -132,11 +132,7 @@ diferentes dependendo das capacidades de cada um deles (os acessórios podem ser
 vistos na \autoref{table:acessorios-esp}). Quando o módulo possuía regulador de
 tensão embarcado, utilizava-se o próprio conectado a uma porta USB. Quando o
 módulo não possuía tal, utilizava-se um circuito com fonte externa (pilhas ou
-USB) e um regulador de tensão conectados aos pinos 3v3 e GND. Dependendo da
-complexidade do circuito para ligar e ter acesso à serial do módulo, foi
-necessário o uso de uma placa \emph{breadboard}, como na
-\autoref{fig:esp-pilha-serial}. Para este trabalho foi utilizado o regular
-AMS1117 3v3 e dois capacitores de $100 \mu F$.
+USB) e um regulador de tensão conectados aos pinos 3v3 e GND.
 
 \begin{table}[htb]
 \IBGEtab{%
@@ -172,6 +168,19 @@ AMS1117 3v3 e dois capacitores de $100 \mu F$.
 	\fonte{Produzido pelo autor.}%
 }
 \end{table}
+
+Dependendo da complexidade do circuito para ligar e ter acesso à serial do
+módulo, foi necessário o uso de uma placa \emph{breadboard}, como na
+\autoref{fig:esp-pilha-serial}. Para este trabalho foi utilizado o regular
+AMS1117 3v3 e dois capacitores de $100 \mu F$.
+
+\begin{figure}[htb]
+	\caption{\label{fig:esp-pilha-serial}ESP-12f com regulador tensão e serial}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{040-plataformas/esp-dev/breadboard.jpg}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
 
 \FloatBarrier
 \subsection{Desenvolvimento e Implantação}
@@ -209,13 +218,7 @@ compiladores e carregadores.
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-\begin{figure}[htb]
-	\caption{\label{fig:esp-pilha-serial}ESP-12f com regulador tensão e serial}
-	\begin{center}
-		\includegraphics[width=1\textwidth]{040-plataformas/esp-dev/breadboard.jpg}
-	\end{center}
-	\legend{Fonte: Elaborada pelo autor}
-\end{figure}
+\FloatBarrier
 
 \begin{table}[htb]
 \IBGEtab{%
@@ -248,6 +251,8 @@ compiladores e carregadores.
 	\fonte{Produzido pelo autor.}%
 }
 \end{table}
+
+\FloatBarrier
 
 Todo código produzido é carregado para o módulo ESP8266 através de seu
 barramento serial. Alguns modelos, como o LoLin e D1 mini, já apresentam
