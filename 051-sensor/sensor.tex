@@ -1,21 +1,21 @@
 \section{Aplicação Sensor}
 \label{sec:app-sensor}
 
-A aplicação sensor tem como requisitos funcionais capturar, avaliar e classificar pacotes de
-Wi-Fi, inferir estatísticas de dispositivos e fornecer estas informações para
-os interessados através do \emph{gateway}.
+A aplicação sensor tem como requisitos funcionais capturar, avaliar e
+classificar pacotes de Wi-Fi, inferir estatísticas de dispositivos e fornecer
+estas informações para os interessados através do \emph{gateway}.
 
 Para fazer a captura dos pacotes na aplicação final, diferente do que foi
-demonstrado na \autoref{subsec:testes-rpi}, em especial o airodump-ng e
-sua interface demonstrada na \autoref{fig-airodump}, foi utilizado o programa
-TShark cujo modo de operação serve melhor para a construção dos
-\emph{streams} que serão abordados em breve.
+demonstrado na \autoref{subsec:testes-rpi}, em especial o airodump-ng e sua
+interface demonstrada na \autoref{fig-airodump}, foi utilizado o programa TShark
+cujo modo de operação serve melhor para a construção dos \emph{streams} que
+serão abordados em breve.
 
 \begin{citacao}
 
-	TShark é uma versão orientada ao terminal do Wireshark projetada para capturar
-	e exibir pacotes quando uma interface de usuário interativa não é necessária ou
-	disponível. Ele suporta as mesmas opções como wireshark. \
+	TShark é uma versão orientada ao terminal do Wireshark projetada para
+	capturar e exibir pacotes quando uma interface de usuário interativa não é
+	necessária ou disponível. Ele suporta as mesmas opções como wireshark. \
 
 	\citeonline{tshark} Tradução Nossa.
 \end{citacao}
@@ -30,18 +30,18 @@ processos filhos do processo Node.js.
 
 	Node.js é uma estrutura em tempo de execução construida sobre o motor de
 	execução JavaScript V8 do Chrome. Node.js utiliza um modelo orientado a
-	evento, de entrada e saída não bloqueante que o faz leve e eficiente.
-	O ecosistema de pacotes do Node.js, npm, é o maior ecossistema de bibliotecas
+	evento, de entrada e saída não bloqueante que o faz leve e eficiente. O
+	ecosistema de pacotes do Node.js, npm, é o maior ecossistema de bibliotecas
 	de código livre no mundo. \
 
 	\citeonline{nodejs} Tradução Nossa.
 \end{citacao}
 
-Como também foi estabelecido anteriormente, o TShark é executado com o
-comando e argumentos como mostrado a seguir, a diferença em relação aos testes e
-na escolha da plataforma é a forma de execução, na maneira mostrada, o processo é
-criado utilizando o módulo ``child\_process'' \cite{child_process} e os
-argumentos são passados como um vetor (\emph{Array}).
+Como também foi estabelecido anteriormente, o TShark é executado com o comando e
+argumentos como mostrado no \autoref{code-node-tshark}, a diferença em relação
+aos testes e na escolha da plataforma é a forma de execução, na maneira
+mostrada, o processo é criado utilizando o módulo ``child\_process''
+\cite{child_process} e os argumentos são passados como um vetor (\emph{Array}).
 
 \begin{lstlisting}[language=javascript,caption={TShark e opções executado pelo Node.js},label=code-node-tshark]
 const spawn = require('child_process').spawn;
@@ -62,17 +62,23 @@ const tsharkProcessoFilho = spawn(
 	]);
 \end{lstlisting}
 
-Para utilizar o resultado gerado pelo TShark, utilizou-se outro método do
-módulo ``child\_process''  juntamente com a estrutura de \emph{Stream}
-\cite{stream} que provê o método \texttt{pipe(destination[, options])} que permite,
-de maneira análoga ao operador `` | '' no terminal também chamado de \emph{pipe},
+Para utilizar o resultado gerado pelo TShark, utilizou-se outro método do módulo
+``child\_process''  juntamente com a estrutura de \emph{Stream} \cite{stream}
+que provê o método \texttt{pipe(destination[, options])} que permite, de maneira
+análoga ao operador `` | '' no terminal também chamado de \emph{pipe},
 redirecionar a saída de um processo ou \emph{stream} de leitura para outro
 processo ou \emph{stream} de escrita.
 
-Com isso, ainda falta um \emph{stream} de escrita que receba a saída do
-TShark que foi definida no formato CSV. Para isso, uma biblioteca extra,
-``fast-csv'', deve ser instalada. Com ela, pode-se criar o \emph{stream}
-necessário e configurá-lo para interpretar os resultados \cite{fast-csv}.
+Com isso, ainda falta um \emph{stream} de escrita que receba a saída do TShark
+que foi definida no formato CSV. Para isso, uma biblioteca extra, ``fast-csv'',
+deve ser instalada. Com ela, pode-se criar o \emph{stream} necessário e
+configurá-lo para interpretar os resultados \cite{fast-csv} como é mostrado no
+\autoref{code-node-csv}.
+
+Na linha 18 do \autoref{code-node-csv}, pode-se observar a operação de
+redirecionamento (\emph{pipe}) de \emph{stream} da saída padrão do processo
+filho (\emph{stdout}) para o \emph{stream} de escrita descrito e configurado com
+o ``fast-csv''.
 
 \begin{lstlisting}[language=javascript,caption={Uso do fast-csv},label=code-node-csv]
 const csv = require("fast-csv");
@@ -95,17 +101,10 @@ tsharkProcessoFilho.stdout.setEncoding('utf8');
 tsharkProcessoFilho.stdout.pipe(csvStream);
 \end{lstlisting}
 
-Na linha 18, pode-se observar a operação de redirecionamento (\emph{pipe})
-de \emph{stream} da saída padrão do processo filho (\emph{stdout}) para o
-\emph{stream} de escrita descrito e configurado com o ``fast-csv''. A parte
-faltante é o processamento dos pacotes e envio das inferências do sensor para o
-\emph{gateway}.
-
-Para as inferências e estatísticas, foi criado um objeto para armazenamento indexado
-pelo endereço MAC e uma classe onde as informações
-sobre cada dispositivo são agregadas. Desta forma, cada novo pacote pode ser acrescentado ao
-histórico de cada dispositivo.
-
+Para as inferências e estatísticas, foi criado um objeto para armazenamento
+indexado pelo endereço MAC e a classe mostrada no \autoref{code-device-packet}
+onde as informações sobre cada dispositivo são agregadas. Desta forma, cada novo
+pacote pode ser acrescentado ao histórico de cada dispositivo.
 
 \begin{lstlisting}[language=javascript,caption={Adição do pacote ao histórico do dispositivo},label=code-device-packet]
 let devices = {};	// lista indexada de dispositivos
@@ -130,8 +129,10 @@ function processarPacote(packet) {
 }
 \end{lstlisting}
 
-A partir desta lista, é posível calcular a média e o desvio padrão de potência de
-sinal para cada dispositivo descoberto.
+A partir da lista declarada na linha 1 do \autoref{code-device-packet}, é
+posível calcular a média e o desvio padrão de potência de sinal para cada
+dispositivo descoberto como demonstrado no \autoref{code-device-stats} entre as
+linhas 3 e 17.
 
 \begin{lstlisting}[language=javascript,caption={Extração das estatísticas do dispositivo},label=code-device-stats]
 class Device {
@@ -159,9 +160,26 @@ class Device {
 }
 \end{lstlisting}
 
-
 Por fim, é necessário comunicar aos interessados nessas inferências, o que é
 feito através do módulo MQTT.js \cite{mqttjs}.
+
+Neste caso o \autoref{code-mqttjs-client} mostra que, quando a aplicação é
+iniciada ela conecta-se ao \emph{MQTT Broker} segundo a configuração das linhas
+1 à 6.
+
+Quando a conexão é estabelecida nas linhas 7 à 10 do
+\autoref{code-mqttjs-client}, ela solicita ao \emph{MQTT Broker} a inscrição
+para receber as publicações do tópico ``devices'' na linha 8 e o processo filho
+TShark é iniciado na linha 9. Com isso os resultados são capturados e guardados
+como discutido anteriormente nos \autoref{code-device-packet} e
+\autoref{code-device-stats}.
+
+Quando uma mensagem no tópico ``devices'' é recebida na linha 11, três reações
+podem acontecer: a lista de dispositivos deve ser fornecida como mostrado nas
+linhas 14 à 18, o relatório do sensor deve ser fornecido segundo as linhas 20 à
+24 ou um relatório sobre um dispositivo específico deve ser fornecido como na
+lógica entre as linhas 26 e 31. Para todos os casos, uma resposta adequada é
+imediatamente processada e enviada para o tópico ``devices/report''.
 
 \begin{lstlisting}[language=javascript,caption={Cliente MQTT.js},label=code-mqttjs-client]
 const mqtt = require('mqtt');
@@ -200,18 +218,6 @@ clientMqtt.on('message', function (topic, message) {
 	}
 });
 \end{lstlisting}
-
-No caso desta listagem de código, quando a aplicação é iniciada ela conecta-se ao \emph{MQTT Broker}.
-Quando a conexão é estabelecida, ela solicita ao \emph{MQTT Broker} a inscrição
-para receber as publicações no tópico ``devices'' e o processo filho TShark
-é iniciado. O processo filho é executado, os resultados são capturados e
-guardados.
-
-Quando uma mensagem no tópico ``devices'' é recebida, três reações podem acontecer:
-a lista de dispositivos deve ser fornecida, o relatório do sensor deve ser
-fornecido ou um relatório sobre um dispositivo específico deve ser fornecido.
-Para todos os casos, uma resposta adequada é imediatamente processada e enviada
-para o tópico ``devices/report''.
 
 Em conclusão, a aplicação sensor instancia o processo de aquisição de dados
 TShark assincronamente e captura, classifica e armazena todos os pacotes
