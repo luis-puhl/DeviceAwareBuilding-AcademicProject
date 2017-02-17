@@ -6,11 +6,11 @@ de ruído e pontos de referência Wi-Fi, foi executada uma captura de referênci
 durante a noite quando ninguém estava no prédio protótipo, ou seja, nenhum
 dispositivo foi movimentado até a manhã seguinte.
 
-Nesta captura, dois sensores foram posicionados a menos de 10
-centímetros de distância um do outro sobre uma mesa a um metro do chão indicada no ponto
-azul da \autoref{fig-planta-baixa-juntos}. A captura
-ocorreu das \texttt{2:50} da noite até aproximadamente \texttt{11:25} da manhã, totalizando
-aproximadamente \texttt{8} horas de captura.
+Nesta captura, dois sensores foram posicionados a menos de 10 centímetros de
+distância um do outro sobre uma mesa a um metro do chão indicada no ponto azul
+da \autoref{fig-planta-baixa-juntos}. A captura ocorreu das \texttt{2:50} da
+noite até aproximadamente \texttt{11:25} da manhã, totalizando aproximadamente
+\texttt{8} horas de captura.
 
 \begin{figure}[htb]
 	\caption{\label{fig-planta-baixa-juntos}Ambiente de teste de ruído}
@@ -23,17 +23,17 @@ aproximadamente \texttt{8} horas de captura.
 \end{figure}
 
 As distâncias aproximadas, em linha reta, entre os sensores e o dispositivo
-062722b3e5fe (AP na sala de servidores, anexo ao salão) é de
-\texttt{14,6m} e entre os sensores e o dispositivo
-062722b3e5fb (AP na sala de aula) é de \texttt{26,5m}.
+062722b3e5fe (AP na sala de servidores, anexo ao salão) é de \texttt{14,6m} e
+entre os sensores e o dispositivo 062722b3e5fb (AP na sala de aula) é de
+\texttt{26,5m}.
 
-Para o primeiro sensor, a função \texttt{``summary''}  da ferramenta Ron’s editor
- indicou que foram capturados \texttt{1.729.624}
-pacotes num arquivo de \texttt{155 MB} com \texttt{88} transmissores únicos.
-Para o segundo sensor, a mesma função indicou que foram capturados \texttt{1.554.319}
-pacotes num arquivo de \texttt{134 MB} com \texttt{66} transmissores únicos.
-Em ambos os sensores, se destacaram dois endereços MAC que são os pontos de
-acesso para rede Wi-Fi do laboratório.
+Para o primeiro sensor, a função \texttt{``summary''}  da ferramenta Ron’s
+editor indicou que foram capturados \texttt{1.729.624} pacotes num arquivo de
+\texttt{155 MB} com \texttt{88} transmissores únicos. Para o segundo sensor, a
+mesma função indicou que foram capturados \texttt{1.554.319} pacotes num arquivo
+de \texttt{134 MB} com \texttt{66} transmissores únicos. Em ambos os sensores,
+se destacaram dois endereços MAC que são os pontos de acesso para rede Wi-Fi do
+laboratório.
 
 Os pacotes capturados dos pontos de acesso e os valores de potência de sinal
 associados a eles são notáveis para entender a precisão de um sistema de localização
@@ -41,14 +41,13 @@ desta categoria uma vez que esses APs estão fixos e transmitiram o
 maior número de pacotes nesta captura.
 
 Nas \autoref{fig-062722b3e5fb-s1}, \autoref{fig-062722b3e5fb-s2},
-\autoref{fig-062722b3e5fe-s1} e \autoref{fig-062722b3e5fe-s2} podemos observar
-a potência de sinal para cada pacote capturado em ordem de chegada.
-Na \autoref{fig-062722b3e5fb-s1} e
-na \autoref{fig-062722b3e5fb-s2}, os pacotes
+\autoref{fig-062722b3e5fe-s1} e \autoref{fig-062722b3e5fe-s2} observa-se a
+potência de sinal para cada pacote capturado em ordem de chegada. Na
+\autoref{fig-062722b3e5fb-s1} e na \autoref{fig-062722b3e5fb-s2}, os pacotes
 foram capturados, respectivamente, pelos sensores 1 e 2 para o ponto de acesso
-de MAC \texttt{06:27:22:b3:e5:fb}. E na
-\autoref{fig-062722b3e5fe-s1} e na \autoref{fig-062722b3e5fe-s2}, os pacotes foram capturados, respectivamente, pelos sensores 1 e 2 para
-o ponto de acesso de MAC \texttt{06:27:22:b3:e5:fe}.
+de MAC \texttt{06:27:22:b3:e5:fb}. E na \autoref{fig-062722b3e5fe-s1} e na
+\autoref{fig-062722b3e5fe-s2}, os pacotes foram capturados, respectivamente,
+pelos sensores 1 e 2 para o ponto de acesso de MAC \texttt{06:27:22:b3:e5:fe}.
 
 \begin{figure}[htb]
 	\centering
@@ -78,22 +77,22 @@ o ponto de acesso de MAC \texttt{06:27:22:b3:e5:fe}.
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-\clearpage
+\FloatBarrier
 
 Imediatamente, percebe-se que, apesar da distância ser invariável durante todo o
-teste, a potência de sinal
-não permaneceu constante. Nota-se também que o valor
-nunca assume valor par. Estas duas características fazem com que o gráfico
-seja feito de 7 linhas paralelas ao centro e alguns grupos de pontos ao redor.
+teste, a potência de sinal não permaneceu constante. Nota-se também que o valor
+nunca assume valor par. Estas duas características fazem com que o gráfico seja
+feito de 7 linhas paralelas ao centro e alguns grupos de pontos ao redor.
 
 Em todas os gráficos anteriores, nota-se uma abrupta mudança no comportamento
-próximo do pacote \texttt{225.000}.
-Estimou-se que esta mudança é devido ao horário (\texttt{08:00}) em que a universidade
-(incluindo o prédio piloto e seus arredores) inicia o seu funcionamento.
+próximo do pacote \texttt{225.000}. Estimou-se que esta mudança é devido ao
+horário (\texttt{08:00}) em que a universidade (incluindo o prédio piloto e seus
+arredores) inicia o seu funcionamento.
 
-Para ter uma visão geral clara da distribuição das potências de sinal, calculou-se
-a média e o desvio padrão para cada um dos casos. Além disso, adicionou-se o
-quanto o desvio padrão representa da média (erro).
+Para ter uma visão geral clara da distribuição das potências de sinal,
+calculou-se a média e o desvio padrão para cada um dos casos. Além disso,
+adicionou-se o quanto o desvio padrão representa da média (erro) como visto na
+\autoref{table:ap-pwr-avg}.
 
 \begin{table}[htb]
 \IBGEtab{%
@@ -126,25 +125,27 @@ $\sigma$ \%					&	8\%				&	7\%					&	4\%				&	4\%					\\
 \end{table}
 
 
-A equação de FSPL (\emph{Free-space path loss} - perca no caminho em
-espaço aberto) que é apresentada na \autoref{eq:fspl} é usualmente utilizada para determinar a potência do sinal
-a ser transmitido para que este alcance o seu destinatário.
+A equação de FSPL (\emph{Free-space path loss} - perca no caminho em espaço
+aberto) que é apresentada na \autoref{eq:fspl} é usualmente utilizada para
+determinar a potência do sinal a ser transmitido para que este alcance o seu
+destinatário.
 
 \begin{equation}
 	{\mbox{FSPL(dB)}}=20\log _{{10}}(\text{d})+20\log _{{10}}(\text{f})+92.45 \label{eq:fspl}
 \end{equation}
 
 Na aplicação \emph{Android} \emph{Wifi Distance Calculator}, desenvolvida por
-\citeonline{Kuik2016}, e no trabalho de \citeonline{androidtri} a FSPL é usada de maneira inversa, ou seja, utiliza-se a potência
-de sinal para se encontrar a distância, como mostra a \autoref{eq:distan}.
+\citeonline{Kuik2016}, e no trabalho de \citeonline{androidtri} a FSPL é usada
+de maneira inversa, ou seja, utiliza-se a potência de sinal para se encontrar a
+distância, como mostra a \autoref{eq:distan}.
 
 \begin{equation}
 	\text{d} = 10 ^{ \frac{1}{20} \left( \text{p} - 20 \times log_{10}\left(\text{f}\right)  + 27.55 \right) } \label{eq:distan}\\
 \end{equation}
 
-O $d$ é a distância em metros, $p$ é a potência do sinal em $dB$ e $f$
-é a frequência do sinal em $MHz$. Como as redes Wi-Fi utilizam canais na região
-de $2.4GHz$ e $5GHz$ \cite{ieee80211}, pode-se simplificar a equação e chegar nos
+O $d$ é a distância em metros, $p$ é a potência do sinal em $dB$ e $f$ é a
+frequência do sinal em $MHz$. Como as redes Wi-Fi utilizam canais na região de
+$2.4GHz$ e $5GHz$ \cite{ieee80211}, pode-se simplificar a equação e chegar nos
 resultados \autoref{eq:2.4ghz} e \autoref{eq:5ghz} respectivamente.
 
 \begin{align}
@@ -157,10 +158,10 @@ resultados \autoref{eq:2.4ghz} e \autoref{eq:5ghz} respectivamente.
 			&= 10 ^{ \frac{1}{20} \left( \text{p} - 46.4294 \right) } \label{eq:5ghz}
 \end{align}
 
-Utilizando a \autoref{eq:2.4ghz} (para $2.4GHz$), pode-se inferir as distâncias entre os sensores
-e pontos de acesso a partir da \autoref{table:ap-pwr-avg}. Na
-\autoref{table:ap-distance}, estão presentes a distância em função da potência $d(p)$
-calculada para a potência média $\overline{dBm}$ e para o erro.
+Utilizando a \autoref{eq:2.4ghz} (para $2.4GHz$), pode-se inferir as distâncias
+entre os sensores e pontos de acesso a partir da \autoref{table:ap-pwr-avg}. Na
+\autoref{table:ap-distance}, estão presentes a distância em função da potência
+$d(p)$ calculada para a potência média $\overline{dBm}$ e para o erro.
 
 
 \begin{table}[htb]
@@ -197,15 +198,14 @@ relação a distância (\%)	&	115\%			&	88\%				&	72\%			&	68\%		\\
 }
 \end{table}
 
-A \autoref{table:ap-distance} mostra em sua última linha o erro acumulado
-em relação a estimativa de distância (calculada a partir do valor de
-potência médio), revelando um erro de tamanho assombroso.
-Esse erro descarta qualquer possibilidade de associar a potência de sinal a uma
-localização geográfica.
+A \autoref{table:ap-distance} mostra em sua última linha o erro acumulado em
+relação a estimativa de distância (calculada a partir do valor de potência
+médio), revelando um erro de tamanho assombroso. Esse erro descarta qualquer
+possibilidade de associar a potência de sinal a uma localização geográfica.
 
-A definição do padrão IEEE 802.11 inclui que a potência de sinal
-utilizada por uma estação para transmissão pode ser variada e, o critério utilizado
-para a escolha desta potência varia entre fabricantes e não é padronizada.
+A definição do padrão IEEE 802.11 inclui que a potência de sinal utilizada por
+uma estação para transmissão pode ser variada e, o critério utilizado para a
+escolha desta potência varia entre fabricantes e não é padronizada.
 
 \begin{citacao}[english]
 
@@ -220,6 +220,7 @@ para a escolha desta potência varia entre fabricantes e não é padronizada.
 Esta definição afasta ainda mais a possibilidade de associação entre a potência
 de sinal recebida e a distância calculada através das equações de FSPL.
 
-Em conclusão, esta seção mostra os níveis de erro encontrados
-utilizando-se somente as equações de FSPL em um ambiente real e justifica o não
-uso de valores RSS (potência de sinal) para determinar valores de geolocalização neste trabalho.
+Em conclusão, esta seção mostra os níveis de erro encontrados utilizando-se
+somente as equações de FSPL em um ambiente real e justifica o não uso de valores
+RSS (potência de sinal) para determinar valores de geolocalização neste
+trabalho.

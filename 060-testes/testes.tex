@@ -4,36 +4,37 @@
 Neste capítulo, são abordados, analisados e discutidos os resultados encontrados
 durante a exploração do tema e das plataformas e durante a implementação das
 aplicações, além de verificar a precisão atingida com a aplicação implementada.
-Todos os testes foram realizados no prédio do laboratório
-LTIA da Unesp de Bauru, onde os sensores permaneceram monitorando dispositivos.
+Todos os testes foram realizados no prédio do laboratório LTIA da Unesp de
+Bauru, onde os sensores permaneceram monitorando dispositivos.
 
 \section{Método de teste}
 \label{sec:metodo-teste}
 
-Como discutido no \autoref{chap:aplicacao_demonstrativa}, a arquitetura geral da aplicação (\autoref{fig-arq-app})
-mostra que a precisão vista na aplicação Web depende dos resultados
-encontrados pela aplicação sensor que, por sua vez, depende do par de
-capacidades combinadas do hardware adaptador Wi-Fi e do software
-TShark. Portanto, a metodologia de testes empregada neste capítulo é
+Como discutido no \autoref{chap:aplicacao_demonstrativa}, a arquitetura geral da
+aplicação (\autoref{fig-arq-app}) mostra que a precisão vista na aplicação Web
+depende dos resultados encontrados pela aplicação sensor que, por sua vez,
+depende do par de capacidades combinadas do hardware adaptador Wi-Fi e do
+software TShark. Portanto, a metodologia de testes empregada neste capítulo é
 analisar diretamente as capacidades deste último par. Esta decisão também se
-deve pela facilidade de armazenar e analisar arquivos CSV gerados pelo
-TShark.
+deve pela facilidade de armazenar e analisar arquivos CSV gerados pelo TShark.
 
-As capturas foram executadas com o comando descrito no \autoref{code-tshark-pipe-assinc}
-que é o mesmo utilizado na aplicação sensor.
+As capturas foram executadas com o comando descrito no
+\autoref{code-tshark-pipe-assinc} que é o mesmo utilizado na aplicação sensor.
 
 \begin{lstlisting}[language=bash,caption={TShark e redirecionamento da saída para arquivo assíncrono},label=code-tshark-pipe-assinc]
 pi@sensor-01:~ $ tshark -I -i wlan0 -T fields -E header=y -E quote=d \
 -e wlan.sa -e wlan.sa_resolved -e wlan.ta -e wlan.ta_resolved \
 -e radiotap.dbm_antsignal -e wlan_mgt.ssid \
 >> 2017-01-17--02-48--rpi-02.csv &
+pi@sensor-01:~ $
 \end{lstlisting}
 
-Neste modo de uso, os resultados são direcionadas para a saída padrão
-(stdout)  do terminal e podem ser capturados por outro programa no formato
-de valores separados por vírgula (CSV). Os campos escolhidos para captura
-são \texttt{``wlan.sa''}, \texttt{``wlan.sa\_resolved''}, \texttt{``wlan.ta''},
-\texttt{``wlan.ta\_resolved''}, \texttt{``radiotap.dbm\_antsignal''} e \texttt{``wlan\_mgt.ssid''}.
+Neste modo de uso, os resultados são direcionadas para a saída padrão (stdout)
+do terminal e podem ser capturados por outro programa no formato de valores
+separados por vírgula (CSV). Os campos escolhidos para captura são
+\texttt{``wlan.sa''}, \texttt{``wlan.sa\_resolved''}, \texttt{``wlan.ta''},
+\texttt{``wlan.ta\_resolved''}, \texttt{``radiotap.dbm\_antsignal''} e
+\texttt{``wlan\_mgt.ssid''}.
 
 Na linha 4 do \autoref{code-tshark-pipe-assinc}, o \texttt{``\&''} representa o início
 de um processo independente (assíncrono) e, a linha 5, a finalização do terminal.
