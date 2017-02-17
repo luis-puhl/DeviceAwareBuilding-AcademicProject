@@ -18,7 +18,13 @@ MQTT \emph{Broker} Mosquitto em um dos RPI3.
 
 
 A instalação é realizada com o gerenciador de pacotes \emph{apt-get} padrão do
-raspbian como mostrado na primeira linha da listagem abaixo.
+raspbian como mostrado na primeira linha do \autoref{code-mosquitto}.
+
+Nas linhas 2 e 3, adiciona-se ao arquivo padrão de configuração padrão do
+\emph{Mosquitto} a linha \texttt{``password\_file /etc/mosquitto/passwd''} que
+indica o arquivo de senhas a ser utilizado para autenticação. Na linha 4, é
+adicionado o usuário ``user'' ao arquivo, a senha é solicitada  nas
+linhas 5 e 6.
 
 \begin{lstlisting}[language=bash,caption={Instalação e configuração do Mosquitto},label=code-mosquitto]
 pi@broker:~ $ sudo apt-get install mosquitto
@@ -29,12 +35,6 @@ Password:
 Reenter password:
 pi@broker:~ $
 \end{lstlisting}
-
-Nas linhas 2 e 3, adiciona-se ao arquivo padrão de configuração padrão do
-\emph{Mosquitto} a linha \texttt{``password\_file /etc/mosquitto/passwd''} que
-indica o arquivo de senhas a ser utilizado para autenticação. Na linha 4, é
-adicionado o usuário ``user'' ao arquivo, a senha é solicitada  nas
-linhas 5 e 6.
 
 Feito isso, o acesso ao \emph{Broker} está limitado aos usuários e senhas
 configurados neste processo. As demais configurações permaneceram sem alterações.
@@ -56,41 +56,58 @@ estão online com a mensagem \texttt{``echo''} publicada no tópico \texttt{``AD
 recebida em cada um deles. Na \autoref{fig-ad-admin-ack}, fica evidente a
 resposta de confirmação (\texttt{ack}) de cada um dos sensores.
 
-A aplicação ``MQTT.fx'', em especial a tela mostrada na
-\autoref{fig-mqttfx-stats}, revela estatísticas do \emph{Broker}, como a versão,
-tempo \emph{online}, número de clientes, mensagens e utilização de rede.
-Na aplicação ``mqtt-spy'', o comando de listagem (mencionado na
-\autopageref{code-mqttjs-client}) é demonstrado.
-
 \begin{figure}[htb]
-\centering
-	\begin{minipage}{0.32\textwidth}
 	\centering
+	\begin{minipage}{0.49\textwidth}
+		\centering
 		\caption{\label{fig-ad-publish}MQTT Dashboard: Envio de mensagens}
 		\includegraphics[width=1\textwidth]{052-gateway/mqtt/ad-publish.jpg}
 		\legend{Fonte: Produzido pelo autor}
 	\end{minipage}
-\hfill
-	\begin{minipage}{0.32\textwidth}
-	\centering
+	\hfill
+	\begin{minipage}{0.49\textwidth}
+		\centering
 		\caption{\label{fig-ad-home-ack}MQTT Dashboard: Lista de inscrições}
 		\includegraphics[width=1\textwidth]{052-gateway/mqtt/ad-home-ack.jpg}
-		\legend{Fonte: Produzido pelo autor}
-	\end{minipage}
-\hfill
-	\begin{minipage}{0.32\textwidth}
-	\centering
-		\caption{\label{fig-ad-admin-ack}MQTT Dashboard: Lista de mensagens no tópico}
-		\includegraphics[width=1\textwidth]{052-gateway/mqtt/ad-admin-ack.jpg}
 		\legend{Fonte: Produzido pelo autor}
 	\end{minipage}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\caption{\label{fig-ad-admin-ack}MQTT Dashboard: Lista de mensagens no tópico}
+		\includegraphics[width=1\textwidth]{052-gateway/mqtt/ad-admin-ack.jpg}
+		\legend{Fonte: Produzido pelo autor}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\caption{\label{fig-ad-devices-list}MQTT Dashboard: Mensagem de relatório completo do sensor}
+		\includegraphics[width=1\textwidth]{052-gateway/mqtt/ad-devices-list.jpg}
+		\legend{Fonte: Produzido pelo autor}
+	\end{minipage}
+\end{figure}
+
+\FloatBarrier
+
+A aplicação ``MQTT.fx'', em especial a tela mostrada na
+\autoref{fig-mqttfx-stats}, revela estatísticas do \emph{Broker}, como a versão,
+tempo \emph{online}, número de clientes, mensagens e utilização de rede.
+
+\begin{figure}[htb]
+	\centering
 	\caption{\label{fig-mqttfx-stats}MQTT.fx: Estatísticas do \emph{Broker}}
 	\includegraphics[width=1\textwidth]{052-gateway/mqtt/mqttfx-stats.png}
 	\legend{Fonte: Produzido pelo autor}
+\end{figure}
+
+Para demonstrar a utilização da aplicação ``mqtt-spy'', o comando de listagem
+(mencionado na \autopageref{code-mqttjs-client}) é demonstrado na
+\autoref{fig-mqtt-spy-list}.
+
+\begin{figure}[htb]
 	\centering
 	\caption{\label{fig-mqtt-spy-list}mqtt-spy: Listagem de dispositivos}
 	\includegraphics[width=1\textwidth]{052-gateway/mqtt/mqtt-spy-list.png}
