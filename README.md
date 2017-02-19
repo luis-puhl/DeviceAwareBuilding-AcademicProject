@@ -17,7 +17,7 @@ anything allowed) aware of the devices location.
 ## Releases
 
 Want the latest delivered version? Look no further,
-[![Version](http://img.shields.io/badge/version-0.3.4-brightgreen.svg)](https://github.com/luis-puhl/DeviceAwareBuilding-AcademicProject/releases/latest)
+[![Version](http://img.shields.io/badge/version-1.2.0-brightgreen.svg)](https://github.com/luis-puhl/DeviceAwareBuilding-AcademicProject/releases/latest)
 but there is also [The last PDF build](monografia-DAB.pdf).
 
 Further more, you can find all [delivered releases
